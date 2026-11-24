@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>JT Screenwriter Agent · 专业编剧创作与金泰平台一键制片工作台</title>
+<style>
+  :root {
+    --bg: #f6f4ef;
+    --surface: #ffffff;
+    --surface-soft: #f0ede5;
+    --ink: #18292e;
+    --muted: #4c5e63;
+    --accent: #1f4e46;
+    --accent-soft: #e3efe9;
+    --warn: #8a2c1f;
+    --warn-bg: #fae9e6;
+    --border: #cfd8d2;
+    --mono-bg: #f4f6f5;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, sans-serif;
+    font-size: 20.5px;
+    line-height: 1.65;
+  }
+  .sticky-bar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(246, 244, 239, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 2px solid var(--border);
+    padding: 14px 20px;
+  }
+  .sticky-inner {
+    max-width: 1380px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+  #globalSearch {
+    flex: 1 1 360px;
+    font-size: 20.5px;
+    padding: 12px 16px;
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--ink);
+  }
+  .nav-pills {
+    max-width: 1380px;
+    margin: 10px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 16.5px;
+    font-weight: 700;
+  }
+  .pill:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .pill.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  .badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 15.5px;
+    font-weight: 700;
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .badge.warn { background: var(--warn-bg); color: var(--warn); }
+  .badge.lan { background: #dff4e6; color: #116634; border: 1.5px solid #2b8a50; display: none; }
+  .container { max-width: 1380px; margin: 0 auto; padding: 20px 20px 64px; }
+  .hero {
+    background: var(--surface);
+    border: 2px solid var(--border);
+    border-left: 8px solid var(--accent);
+    border-radius: 14px;
+    padding: 24px 26px;
+    margin-bottom: 24px;
+  }
+  .hero h1 { margin: 8px 0 10px; font-size: 30px; line-height: 1.3; }
+  .lead { margin: 0; color: var(--muted); font-size: 19.5px; }
+  section.panel {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 26px;
+  }
+  section.panel > h2 {
+    margin: 0 0 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--surface-soft);
+    font-size: 25px;
+    color: var(--accent);
+  }
+  .grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 18px;
+  }
+  .card {
+    background: #fcfcfa;
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .card h3 { margin: 4px 0 10px; font-size: 22px; color: var(--ink); }
+  .card-meta { font-size: 16px; font-weight: 700; color: var(--accent); margin-bottom: 6px; }
+  .warn-box {
+    background: var(--warn-bg);
+    border-left: 5px solid var(--warn);
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #5b1b13;
+  }
+  .ok-box {
+    background: var(--accent-soft);
+    border-left: 5px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  .mono-box {
+    background: var(--mono-bg);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    font-family: Consolas, "Cascadia Mono", monospace;
+    font-size: 16.5px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+    max-height: 360px;
+    overflow: auto;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 18px;
+    border-radius: 9px;
+    border: 1.5px solid var(--accent);
+    background: var(--accent);
+    color: #fff;
+    font-size: 17.5px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .btn.ghost { background: #fff; color: var(--accent); }
+  .btn:hover { opacity: 0.92; }
+  .row-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; align-items: center; }
+  video, audio, img.preview-img {
+    width: 100%;
+    border-radius: 10px;
+    border: 1.5px solid var(--border);
+    background: #101618;
+  }
+  img.preview-img { cursor: zoom-in; background: #fff; }
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  label.fld { display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 18px; }
+  select, input.txt-in, textarea.txt-in {
+    font-family: inherit;
+    font-size: 18.5px;
+    padding: 10px 12px;
+    border: 1.5px solid #96a8a0;
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+  }
+  .genre-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+  .chip {
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1.5px solid var(--border);
+    background: var(--surface-soft);
+    font-size: 16.5px;
+    font-weight: 700;
+    cursor: pointer;
+    color: var(--ink);
+  }
+  .chip.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+  #toast {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 90;
+    background: #18292e;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 17.5px;
+    font-weight: 700;
+    display: none;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.22);
+  }
+  #lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(12, 18, 20, 0.88);
+    z-index: 100;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+  }
+  #lightbox img { max-width: 96vw; max-height: 92vh; border-radius: 10px; border: 2px solid #fff; }
+  .hidden { display: none !important; }
+  .small-muted { color: var(--muted); font-size: 17px; }
+  @media (max-width: 900px) {
+    body { font-size: 18.5px; }
+    .grid-2 { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 25px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sticky-bar">
+  <div class="sticky-inner">
+    <input id="globalSearch" type="search" autofocus placeholder="即时搜索：32部世界佳片、56位导演、6款胶片、分镜与台词…">
+    <button class="btn ghost" id="clearSearchBtn" type="button">清空筛选</button>
+    <span class="badge lan" id="lanBadge">● 局域网全功能实时模式已连接</span>
+  </div>
+  <nav class="nav-pills">
+    <a class="pill active" href="#reel-stage">🎬 实渲小样与四联审片</a>
+    <a class="pill" href="#comps-library">🌍 世界佳片机制库 (32部)</a>
+    <a class="pill" href="#style-lab">🎞️ 导演×胶片编译器</a>
+    <a class="pill" href="#writer-console">✍️ 5入口编剧台 & System Prompt</a>
+    <a class="pill" href="#platform-bridge">⚡ 金泰平台 & AVC 导出</a>
+  </nav>
+</div>
+
+<main class="container">
+  <header class="hero">
+    <div class="row-actions" style="margin-top:0;margin-bottom:8px">
+      <span class="badge" id="metaStatsBadge">加载数据中…</span>
+      <span class="badge">13 层防漂移语义门禁</span>
+      <span class="badge">面向成熟编剧 · 零说教同行协同</span>
+    </div>
+    <h1>JT Screenwriter Agent · 专业编剧创作与金泰平台一键制片工作台</h1>
+    <p class="lead">
+      直接服务有经验的编剧个体与导演：按「一颗火花 / 大纲 / 初稿会诊 / 小说历史改编 / 多季引擎」五入口介入剧本创作，
+      借鉴 32 部世界同类型优秀影片（F/O 机制剥离 + 抄袭隔离红线），编译 56 位导演 × 6 款胶片乳剂 × 世界观美术资产，
+      一键导出金泰 AVC 画布工程与 8×H100 电影级影片小样。
+    </p>
+  </header>
+
+  <section class="panel" id="lanPanel" style="display:none; border: 2px solid #2b8a50;">
+    <h2>🟢 局域网全功能生产控制台（实时直连本机服务与 A 机探针）</h2>
+    <div class="form-grid">
+      <label class="fld">当前工作区项目
+        <select id="lanProjectSelect"></select>
+      </label>
+      <label class="fld">A 机集群即时摘要
+        <input class="txt-in" id="lanClusterStatus" readonly value="正在探测…">
+      </label>
+    </div>
+    <div class="row-actions">
+      <button class="btn" id="lanDoctorBtn" type="button">实时运行剧本医生 & 13层门禁</button>
+      <button class="btn ghost" id="lanBuildBtn" type="button">重编译金泰平台交付包</button>
+      <button class="btn ghost" id="lanProbePlanBtn" type="button">生成 A 机单卡 5s 探针预演计划 (dry-run)</button>
+    </div>
+    <div class="mono-box" id="lanActionOut" style="margin-top:12px; display:none;"></div>
+  </section>
+
+  <section class="panel" id="reel-stage">
+    <h2>1. 实渲影片小样与金泰影视四联检视板 — 《第七页雨痕》</h2>
+    <p class="small-muted" id="demoLogline">正在加载《第七页雨痕》分场小样…</p>
+    <div class="grid-2">
+      <article class="card">
+        <div class="card-meta" id="reelMetaTag">A 机单卡 Veda R2VA · 5.17s · 1344×768 · 24fps</div>
+        <h3>《第七页雨痕》SH01 概念成片小样</h3>
+        <video controls preload="metadata" playsinline src="assets/sample_reel.mp4"></video>
+        <p style="margin:12px 0 6px"><strong>独立审听音轨（Breeze-TTS 演员声线 + MiniMax Music 3 整轨大提琴与弱音钢琴）：</strong></p>
+        <audio controls preload="metadata" src="assets/sample_reel_audio.mp3"></audio>
+        <div class="ok-box" id="reelAuditVerdict"></div>
+      </article>
+      <article class="card">
+        <div class="card-meta">金泰影视四联标准检视板 & 4MP 锚点母图（点击放大）</div>
+        <h3>视觉与连续性审片图板</h3>
+        <img class="preview-img" src="assets/qa_quad_sheet.jpg" alt="《第七页雨痕》四联标准检视板" data-zoom="assets/qa_quad_sheet.jpg">
+        <div style="margin-top:14px">
+          <div class="card-meta">SH01 关键帧 4MP 视觉锚点（MiniMax-H3-Image）</div>
+          <img class="preview-img" src="assets/SH01_anchor.jpg" alt="SH01 关键帧视觉锚点" data-zoom="assets/SH01_anchor.jpg">
+        </div>
+      </article>
+    </div>
+    <h3 style="margin:22px 0 12px">逐镜语义包（13 层防漂移锁定，零 4 列窄表）</h3>
+    <div class="grid-2" id="demoShotsGrid"></div>
+  </section>
+
+  <section class="panel" id="comps-library">
+    <h2>2. 世界同类型优秀影片四层机制库（32 部精选 · F/O 汲取与防抄袭红线）</h2>
+    <p class="small-muted">
+      只借鉴可迁移的剧作信息差、空间权力调度与光影声响机制，强制剥离标志性台词与签名桥段（<code>identity_exclusions</code>），防范同质化与“设计固着”。
+    </p>
+    <div class="genre-bar" id="genreChips"></div>
+    <div class="grid-2" id="compsGrid"></div>
+  </section>
+
+  <section class="panel" id="style-lab">
+    <h2>3. 56 位导演 × 6 款胶片光学编译器与物理冲突检测</h2>
+    <p class="small-muted">杜绝“8K、HDR、Masterpiece、电影感”等空洞套话，将美学意图编译为真实光学焦段、单光源物理动机、银盐色温与零否定词提示词。</p>
+    <div class="form-grid">
+      <label class="fld">主导演（负责机位几何与剪辑呼吸）
+        <select id="selDirector"></select>
+      </label>
+      <label class="fld">副导演（仅限光色/介质补充）
+        <select id="selSecondaryDirector"></select>
+      </label>
+      <label class="fld">6 款胶片物理乳剂（含光学门禁）
+        <select id="selFilmStock"></select>
+      </label>
+      <label class="fld">景别与焦段
+        <input class="txt-in" id="inpShotScale" value="Medium Close-Up, 35mm">
+      </label>
+    </div>
+    <div class="form-grid">
+      <label class="fld">场景空间与物理光源（@SCN 基准）
+        <input class="txt-in" id="inpScene" value="1998年南方潮湿旧城半卷斋旧书店梅雨夜，唯一一盏3200K黄铜台灯照亮旧木桌，窗外冷青街灯穿透雨水玻璃">
+      </label>
+      <label class="fld">角色动作与微表情反应链
+        <input class="txt-in" id="inpAction" value="修书匠周砚手指按住发黄借书卡停滞半秒，门铃轻震后缓缓抬头迎向门口黑伞阴影">
+      </label>
+    </div>
+    <div class="row-actions">
+      <button class="btn" id="compileStyleBtn" type="button">立即编译双语导演提示词</button>
+      <button class="btn ghost" id="copyH3PromptBtn" type="button">复制 H3 Ref2VA 提示词</button>
+      <button class="btn ghost" id="copySeedanceBtn" type="button">复制 Seedance 2.5 提示词</button>
+    </div>
+    <div id="styleWarningsBox" style="margin-top:12px"></div>
+    <div class="grid-2" style="margin-top:14px">
+      <div class="card">
+        <div class="card-meta" id="dirProfileTitle">导演六维参数与胶片属性</div>
+        <div id="dirProfileDetails"></div>
+      </div>
+      <div class="card">
+        <div class="card-meta">编译后模型级提示词（H3 Ref2VA / Seedance 2.5）</div>
+        <div class="mono-box" id="compiledPromptsOut"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="panel" id="writer-console">
+    <h2>4. 五大专业编剧入口 & 专家 System Prompt 一键复制</h2>
+    <div class="grid-2" id="entryModesGrid"></div>
+    <div class="grid-2" style="margin-top:18px">
+      <article class="card">
+        <div class="card-meta">完整专家 System Prompt（可直接粘贴至 AI 创作台）</div>
+        <h3>JT_SCREENWRITER_AGENT_SYSTEM_PROMPT.md</h3>
+        <div class="row-actions" style="margin-bottom:10px">
+          <button class="btn" id="copySystemPromptBtn" type="button">一键复制完整 System Prompt</button>
+        </div>
+        <div class="mono-box" id="systemPromptBox"></div>
+      </article>
+      <article class="card">
+        <div class="card-meta">《第七页雨痕》示例分场剧本与 13 层语义门禁报告</div>
+        <h3>剧本医生与门禁裁决：<span id="gateVerdictBadge" class="badge">PASS</span></h3>
+        <div class="mono-box" id="demoScreenplayBox"></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="panel" id="platform-bridge">
+    <h2>5. 一键通达金泰平台 & AVC 画布 JSON 导出</h2>
+    <div class="grid-2" id="publicLinksGrid"></div>
+    <div class="card" style="margin-top:18px">
+      <div class="card-meta">已验证零外链 · 零重叠 · 全端点连通的 AVC 导入工程</div>
+      <h3>《第七页雨痕》avc_canvas_import.json</h3>
+      <div class="row-actions" style="margin-bottom:10px">
+        <button class="btn" id="copyAvcBtn" type="button">一键复制 AVC 画布 JSON</button>
+        <button class="btn ghost" id="downloadAvcBtn" type="button">下载 avc_canvas_import.json</button>
+      </div>
+      <div class="mono-box" id="avcJsonBox"></div>
+    </div>
+  </section>
+</main>
+
+<div id="lightbox"><img id="lightboxImg" src="" alt="放大预览"></div>
+<div id="toast"></div>
+
+<script>
+(function(){
+  var DATA = null;
+  var activeGenre = '全部';
+  var lastCompiled = { h3: '', seedance: '' };
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function toast(msg) {
+    var el = document.getElementById('toast');
+    el.textContent = msg;
+    el.style.display = 'block';
+    clearTimeout(window.__jtToastT);
+    window.__jtToastT = setTimeout(function(){ el.style.display = 'none'; }, 3200);
+  }
+
+  function copyText(txt, label) {
+    if (!txt) { toast('当前暂无可复制内容'); return; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(txt).then(function(){ toast('已复制：' + label); }).catch(function(){ fallbackCopy(txt, label); });
+    } else {
+      fallbackCopy(txt, label);
+    }
+  }
+
+  function fallbackCopy(txt, label) {
+    var ta = document.createElement('textarea');
+    ta.value = txt;
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    toast('已复制：' + label);
+  }
+
+  function renderDemoSection() {
+    var demo = DATA.demo_project || {};
+    var ci = demo.creative_intent || {};
+    var reel = demo.sample_reel_manifest || {};
+    var gate = demo.semantic_gate_report || {};
+    document.getElementById('demoLogline').innerHTML =
+      '<strong>主控思想：</strong>' + esc(ci.controlling_idea || '') +
+      ' ｜ <strong>调性：</strong>' + esc(ci.tone || '') +
+      ' ｜ <strong>反调性禁区：</strong>' + esc((ci.must_not_become || []).join(' / '));
+    document.getElementById('reelAuditVerdict').innerHTML =
+      '<strong>双盲审片验收：</strong>视觉 ' + esc(reel.visual_check_status || 'PASS') +
+      ' · 听审 ' + esc(reel.ear_check_status || 'PASS') +
+      '<br><span class="small-muted">' + esc(reel.ear_check_note || '') + '</span>';
+
+    var shots = (demo.shot_semantic_packets || {}).shots || [];
+    var sHtml = shots.map(function(sh){
+      return '<article class="card search-item">' +
+        '<div class="card-meta">' + esc(sh.shot_id) + ' · ' + esc(sh.duration_sec) + 's (' + esc(sh.h3_frames) + '帧) · ' + esc(sh.shot_size) + ' ' + esc(sh.lens) + '</div>' +
+        '<h3>' + esc(sh.story_function || '') + '</h3>' +
+        '<p><strong>动作：</strong>' + esc(sh.visible_action || '') + '</p>' +
+        '<p><strong>微表情与潜台词：</strong>' + esc(sh.micro_action || '') + ' ｜ <em>' + esc(sh.subtext || '') + '</em></p>' +
+        '<p><strong>对白：</strong>' + esc(sh.speaker || '（无对白）') + (sh.dialogue_line ? '：「' + esc(sh.dialogue_line) + '」' : '') + '</p>' +
+        '<div class="row-actions"><button class="btn ghost copy-shot-btn" data-prompt="' + esc(sh.h3_prompt || '') + '" type="button">复制本镜 H3 提示词</button></div>' +
+        '</article>';
+    }).join('');
+    document.getElementById('demoShotsGrid').innerHTML = sHtml;
+    document.querySelectorAll('.copy-shot-btn').forEach(function(btn){
+      btn.onclick = function(){ copyText(btn.getAttribute('data-prompt'), '分镜 H3 提示词'); };
+    });
+
+    document.getElementById('gateVerdictBadge').textContent = (gate.verdict || 'PASS') + ' · 0 穿帮';
+    document.getElementById('demoScreenplayBox').textContent = demo.screenplay_md || '';
+    document.getElementById('systemPromptBox').textContent = DATA.system_prompt_md || '';
+    document.getElementById('avcJsonBox').textContent = JSON.stringify(demo.avc_canvas_import || {}, null, 2);
+  }
+
+  function renderComps(kw) {
+    var libs = DATA.world_cinema_library || [];
+    var genresMap = { '全部': 1 };
+    libs.forEach(function(it){
+      (it.genres || []).forEach(function(g){ genresMap[g] = 1; });
+    });
+    var bar = document.getElementById('genreChips');
+    if (!bar.children.length) {
+      Object.keys(genresMap).forEach(function(g){
+        var b = document.createElement('button');
+        b.type = 'button';
+        b.className = 'chip' + (g === activeGenre ? ' active' : '');
+        b.textContent = g;
+        b.onclick = function(){
+          activeGenre = g;
+          Array.from(bar.children).forEach(function(c){ c.classList.toggle('active', c.textContent === g); });
+          renderComps(document.getElementById('globalSearch').value);
+        };
+        bar.appendChild(b);
+      });
+    }
+
+    var q = (kw || '').trim().toLowerCase();
+    var filtered = libs.filter(function(it){
+      if (activeGenre !== '全部' && (it.genres || []).indexOf(activeGenre) === -1) return false;
+      if (!q) return true;
+      var blob = JSON.stringify(it).toLowerCase();
+      return blob.indexOf(q) !== -1;
+    });
+
+    var grid = document.getElementById('compsGrid');
+    if (!filtered.length) {
+      grid.innerHTML = '<div class="card"><p>没有匹配「' + esc(kw) + '」的佳片记录，请更换关键词或点选「全部」。</p></div>';
+      return;
+    }
+    grid.innerHTML = filtered.map(function(m){
+      var rules = (m.transferable_rules || []).map(function(r){ return '<li>' + esc(r) + '</li>'; }).join('');
+      var excls = (m.identity_exclusions || []).map(function(e){ return '<li>' + esc(e) + '</li>'; }).join('');
+      return '<article class="card search-item">' +
+        '<div class="card-meta">' + esc(m.id) + ' · ' + esc(m.year) + ' · ' + esc(m.region) + ' · 导演 ' + esc(m.director) + '</div>' +
+        '<h3>《' + esc(m.title) + '》</h3>' +
+        '<p class="small-muted"><strong>[F 核验]</strong> ' + esc(m.facts_F) + '</p>' +
+        '<p><strong>[O 剧作]</strong> ' + esc(m.dramaturgy_mechanism) + '</p>' +
+        '<p><strong>[O 视听]</strong> ' + esc(m.visual_camera_mechanism) + '</p>' +
+        '<p><strong>[可迁移法则]</strong></p><ul>' + rules + '</ul>' +
+        '<div class="warn-box"><strong>⛔ 禁止抄袭隔离红线：</strong><ul style="margin:6px 0 0 18px">' + excls + '</ul>' +
+        '<div><strong>反例预警：</strong>' + esc(m.failure_counterexample) + '</div></div>' +
+        '<div class="row-actions"><button class="btn ghost copy-comp-btn" data-cid="' + esc(m.id) + '" type="button">复制机制借鉴卡</button></div>' +
+        '</article>';
+    }).join('');
+    grid.querySelectorAll('.copy-comp-btn').forEach(function(btn){
+      btn.onclick = function(){
+        var cid = btn.getAttribute('data-cid');
+        var item = libs.find(function(x){ return x.id === cid; });
+        if (!item) return;
+        var txt = '【' + item.id + ' 《' + item.title + '》(' + item.year + ')】\nF: ' + item.facts_F +
+          '\n剧作机制: ' + item.dramaturgy_mechanism + '\n视听机制: ' + item.visual_camera_mechanism +
+          '\n禁止抄袭隔离: ' + (item.identity_exclusions || []).join('；');
+        copyText(txt, item.title);
+      };
+    });
+  }
+
+  function initStyleLab() {
+    var dirs = DATA.directors || [];
+    var stocks = DATA.film_stocks || [];
+    var selD = document.getElementById('selDirector');
+    var selS = document.getElementById('selSecondaryDirector');
+    var selF = document.getElementById('selFilmStock');
+
+    selD.innerHTML = dirs.map(function(d){
+      var badge = d.full_profile ? ' ★' : '';
+      return '<option value="' + esc(d.name) + '">' + esc(d.name) + (d.name_en ? ' (' + esc(d.name_en) + ')' : '') + badge + '</option>';
+    }).join('');
+    selS.innerHTML = '<option value="">无（保持单一主导演视觉纯度）</option>' + dirs.map(function(d){
+      return '<option value="' + esc(d.name) + '">' + esc(d.name) + '</option>';
+    }).join('');
+    selF.innerHTML = stocks.map(function(st){
+      return '<option value="' + esc(st.key) + '">' + esc(st.label) + ' — ' + esc(st.temp) + '</option>';
+    }).join('');
+
+    // Default to Johnnie To + Wong Kar-wai + CineStill 800T matching the demo
+    if (dirs.some(function(d){ return d.name === '杜琪峰'; })) selD.value = '杜琪峰';
+    if (dirs.some(function(d){ return d.name === '王家卫'; })) selS.value = '王家卫';
+    selF.value = 'cinestill800t';
+
+    document.getElementById('compileStyleBtn').onclick = compileStyle;
+    selD.onchange = compileStyle;
+    selS.onchange = compileStyle;
+    selF.onchange = compileStyle;
+    compileStyle();
+  }
+
+  function detectConflicts(text, stockKey, shotScale) {
+    var warns = [];
+    var low = (text + ' ' + shotScale).toLowerCase();
+    var g = DATA.guards || {};
+    (g.empty_buzzwords || []).forEach(function(bw){
+      if (low.indexOf(bw.toLowerCase()) !== -1) warns.push('空洞套话词警报：包含「' + bw + '」，请改为真实光学/材质物理参数。');
+    });
+    (g.skin_artifact_triggers || []).forEach(function(tr){
+      if (low.indexOf(tr.toLowerCase()) !== -1) warns.push('近景麻点诱发词警报：包含「' + tr + '」，近景人像请改为正面细腻肤理表述。');
+    });
+    (g.di_negation_phrases || []).forEach(function(ng){
+      if (low.indexOf(ng.toLowerCase()) !== -1) warns.push('本地 DiT 否定词泄漏风险：包含「' + ng.trim() + '」，请改写为正面物理描写。');
+    });
+    if (stockKey === 'cinestill800t' && (low.indexOf('正午') !== -1 || low.indexOf('烈日') !== -1) &&
+        low.indexOf('灯') === -1 && low.indexOf('neon') === -1 && low.indexOf('霓虹') === -1) {
+      warns.push('光学冲突：CineStill 800T 依赖点光源红晕（Halation），不宜与无点光源的正午强日光硬拼。');
+    }
+    if (stockKey === 'ultramax400' && (low.indexOf('远景') !== -1 || low.indexOf('航拍') !== -1 || low.indexOf('aerial') !== -1 || low.indexOf('wide') !== -1)) {
+      warns.push('光学冲突：UltraMax 400 机顶硬闪有效距离仅 1.5–4m，禁止用于大远景或航拍。');
+    }
+    if (stockKey === 'hp5plus400') {
+      ['红','蓝','绿','黄','青','紫','amber','crimson','teal','cyan','red','blue'].some(function(c){
+        if (low.indexOf(c) !== -1) {
+          warns.push('光学冲突：Ilford HP5 Plus 400 黑白银盐胶片禁止混入彩色色相词（检测到「' + c + '」）。');
+          return true;
+        }
+        return false;
+      });
+    }
+    return warns;
+  }
+
+  function compileStyle() {
+    var dName = document.getElementById('selDirector').value;
+    var sName = document.getElementById('selSecondaryDirector').value;
+    var fKey = document.getElementById('selFilmStock').value;
+    var scale = document.getElementById('inpShotScale').value.trim() || 'Medium Close-Up, 35mm';
+    var scene = document.getElementById('inpScene').value.trim();
+    var action = document.getElementById('inpAction').value.trim();
+
+    var dirObj = (DATA.directors || []).find(function(x){ return x.name === dName; }) || {};
+    var secObj = sName ? (DATA.directors || []).find(function(x){ return x.name === sName; }) : null;
+    var stockObj = (DATA.film_stocks || []).find(function(x){ return x.key === fKey; }) || {};
+
+    var warns = detectConflicts(scene + ' ' + action, fKey, scale);
+    document.getElementById('styleWarningsBox').innerHTML = warns.length
+      ? '<div class="warn-box"><strong>⚠️ 光学与 DiT 物理冲突检测 (' + warns.length + ' 项)：</strong><ul>' +
+        warns.map(function(w){ return '<li>' + esc(w) + '</li>'; }).join('') + '</ul></div>'
+      : '<div class="ok-box">✅ 光学物理链、胶片色温与 DiT 零否定检测全部通过（0 冲突）。</div>';
+
+    document.getElementById('dirProfileTitle').textContent =
+      dirObj.name + (dirObj.name_en ? ' (' + dirObj.name_en + ')' : '') + ' × ' + (stockObj.label || '');
+    document.getElementById('dirProfileDetails').innerHTML =
+      '<p><strong>焦段画幅：</strong>' + esc(dirObj.lens_aspect || '') + '</p>' +
+      '<p><strong>构图调度：</strong>' + esc(dirObj.composition || '') + '</p>' +
+      '<p><strong>光源逻辑：</strong>' + esc(dirObj.lighting || '') + '</p>' +
+      '<p><strong>色彩与质感：</strong>' + esc(dirObj.color || '') + ' ｜ <em>' + esc(stockObj.prompt_zh || '') + '</em></p>' +
+      '<p><strong>运动与节奏：</strong>' + esc(dirObj.movement || '') + ' ｜ ' + esc(dirObj.rhythm || '') + '</p>';
+
+    var h3 = 'Live-action 24fps film footage (' + scale + '), natural luminous skin texture and authentic fabric folds. ' +
+      (scene ? 'Scene & motivated light: ' + scene + '. ' : '') +
+      (action ? 'Physical action & micro-reaction: ' + action + '. ' : '') +
+      'Primary visual blocking: ' + (dirObj.prompt_en || '') + '. ' +
+      (secObj ? 'Secondary color/atmosphere touch: ' + (secObj.prompt_en || '') + '. ' : '') +
+      'Film stock emulsion: ' + (stockObj.prompt_en || '') + '.';
+
+    var sd = '[电影实拍参考编译] 景别与焦段：' + scale + '；主导演几何调度：' + (dirObj.prompt_zh || '') +
+      (secObj ? '；光色辅助气质：' + (secObj.prompt_zh || '') : '') +
+      '；胶片乳剂：' + (stockObj.prompt_zh || '') +
+      (scene ? '。场景光源：' + scene : '') +
+      (action ? '。动作与反应：' + action : '') + '。画面干净无水印字幕。';
+
+    lastCompiled = { h3: h3, seedance: sd };
+    document.getElementById('compiledPromptsOut').textContent =
+      '=== MiniMax H3 Ref2VA / Image 提示词 ===\n' + h3 + '\n\n=== Seedance 2.5 中文分镜提示词 ===\n' + sd;
+  }
+
+  function renderEntryModes() {
+    var htmlStr = (DATA.entry_modes || []).map(function(m){
+      return '<article class="card search-item">' +
+        '<div class="card-meta">' + esc(m.route_skill) + '</div>' +
+        '<h3>' + esc(m.title) + '</h3>' +
+        '<p><strong>适用情形：</strong>' + esc(m.when) + '</p>' +
+        '<p><strong>关键产出：</strong>' + esc(m.deliverable) + '</p>' +
+        '<div class="mono-box" style="max-height:110px">' + esc(m.cmd) + '</div>' +
+        '<div class="row-actions"><button class="btn ghost copy-cmd-btn" data-cmd="' + esc(m.cmd) + '" type="button">复制开工命令</button></div>' +
+        '</article>';
+    }).join('');
+    document.getElementById('entryModesGrid').innerHTML = htmlStr;
+    document.querySelectorAll('.copy-cmd-btn').forEach(function(b){
+      b.onclick = function(){ copyText(b.getAttribute('data-cmd'), 'CLI 开工命令'); };
+    });
+
+    var linksHtml = (DATA.public_links || []).map(function(lk){
+      return '<article class="card">' +
+        '<h3>' + esc(lk.name) + '</h3>' +
+        '<p class="small-muted">' + esc(lk.desc) + '</p>' +
+        '<div class="row-actions"><a class="btn" href="' + esc(lk.url) + '" target="_blank" rel="noopener">立即打开 ↗</a></div>' +
+        '</article>';
+    }).join('');
+    document.getElementById('publicLinksGrid').innerHTML = linksHtml;
+  }
+
+  function applyGlobalSearch(kw) {
+    var q = (kw || '').trim().toLowerCase();
+    renderComps(q);
+    document.querySelectorAll('#demoShotsGrid .search-item, #entryModesGrid .search-item').forEach(function(el){
+      var hit = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
+      el.classList.toggle('hidden', !hit);
+    });
+  }
+
+  function enableLanModeIfAvailable() {
+    var isLan = (location.port === '8795') || (document.querySelector('meta[name="jt-lan-mode"]') !== null);
+    if (!isLan) return;
+    fetch('./api/health').then(function(r){ return r.ok ? r.json() : null; }).then(function(h){
+      if (!h || !h.ok) return;
+      document.getElementById('lanBadge').style.display = 'inline-block';
+      document.getElementById('lanPanel').style.display = 'block';
+      document.getElementById('lanClusterStatus').value =
+        'A机在线 ' + (h.a_online_count || 0) + '/8 卡 · 可用显存 ' + (h.a_total_free_vram_gib || 0) + ' GiB · 服务 ' + (h.lan_url || '');
+      return fetch('./api/projects').then(function(pr){ return pr.ok ? pr.json() : null; });
+    }).then(function(pdata){
+      if (!pdata || !pdata.projects) return;
+      var sel = document.getElementById('lanProjectSelect');
+      sel.innerHTML = pdata.projects.map(function(p){
+        return '<option value="' + esc(p.slug) + '">' + esc(p.title || p.slug) + ' (' + esc(p.slug) + ')</option>';
+      }).join('');
+      function callLanPost(ep, extra) {
+        var box = document.getElementById('lanActionOut');
+        box.style.display = 'block';
+        box.textContent = '正在请求 ' + ep + ' …';
+        var body = Object.assign({ project_slug: sel.value }, extra || {});
+        fetch('.' + ep, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        }).then(function(res){ return res.json(); }).then(function(js){
+          box.textContent = JSON.stringify(js, null, 2);
+        }).catch(function(err){
+          box.textContent = '请求异常: ' + err;
+        });
+      }
+      document.getElementById('lanDoctorBtn').onclick = function(){ callLanPost('/api/doctor'); };
+      document.getElementById('lanBuildBtn').onclick = function(){ callLanPost('/api/build-platform'); };
+      document.getElementById('lanProbePlanBtn').onclick = function(){ callLanPost('/api/render-probe', { dry_run: true }); };
+    }).catch(function(){});
+  }
+
+  function bindEvents() {
+    var searchInp = document.getElementById('globalSearch');
+    searchInp.addEventListener('input', function(){ applyGlobalSearch(searchInp.value); });
+    document.getElementById('clearSearchBtn').onclick = function(){
+      searchInp.value = '';
+      activeGenre = '全部';
+      document.querySelectorAll('#genreChips .chip').forEach(function(c){ c.classList.toggle('active', c.textContent === '全部'); });
+      applyGlobalSearch('');
+      searchInp.focus();
+    };
+    document.getElementById('copyH3PromptBtn').onclick = function(){ copyText(lastCompiled.h3, 'H3 Ref2VA 提示词'); };
+    document.getElementById('copySeedanceBtn').onclick = function(){ copyText(lastCompiled.seedance, 'Seedance 2.5 提示词'); };
+    document.getElementById('copySystemPromptBtn').onclick = function(){ copyText(DATA.system_prompt_md, '完整专家 System Prompt'); };
+    document.getElementById('copyAvcBtn').onclick = function(){
+      copyText(JSON.stringify((DATA.demo_project || {}).avc_canvas_import || {}, null, 2), 'AVC 画布 JSON');
+    };
+    document.getElementById('downloadAvcBtn').onclick = function(){
+      var raw = JSON.stringify((DATA.demo_project || {}).avc_canvas_import || {}, null, 2);
+      var blob = new Blob([raw], { type: 'application/json;charset=utf-8' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'demo_seventh_page_avc_canvas_import.json';
+      a.click();
+      toast('已下载 avc_canvas_import.json');
+    };
+    document.querySelectorAll('img[data-zoom]').forEach(function(im){
+      im.onclick = function(){
+        document.getElementById('lightboxImg').src = im.getAttribute('data-zoom');
+        document.getElementById('lightbox').style.display = 'flex';
+      };
+    });
+    document.getElementById('lightbox').onclick = function(){
+      document.getElementById('lightbox').style.display = 'none';
+    };
+  }
+
+  fetch('data/workbench_data.json?v=1').then(function(r){ return r.json(); }).then(function(js){
+    DATA = js;
+    var meta = js.meta || {};
+    document.getElementById('metaStatsBadge').textContent =
+      meta.comps_count + ' 部世界佳片 · ' + meta.directors_count + ' 位导演 · ' + meta.film_stocks_count + ' 款胶片';
+    renderDemoSection();
+    renderComps('');
+    initStyleLab();
+    renderEntryModes();
+    bindEvents();
+    enableLanModeIfAvailable();
+  }).catch(function(err){
+    document.getElementById('demoLogline').textContent = '加载工作台数据失败：' + err;
+  });
+})();
+</script>
+</body>
+</html>

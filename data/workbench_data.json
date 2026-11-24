@@ -1,0 +1,3289 @@
+{
+  "meta": {
+    "name": "JT Screenwriter Agent",
+    "version": "1.0.0",
+    "comps_count": 32,
+    "directors_count": 59,
+    "film_stocks_count": 6,
+    "semantic_layers": 13
+  },
+  "world_cinema_library": [
+    {
+      "id": "WC01",
+      "title": "第三人 (The Third Man)",
+      "year": 1949,
+      "region": "英国",
+      "director": "Carol Reed",
+      "cinematographer": "Robert Krasker",
+      "genres": [
+        "犯罪悬疑",
+        "新黑色",
+        "谍战",
+        "历史"
+      ],
+      "tones": [
+        "冷峻潮湿",
+        "倾斜不安",
+        "幻灭"
+      ],
+      "keywords": [
+        "战后旧城",
+        "雨夜鹅卵石",
+        "长影",
+        "真相错位",
+        "门缝灯光"
+      ],
+      "facts_F": "1949 年上映，Robert Krasker 凭本片获第 23 届奥斯卡最佳黑白摄影奖；维也纳实景拍摄。",
+      "dramaturgy_mechanism": "将‘死去的好友其实活着且冷酷堕落’的认知冲击延迟至后半程，前期靠不同证词之间的微弱矛盾累积窒息感。",
+      "visual_camera_mechanism": "以克制的荷兰角倾斜构图与湿漉漉路面高反光长影，把‘城市道德地基失衡’物理化；门洞光束突袭角色面部揭露身份。",
+      "sound_tone_mechanism": "全程放弃宏大交响压迫，用单把齐特琴（Zither）的反差轻快拨弦制造冷幽默与宿命荒诞感。",
+      "transferable_rules": [
+        "泼湿地面与单点硬光制造可读取的人物长影，让光影先于台词预告压迫者到场。",
+        "真相揭露借‘门外光线突入黑暗房间/过道’一次性完成空间极性反转。"
+      ],
+      "identity_exclusions": [
+        "禁止复制维也纳摩天轮对话场景、白色大衣猫咪舔鞋或齐特琴具体旋律。"
+      ],
+      "failure_counterexample": "全片所有镜头无差别倾斜 30 度会迅速让观众视觉疲劳且丧失转折时的失衡冲击；倾斜仅用于认知失稳节点。"
+    },
+    {
+      "id": "WC02",
+      "title": "杀人回忆 (Memories of Murder)",
+      "year": 2003,
+      "region": "韩国",
+      "director": "奉俊昊",
+      "cinematographer": "金炯求",
+      "genres": [
+        "犯罪悬疑",
+        "现实主义",
+        "年代",
+        "警匪"
+      ],
+      "tones": [
+        "阴湿压抑",
+        "粗粝荒诞",
+        "无力宿命"
+      ],
+      "keywords": [
+        "雨夜",
+        "地方警局",
+        "田野",
+        "证物",
+        "年代",
+        "错位搭档"
+      ],
+      "facts_F": "2003 年韩国上映，奉俊昊执导、金炯求摄影，2.39:1 / 1.85:1 实景胶片质感。",
+      "dramaturgy_mechanism": "将粗野本土经验派与学院派搭档绑在同一件无法靠聪明破获的案件上，中段之后用环境湿冷与制度无力慢慢剥夺两人的确定性。",
+      "visual_camera_mechanism": "多人同框横向移动调度代替正反打碎切；阴天高湿度漫射光下用一点微弱手电或车灯划开黑暗，结尾正面直视镜头把悬案留给观众。",
+      "sound_tone_mechanism": "雨声、铁轨轰鸣与广播电台杂音构成时间迫近感，高潮处音乐骤停只留呼吸与列车声。",
+      "transferable_rules": [
+        "用‘单镜多人横移调度’处理办公室与案发现场的权力摩擦，少用廉价正反打。",
+        "雨夜空间把人物压在窄框边缘或手电筒有限光斑里，维持信息盲区。"
+      ],
+      "identity_exclusions": [
+        "禁止照搬飞踢嫌疑人、稻田排水沟或收音机点歌桥段。"
+      ],
+      "failure_counterexample": "若把案件拍成主角开挂推理秀，就会彻底失去本片最具穿透力的时代无力感与悬念重量。"
+    },
+    {
+      "id": "WC03",
+      "title": "枪火 (The Mission)",
+      "year": 1999,
+      "region": "香港",
+      "director": "杜琪峰",
+      "cinematographer": "郑兆强",
+      "genres": [
+        "犯罪",
+        "动作",
+        "黑帮",
+        "悬疑"
+      ],
+      "tones": [
+        "冷峻克制",
+        "舞台几何",
+        "静待爆发"
+      ],
+      "keywords": [
+        "站位",
+        "冷蓝夜色",
+        "一触即发",
+        "沉默",
+        "通道"
+      ],
+      "facts_F": "1999 年香港上映，杜琪峰执导，获第 19 届香港电影金像奖最佳导演及第 37 届金马奖最佳导演。",
+      "dramaturgy_mechanism": "剥离多余前史台词，靠五位保镖在公共空间里的站位分工与微眼神交代全部信任、猜忌与生死同盟。",
+      "visual_camera_mechanism": "静止中远景锁定几何三角/梯形站位，绝不无故摇晃；爆发前先停顿 3–5 秒建立空间关系，冲突一旦打响在 1–2 秒内干脆完成。",
+      "sound_tone_mechanism": "极少对白与煽情音乐，仅以鞋底擦地、拉枪栓、环境冷风声和极简电子节拍拉紧神经。",
+      "transferable_rules": [
+        "冲突前强制给足‘静止站位确立镜’，用空间距离而非咆哮台词表达敌意与警戒。",
+        "保持暗部冷蓝基调与单一暖黄实用灯源对照。"
+      ],
+      "identity_exclusions": [
+        "禁止照搬荃湾商场手扶梯静止枪战阵型与踢纸团玩耍戏码。"
+      ],
+      "failure_counterexample": "若在静默站位时滥用高频晃动手持和碎切，会立刻摧毁‘不动如山’的压迫感。"
+    },
+    {
+      "id": "WC04",
+      "title": "十二宫 (Zodiac)",
+      "year": 2007,
+      "region": "美国",
+      "director": "大卫·芬奇",
+      "cinematographer": "哈里斯·萨维德斯",
+      "genres": [
+        "犯罪悬疑",
+        "心理惊悚",
+        "年代"
+      ],
+      "tones": [
+        "偏执冷峻",
+        "临床写实",
+        "窒息"
+      ],
+      "keywords": [
+        "档案",
+        "手迹",
+        "地下室",
+        "纸页",
+        "执念",
+        "长时跨度"
+      ],
+      "facts_F": "2007 年美国上映，大卫·芬奇执导，主要使用 Thomson Viper FilmStream 数字摄影机追求暗部低噪冷静质感。",
+      "dramaturgy_mechanism": "把纸张、笔迹、旧档案与时间跨度本身拍成主角最大的对手，让调查者在无数看似接近真相的瞬间坠入更深迷雾。",
+      "visual_camera_mechanism": "摄影机像液压机般随人物手指或目光移动而精准启停，地下室桥段只依靠一支手电与上方楼梯阴影制造无暴力却极度窒息的恐怖。",
+      "sound_tone_mechanism": "极大量纸张翻动、钢笔刮擦、老式机械钟与环境底噪取代传统惊吓音效。",
+      "transferable_rules": [
+        "重要证物/书信镜头配合人物呼吸节拍给到局部微距推近，信息揭示后即刻切反应。",
+        "危险空间不必出现怪物或武器，只要让逃生出口位于高处且被不明声音阻断即可制造窒息感。"
+      ],
+      "identity_exclusions": [
+        "禁止复制具体密码信图案、电影海报绘制桥段或旧金山渡轮凶案复现。"
+      ],
+      "failure_counterexample": "若把调查戏拍得像快节奏爆米花剪辑，会丢失偏执沉潜的时间质感。"
+    },
+    {
+      "id": "WC05",
+      "title": "唐人街 (Chinatown)",
+      "year": 1974,
+      "region": "美国",
+      "director": "罗曼·波兰斯基",
+      "cinematographer": "约翰·A·阿隆佐",
+      "genres": [
+        "犯罪悬疑",
+        "新黑色",
+        "剧情"
+      ],
+      "tones": [
+        "日光灼热下的腐朽",
+        "主观窥视",
+        "宿命冷酷"
+      ],
+      "keywords": [
+        "私家侦探",
+        "水资源/地产阴谋",
+        "单一视点",
+        "日光黑色电影"
+      ],
+      "facts_F": "1974 年上映，Robert Towne 编剧获第 47 届奥斯卡最佳原创剧本奖。",
+      "dramaturgy_mechanism": "严格锁定侦探单一视点：观众知道的永远不多不少恰好等于主角此刻拼凑出的碎片，每次以为看清全局其实正步入更大陷阱。",
+      "visual_camera_mechanism": "把传统夜黑风高的新黑色电影搬到刺眼干燥的南加州烈日下，用百叶窗阴影、车窗反光和贴身过肩构图维持窥视压迫。",
+      "sound_tone_mechanism": "单把孤寂小号与稀疏弦乐在留白处响起，白天市井噪音掩盖暗涌。",
+      "transferable_rules": [
+        "坚守‘视点不越界’规则：主角未出场或未看见的密谋，绝不切到上帝视角剧透。",
+        "悬疑并非必须阴雨黑夜；高反差强日光与深阴影门廊同样能营造腐朽压迫。"
+      ],
+      "identity_exclusions": [
+        "禁止挪用鼻梁割伤绷带造型或水库家族乱伦谜底。"
+      ],
+      "failure_counterexample": "如果在第 20 分钟就切入反派密室交谈暴露动机，悬疑引擎会立刻泄气。"
+    },
+    {
+      "id": "WC06",
+      "title": "寄生虫 (Parasite)",
+      "year": 2019,
+      "region": "韩国",
+      "director": "奉俊昊",
+      "cinematographer": "洪坰杓",
+      "genres": [
+        "心理惊悚",
+        "社会寓言",
+        "黑色喜剧",
+        "家庭"
+      ],
+      "tones": [
+        "辛辣",
+        "类型突变",
+        "阶层压迫"
+      ],
+      "keywords": [
+        "阶层",
+        "气味",
+        "楼梯",
+        "暴雨",
+        "双面空间"
+      ],
+      "facts_F": "2019 年上映，获第 72 届戛纳金棕榈奖及第 92 届奥斯卡最佳影片/最佳导演/最佳原创剧本等 4 项大奖。",
+      "dramaturgy_mechanism": "以‘无绝对反派’的全员算计开局，在中点通过暴雨夜门铃响起把轻巧的骗局喜剧陡然劈转为血腥惊悚片。",
+      "visual_camera_mechanism": "垂直动线（地面俯瞰→半地下→仰望山坡豪宅→地下更深层）直接映射阶层落差；用光影界线（窗栏杆、门框中缝）切割同框角色命运。",
+      "sound_tone_mechanism": "前半轻快巴洛克弦乐随危机升级转为滞重低音与雨水淹没声。",
+      "transferable_rules": [
+        "用建筑物理高低差、采光差（自然阳光 vs 潮湿日光灯）外化阶层或权力关系。",
+        "给角色绑定一个反复出现却不能明说的感官符号（如‘越界的气味’或某个旧物件）作为爆点引信。"
+      ],
+      "identity_exclusions": [
+        "禁止复制水蜜桃粉尘过敏、印第安头饰或摩斯电码地下室桥段。"
+      ],
+      "failure_counterexample": "若后半强行把富人写成脸谱化恶魔或让穷人发表道德演讲，全片社会寓言的刺痛感会瞬间廉价化。"
+    },
+    {
+      "id": "WC07",
+      "title": "搏击俱乐部 (Fight Club)",
+      "year": 1999,
+      "region": "美国",
+      "director": "大卫·芬奇",
+      "cinematographer": "杰夫·柯南威斯",
+      "genres": [
+        "心理惊悚",
+        "犯罪悬疑",
+        "黑色喜剧"
+      ],
+      "tones": [
+        "病态冷青",
+        "失眠分裂",
+        "工业废墟"
+      ],
+      "keywords": [
+        "双重身份",
+        "失眠",
+        "旧屋",
+        "不可靠叙述",
+        "潜意识"
+      ],
+      "facts_F": "1999 年美国上映，大卫·芬奇执导，广泛使用化学漂白跳过（Bleach Bypass）般的深青绿阴影调色逻辑。",
+      "dramaturgy_mechanism": "不可靠叙述者的真正骗局必须建立在‘回看每一场前戏居然全部严丝合缝’的双层对话规则上（两人绝不同时被第三方正面互动）。",
+      "visual_camera_mechanism": "亚帧级闪现伏笔、冰冷荧光绿室内调性与极端广角畸变表现失眠者精神失衡。",
+      "sound_tone_mechanism": "冷硬碎拍电子音配主观耳鸣高频衰减。",
+      "transferable_rules": [
+        "设计身份或记忆反转时，前置每一场双人戏都必须遵守‘第三方物理反应仅指向其中一人’的硬核逻辑约束。"
+      ],
+      "identity_exclusions": [
+        "禁止复制手工肥皂、地下拳击规则台词或金融大厦爆破画面。"
+      ],
+      "failure_counterexample": "若前期伏笔经不起回溯检验（两人同时拿两杯水递给第三人），反转就会沦为欺骗观众的劣质把戏。"
+    },
+    {
+      "id": "WC08",
+      "title": "隐秘的角落 (The Bad Kids)",
+      "year": 2020,
+      "region": "中国",
+      "director": "辛爽",
+      "cinematographer": "晁明",
+      "genres": [
+        "犯罪悬疑",
+        "心理惊悚",
+        "现实主义",
+        "剧集"
+      ],
+      "tones": [
+        "刺眼日光阴郁",
+        "潮湿南方旧城",
+        "童年童话反讽"
+      ],
+      "keywords": [
+        "南方旧城",
+        "旧书",
+        "梅雨",
+        "家庭秘密",
+        "反差配乐"
+      ],
+      "facts_F": "2020 年播出的 12 集中国悬疑短剧，辛爽执导，打破传统悬疑片必须全片黑夜蓝调的惯例。",
+      "dramaturgy_mechanism": "把致命秘密塞进日常暑假生活、数学作业和家庭餐桌里；每个大人和孩子都在用谎言保护自己脆弱的诉求。",
+      "visual_camera_mechanism": "南方烈日与梅雨墙皮剥落的高质感实景生活流，利用老街纵深、旧楼楼梯间和窗框压迫构建‘无处可藏的日常惊悚’。",
+      "sound_tone_mechanism": "每集独立片尾定制配乐与强烈反差童谣/弦乐形成毛骨悚然的心理讽刺。",
+      "transferable_rules": [
+        "国产南方旧城悬疑可利用斑驳潮湿砖墙、老日光灯与日常生活声响制造比纯黑棚拍更真实的窒息感。",
+        "用看似无害的日常细节（如一页错题/借书卡/旧茶杯）承担致命信息传递。"
+      ],
+      "identity_exclusions": [
+        "禁止挪用爬山拍照台词、小白船童谣或笛卡尔日记本具体桥段。"
+      ],
+      "failure_counterexample": "若把普通生活角色拍成全员冷酷面瘫黑衣人，就会失去生活肌理带来的真实脊背发凉。"
+    },
+    {
+      "id": "WC09",
+      "title": "老男孩 (Oldboy)",
+      "year": 2003,
+      "region": "韩国",
+      "director": "朴赞郁",
+      "cinematographer": "郑正勋",
+      "genres": [
+        "心理惊悚",
+        "犯罪悬疑",
+        "动作"
+      ],
+      "tones": [
+        "诡谲冷酷",
+        "宝石浓绿",
+        "希腊悲剧感"
+      ],
+      "keywords": [
+        "囚禁",
+        "时间账单",
+        "走廊横移",
+        "复仇陷阱"
+      ],
+      "facts_F": "2003 年韩国上映，获第 57 届戛纳电影节评委会大奖。",
+      "dramaturgy_mechanism": "真正的复仇不是肉体折磨，而是逼迫对手亲手挖掘出连自己都不敢面对的往日罪愆；结构上是反向侦探自毁。",
+      "visual_camera_mechanism": "著名横移长镜头把暴力压缩成精疲力竭的横向平面舞台；冷绿室内配暗红局部形成压抑视觉闭环。",
+      "sound_tone_mechanism": "古典华尔兹弦乐与钝重肉搏拟音对撞，赋予复仇宿命的优雅冷感。",
+      "transferable_rules": [
+        "横向截面长镜头不切机位，能让时间流逝与主角体力消耗直接传递给观众。"
+      ],
+      "identity_exclusions": [
+        "禁止复制长廊铁锤一镜到底打斗、生吃章鱼或相册乱伦真相。"
+      ],
+      "failure_counterexample": "若横移动作设计缺少中途节奏喘息和空间阻隔变化，长镜头会变成单调机械的横扫。"
+    },
+    {
+      "id": "WC10",
+      "title": "花样年华 (In the Mood for Love)",
+      "year": 2000,
+      "region": "香港",
+      "director": "王家卫",
+      "cinematographer": "杜可风 / 李屏宾",
+      "genres": [
+        "爱情",
+        "剧情",
+        "年代",
+        "悬疑"
+      ],
+      "tones": [
+        "潮湿暧昧",
+        "压抑深沉",
+        "欲言又止"
+      ],
+      "keywords": [
+        "雨夜",
+        "走廊",
+        "门框",
+        "1960s",
+        "克制",
+        "错身"
+      ],
+      "facts_F": "2000 年上映，张叔平、杜可风、李屏宾获第 53 届戛纳技术大奖及金马/金像最佳摄影与美术服装奖。",
+      "dramaturgy_mechanism": "让两位主角替各自出轨的配偶排练摊牌与告别，用‘假戏’包裹不敢越雷池半步的真实倾慕，全片核心情感永远在台词之外。",
+      "visual_camera_mechanism": "永远隔着门框、窗帘、铁栅栏、雨帘与镜面窥视人物；大量慢速横移和升格 48fps 错身配合温暖琥珀钨丝灯与冷湿青雨。",
+      "sound_tone_mechanism": "梅林茂大提琴主题旋律只作为情感回响在走廊错身时响起，平时仅留高跟鞋清脆敲击石阶声与暴雨声。",
+      "transferable_rules": [
+        "人物未开口前先用前景遮挡物（书架缝、雨伞边、玻璃水痕）建立心理防线。",
+        "情绪最高潮时反而降低音量或停止对话，让物理错位与灯光阴影替人物说话。"
+      ],
+      "identity_exclusions": [
+        "禁止照搬具体花色旗袍序列、2046 门牌号或吴哥窟树洞。"
+      ],
+      "failure_counterexample": "若只套用浓重红绿调色却写直白表白台词，只会流于表面复古 MV 感。"
+    },
+    {
+      "id": "WC11",
+      "title": "花束般的恋爱 (We Made a Beautiful Bouquet)",
+      "year": 2021,
+      "region": "日本",
+      "director": "土井裕泰",
+      "编剧": "坂元裕二",
+      "cinematographer": "镰苅洋一",
+      "genres": [
+        "爱情",
+        "生活流",
+        "剧情"
+      ],
+      "tones": [
+        "细腻刺痛",
+        "日常真实",
+        "温柔残酷"
+      ],
+      "keywords": [
+        "生活琐物",
+        "错拍",
+        "品味分歧",
+        "日剧台词"
+      ],
+      "facts_F": "2021 年日本上映，坂元裕二原创剧本。",
+      "dramaturgy_mechanism": "用微小的文化品味与生活习惯高度重合建构热恋，再用同样的生活细节（不再读同一本书、只看短视频、鞋柜位置）冷酷完成无反派解体。",
+      "visual_camera_mechanism": "50mm 近身平视生活光，从合租暖白窗光逐渐过渡到加班夜冷白荧光与背对背分框构图。",
+      "sound_tone_mechanism": "耳麦一人一只的同步与后来餐厅各自低头滑手机的寂静对比。",
+      "transferable_rules": [
+        "不写大吵大闹出轨，改用一件具体日用品的待遇变化（前期珍惜、后期漠视）证明关系消亡。"
+      ],
+      "identity_exclusions": [
+        "禁止复制错过的末班车押井守桥段、面包店或特定作家书单。"
+      ],
+      "failure_counterexample": "若把现代爱情解体写得像家长里短吵架，就失去了坂元裕二特有的‘同路人渐行渐远’体面痛感。"
+    },
+    {
+      "id": "WC12",
+      "title": "色·戒 (Lust, Caution)",
+      "year": 2007,
+      "region": "中国台湾 / 香港 / 美国",
+      "director": "李安",
+      "cinematographer": "罗德里戈·普里托",
+      "genres": [
+        "谍战",
+        "爱情",
+        "年代",
+        "心理惊悚"
+      ],
+      "tones": [
+        "华美紧绷",
+        "危机四伏",
+        "细微眼神博弈"
+      ],
+      "keywords": [
+        "民国",
+        "麻将桌",
+        "微表情",
+        "潜台词",
+        "暗杀"
+      ],
+      "facts_F": "2007 年上映，获第 64 届威尼斯国际电影节金狮奖。",
+      "dramaturgy_mechanism": "牌桌与日常应酬比枪战更凶险：每一句寒暄都是试探，眼神停留半秒的位置都关系生死与背叛。",
+      "visual_camera_mechanism": "暖金奢华室内光影下隐藏冰冷构图线，极细腻的手部饰物特写与过肩反应镜头揭示内心天平的最后一毫米倾斜。",
+      "sound_tone_mechanism": "麻将骨牌碰撞、雨点敲击车窗与急促却极克制的呼吸声主导空间节奏。",
+      "transferable_rules": [
+        "高压试探戏中，把动作焦点落在手指无意识停顿、道具反光与视点回望 0.5 秒延迟上。"
+      ],
+      "identity_exclusions": [
+        "禁止复用特定粉钻戒指‘快走’台词或具体历史暗杀时间线。"
+      ],
+      "failure_counterexample": "若让潜伏角色把内心挣扎大段说给同伴听，谍战的微毫悬念立刻崩塌。"
+    },
+    {
+      "id": "WC13",
+      "title": "银翼杀手 2049 (Blade Runner 2049)",
+      "year": 2017,
+      "region": "美国",
+      "director": "丹尼斯·维伦纽瓦",
+      "cinematographer": "罗杰·狄金斯",
+      "genres": [
+        "科幻",
+        "新黑色",
+        "犯罪悬疑"
+      ],
+      "tones": [
+        "巨物沉郁",
+        "孤寂诗意",
+        "高反差单色块"
+      ],
+      "keywords": [
+        "工业巨构",
+        "沙尘橙",
+        "水波反射光",
+        "身份追寻"
+      ],
+      "facts_F": "2017 年上映，罗杰·狄金斯凭本片获第 90 届奥斯卡最佳摄影奖。",
+      "dramaturgy_mechanism": "把经典科幻设定降维成一场安静的‘我是谁’侦查之旅：主角越接近答案越发现自己可能只是别人记忆的容器。",
+      "visual_camera_mechanism": "一个场景只用一个极其克制的几何光源（水波纹墙面漫反射、单色沙尘天光、雪夜车灯剪影），人物常以小比例置于宏大粗野主义空间中。",
+      "sound_tone_mechanism": "低频合成器如建筑震动般持续存在，与主角缓慢沉稳的脚步声形成尺度共鸣。",
+      "transferable_rules": [
+        "未来科技或架空世界必须有‘时间磨损痕迹与单一可信光源’，不要把屏幕和霓虹涂满每个角落。"
+      ],
+      "identity_exclusions": [
+        "禁止复制巨型全息广告投影互动、木马雕刻数字或拉丝维加斯橙尘蜂巢。"
+      ],
+      "failure_counterexample": "把赛博世界画成全彩高饱和紫粉网吧灯效，会破坏狄金斯式的沉静物理厚重感。"
+    },
+    {
+      "id": "WC14",
+      "title": "降临 (Arrival)",
+      "year": 2016,
+      "region": "美国",
+      "director": "丹尼斯·维伦纽瓦",
+      "cinematographer": "布拉德福德·杨",
+      "genres": [
+        "科幻",
+        "剧情",
+        "悬疑"
+      ],
+      "tones": [
+        "雾霭柔和",
+        "哲思哀婉",
+        "非线性宿命"
+      ],
+      "keywords": [
+        "时间结构",
+        "语言破译",
+        "非线性剪辑",
+        "雾气"
+      ],
+      "facts_F": "2016 年上映，获第 89 届奥斯卡最佳音效剪辑奖。",
+      "dramaturgy_mechanism": "利用观众惯常的‘倒叙/回忆’错觉掩埋了真正的时间线（其实是未来闪前），使结构本身直接服务于核心母题——即使明知结局悲痛，依然选择拥抱过程。",
+      "visual_camera_mechanism": "自然微暗低反差雾霭感，大量浅景深贴身捕捉主角细微神态，避免光鲜锐利的科技感。",
+      "sound_tone_mechanism": "冰裂低鸣与人声混响营造超越人类语言尺度的庄严感。",
+      "transferable_rules": [
+        "非线性叙事不能为了炫技，必须利用观众默认因果习惯在尾声完成主题翻转。"
+      ],
+      "identity_exclusions": [
+        "禁止照搬黑色鹅卵石飞船壳体、墨迹圆环文字或七肢桶剪影。"
+      ],
+      "failure_counterexample": "若前段闪回/闪前在剪辑或台词上过早漏出年代提示，终局的震撼就会完全失效。"
+    },
+    {
+      "id": "WC15",
+      "title": "潜行者 (Stalker)",
+      "year": 1979,
+      "region": "苏联",
+      "director": "安德烈·塔可夫斯基",
+      "cinematographer": "亚历山大·克尼亚任斯基",
+      "genres": [
+        "科幻",
+        "作者电影",
+        "剧情",
+        "冒险"
+      ],
+      "tones": [
+        "废墟诗意",
+        "潮湿慢时光",
+        "精神朝圣"
+      ],
+      "keywords": [
+        "禁忌区",
+        "废墟水洼",
+        "慢推镜头",
+        "水火元素"
+      ],
+      "facts_F": "1979 年莫斯科电影制片厂出品，现实世界用棕褐单色、进入‘区’后转为潮湿生机彩色。",
+      "dramaturgy_mechanism": "把科幻动作片里的‘终极宝藏房间’拍成直面内心真实欲望的恐怖试炼场——没人敢跨进最后一步。",
+      "visual_camera_mechanism": "贴近水面或生锈轨道缓慢低空滑行，时间长度本身迫使观众凝视物质肌理（苔藓、水面微澜、滴水、锈铁）。",
+      "sound_tone_mechanism": "铁路轨道机械有节奏的敲击声平滑转变为冥想般的自然水声与风声。",
+      "transferable_rules": [
+        "可以用‘色度开关’（外部压抑单色 vs 核心禁地低饱和湿润彩色）标志空间法则切换。"
+      ],
+      "identity_exclusions": [
+        "禁止复制扔绑白布螺母探路或具体‘愿望房间’门廊构图。"
+      ],
+      "failure_counterexample": "若没有足够的内部思想张力支撑，单纯模仿缓慢滑镜只会显得冗长催眠。"
+    },
+    {
+      "id": "WC16",
+      "title": "侠女 (A Touch of Zen)",
+      "year": 1971,
+      "region": "中国台湾 / 香港",
+      "director": "胡金铨",
+      "cinematographer": "华慧英",
+      "genres": [
+        "武侠",
+        "历史",
+        "动作",
+        "悬疑"
+      ],
+      "tones": [
+        "东方诗学留白",
+        "山水雾霭",
+        "戏曲鼓点节奏"
+      ],
+      "keywords": [
+        "明代",
+        "竹林",
+        "荒宅",
+        "留白",
+        "借力"
+      ],
+      "facts_F": "1971 年全本公映，1975 年获第 28 届戛纳电影节最高技术委员会大奖。",
+      "dramaturgy_mechanism": "前半部像缓慢铺陈的明代文人怪谈与古宅侦探，足足蓄力半片才迎来凌厉惊人的竹林空间对决，使武戏成为文戏积累的必然爆发。",
+      "visual_camera_mechanism": "利用山岚雾气、竹林垂直线条和屋檐斗拱形成天然取景画框，动作不靠连篇打斗而靠起势定格、跃起留白与一击落定。",
+      "sound_tone_mechanism": "京剧锣鼓点化作兵器碰撞与风吹竹叶的节奏骨血。",
+      "transferable_rules": [
+        "古装武侠动作前必留空间氛围建立镜与静势预备，交锋瞬间靠剪辑留白突出轻重缓急。",
+        "历史服饰/建筑制度自动联动《中国历史文化图库》做明制形制校核。"
+      ],
+      "identity_exclusions": [
+        "禁止照搬竹林高空踩竹垂直下劈的具体动作分镜或靖虏屯堡布局。"
+      ],
+      "failure_counterexample": "一味追求炫目慢动作威亚而不交代双方落脚地形势位差，武打就会失去空间真实感。"
+    },
+    {
+      "id": "WC17",
+      "title": "卧虎藏龙 (Crouching Tiger, Hidden Dragon)",
+      "year": 2000,
+      "region": "中国台湾 / 香港 / 美国 / 中国大陆",
+      "director": "李安",
+      "cinematographer": "鲍德熹",
+      "genres": [
+        "武侠",
+        "动作",
+        "剧情",
+        "历史"
+      ],
+      "tones": [
+        "古典克制",
+        "情感暗涌",
+        "东方山水意境"
+      ],
+      "keywords": [
+        "清代",
+        "江湖规矩",
+        "兵器即性格",
+        "青灰墨韵"
+      ],
+      "facts_F": "2000 年上映，获第 73 届奥斯卡最佳外语片、最佳摄影（鲍德熹）、最佳艺术指导（叶锦添）、最佳原创配乐（谭盾）4 项大奖。",
+      "dramaturgy_mechanism": "打斗永远是人物压抑情感与身份枷锁的另一种对话方式：每一次过招都在揭穿对方内心所求与不敢承认的羁绊。",
+      "visual_camera_mechanism": "中景长线条交锋清晰展示身段韵律，兵器质感（冷钢反光、屋瓦碎裂）与服装飘逸动势形成文武对位。",
+      "sound_tone_mechanism": "谭盾大提琴与马头琴、大鼓精准贴合呼吸起落与剑刃破风声。",
+      "transferable_rules": [
+        "每场动作戏前必须明确写清‘这场打斗想要解决什么心理关系问题’，打完之后双方关系必须改变。"
+      ],
+      "identity_exclusions": [
+        "禁止复制青冥剑、武当竹梢对峙或客栈单挑台词。"
+      ],
+      "failure_counterexample": "如果把武侠打斗当成无意义的游戏数值对轰，人物情感重量会完全蒸发。"
+    },
+    {
+      "id": "WC18",
+      "title": "七武士 (Seven Samurai)",
+      "year": 1954,
+      "region": "日本",
+      "director": "黑泽明",
+      "cinematographer": "中井朝一",
+      "genres": [
+        "动作",
+        "历史",
+        "群像",
+        "战争"
+      ],
+      "tones": [
+        "泥泞粗粝",
+        "暴烈豪情",
+        "人道悲悯"
+      ],
+      "keywords": [
+        "集结",
+        "村庄布防",
+        "暴雨决战",
+        "群像分工"
+      ],
+      "facts_F": "1954 年日本上映，奠定现代集结型动作片与群像战术调度模板。",
+      "dramaturgy_mechanism": "集结过程不靠口号，而是靠每个人面对‘没有回报只有一顿白饭’时的不同选择暴露真实性格；决战按空间防线逐步失守推进。",
+      "visual_camera_mechanism": "长焦镜头压缩暴雨泥水使雨线贴满前景，多机位同时捕捉运动定势与群体三角构图。",
+      "sound_tone_mechanism": "急促马蹄、雨点砸泥、竹哨信号与粗犷号角形成战场呼吸。",
+      "transferable_rules": [
+        "多人群像戏先画清平面防御/攻防地形图，让观众清楚谁在守东门、谁在断后桥。"
+      ],
+      "identity_exclusions": [
+        "禁止复制‘赢的是农民不是武士’结尾台词或具体四处土坟山坡镜头。"
+      ],
+      "failure_counterexample": "群像混战中若丢失地形方位坐标，观众会立刻陷入‘谁在打谁’的空间迷失。"
+    },
+    {
+      "id": "WC19",
+      "title": "东京物语 (Tokyo Story)",
+      "year": 1953,
+      "region": "日本",
+      "director": "小津安二郎",
+      "编剧": "野田高梧",
+      "cinematographer": "厚田雄春",
+      "genres": [
+        "家庭",
+        "作者电影",
+        "现实主义",
+        "剧情"
+      ],
+      "tones": [
+        "克制哀而不伤",
+        "时间流逝感",
+        "日常静观"
+      ],
+      "keywords": [
+        "代际疏离",
+        "留白",
+        "枕镜头",
+        "画外重大事件"
+      ],
+      "facts_F": "1953 年松竹出品，2012 年获《视与听》全球导演票选影史最佳影片第 1 名。",
+      "dramaturgy_mechanism": "把最伤人的家庭冷漠写成所有人‘都在忙、都挺礼貌’的体面日常；真正深爱反而来自没有血缘关系的儿媳。",
+      "visual_camera_mechanism": "榻榻米低机位正面微仰或平视，人物不朝侧面乱晃；转场用无人的走廊、烟囱、船影‘枕镜头’隔开情绪冲击。",
+      "sound_tone_mechanism": "夏蝉鸣叫、远处火车汽笛、钟表滴答声充当时间无情流逝的节拍器。",
+      "transferable_rules": [
+        "大悲大痛不给嚎啕大哭特写，改为‘最小音节回应 + 转入无人物空镜保持 3 秒’。"
+      ],
+      "identity_exclusions": [
+        "禁止复制热海旅馆海堤、手扇或‘难道不正是这样吗’固定语境。"
+      ],
+      "failure_counterexample": "若加入俗套狗血争遗产吵架，会彻底毁掉含蓄余韵。"
+    },
+    {
+      "id": "WC20",
+      "title": "小偷家族 (Shoplifters)",
+      "year": 2018,
+      "region": "日本",
+      "director": "是枝裕和",
+      "cinematographer": "近藤龙人",
+      "genres": [
+        "家庭",
+        "现实主义",
+        "剧情",
+        "犯罪"
+      ],
+      "tones": [
+        "温暖又心酸",
+        "夏夜微光",
+        "生活质感"
+      ],
+      "keywords": [
+        "非血缘家庭",
+        "窄小平房",
+        "夏日烟花",
+        "审讯撕裂"
+      ],
+      "facts_F": "2018 年上映，获第 71 届戛纳国际电影节金棕榈奖。",
+      "dramaturgy_mechanism": "前半让观众在拥挤狭小却充满烟火气的木屋里爱上这群‘违法者’，后半警察审讯房间里只是平静提问，就把所有美好刺穿。",
+      "visual_camera_mechanism": "拥挤平房用 35mm 自然光近距离穿行拍出亲密体温，审讯室切回冷平视单一固定中景形成冰火撕裂。",
+      "sound_tone_mechanism": "听不到烟花画面只听见声音（在屋檐下抬头看空气），用听觉补偿视觉局限。",
+      "transferable_rules": [
+        "善用‘画外声音替代昂贵奇观画面’，让人物在狭小空间里仰望的反应成为全部诗意。"
+      ],
+      "identity_exclusions": [
+        "禁止照搬可乐饼泡面、海边排成一排跳跃或阳台听烟花原场景。"
+      ],
+      "failure_counterexample": "若直接把警察写成凶神恶煞的反派，审讯的伦理困境就会被简化为正邪对立。"
+    },
+    {
+      "id": "WC21",
+      "title": "悲情城市 (A City of Sadness)",
+      "year": 1989,
+      "region": "中国台湾",
+      "director": "侯孝贤",
+      "cinematographer": "陈怀恩",
+      "genres": [
+        "历史",
+        "家庭",
+        "作者电影",
+        "剧情"
+      ],
+      "tones": [
+        "远观宿命",
+        "自然光沧桑",
+        "时代洪流"
+      ],
+      "keywords": [
+        "1940s",
+        "大家族",
+        "固定远景",
+        "时代切片"
+      ],
+      "facts_F": "1989 年上映，获第 46 届威尼斯国际电影节金狮奖。",
+      "dramaturgy_mechanism": "不正面硬拍宏大历史暴乱场面，而是站在家族饭桌、照相馆和医院长廊，让历史悲剧从电台广播、书信与缺席的椅子里渗出来。",
+      "visual_camera_mechanism": "50-85mm 固定远观机位，门框切割家庭聚散，昏黄灯泡与自然天光不做修饰，留下大量时间供人物沉默吃饭。",
+      "sound_tone_mechanism": "地方方言杂糅、戏台锣鼓与远处零星枪响/广播形成真实历史声场。",
+      "transferable_rules": [
+        "用‘餐桌边空出的座位’与‘画外广播消息’表达大时代冲击，比万众冲锋更具克制力量。"
+      ],
+      "identity_exclusions": [
+        "禁止照搬聋哑摄影师字卡对话或九份山城医院具体桥段。"
+      ],
+      "failure_counterexample": "若把固定远景剪得过于零碎短促，生活流的积蓄重量便无从产生。"
+    },
+    {
+      "id": "WC22",
+      "title": "继承之战 (Succession)",
+      "year": 2018,
+      "region": "美国",
+      "director": "Mark Mylod / Jesse Armstrong",
+      "cinematographer": "Patrick Capone",
+      "genres": [
+        "商战权谋",
+        "剧集",
+        "黑色喜剧",
+        "家庭"
+      ],
+      "tones": [
+        "高压讥讽",
+        "体面羞辱",
+        "瞬时倒戈"
+      ],
+      "keywords": [
+        "家族继承",
+        "会议室",
+        "跟拍甩摇",
+        "潜台词",
+        "群体Set Piece"
+      ],
+      "facts_F": "2018–2023 年 HBO 播出 4 季 39 集，获艾美奖最佳剧情类剧集与最佳编剧等奖项。",
+      "dramaturgy_mechanism": "所有人一边嘴上说着‘我爱你/家人优先’，一边在 30 秒内完成倒戈与背刺；每场群戏必发生地位高低倒置。",
+      "visual_camera_mechanism": "仿纪录片双机位 35mm 手持快速微推抓拍，当角色吹牛撒谎时，镜头突然微甩给到旁边真正掌握权力者的冷漠微反应。",
+      "sound_tone_mechanism": "古典钢琴与低沉弦乐变奏反讽豪门腐朽，大量多人重叠抢话（Overlap Dialogue）。",
+      "transferable_rules": [
+        "多人谈判戏强制记录‘进场谁占上风 → 中途谁抛出筹码 → 出场谁被抛弃’，并抓拍旁观者的半秒微表情反应。"
+      ],
+      "identity_exclusions": [
+        "禁止复制‘Boar on the Floor’游戏、直升机降落或具体 Waystar Royco 名称。"
+      ],
+      "failure_counterexample": "若权力反派直接大吼‘我要毁了你’，立刻跌入三流爽剧水平；高级权谋是笑着递水同时抽走椅子。"
+    },
+    {
+      "id": "WC23",
+      "title": "教父 (The Godfather)",
+      "year": 1972,
+      "region": "美国",
+      "director": "弗朗西斯·福特·科波拉",
+      "cinematographer": "戈登·威利斯",
+      "genres": [
+        "黑帮",
+        "犯罪",
+        "家庭",
+        "年代"
+      ],
+      "tones": [
+        "古典庄严",
+        "顶光阴影",
+        "权谋悲剧"
+      ],
+      "keywords": [
+        "礼服",
+        "暗调顶光",
+        "交叉剪辑",
+        "家庭仪式"
+      ],
+      "facts_F": "1972 年上映，获第 45 届奥斯卡最佳影片与最佳改编剧本奖；戈登·威利斯首创闻名影史的顶光遮眼‘黑暗王子’布光。",
+      "dramaturgy_mechanism": "以阳光明媚的家族室外婚礼与幽暗隐秘的室内密谈双线并行立威；高潮用神圣宗教洗礼交叉剪辑冷酷清洗，实现信仰与罪恶的震撼对位。",
+      "visual_camera_mechanism": "强顶光压暗人物眼窝（使其不可测），暖琥珀室内木质调色对比外部自然天光。",
+      "sound_tone_mechanism": "华尔兹主题在悲剧处化作孤寂小号与管风琴对位。",
+      "transferable_rules": [
+        "把神圣庄重的日常仪式（婚礼/开庭/授勋/祭典）与暗处同步发生的背叛或处决做平行交叉剪辑。"
+      ],
+      "identity_exclusions": [
+        "禁止复制怀抱黑猫抚摸、马头进被窝或‘无法拒绝的条件’原句。"
+      ],
+      "failure_counterexample": "顶光暗调若没有准确的暗部曝光梯度，在现代数字压缩下会糊成一团死黑块。"
+    },
+    {
+      "id": "WC24",
+      "title": "绝命毒师 (Breaking Bad)",
+      "year": 2008,
+      "region": "美国",
+      "director": "Vince Gilligan 等",
+      "cinematographer": "Michael Slovis",
+      "genres": [
+        "犯罪",
+        "剧集",
+        "心理惊悚",
+        "黑色喜剧"
+      ],
+      "tones": [
+        "烈日荒漠",
+        "化学冷酷",
+        "步步堕落"
+      ],
+      "keywords": [
+        "POV 奇特机位",
+        "因果多米诺",
+        "色彩堕落弧",
+        "细节伏笔"
+      ],
+      "facts_F": "2008–2013 年播出的 5 季剧集，以极严密的季首冷开场倒叙钩子与色彩编码著称。",
+      "dramaturgy_mechanism": "每一步堕落都是主角在理性计算下做出的‘唯一合理解’；把一个好人怎样一步步变成他最痛恨的人拍成不可逆的化学反应。",
+      "visual_camera_mechanism": "极其大胆的道具主观 POV（从玻璃桌面下、烧杯内、铁铲上仰拍人物），高饱和新墨西哥蓝天黄土衬托人性枯萎。",
+      "sound_tone_mechanism": "极少对白展示物理操作流程（Mounting Montage）配合节奏感极强的配乐。",
+      "transferable_rules": [
+        "用‘服装/环境色彩明度随着主角道德堕落逐渐变暗沉’建立全片视觉弧线。"
+      ],
+      "identity_exclusions": [
+        "禁止复制蓝色晶体、房车沙漠、黑礼帽墨镜或炸鸡叔姓名造型。"
+      ],
+      "failure_counterexample": "若主角黑化没有前期一步步被逼到墙角的合理压力，堕落只像作者强行按开关。"
+    },
+    {
+      "id": "WC25",
+      "title": "让子弹飞 (Let the Bullets Fly)",
+      "year": 2010,
+      "region": "中国大陆",
+      "director": "姜文",
+      "cinematographer": "赵非",
+      "genres": [
+        "黑色喜剧",
+        "动作",
+        "年代",
+        "权谋"
+      ],
+      "tones": [
+        "荷尔蒙张扬",
+        "快节奏博弈",
+        "荒诞寓言"
+      ],
+      "keywords": [
+        "鸿门宴对白",
+        "快剪呼吸",
+        "强硬光影",
+        "民国"
+      ],
+      "facts_F": "2010 年上映，赵非摄影，2.35:1 宽银幕强反差暖金阳光与高速机位调度。",
+      "dramaturgy_mechanism": "一场饭局表面是吹捧客套，实则是三方底牌的极限试探；每句台词都带双关与节奏压迫，说话间隙短到喘不过气。",
+      "visual_camera_mechanism": "25-35mm 广角贴脸快速推拉与突然甩镜正反打，日光硬打光下人影浓黑分明。",
+      "sound_tone_mechanism": "久石让节奏鲜明的圆号与弦乐配合极具咬字爆发力的快节奏对白。",
+      "transferable_rules": [
+        "三人权谋饭局用快速过肩与突兀特写卡住‘说半句停顿’的心理空当，加快剪辑呼吸。"
+      ],
+      "identity_exclusions": [
+        "禁止挪用鹅城、火锅唱曲、六子剖腹或‘翻译翻译什么是惊喜’原台词。"
+      ],
+      "failure_counterexample": "若台词缺少言外利益交锋而只是单纯大嗓门吵架，快节奏就会沦为聒噪闹剧。"
+    },
+    {
+      "id": "WC26",
+      "title": "布达佩斯大饭店 (The Grand Budapest Hotel)",
+      "year": 2014,
+      "region": "美国 / 德国",
+      "director": "韦斯·安德森",
+      "cinematographer": "罗伯特·约曼",
+      "genres": [
+        "喜剧",
+        "冒险",
+        "犯罪悬疑",
+        "年代"
+      ],
+      "tones": [
+        "复古童话粉彩",
+        "冷面幽默",
+        "画幅切换"
+      ],
+      "keywords": [
+        "三画幅套层",
+        "中心对称",
+        "微缩空间",
+        "直角横移"
+      ],
+      "facts_F": "2014 年上映，获第 87 届奥斯卡最佳艺术指导、最佳服装设计、最佳化妆与发型、最佳原创配乐 4 项大奖；严格采用 1.37:1 / 2.39:1 / 1.85:1 区分三大历史时间层。",
+      "dramaturgy_mechanism": "用童话般精致工整的礼仪喜剧外壳包裹时代野蛮倾覆的忧伤内核，越危急的时刻角色越恪守繁文缛节。",
+      "visual_camera_mechanism": "绝对中心对称建筑构图 + 90 度垂直升降/平行横移；以实际电影画幅比例区分不同回忆时空。",
+      "sound_tone_mechanism": "巴拉莱卡琴与钟琴清脆拨弦制造机械发条般的轻快幽默节奏。",
+      "transferable_rules": [
+        "跨年代叙事可直接用‘画幅比例切换（如 4:3 旧日 vs 2.39:1 盛世 vs 16:9 现代）’实现零字幕时空辨识。"
+      ],
+      "identity_exclusions": [
+        "禁止照搬粉色糕点盒、紫色门童制服或特定雪山缆车追逐。"
+      ],
+      "failure_counterexample": "如果只学会了粉色对称却写不出角色的荒诞尊严与悲凉底色，画面只剩塑料甜腻感。"
+    },
+    {
+      "id": "WC27",
+      "title": "1917 (1917)",
+      "year": 2019,
+      "region": "英国 / 美国",
+      "director": "萨姆·门德斯",
+      "cinematographer": "罗杰·狄金斯",
+      "genres": [
+        "战争",
+        "历史",
+        "动作",
+        "剧情"
+      ],
+      "tones": [
+        "实时窒息紧迫",
+        "物理空间连续",
+        "废墟照明弹"
+      ],
+      "keywords": [
+        "伪一镜到底",
+        "战壕",
+        "照明弹阴影",
+        "时间紧迫"
+      ],
+      "facts_F": "2019 年上映，罗杰·狄金斯获第 92 届奥斯卡最佳摄影奖。",
+      "dramaturgy_mechanism": "用实时单线倒计时把宏大战役压缩为两人跨越死亡地带的每一步喘息：路径距离直接等于生死余量。",
+      "visual_camera_mechanism": "隐藏剪辑点的连续空间跟拍；夜间废墟用唯一动态升落的照明弹打出旋转移动的黑影建筑群。",
+      "sound_tone_mechanism": "Thomas Newman 沉稳推进脉动配合泥浆脚步与喘息。",
+      "transferable_rules": [
+        "夜间单光源（手电/火光/照明弹）随时间移动改变阴影方向，可在一个静止空间内创造翻天覆地的紧张感。"
+      ],
+      "identity_exclusions": [
+        "禁止照搬废墟燃烧教堂照明弹剪影、樱花河漂流或横向冲锋跑。"
+      ],
+      "failure_counterexample": "伪长镜头若只追求不停转圈不顾人物视点与路径长度合理性，会迅速露怯成‘炫技跟拍’。"
+    },
+    {
+      "id": "WC28",
+      "title": "鸟人 (Birdman)",
+      "year": 2014,
+      "region": "美国",
+      "director": "亚历桑德罗·G·伊尼亚里图",
+      "cinematographer": "艾曼努尔·卢贝兹基",
+      "genres": [
+        "剧情",
+        "黑色喜剧",
+        "心理惊悚"
+      ],
+      "tones": [
+        "后台高压眩晕",
+        "鼓点焦躁",
+        "魔幻现实"
+      ],
+      "keywords": [
+        "后台走廊",
+        "时间压缩",
+        "广角贴身",
+        "鼓点"
+      ],
+      "facts_F": "2014 年上映，获第 87 届奥斯卡最佳影片、最佳导演、最佳原创剧本、最佳摄影 4 项大奖。",
+      "dramaturgy_mechanism": "在空间完全连续的后台狭窄走廊里通过人物擦肩进出与灯光暗切完成数天心理时间的无痕折叠。",
+      "visual_camera_mechanism": "广角贴身漂浮斯坦尼康在狭窄后台走廊、化妆镜前穿梭，镜子反射自然完成双人同框切换。",
+      "sound_tone_mechanism": "几乎全部配乐由片场内外呼应的一套真实爵士爵鼓独奏完成，精准卡住台词节奏。",
+      "transferable_rules": [
+        "狭窄封闭空间里善用镜面、玻璃门反光完成‘不切机位的正反打与表情偷窥’。"
+      ],
+      "identity_exclusions": [
+        "禁止照搬内裤穿过时代广场、鸟人羽翼怪物或剧场舞台开枪桥段。"
+      ],
+      "failure_counterexample": "若时间折叠没有声音/服装/台词状态线索支撑，观众会对时空跳跃感到混乱。"
+    },
+    {
+      "id": "WC29",
+      "title": "巴里·林登 (Barry Lyndon)",
+      "year": 1975,
+      "region": "英国 / 美国",
+      "director": "斯坦利·库布里克",
+      "cinematographer": "约翰·奥尔科特",
+      "genres": [
+        "历史",
+        "年代",
+        "剧情"
+      ],
+      "tones": [
+        "油画质感",
+        "冷漠旁观",
+        "宿命沉静"
+      ],
+      "keywords": [
+        "18世纪",
+        "全自然光与烛光",
+        "慢拉镜头",
+        "油画构图"
+      ],
+      "facts_F": "1975 年上映，约翰·奥尔科特获第 48 届奥斯卡最佳摄影奖；夜间室内采用 f/0.7 超大光圈蔡司镜头仅凭真实蜡烛曝光。",
+      "dramaturgy_mechanism": "用优雅冷静的全知旁白提前剧透或冷嘲主角命运，剥离爽感，让观众像看一幅逐渐发黄的油画一样注视野心家坠落。",
+      "visual_camera_mechanism": "从人物特写极缓慢地变焦后拉（Slow Zoom-out），暴露个体在庞大贵族庄园秩序中的渺小与孤立；严格拒绝现代化人工电光。",
+      "sound_tone_mechanism": "舒伯特钢琴三重奏与亨德尔萨拉班德舞曲赋予冷酷兴衰以宿命庄重。",
+      "transferable_rules": [
+        "古装/历史室内夜戏严格锁定真火源（蜡烛/油灯/炉火）暖色温与极浅景深衰减，彻底拒绝现代棚拍均匀亮光。"
+      ],
+      "identity_exclusions": [
+        "禁止复制具体十八世纪红军制服决斗桥段或名画构图复刻。"
+      ],
+      "failure_counterexample": "如果在纯烛光场景里暗中塞入冷白顶光或现代补光，油画感会瞬间溃散成廉价古装网剧。"
+    },
+    {
+      "id": "WC30",
+      "title": "大红灯笼高高挂 (Raise the Red Lantern)",
+      "year": 1991,
+      "region": "中国大陆 / 香港 / 台湾",
+      "director": "张艺谋",
+      "cinematographer": "赵非",
+      "genres": [
+        "年代",
+        "剧情",
+        "心理惊悚",
+        "历史"
+      ],
+      "tones": [
+        "森严压迫",
+        "对称窒息",
+        "寒雪红灯"
+      ],
+      "keywords": [
+        "大宅院",
+        "对称框景",
+        "点灯光权",
+        "规矩吞人"
+      ],
+      "facts_F": "1991 年上映，获第 48 届威尼斯电影节银狮奖。",
+      "dramaturgy_mechanism": "将权力争斗具象化为一套每日重复的公开仪式（点灯、锤脚、封灯），使人不知不觉成为吞噬自己的旧规矩共谋。",
+      "visual_camera_mechanism": "高墙深院中轴严格对称，灰暗青砖白雪的冰冷秩序里，唯一大红灯笼象征瞬间即逝的虚幻宠幸。",
+      "sound_tone_mechanism": "木槌锤脚清脆敲击声、布套套灯的闷响与冬夜戏曲唱腔在雪院空旷回荡。",
+      "transferable_rules": [
+        "把抽象家族/机构权力浓缩成一项每天发生且可听可见的机械仪式道具。"
+      ],
+      "identity_exclusions": [
+        "禁止复制挂灯/封灯锤脚或天台死人屋具体桥段。"
+      ],
+      "failure_counterexample": "若宅门戏只靠姨太太吵嘴抓头发，格局就会降维到肥皂宅斗。"
+    },
+    {
+      "id": "WC31",
+      "title": "妖猫传 / 刺客聂隐娘 (Chinese Tang Aesthetics Pair)",
+      "year": 2015,
+      "region": "中国 / 中国台湾",
+      "director": "侯孝贤 / 陈凯歌",
+      "cinematographer": "李屏宾 / 曹郁",
+      "genres": [
+        "历史",
+        "古装",
+        "悬疑",
+        "武侠",
+        "志怪"
+      ],
+      "tones": [
+        "唐代气韵",
+        "纱幔风动",
+        "幽微史诗"
+      ],
+      "keywords": [
+        "唐代",
+        "历史图库考据",
+        "纱帐烛影",
+        "东方意境"
+      ],
+      "facts_F": "《刺客聂隐娘》2015 年获第 68 届戛纳最佳导演奖；唐代建筑与服饰考据严格遵循壁画与传世文物体系。",
+      "dramaturgy_mechanism": "以历史悬案/门阀秩序为表，人物在忠义与个人良知间的微小抉择为里。",
+      "visual_camera_mechanism": "薄纱窗幔随风微拂的层次景深、青绿山水薄雾、自然光与实景唐制器物纹样（需经《中国历史文化图库》校核朝代制式）。",
+      "sound_tone_mechanism": "林强式极简古琴/鼓点与天然林风虫鸣构成时间沉静厚度。",
+      "transferable_rules": [
+        "凡中国古代历史题材，生成资产前强制查阅《中国历史文化图库》锁定朝代发髻、领口交叠方向、建筑斗拱与器物形制。"
+      ],
+      "identity_exclusions": [
+        "禁止照搬极乐之宴幻术、具体黑猫说话或木盒剪纸人桥段。"
+      ],
+      "failure_counterexample": "把唐代与明清服饰道具乱炖、或满屏赛博金光特效，会立刻摧毁历史可信度。"
+    },
+    {
+      "id": "WC32",
+      "title": "罪人 (Sinners)",
+      "year": 2025,
+      "region": "美国",
+      "director": "瑞恩·库格勒",
+      "cinematographer": "奥特姆·杜拉德·阿卡波",
+      "genres": [
+        "恐怖",
+        "年代",
+        "音乐",
+        "动作",
+        "志怪"
+      ],
+      "tones": [
+        "燥热压抑",
+        "音乐仪式感",
+        "画幅张力"
+      ],
+      "keywords": [
+        "密闭木屋",
+        "门外诱惑",
+        "音乐召唤",
+        "画幅扩张"
+      ],
+      "facts_F": "2025 年上映，70mm 胶片与 IMAX 混合画幅拍摄，获第 98 届奥斯卡最佳摄影奖记录。",
+      "dramaturgy_mechanism": "把超自然威胁严密封锁在一条物理规则里（不请自来无法越过门槛），迫使屋内外上演高张力的信任攻防战。",
+      "visual_camera_mechanism": "平时紧绷窄幅空间，当音乐与超自然时间轴贯通的瞬间无缝展开至超大画幅，实现听觉与视野双重震撼。",
+      "sound_tone_mechanism": "蓝调吉他与民族打击乐不仅作背景配乐，更作为跨时空剧情引擎直接推动场内事件。",
+      "transferable_rules": [
+        "志怪/惊悚题材必须提前白纸黑字锁死超自然力量的物理限制与破绽，否则恐怖感会因无所不能而归零。"
+      ],
+      "identity_exclusions": [
+        "禁止复制密西西比木屋仓储酒馆、双胞胎造型或跨世纪乐手同框具体桥段。"
+      ],
+      "failure_counterexample": "超自然规则在后半随意修改（忽然穿墙忽然怕光又忽然不怕），会让观众立刻出戏。"
+    }
+  ],
+  "directors": [
+    {
+      "name": "王家卫",
+      "name_en": "Wong Kar-wai",
+      "id": "01",
+      "source": "director-style-prompts-handbook + chinese-directors",
+      "tags": [
+        "霓虹湿街",
+        "抽帧拖影",
+        "浓绿洋红",
+        "前景遮挡窥视"
+      ],
+      "lens_aspect": "18mm-28mm 贴身广角手持，2.35:1 宽银幕",
+      "composition": "门框/雨伞/玻璃/百叶窗前景遮挡构图，人物偏居一隅，保留画外悬空",
+      "lighting": "实用光源（台灯、潮湿街面霓虹、钨丝灯）高光比，暗部保留细节",
+      "color": "青绿暗部碰撞洋红或琥珀暖高光，潮湿反光材质放大色彩渗透",
+      "movement": "贴身轻手持漂移或慢快门抽帧拖影（光色介质为主）",
+      "rhythm": "碎片化情绪跳切与内心独白余韵",
+      "prompt_en": "foreground obstruction framing through glass and doorframe with off-center subject, practical tungsten and wet neon reflections, deep teal shadows clashing with amber-crimson highlights, textured 35mm film grain",
+      "prompt_zh": "门框雨夜玻璃前景遮挡偏置构图，实用钨丝灯与潮湿霓虹反光，青绿暗部碰撞琥珀暖光，粗颗粒 35mm 胶片质感",
+      "full_profile": true
+    },
+    {
+      "name": "张艺谋",
+      "name_en": "Zhang Yimou",
+      "id": "02",
+      "source": "director-style-prompts-handbook + chinese-directors",
+      "tags": [
+        "单一主色块",
+        "严格中轴对称",
+        "仪式感阵列",
+        "美术驱动色彩"
+      ],
+      "lens_aspect": "中焦到广角正轴全景，2.35:1",
+      "composition": "严格中轴对称、建筑框景与几何方阵重复秩序",
+      "lighting": "平光或顶光均匀照亮色块，依靠大面积美术置景与服装色度定调",
+      "color": "单一高饱和主色统摄全局（正红/明黄/青灰/墨黑）",
+      "movement": "仪式化缓慢推进或平行横移",
+      "rhythm": "古典庄重、节奏分明",
+      "prompt_en": "strict central-axis symmetry with architectural frame-within-frame and repetitive geometric backdrop, dominant monolithic color block driven by production design, slow ceremonial dolly push-in",
+      "prompt_zh": "严格中轴对称与建筑框中框秩序，大面积单一主色块靠美术置景统摄，缓慢仪式感推轨，古典庄重节奏",
+      "full_profile": true
+    },
+    {
+      "name": "侯孝贤",
+      "name_en": "Hou Hsiao-hsien",
+      "id": "03",
+      "source": "director-style-prompts-handbook + chinese-directors",
+      "tags": [
+        "中长焦固定机位",
+        "人物自然进出画",
+        "纯自然光",
+        "生活流留白"
+      ],
+      "lens_aspect": "50-85mm 中长焦固定机位，1.85:1 或 4:3",
+      "composition": "中远景观察式旁观机位，门廊阻隔视线，大量空景留白",
+      "lighting": "未修饰的自然天光、窗光与室内白炽灯泡",
+      "color": "低饱和褪色绿灰与木质暖褐",
+      "movement": "近乎静止，偶有微幅呼吸式横摇",
+      "rhythm": "长镜头静观，让时间自然沉淀",
+      "prompt_en": "50-85mm medium-telephoto static locked-off camera, observational distance allowing natural entry and exit with generous empty space, unmanipulated natural window daylight, muted green-grey and aged wood palette",
+      "prompt_zh": "50-85mm 中长焦固定旁观机位，大景深留白让人物自然进出画框，纯自然窗光无人工摆拍光，褪色绿灰生活流影调",
+      "full_profile": true
+    },
+    {
+      "name": "姜文",
+      "name_en": "Jiang Wen",
+      "id": "04",
+      "source": "director-style-prompts-handbook",
+      "issue": "第一期 (7694929307038240043)",
+      "tags": [
+        "高反差黑白",
+        "快速手持",
+        "荒诞浪漫",
+        "强节奏剪辑"
+      ],
+      "lens_aspect": "广角略畸变 (25–35mm) 快速推拉",
+      "composition": "不稳定、倾斜、突然的极近特写",
+      "lighting": "硬光、强投影，黑白时期对比拉满",
+      "color": "高反差黑白；或浓烈的暖金黄（阳光灿烂感）",
+      "movement": "手持快速移动、突然甩镜、跳切",
+      "rhythm": "极快，呼吸感强",
+      "prompt_en": "25-35mm wide-angle lens with slight distortion, unstable tilted framing cutting abruptly to extreme close-ups, hard directional sunlight with sharp shadows, high-contrast black-and-white or saturated golden-amber warmth, kinetic handheld push-pull and whip pans, punchy jump cuts, rapid breathing-rhythm pacing, absurdist romantic energy",
+      "prompt_zh": "25–35mm 广角略畸变，不稳定倾斜构图、突然切入的极近特写，硬光与强投影，高反差黑白或浓烈暖金黄，手持快速推拉与甩镜，跳切，极快的呼吸感剪辑，荒诞浪漫",
+      "full_profile": true
+    },
+    {
+      "name": "杜琪峰",
+      "name_en": "Johnnie To",
+      "id": "05",
+      "source": "director-style-prompts-handbook + chinese-directors",
+      "tags": [
+        "冷蓝夜色",
+        "舞台式几何站位",
+        "静待爆发",
+        "实用路灯暖源"
+      ],
+      "lens_aspect": "中远景为主，长焦压缩群像站位，2.35:1 或 1.85:1",
+      "composition": "人物站位呈精密几何三角/对角线舞台调度，前景与走廊纵深拉出权力差",
+      "lighting": "顶光与硬侧光切割空间，大面积暗部留出阴影，钠灯/门缝暖光作唯一暖源",
+      "color": "冷蓝与青灰夜景底色，极少局部暖黄或铁锈红作情绪锚点",
+      "movement": "长时间固定冷峻机位或缓慢平推，爆发瞬间高速切镜",
+      "rhythm": "极静压迫感蓄力 → 瞬间干脆爆发 → 迅速收束留白",
+      "prompt_en": "medium-long geometric ensemble staging like theatrical blocking, hard overhead and side rim light carving deep shadows with a single warm sodium practical lamp, cold slate-blue and cyan-grey night palette, prolonged tense stillness breaking into crisp decisive cut",
+      "prompt_zh": "中远景几何舞台站位调度，硬顶光与侧轮廓光切割深暗空间，单盏暖黄实用路灯点题，冷蓝青灰夜色调性，极静凝滞后干脆利落切镜",
+      "full_profile": true
+    },
+    {
+      "name": "贾樟柯",
+      "name_en": "Jia Zhangke",
+      "id": "06",
+      "source": "director-style-prompts-handbook",
+      "issue": "第一期 (7694929307038240043)",
+      "tags": [
+        "粗粝纪实",
+        "手持 DV 感",
+        "灰调",
+        "时代噪音"
+      ],
+      "lens_aspect": "手持随机，构图不完美；DV 与数字感",
+      "composition": "随意、偶尔切掉半个头、画框边缘不讲究",
+      "lighting": "现场光、荧光灯、尘土中的散射",
+      "color": "低饱和灰绿黄，脏、旧、发闷",
+      "movement": "随机跟随、晃动、突然停住",
+      "rhythm": "生活流，混乱中偶有静止",
+      "prompt_en": "Gritty handheld DV documentary aesthetic, unpolished off-kilter framing occasionally cropping the top of heads, raw available light mixed with fluorescent tubes and dust-haze scattering, muted dusty grey-green-ochre palette, spontaneous following camera that sways and stops abruptly, slice-of-life pacing amidst industrial ambient noise",
+      "prompt_zh": "手持 DV 粗粝纪实感，构图随意不讲究、偶尔切掉半个头，现场光与荧光灯、尘土中的散射，低饱和灰绿黄、脏旧发闷，随机跟随晃动后突然停住，生活流节奏，时代噪音感",
+      "full_profile": true
+    },
+    {
+      "name": "克里斯托弗·诺兰",
+      "name_en": "Christopher Nolan",
+      "id": "07",
+      "source": "director-style-prompts-handbook + cinematic-director",
+      "tags": [
+        "IMAX 实拍纵深",
+        "跨时间线平行剪辑",
+        "冷钢蓝配铜暖",
+        "紧迫推进"
+      ],
+      "lens_aspect": "35mm/50mm 实拍大画幅清晰景深，1.90:1 / 2.39:1",
+      "composition": "人物贴身背部或侧脸推进，物理实景空间明确，无花哨滤镜",
+      "lighting": "冷调日光/室内白光与仪表暖光交织，强调物质真实重量",
+      "color": "冷钢蓝、深黑、银灰配少量红铜与琥珀暖点",
+      "movement": "贴肩稳步推轨或高速实景车辆跟拍",
+      "rhythm": "多线时间交织、秒表般层层加码的紧迫感",
+      "prompt_en": "crisp large-format natural depth of field, tactile physical location realism, shoulder-height steady push-in camera, cold steel-blue and slate palette accented by warm tungsten instrument glow",
+      "prompt_zh": "大画幅通透实景景深，肩高稳步推进摄影，冷钢蓝灰基调点缀暖铜仪表光，物理材质厚重真实",
+      "full_profile": true
+    },
+    {
+      "name": "韦斯·安德森",
+      "name_en": "Wes Anderson",
+      "id": "08",
+      "source": "director-style-prompts-handbook + cinematic-director",
+      "tags": [
+        "绝对中心对称",
+        "平面微缩正交",
+        "粉彩童话色卡",
+        "90度直角横移"
+      ],
+      "lens_aspect": "27-40mm 几乎零透视畸变广角，1.37:1 或 2.39:1",
+      "composition": "像素级绝对中轴对称、正面平视、横平竖直如建筑立面图",
+      "lighting": "均匀柔和偏高调棚拍感照明，少浓重阴影",
+      "color": "柔和复古马卡龙配色（粉红、芥末黄、湖蓝、勃艮第红）",
+      "movement": "严格的 90 度平行横移、垂直升降或快速正交甩镜",
+      "rhythm": "冷面笑匠式的机械节拍与精准卡点",
+      "prompt_en": "razor-exact central-axis symmetry with planar perpendicular staging like a theatrical dollhouse cross-section, even soft lighting, curated pastel palette of mustard yellow, dusty rose, and slate blue, strict 90-degree lateral dolly track",
+      "prompt_zh": "绝对中轴正交平视构图如建筑立面，柔和均匀布光，芥末黄/灰粉/湖蓝复古粉彩色卡，严格 90 度平行横移",
+      "full_profile": true
+    },
+    {
+      "name": "昆汀·塔伦蒂诺",
+      "name_en": "Quentin Tarantino",
+      "id": "09",
+      "source": "director-style-prompts-handbook",
+      "issue": "第一期 (7694929307038240043)",
+      "tags": [
+        "低机位广角",
+        "复古饱和",
+        "章回结构",
+        "暴力美学"
+      ],
+      "lens_aspect": "超低机位仰拍广角；对话用长焦",
+      "composition": "极端视角（车内、后备箱、地板向上）",
+      "lighting": "硬光、70 年代胶片感、暖",
+      "color": "暖黄、正红、高饱和复古",
+      "movement": "突然推镜 (crash zoom)、快速摇镜",
+      "rhythm": "话痨式对白 + 瞬间爆发",
+      "prompt_en": "Ultra-low-angle wide trunk/floor POV shot contrasted with telephoto dialogue compression, extreme framing angles, hard 1970s grindhouse 35mm film lighting, saturated retro warm yellow and arterial crimson palette, sudden crash zooms and whip pans, drawn-out conversational tension exploding into kinetic stylized violence",
+      "prompt_zh": "超低机位仰拍广角、对话用长焦压缩，极端视角构图（车内、后备箱、地板向上），硬光、70 年代胶片质感，暖黄正红高饱和复古色，突然推镜与快速摇镜，话痨式节奏里瞬间爆发",
+      "full_profile": true
+    },
+    {
+      "name": "大卫·芬奇",
+      "name_en": "David Fincher",
+      "id": "10",
+      "source": "director-style-prompts-handbook + cinematic-director",
+      "tags": [
+        "幽暗青绿琥珀",
+        "液压机器般跟拍",
+        "低照度写实",
+        "偏执细节"
+      ],
+      "lens_aspect": "27-40mm 主力中广角，2.39:1 变形感或 2.0:1",
+      "composition": "低头或背影同步锁定在画面中央/三分线，前景档案与灯光严格入画",
+      "lighting": "顶部荧光灯、台灯或阴天散射弱光，严格基于物理可信的暗部层次",
+      "color": "标志性冷青暗部配病态黄绿或老旧钨丝灯暖黄",
+      "movement": "与角色动作完全同步的精密轨道/稳定器，人物停则机位停，绝无无故晃动",
+      "rhythm": "冰冷精准，信息密度极高，毫秒级剪辑卡点",
+      "prompt_en": "locked-to-subject mechanical tracking camera that stops the instant the actor stops, credible low-key overhead fluorescent and desk lamp lighting, deep cyan-teal shadows with sickly amber highlights, clinical investigative precision",
+      "prompt_zh": "随人物同步启停的冰冷机械轨道摄影，可信低照度顶灯与台灯实光，深青阴影配病态琥珀高光，偏执冷峻的侦查秩序",
+      "full_profile": true
+    },
+    {
+      "name": "史蒂文·斯皮尔伯格",
+      "name_en": "Steven Spielberg",
+      "id": "11",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "逆光光晕",
+        "仰角惊奇",
+        "宽银幕",
+        "温暖人文"
+      ],
+      "lens_aspect": "宽银幕 2.39:1，大远景直接切特写",
+      "composition": "仰拍、低机位、“斯皮尔伯格脸”（仰角 + 柔光特写）",
+      "lighting": "强逆光 + 雾 / 烟造体积光，暖调",
+      "color": "暖橙与蓝夜对比，柔和",
+      "movement": "缓慢推近、环绕，情绪牵引",
+      "rhythm": "温和、流畅、人文",
+      "prompt_en": "2.39:1 anamorphic widescreen, wide establishing shot cutting to low-angle soft-lit 'Spielberg face' close-up, strong volumetric backlight beams cutting through atmospheric haze and smoke, warm amber and deep night-blue contrast, fluid emotional dolly push-in and arc track, warm humanist pacing",
+      "prompt_zh": "2.39:1 宽银幕，大远景直接切特写，仰拍低机位柔光特写，强逆光配合雾与烟制造体积光，暖橙与蓝夜对比、柔和，缓慢推近与环绕运镜，温暖流畅的人文节奏",
+      "full_profile": true
+    },
+    {
+      "name": "斯坦利·库布里克",
+      "name_en": "Stanley Kubrick",
+      "id": "12",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "单点透视对称",
+        "广角畸变",
+        "冷光",
+        "几何秩序"
+      ],
+      "lens_aspect": "18mm 广角，完美中心单点透视",
+      "composition": "绝对对称、消失点在正中央",
+      "lighting": "对称布光、天花板灯阵列、冷白",
+      "color": "冷白为主 + 一点正红点缀；或烛光暖黄",
+      "movement": "斯坦尼康平稳后退 / 前进，超长距离",
+      "rhythm": "缓慢、庄严、压迫",
+      "prompt_en": "18mm ultra-wide lens, razor-sharp one-point perspective with central vanishing point and absolute symmetry, symmetrical overhead ceiling light array in cold white with a single crimson red accent, long-distance Steadicam forward/backward tracking down a corridor, slow solemn oppressive cadence",
+      "prompt_zh": "18mm 广角，完美中心单点透视与绝对对称构图，天花板灯阵列对称布光、冷白，冷白主调配一点正红点缀，斯坦尼康超长距离平稳前进后退，缓慢庄严压迫",
+      "full_profile": true
+    },
+    {
+      "name": "蒂姆·波顿",
+      "name_en": "Tim Burton",
+      "id": "13",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "哥特",
+        "高对比扭曲",
+        "螺旋条纹",
+        "怪诞童话"
+      ],
+      "lens_aspect": "广角畸变 + 荷兰角（倾斜构图）",
+      "composition": "倾斜、扭曲、夸张的高瘦比例",
+      "lighting": "冷蓝月光 + 暖橙点缀；大暗角",
+      "color": "黑、深紫、惨白、条纹；极高对比",
+      "movement": "定格式的跳动、缓慢横移",
+      "rhythm": "怪趣、童话、黑色幽默",
+      "prompt_en": "Wide-angle distortion with Dutch tilt, elongated spindly Gothic proportions, cold moonlit blue with warm orange accents and heavy vignetting, stark black/deep purple/pale white palette with spiral stripes, stop-motion-like cadence and slow lateral drift, macabre fairy-tale whimsy",
+      "prompt_zh": "广角畸变加荷兰角倾斜构图，高瘦夸张比例，冷蓝月光配暖橙点缀、大暗角，黑、深紫、惨白与螺旋条纹、极高对比，定格式跳动与缓慢横移，怪趣的黑色童话感",
+      "full_profile": true
+    },
+    {
+      "name": "大卫·林奇",
+      "name_en": "David Lynch",
+      "id": "14",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "红色幕布",
+        "暗角",
+        "工业噪音",
+        "静默对峙"
+      ],
+      "lens_aspect": "固定中景、长时间静止",
+      "composition": "居中、正对、舞台感",
+      "lighting": "深红舞台光、单一顶光、浓重暗角",
+      "color": "深红 + 暗蓝；或高对比黑白",
+      "movement": "极慢的爬行推轨（creeping dolly）",
+      "rhythm": "诡异的静止，然后突然的推近",
+      "prompt_en": "Static medium shot held uncomfortably long, centered frontal theatrical staging, deep crimson velvet stage lighting or single overhead spotlight with heavy dark vignette, deep red and midnight blue contrast, imperceptibly slow creeping dolly push-in, uncanny stillness followed by sudden dread",
+      "prompt_zh": "固定中景长时间静止，居中正对的舞台感构图，深红舞台光或单一顶光、浓重暗角，深红配暗蓝或高对比黑白，极慢的爬行推轨，诡异静止后突然推近",
+      "full_profile": true
+    },
+    {
+      "name": "雷德利·斯科特",
+      "name_en": "Ridley Scott",
+      "id": "15",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "体积光",
+        "烟雾霾",
+        "油画质感",
+        "史诗"
+      ],
+      "lens_aspect": "宽银幕大远景，烟雾营造纵深",
+      "composition": "大场面、人物置于环境中",
+      "lighting": "逆光穿透烟雾形成光柱，暖橙",
+      "color": "金黄、青铜、烟灰",
+      "movement": "缓慢推轨、航拍大场面",
+      "rhythm": "厚重、史诗、油画感",
+      "prompt_en": "Anamorphic widescreen extreme wide shot, god-ray backlight shafts piercing dense smoke and atmospheric haze for deep spatial layering, figures embedded in grand environments, bronze/amber-gold/ash-grey painterly palette, slow sweeping dolly and aerial tracking, heavy epic gravitas",
+      "prompt_zh": "宽银幕大远景，逆光穿透烟雾形成光柱，烟雾霾营造纵深，人物置于宏大环境之中，暖橙金黄青铜烟灰色调，缓慢推轨与航拍大场面，厚重油画质感的史诗感",
+      "full_profile": true
+    },
+    {
+      "name": "丹尼斯·维伦纽瓦",
+      "name_en": "Denis Villeneuve",
+      "id": "16",
+      "source": "director-style-prompts-handbook + cinematic-director",
+      "tags": [
+        "巨物尺度压迫",
+        "极简粗野主义几何",
+        "沙尘浓雾",
+        "低沉音景"
+      ],
+      "lens_aspect": "超广角架构宏大尺度与中长焦分离孤独个体，2.39:1",
+      "composition": "微小人影面对庞然巨物建筑/自然力，极简负空间构成压迫美学",
+      "lighting": "穿透雾霭或尘埃的巨大漫射天光束与剪影轮廓光",
+      "color": "单色调沙金、冰灰、铁锈橙或冷雾蓝",
+      "movement": "庄严缓慢的航拍俯冲、推轨或呼吸式悬停",
+      "rhythm": "缓慢沉重、如碑石压境的心理震颤",
+      "prompt_en": "monumental brutalist architectural scale dwarfing a lone human silhouette, colossal diffused skylight cutting through dense atmospheric mist and dust, monochromatic slate-grey or ochre palette, slow majestic dolly glide",
+      "prompt_zh": "粗野主义巨物建筑压迫孤立微小人物，穿透浓雾尘埃的漫射天光束，单色调沙金或冷雾灰，缓慢庄严推进",
+      "full_profile": true
+    },
+    {
+      "name": "让-皮埃尔·热内",
+      "name_en": "Jean-Pierre Jeunet",
+      "id": "17",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "琥珀青绿",
+        "广角畸变",
+        "手作质感",
+        "法式怪趣"
+      ],
+      "lens_aspect": "21mm 广角贴脸，畸变明显",
+      "composition": "近距离、略带夸张变形",
+      "lighting": "暖琥珀主光 + 青绿补光",
+      "color": "琥珀金 + 青绿，浓郁饱和",
+      "movement": "快速横摇、夸张推拉",
+      "rhythm": "灵巧、俏皮、手工感",
+      "prompt_en": "21mm wide-angle close-up with playful facial distortion, warm amber key light paired with emerald-green fill, richly saturated golden-amber and viridian palette, snappy whip pans and exaggerated push-ins, tactile handcrafted French whimsy",
+      "prompt_zh": "21mm 广角贴脸畸变，近距离略带夸张变形的构图，暖琥珀主光配青绿补光，琥珀金与青绿浓郁饱和，快速横摇与夸张推拉，灵巧俏皮的手作质感",
+      "full_profile": true
+    },
+    {
+      "name": "阿方索·卡隆",
+      "name_en": "Alfonso Cuarón",
+      "id": "18",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "长镜头",
+        "黑白",
+        "自然光手持",
+        "亲密连续"
+      ],
+      "lens_aspect": "手持稳定器，超长镜头不剪",
+      "composition": "跟随式、360 度环绕",
+      "lighting": "纯自然光、窗光、烛光",
+      "color": "高对比黑白；或自然低饱和",
+      "movement": "连续、流畅、跟随人物",
+      "rhythm": "一气呵成、沉浸",
+      "prompt_en": "Unbroken fluid Steadicam long take, 360-degree environmental pan and deep-focus foreground-to-background staging, pure natural window and practical light, luminous high-contrast monochrome or natural desaturated color, seamless immersive momentum",
+      "prompt_zh": "手持稳定器超长镜头不剪，跟随式 360 度环绕构图，纯自然光、窗光与烛光，高对比黑白或自然低饱和，连续流畅地跟随人物，一气呵成的沉浸感",
+      "full_profile": true
+    },
+    {
+      "name": "佩德罗·阿莫多瓦",
+      "name_en": "Pedro Almodóvar",
+      "id": "19",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "高饱和正红",
+        "设计感室内",
+        "女性群像",
+        "欲望"
+      ],
+      "lens_aspect": "中景、平面化色块、对称",
+      "composition": "设计师式的空间，色块大于人物",
+      "lighting": "明亮均匀、影棚感",
+      "color": "正红、亮粉、明黄，撞色大胆",
+      "movement": "缓慢推轨、平滑横移",
+      "rhythm": "浓烈、戏剧、情感外放",
+      "prompt_en": "Medium shot with graphic color-block symmetry in designer interiors, bright even studio-style illumination, bold saturated primary crimson red, hot pink, and canary yellow color clashes, smooth lateral dolly and push-in, passionate melodramatic intensity",
+      "prompt_zh": "中景平面化色块与对称构图，设计感空间里色块大于人物，明亮均匀的影棚式光线，正红亮粉明黄大胆撞色、高饱和，缓慢推轨与平滑横移，浓烈外放的戏剧感",
+      "full_profile": true
+    },
+    {
+      "name": "安德烈·塔可夫斯基",
+      "name_en": "Andrei Tarkovsky",
+      "id": "20",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "诗性长镜头",
+        "自然元素",
+        "极慢",
+        "神圣感"
+      ],
+      "lens_aspect": "超长镜头、固定或极缓移动",
+      "composition": "人物穿越画框，自然元素入镜（水草、雨、火）",
+      "lighting": "自然光、窗光、雾气散射",
+      "color": "低饱和绿灰、棕；黑白与彩色交替",
+      "movement": "极慢推拉，人物进出画",
+      "rhythm": "冥想式、神圣、时间凝固",
+      "prompt_en": "Poetic ultra-long take with glacial tracking, elemental nature filling the frame (flowing waterweeds, rain, fire, mist), diffused natural window light, desaturated moss-green and sepia-brown alternating with monochrome, sacred sculpted-time stillness",
+      "prompt_zh": "超长镜头固定或极缓移动，人物穿越画框、自然元素入镜（水草、雨、火、雾），自然光与窗光、雾气散射，低饱和绿灰棕、黑白与彩色交替，极慢推拉，冥想神圣时间凝固",
+      "full_profile": true
+    },
+    {
+      "name": "黑泽明",
+      "name_en": "Akira Kurosawa",
+      "id": "21",
+      "source": "director-style-prompts-handbook + film-crew-masters",
+      "tags": [
+        "长焦压缩群体",
+        "极端天气元素",
+        "多机位切入",
+        "动势几何"
+      ],
+      "lens_aspect": "长焦 100-200mm 压缩景深使雨水/风尘贴脸扑来，1.37:1 或 2.35:1",
+      "composition": "三角形稳态群像构图，在风暴雨雪中以人体姿态划破画框",
+      "lighting": "强对比自然风雨天光或夜间火把高反差明暗",
+      "color": "高反差黑白银盐或浓重矿物质战国色",
+      "movement": "猛烈快速横摇接瞬间静止定势（不动如山）",
+      "rhythm": "暴风骤雨的动与雕塑般的静形成极限张力",
+      "prompt_en": "long telephoto lens compression turning heavy rain and wind-blown dust into dense foreground texture, triangular heroic blocking in extreme weather, high-contrast directional rim light, dynamic whip pan snapping into still poise",
+      "prompt_zh": "长焦镜头压缩暴雨与风尘形成浓烈前景动势，三角形稳态群像构图，高反差风雨天光，猛烈横摇后瞬间定格如雕塑",
+      "full_profile": true
+    },
+    {
+      "name": "是枝裕和",
+      "name_en": "Hirokazu Kore-eda",
+      "id": "22",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "自然光",
+        "静观固定",
+        "低饱和",
+        "家庭日常"
+      ],
+      "lens_aspect": "固定机位、中远景",
+      "composition": "人物进出画框，房间被完整呈现",
+      "lighting": "自然光、窗光、夏日散射",
+      "color": "低饱和、米白、淡绿",
+      "movement": "几乎不动，只有轻微呼吸感",
+      "rhythm": "舒缓、日常、留白",
+      "prompt_en": "Static medium-long domestic shot showing the full tatami room as family members enter and exit the frame, soft summer daylight filtering through windows, low-saturation warm cream and pale foliage green, gentle observational stillness without melodrama",
+      "prompt_zh": "固定机位中远景，人物进出画框、房间被完整呈现，自然光窗光与夏日散射，低饱和米白淡绿，镜头几乎不动只有轻微呼吸感，舒缓日常留白、不评判不煽情",
+      "full_profile": true
+    },
+    {
+      "name": "岩井俊二",
+      "name_en": "Shunji Iwai",
+      "id": "23",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "逆光",
+        "柔焦",
+        "青春",
+        "樱花与雪"
+      ],
+      "lens_aspect": "手持轻晃、柔焦、中景",
+      "composition": "逆光、窗帘光、光晕",
+      "lighting": "强逆光、柔和光晕、窗边",
+      "color": "淡青白、粉樱、高调",
+      "movement": "轻微手持、慢镜",
+      "rhythm": "青春、怀旧、轻盈",
+      "prompt_en": "Soft-focus medium shot with gentle handheld sway, strong overexposed window backlight glowing through sheer white curtains with halation bloom, high-key pale cyan-white and cherry-blossom pink palette, slow-motion breeze, nostalgic youth lyricism",
+      "prompt_zh": "中景手持轻晃加柔焦，逆光窗帘光与光晕式构图，强逆光、柔和光晕、窗边光线，淡青白与粉樱的高调色彩，轻微手持与慢镜，青春怀旧轻盈",
+      "full_profile": true
+    },
+    {
+      "name": "北野武",
+      "name_en": "Takeshi Kitano",
+      "id": "24",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "北野蓝",
+        "静默留白",
+        "突然的暴力",
+        "极简"
+      ],
+      "lens_aspect": "固定机位、远景",
+      "composition": "极简，人物置于空旷环境",
+      "lighting": "自然光、海边强光",
+      "color": "北野蓝（青蓝）、低饱和",
+      "movement": "静止 → 瞬间爆发",
+      "rhythm": "省略剪辑，大段留白",
+      "prompt_en": "Locked-off wide shot, minimalist deadpan composition placing figures in vast empty coastal space, bright natural seaside light, desaturated 'Kitano blue' cyan-slate grade, prolonged stoic stillness exploding into sudden violence with elliptical cuts",
+      "prompt_zh": "固定机位远景，极简构图、人物置于空旷环境，自然光与海边强光，北野蓝青蓝低饱和，长时间静止后瞬间爆发，省略式剪辑与大段留白",
+      "full_profile": true
+    },
+    {
+      "name": "朴赞郁",
+      "name_en": "Park Chan-wook",
+      "id": "25",
+      "source": "director-style-prompts-handbook + sw-korean-french-screenwriting",
+      "tags": [
+        "极繁对称美学",
+        "奇诡仰俯视角",
+        "宝石浓彩",
+        "转场魔术剪辑"
+      ],
+      "lens_aspect": "广角近距与极端俯仰角度，2.39:1",
+      "composition": "巴洛克式壁纸纹理对称、透过物面/镜面/门孔窥视的戏剧性构图",
+      "lighting": "造型感强烈的局部冷暖切光，人物半张脸落入浓重阴影",
+      "color": "墨绿、酒红、孔雀蓝、暗金等华丽深沉的宝石色调",
+      "movement": "精准机械式推摇与跨时空匹配转场（Match Cut）",
+      "rhythm": "优雅克制与骤然冷酷交替",
+      "prompt_en": "baroque symmetrical framing with ornate textures and unusual high or low angles, razor-sharp chiaroscuro slicing half the face into shadow, rich jewel-toned emerald and burgundy palette, surgical match-cut camera precision",
+      "prompt_zh": "极繁对称肌理与奇诡俯仰视角，犀利明暗切割半张面孔，深邃墨绿酒红宝石色调，手术刀般精准的匹配运镜",
+      "full_profile": true
+    },
+    {
+      "name": "新海诚",
+      "name_en": "Makoto Shinkai",
+      "id": "26",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "光斑",
+        "紫橙天空",
+        "高对比云",
+        "城市写实"
+      ],
+      "lens_aspect": "大远景天空、逆光光斑",
+      "composition": "天空占画面大半，人物很小",
+      "lighting": "黄昏逆光、强烈光晕、光斑（bokeh）",
+      "color": "紫蓝橙渐变天空、青绿植栽、高饱和",
+      "movement": "缓慢平移、云流动、雨滴",
+      "rhythm": "抒情、青春、MV 感",
+      "prompt_en": "Hyper-detailed anime realism extreme wide shot where towering cumulus clouds and twilight sky occupy 70% of the frame, blinding golden-hour lens flare and shimmering bokeh, violet-indigo-amber sky gradient with vibrant emerald foliage, slow lyrical pan",
+      "prompt_zh": "大远景天空占画面大半、人物很小，黄昏逆光强烈光晕与光斑（bokeh），紫蓝橙渐变天空配青绿植栽、高饱和，缓慢平移、云流动与雨滴，抒情 MV 感的青春氛围",
+      "full_profile": true
+    },
+    {
+      "name": "宫崎骏",
+      "name_en": "Hayao Miyazaki",
+      "id": "27",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "手绘水彩",
+        "绿意",
+        "云",
+        "飞行"
+      ],
+      "lens_aspect": "大远景、俯瞰、横向卷轴移动",
+      "composition": "地平线高，天空与大地各半",
+      "lighting": "柔和阳光、水面反光",
+      "color": "翠绿、天蓝、暖黄，柔和而明亮",
+      "movement": "横向飞行移动、云飘、草浪",
+      "rhythm": "舒缓、治愈、辽阔",
+      "prompt_en": "Hand-painted gouache and watercolor animation wide shot, high horizon line balancing lush emerald meadows and towering white cumulus clouds, warm sunlit water reflections, buoyant lateral flight tracking over wind-rippled grass waves, healing pastoral wonder",
+      "prompt_zh": "大远景俯瞰与横向卷轴移动，地平线高、天空与大地各半，柔和阳光与水面反光，翠绿天蓝暖黄柔和明亮，横向飞行移动、云飘草浪，手绘水彩质感、舒缓治愈辽阔",
+      "full_profile": true
+    },
+    {
+      "name": "大友克洋",
+      "name_en": "Katsuhiro Otomo",
+      "id": "28",
+      "source": "director-style-prompts-handbook",
+      "issue": "第二期 (7699006867904761098)",
+      "tags": [
+        "机械硬光",
+        "高密度细节",
+        "冷青",
+        "崩坏"
+      ],
+      "lens_aspect": "广角大场景、仰视巨构",
+      "composition": "信息密度极高、细节爆炸",
+      "lighting": "硬光、强阴影、工业照明",
+      "color": "冷青、铁灰、警示红",
+      "movement": "高速、爆炸、机械运动",
+      "rhythm": "压迫、失控、末世",
+      "prompt_en": "Wide-angle low-angle megastructure vista with obsessive mechanical pipe/cable density, harsh industrial lighting and deep shadows, cold cyan and gunmetal grey punctuated by neon warning red, high-velocity light-trail motion and structural collapse, apocalyptic cyberpunk intensity",
+      "prompt_zh": "广角大场景仰视巨构，信息密度极高细节爆炸，硬光强阴影工业照明，冷青铁灰配警示红，高速运动与机械崩坏，精密到病态的压迫感与末世感",
+      "full_profile": true
+    },
+    {
+      "name": "奉俊昊",
+      "name_en": "",
+      "id": "bong",
+      "source": "sw-korean-french-screenwriting",
+      "tags": [
+        "阶层垂直空间",
+        "精密场面调度",
+        "中点类型突变",
+        "冷峻黑色幽默"
+      ],
+      "lens_aspect": "28-40mm 变形宽银幕，2.39:1",
+      "composition": "利用楼梯、半地下窗、暴雨门槛制造上下阶层压迫与视线窥视",
+      "lighting": "上层暖金日光与地下室青绿冷荧光形成阶级光温分裂",
+      "color": "青绿病态阴湿与上流暖琥珀强烈对冲",
+      "movement": "丝滑轨道长镜头串联多名人物，同步推进危机信息差",
+      "rhythm": "前半轻快喜剧节奏在中点陡转为冷冽惊悚",
+      "prompt_en": "2.39:1 widescreen vertical spatial blocking using staircases and basement thresholds to separate social classes, smooth lateral tracking connecting simultaneous actions, cold fluorescent green-cyan clashing with warm interior amber",
+      "prompt_zh": "2.39:1 宽银幕阶层垂直空间调度（楼梯/半地下门槛），精密丝滑横移轨道连接多人，冷荧光青绿与上层暖琥珀色温撕裂",
+      "full_profile": true
+    },
+    {
+      "name": "罗杰·狄金斯",
+      "name_en": "",
+      "id": "deakins",
+      "source": "film-crew-masters/01_cinematography + 04_lighting",
+      "tags": [
+        "单一主光动机",
+        "剪影反差",
+        "极简干净构图",
+        "钠灯或窗光"
+      ],
+      "lens_aspect": "32-40mm 主力定焦，摄影机只讲最简单的物理事实",
+      "composition": "画面干净克制，绝不炫技，让空间阴影与人物轮廓完成叙事",
+      "lighting": "每一束光必须能指出现实光源（火光、走廊单灯、百叶窗天光），极少补光",
+      "color": "大面积中性暗部托举纯净暖光或冷月光",
+      "movement": "沉稳丝滑推轨，只在人物情感或空间关系变化时移动",
+      "rhythm": "克制沉静、一针见血",
+      "prompt_en": "clean restrained 35mm-40mm prime lens framing, strictly motivated single practical light source (window daylight or bare tungsten bulb) casting crisp silhouettes against deep clean shadows, zero artificial fill light",
+      "prompt_zh": "干净克制的 35-40mm 叙事构图，严格可指认的单一现实光源（窗光或孤灯）打出清晰轮廓剪影，绝不滥用无动机补光",
+      "full_profile": true
+    },
+    {
+      "name": "小津安二郎",
+      "name_en": "",
+      "id": "ozu",
+      "source": "ozu-screenplay-style",
+      "tags": [
+        "榻榻米低机位",
+        "180度正面轴线",
+        "枕镜头空镜",
+        "事件画外"
+      ],
+      "lens_aspect": "50mm 标准定焦，1.37:1 经典比例",
+      "composition": "低机位平视人物胸口，建筑拉门与走廊严格水平垂直对称",
+      "lighting": "柔和漫射室内日光与素雅纸门透光",
+      "color": "克制中性米白、原木棕与一点壶身红或蓝作视觉标点",
+      "movement": "全静态固定镜头，用空镜枕镜头（水壶/铁轨/廊柱）完成场次呼吸过渡",
+      "rhythm": "均匀平稳，重大冲击留给画外或单音节反应",
+      "prompt_en": "50mm prime low tatami-height static camera, crisp architectural horizontals and verticals, soft diffused interior daylight, restrained neutral wood and rice-paper tones, calm unhurried pillow-shot stillness",
+      "prompt_zh": "50mm 标头低机位静态摄影，建筑横平竖直如建筑素描，柔和室内纸门散射日光，素雅原木色调与空镜静观余韵",
+      "full_profile": true
+    },
+    {
+      "name": "乌尔善",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 乌尔善 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 乌尔善, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 乌尔善 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "冯小刚",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 冯小刚 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 冯小刚, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 冯小刚 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "刘镇伟",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 刘镇伟 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 刘镇伟, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 刘镇伟 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "吴京",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 吴京 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 吴京, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 吴京 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "吴宇森",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 吴宇森 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 吴宇森, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 吴宇森 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "周星驰",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 周星驰 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 周星驰, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 周星驰 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "宁浩",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 宁浩 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 宁浩, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 宁浩 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "徐克",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 徐克 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 徐克, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 徐克 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "徐峥",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 徐峥 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 徐峥, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 徐峥 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "李安",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 李安 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 李安, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 李安 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "杨德昌",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 杨德昌 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 杨德昌, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 杨德昌 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "林超贤",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 林超贤 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 林超贤, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 林超贤 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "管虎",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 管虎 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 管虎, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 管虎 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "胡金铨",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 胡金铨 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 胡金铨, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 胡金铨 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "蔡明亮",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 蔡明亮 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 蔡明亮, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 蔡明亮 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "许诚毅",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 许诚毅 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 许诚毅, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 许诚毅 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "许鞍华",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 许鞍华 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 许鞍华, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 许鞍华 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "费穆",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 费穆 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 费穆, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 费穆 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "郭帆",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 郭帆 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 郭帆, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 郭帆 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "陈凯歌",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 陈凯歌 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 陈凯歌, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 陈凯歌 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "陈可辛",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 陈可辛 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 陈可辛, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 陈可辛 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "陈思诚",
+      "name_en": "",
+      "id": "cn-dir",
+      "source": "chinese-directors",
+      "tags": [
+        "华语导演风格",
+        "东方语境调度"
+      ],
+      "lens_aspect": "35mm-85mm 实拍银幕透视",
+      "composition": "遵循 陈思诚 标志性人物空间与景别关系调度",
+      "lighting": "基于场景内真实物理光源动机照明",
+      "color": "依据戏剧年代与冷暖命题定色",
+      "movement": "情绪节点驱动摄影机推拉移摇",
+      "rhythm": "保留表演反应链呼吸留白",
+      "prompt_en": "live-action cinematography reflecting the spatial blocking and optical discipline of 陈思诚, physically motivated lighting, coherent environmental depth",
+      "prompt_zh": "遵循 陈思诚 标志性场面调度、景别几何与可指认物理光源的实拍电影质感",
+      "full_profile": false
+    },
+    {
+      "name": "尼古拉斯·温丁·雷弗恩",
+      "name_en": "",
+      "id": "intl-dir",
+      "source": "cinematic-director",
+      "tags": [
+        "国际大师视听",
+        "作者电影质感"
+      ],
+      "lens_aspect": "35mm/50mm 电影定焦透视",
+      "composition": "采用 尼古拉斯·温丁·雷弗恩 典型视觉秩序与景框层次调度",
+      "lighting": "单主光物理动机与自然光影反差",
+      "color": "克制色彩命题，杜绝塑料高亮过滤感",
+      "movement": "精确动机运镜与落幅定势",
+      "rhythm": "按心理转折切入切出",
+      "prompt_en": "feature film cinematography evoking the framing geometry and lighting ethos of 尼古拉斯·温丁·雷弗恩, grounded optical realism, organic grain",
+      "prompt_zh": "遵循 尼古拉斯·温丁·雷弗恩 经典视听美学与物理光影逻辑的电影摄影质感",
+      "full_profile": false
+    },
+    {
+      "name": "毕赣",
+      "name_en": "",
+      "id": "intl-dir",
+      "source": "cinematic-director",
+      "tags": [
+        "国际大师视听",
+        "作者电影质感"
+      ],
+      "lens_aspect": "35mm/50mm 电影定焦透视",
+      "composition": "采用 毕赣 典型视觉秩序与景框层次调度",
+      "lighting": "单主光物理动机与自然光影反差",
+      "color": "克制色彩命题，杜绝塑料高亮过滤感",
+      "movement": "精确动机运镜与落幅定势",
+      "rhythm": "按心理转折切入切出",
+      "prompt_en": "feature film cinematography evoking the framing geometry and lighting ethos of 毕赣, grounded optical realism, organic grain",
+      "prompt_zh": "遵循 毕赣 经典视听美学与物理光影逻辑的电影摄影质感",
+      "full_profile": false
+    },
+    {
+      "name": "英格玛·伯格曼",
+      "name_en": "",
+      "id": "intl-dir",
+      "source": "cinematic-director",
+      "tags": [
+        "国际大师视听",
+        "作者电影质感"
+      ],
+      "lens_aspect": "35mm/50mm 电影定焦透视",
+      "composition": "采用 英格玛·伯格曼 典型视觉秩序与景框层次调度",
+      "lighting": "单主光物理动机与自然光影反差",
+      "color": "克制色彩命题，杜绝塑料高亮过滤感",
+      "movement": "精确动机运镜与落幅定势",
+      "rhythm": "按心理转折切入切出",
+      "prompt_en": "feature film cinematography evoking the framing geometry and lighting ethos of 英格玛·伯格曼, grounded optical realism, organic grain",
+      "prompt_zh": "遵循 英格玛·伯格曼 经典视听美学与物理光影逻辑的电影摄影质感",
+      "full_profile": false
+    },
+    {
+      "name": "费德里科·费里尼",
+      "name_en": "",
+      "id": "intl-dir",
+      "source": "cinematic-director",
+      "tags": [
+        "国际大师视听",
+        "作者电影质感"
+      ],
+      "lens_aspect": "35mm/50mm 电影定焦透视",
+      "composition": "采用 费德里科·费里尼 典型视觉秩序与景框层次调度",
+      "lighting": "单主光物理动机与自然光影反差",
+      "color": "克制色彩命题，杜绝塑料高亮过滤感",
+      "movement": "精确动机运镜与落幅定势",
+      "rhythm": "按心理转折切入切出",
+      "prompt_en": "feature film cinematography evoking the framing geometry and lighting ethos of 费德里科·费里尼, grounded optical realism, organic grain",
+      "prompt_zh": "遵循 费德里科·费里尼 经典视听美学与物理光影逻辑的电影摄影质感",
+      "full_profile": false
+    },
+    {
+      "name": "阿尔弗雷德·希区柯克",
+      "name_en": "",
+      "id": "intl-dir",
+      "source": "cinematic-director",
+      "tags": [
+        "国际大师视听",
+        "作者电影质感"
+      ],
+      "lens_aspect": "35mm/50mm 电影定焦透视",
+      "composition": "采用 阿尔弗雷德·希区柯克 典型视觉秩序与景框层次调度",
+      "lighting": "单主光物理动机与自然光影反差",
+      "color": "克制色彩命题，杜绝塑料高亮过滤感",
+      "movement": "精确动机运镜与落幅定势",
+      "rhythm": "按心理转折切入切出",
+      "prompt_en": "feature film cinematography evoking the framing geometry and lighting ethos of 阿尔弗雷德·希区柯克, grounded optical realism, organic grain",
+      "prompt_zh": "遵循 阿尔弗雷德·希区柯克 经典视听美学与物理光影逻辑的电影摄影质感",
+      "full_profile": false
+    },
+    {
+      "name": "马丁·斯科塞斯",
+      "name_en": "",
+      "id": "intl-dir",
+      "source": "cinematic-director",
+      "tags": [
+        "国际大师视听",
+        "作者电影质感"
+      ],
+      "lens_aspect": "35mm/50mm 电影定焦透视",
+      "composition": "采用 马丁·斯科塞斯 典型视觉秩序与景框层次调度",
+      "lighting": "单主光物理动机与自然光影反差",
+      "color": "克制色彩命题，杜绝塑料高亮过滤感",
+      "movement": "精确动机运镜与落幅定势",
+      "rhythm": "按心理转折切入切出",
+      "prompt_en": "feature film cinematography evoking the framing geometry and lighting ethos of 马丁·斯科塞斯, grounded optical realism, organic grain",
+      "prompt_zh": "遵循 马丁·斯科塞斯 经典视听美学与物理光影逻辑的电影摄影质感",
+      "full_profile": false
+    }
+  ],
+  "crew_master_consultants": {
+    "摄影指导 (DP)": "Roger Deakins（单光源物理动机）/ Emmanuel Lubezki（自然广角流动）/ 杜可风（手持实用光湿色）",
+    "运镜与调度": "Garrett Brown（斯坦尼康呼吸）/ 奉俊昊（阶层垂直通道）/ 黑泽明（长焦风雨水幕压缩）",
+    "美术与置景": "叶锦添（东方新写实器物）/ Dante Ferretti（历史质感重量）/ 真实生活磨损痕迹（非崭新棚拍）",
+    "灯光工程 (Gaffer)": "Gordon Willis（顶光遮眼暗调）/ 实用光源色温隔离（3200K 钨丝 vs 5600K 阴雨天光）",
+    "剪辑与声音": "Walter Murch（情感 51% 优先于视线匹配）/ 张叔平（情绪碎片留白）/ HDemucs 物理拟音分离"
+  },
+  "film_stocks": [
+    {
+      "key": "cinestill800t",
+      "label": "CineStill 800T",
+      "temp": "3200K tungsten night",
+      "prompt_en": "shot on CineStill 800T 35mm tungsten film, cool teal-blue rainy shadows, warm amber practical tungsten highlights with subtle natural red halation around bare bulbs, organic silver halide grain",
+      "prompt_zh": "CineStill 800T 35mm 灯光片胶片质感，冷青蓝雨夜暗部，暖琥珀钨丝实用光源带自然红晕光晕，有机银盐颗粒",
+      "conflict_note": "需要人工点光源/霓虹/灯丝或夜晚场景；避免与无点光源的平光正午烈日强拼。"
+    },
+    {
+      "key": "portra400",
+      "label": "Kodak Portra 400",
+      "temp": "soft natural daylight / window light",
+      "prompt_en": "shot on Kodak Portra 400 35mm film, soft window daylight, natural luminous peach skin texture and crisp hair strands, smooth highlight roll-off, rich shadow gradation",
+      "prompt_zh": "Kodak Portra 400 胶片质感，柔和自然窗光，真实细腻的肤理光泽与清晰发丝纹理，平顺高光过渡",
+      "conflict_note": "近景人像务必使用正面细腻肤理词，禁写引发麻点的负向或毛孔词元。"
+    },
+    {
+      "key": "pro400h",
+      "label": "Fujifilm Pro 400H",
+      "temp": "overcast diffused daylight",
+      "prompt_en": "shot on Fujifilm Pro 400H 35mm film, soft overcast daylight, airy sage greens and muted cyan shadow separation, lifted creamy highlights, gentle low-contrast film look",
+      "prompt_zh": "Fujifilm Pro 400H 胶片质感，阴天散射柔光，低饱和青灰鼠尾草绿暗部与奶油高光过渡",
+      "conflict_note": "适用于阴天与素雅日常流，不宜配高对比赛博霓虹。"
+    },
+    {
+      "key": "gold200",
+      "label": "Kodak Gold 200",
+      "temp": "warm golden sunlight",
+      "prompt_en": "shot on Kodak Gold 200 35mm film, warm golden-amber sunlight, gentle nostalgic highlight warmth, muted sky blues, organic fine grain",
+      "prompt_zh": "Kodak Gold 200 胶片质感，温暖金黄日光，轻微怀旧暖琥珀阴影，细腻颗粒",
+      "conflict_note": "适合暖日光回忆与日常外景，不宜直接套在冷青悬疑地下室。"
+    },
+    {
+      "key": "ultramax400",
+      "label": "Kodak UltraMax 400",
+      "temp": "direct hard on-camera flash 5500K",
+      "prompt_en": "shot on Kodak UltraMax 400 35mm film, direct on-camera hard flash illuminating close foreground subject within 2.5m with steep dark falloff behind, punchy contrast",
+      "prompt_zh": "Kodak UltraMax 400 胶片质感，近距离机顶硬闪直打主体并迅速衰减入暗背景，强烈明暗反差",
+      "conflict_note": "闪光灯有效距离仅 1.5–4m，严禁与浩瀚山川大远景或航拍混搭。"
+    },
+    {
+      "key": "hp5plus400",
+      "label": "Ilford HP5 Plus 400",
+      "temp": "monochrome panchromatic ISO 400",
+      "prompt_en": "shot on Ilford HP5 Plus 400 black-and-white 35mm panchromatic film, pure monochrome tonal gradation, crisp architectural light beams and silver halide grain",
+      "prompt_zh": "Ilford HP5 Plus 400 黑白银盐胶片质感，纯净黑白灰阶过渡，建筑光束与细腻银盐颗粒",
+      "conflict_note": "严禁混入任何具体彩色色相词（红/蓝/绿/青/金等）。"
+    }
+  ],
+  "guards": {
+    "empty_buzzwords": [
+      "masterpiece",
+      "8k",
+      "hdr",
+      "stunning",
+      "ultra detailed",
+      "best quality"
+    ],
+    "skin_artifact_triggers": [
+      "pores",
+      "moles",
+      "acne",
+      "blemish",
+      "毛孔",
+      "痘",
+      "麻点",
+      "斑点"
+    ],
+    "di_negation_phrases": [
+      "不要",
+      "避免",
+      "禁止",
+      "不死黑",
+      "不过曝",
+      "no ",
+      "without ",
+      "avoid ",
+      "never "
+    ]
+  },
+  "entry_modes": [
+    {
+      "key": "spark",
+      "title": "1. 一颗火花起盘",
+      "cli_entry": "spark",
+      "when": "手里只有一个念头、人物关系或社会痛点，缺主控思想与戏剧内核。",
+      "route_skill": "sw-story-architecture / story-three-act-structure",
+      "cmd": "python jt_sw.py init --project my_film --title \"片名\" --entry spark --genre \"犯罪悬疑\" --duration 15",
+      "deliverable": "建立《STORY_BIBLE》、主控思想（Controlling Idea）、反调性禁区与因果骨架。"
+    },
+    {
+      "key": "outline",
+      "title": "2. 已有大纲 / 分场推进",
+      "cli_entry": "outline",
+      "when": "已写出大纲或分场表，需要落盘标准场号剧本并检验每场价值 +/- 翻转。",
+      "route_skill": "sw-scene-craft + short-drama-write",
+      "cmd": "python jt_sw.py route --query \"分场强冲突推演与价值翻转\" --project my_film",
+      "deliverable": "场场有冲突与情绪极性改变的剧本与精确秒级分镜池。"
+    },
+    {
+      "key": "script_doctor",
+      "title": "3. 已有初稿外科会诊",
+      "cli_entry": "script_doctor",
+      "when": "初稿写完总觉得散、人物同声、台词说教或角色提前知道未揭晓秘密。",
+      "route_skill": "sw-dialogue-subtext + knowledge_state 审计",
+      "cmd": "python jt_sw.py doctor --project my_film",
+      "deliverable": "遮名可辨度报告、说教句标红、knowledge_state 穿帮拦截。"
+    },
+    {
+      "key": "adaptation",
+      "title": "4. 小说 / 历史 / IP 改编",
+      "cli_entry": "adaptation",
+      "when": "长篇小说压缩、心理独白视听外化，或中国古装/历史真实性考证。",
+      "route_skill": "sw-format-adaptation + 中国历史文化图库校验",
+      "cmd": "python jt_sw.py gate --project my_film",
+      "deliverable": "外化视听动作序列 + 《历史真实性三级边界（史实/推拟/加工）》清单。"
+    },
+    {
+      "key": "series_bible",
+      "title": "5. 多季 / 竖屏短剧引擎",
+      "cli_entry": "series_bible",
+      "when": "多季剧集圣经或 80 集以上竖屏短剧，需要冷开场钩子与 A/B/C 多线交织。",
+      "route_skill": "sw-series-engine-bible + short-drama-outline",
+      "cmd": "python jt_sw.py route --query \"百集短剧冷开场钩子与季终母题引擎\" --project my_film",
+      "deliverable": "双季扩展引擎与每集末钩子悬念曲线。"
+    }
+  ],
+  "system_prompt_md": "# JT Screenwriter Agent — 专业编剧创作与金泰平台一键制片 System Prompt\n\n> 本提示词可直接配置为 **JinTai Smart（金泰智创） 工作台 (`:45331` / `:8444`)**、**AVC 画布平台 (`:3000` / `:8443`)**、Claude Code 或 Codex 的专属编剧智能体系统提示词。\n\n---\n\n## 一、身份定位与核心工作准则\n\n你是 **JT Screenwriter Agent**——一位兼具好莱坞/华语一线剧本医生功力与 **金泰 AI 影视工业全栈管线执行力** 的高级创作搭档。你服务的对象是**有经验的成熟编剧、导演与制片人**，绝非零基础新手。\n\n### 铁律（Peer-to-Peer Collaborator Rules）\n1. **同行级对话，拒绝说教与模板腔**：\n   - 不背诵基础编剧教科书概念（如不向专业编剧科普“什么是三幕剧”）；\n   - 保护创作者的作者声音与怪癖，绝不把锋利、冷峻、生活流的台词洗白成“四平八稳的 AI 端水腔”；\n   - 先问准会改变全剧方向的 **1–3 个结构性问题**（缺口、核心矛盾、反调性禁区），小细节标出可逆假设直接推进。\n2. **禁止跳层与长链条防漂移（13 层控制链）**：\n   - 一切关键创作决策必须结构化落盘，严禁依赖聊天窗口记忆；\n   - **上游定意义，下游只翻译**：立意 (`creative_intent`) → 故事骨架 (`story_architecture`) → 语义圣经 (`STORY_BIBLE` + 角色 `knowledge_state`) → 剧本 (`screenplay`) → 场次意图 (`scene_intents`) → 分镜语义包 (`shot_semantic_packets`) → 语义闸门 (`PASS`) → 下游模型编译 (`Seedance 2.5 / H3`)；\n   - 遇到动机不成立或逻辑冲突，必须 **ROLLBACK 回退上游对应层** 修改，严禁在最终生成 Prompt 里偷偷改剧情。\n3. **算力门控与人工审美最终裁决**：\n   - 自动跑到“门口”停下，把对比选项、四联检视板与独立音频摆给创作者决策，绝不盲目用多张 H100 并发乱抽全长片；\n   - 参数试探一律单卡 `3–5s`（`56/124` 帧）短探针先行；本机零 CUDA/PyTorch 推理，重活全走 A 机 `<A_MACHINE_8xH100_CLUSTER>`（8 卡调度）或 B 机 `<B_MACHINE_5090_HOST>`。\n\n---\n\n## 二、五大专业编剧入口路由（自动贴合来稿形态）\n\n根据用户手头素材，立即锁定对应工作流并运行 `jt_sw.py route` 调用本地唯一 L1 主帅技能（严禁把冲突主帅混用）：\n1. **一颗火花起盘 (`spark`)**：缺前提与灵魂时，用麦基主控思想 / 特鲁比 22 步四角对立 / 埃格里三维人物确立戏核与 `must_not_become` 反调性禁区。\n2. **已有大纲/分场 (`outline`)**：用 `sw-scene-craft` 检查每场价值正负翻转（+/-），以 `short-drama-write` 落盘标准场号剧本并做秒级时长测算。\n3. **已有初稿会诊 (`script_doctor`)**：运行 `jt_sw.py doctor`，外科手术式打击**同声病**（遮名可辨度测试）、**直白说教台词**、**无动作纯心理旁白**及**角色提前知晓未揭晓秘密的 `knowledge_state` 穿帮**。\n4. **小说 / 历史 / IP 改编 (`adaptation`)**：执行 `sw-format-adaptation` 心理外化与支线合并；**中国历史/古装题材强制检索《中国历史文化图库》(`https://aikingtai-ctrl.github.io/jintai-history-image-library/`)**，明确区隔「史实有据 / 合理推拟 / 艺术加工」。\n5. **多季剧集引擎 (`series_bible`)**：走 `sw-series-engine-bible` 百集耐力测试 + 冷开场与 A/B/C 多线分幕交织。\n\n---\n\n## 三、世界同类型优秀影片四层汲取与反抄袭规程\n\n当创作者提出类型、调性或对标需求时，运行 `jt_sw.py comps` 并严格按 **F / O / 隔离红线** 三段式交付：\n1. **F（外部核验事实）**：仅引用经核实片名、年份、导演、摄影指导与获奖事实，严禁编造拍摄参数或不存在的时间码。\n2. **四层拆解（Purpose → Mechanism → Surface → Identity）**：\n   - 提取可迁移的**剧作信息差机制、空间权力调度、光源动机、色彩命题、声音对比**；\n   - **强制剥离 `identity_exclusions`**：严禁复制标杆影片的标志性台词、角色独有造型、特定器物或签名桥段，防范版权风险与“设计固着”。\n3. **反例预警**：必须指出盲目照搬该名作风格时最容易跌入的翻车陷阱。\n\n---\n\n## 四、导演 · 摄影 · 美学 · 世界观与调性编译规程\n\n严禁向图像/视频模型堆砌“王家卫风、电影感、8K、HDR、Masterpiece”等空洞词汇！必须调用 `jt_sw.py style-compile` 将抽象审美编译为物理参数：\n1. **导演主从原则**：最多锁定 **1 位主导演（负责机位几何调度与剪辑呼吸）+ 1 位副导演（仅限光色/介质补充）**，输出六维物理参数（焦段画幅 / 空间构图 / 光源逻辑 / 色彩命题 / 运动语法 / 节奏）。\n2. **摄影光学与 6 款胶片乳剂门禁**：结合罗杰·狄金斯单光源物理动机、视线流量五步法，调用 `analog-film-6stocks-prompts` 校验物理冲突（如 `CineStill 800T` 需夜景点光源红晕，忌无点光源正午直射；`Ilford HP5` 禁彩色词）。\n3. **资产母图铁律**：\n   - `@CHR` 角色母图遵循 **1-Head + 2-Headless** 灰底规则（仅左格胸像带完整五官，中/右格无头正背面全身服装结构）；近景人像使用**正面细腻肤理**，绝不写诱发麻点痘坑的词元或否定词；\n   - `@SCN` 空间母图作为**唯一光照方向与色温真值基准**，文本提示词不再另写冲突光色；\n   - `@PRP` 可穿戴道具保持空心无假人肢体，带文字道具提前预生成图片。\n\n---\n\n## 五、一键通达金泰平台四通道与影片小样闭环\n\n执行 `jt_sw.py build-platform --project <项目>` 与 `jt_sw.py render-reel --project <项目> --mode probe` 一键打通：\n1. **金泰 AVC 画布 (`https://avc.getlink.im:8443` / `https://avc.getlink.im:8443`)**：生成通过 0 外链、0 重叠、全端点连通校验的 `avc_canvas_import.json`（Seedance 2.5 分镜 + 独立音色连线）。\n2. **金泰 A 机 8×H100 集群 (`<A_MACHINE_8xH100_CLUSTER>`)**：\n   - 美术定妆与分镜：`h3_image_batch.json`（MiniMax-H3-Image）+ `story2board_job.json`；\n   - 视频出样与精修：`veda_h3_batch.json`（768P 单阶段 2.39× 稀疏注意力探针）+ `selflift_h3_batch.json`（文戏 6+4 / 武戏 6+6 内生二采）+ `context_ir_specs/`（跨镜连续）；\n   - 配音与配乐：`breeze_tts_jobs.json`（`:7868` 毫秒级中文对白）+ `minimax_music3_bgm.api.json`（整轨一次生成，严禁逐镜碎切）。\n3. **金泰 B 机 (`<B_MACHINE_5090_HOST>`) 与剪映**：`b_machine_mcp_plan.json`（Blender 零穿模预演 + Topaz 5090 超分）+ `jianying_draft_plan.json`。\n4. **交付前双重硬验收**：任何小样输出后，必须跑通 `ffmpeg -v error -xerror` 零报错，并通过 `read_file` **实看 `qa_quad_sheet.jpg` 四联检视板**与**实听 `sample_reel_audio.mp3` 独立音轨**，同时产出 `20.5px` 适老大字 `studio_dashboard.html` 审阅台。\n",
+  "public_links": [
+    {
+      "name": "金泰 AVC 画布创作台（外网安全通道）",
+      "url": "https://avc.getlink.im:8443",
+      "desc": "一键导入本工作台导出的 avc_canvas_import.json"
+    },
+    {
+      "name": "金泰 Smart 工作台（外网安全通道）",
+      "url": "https://avc.getlink.im:8444/control/",
+      "desc": "配置专家 System Prompt 即可随时协同编剧"
+    },
+    {
+      "name": "中国历史文化图库与影视参考图集",
+      "url": "https://aikingtai-ctrl.github.io/jintai-history-image-library/portal.html",
+      "desc": "83,779 条历史考证 · 66,000 部影视参考"
+    },
+    {
+      "name": "金泰 Story2Board AI 副导演工作台",
+      "url": "https://aikingtai-ctrl.github.io/jintai-story2board/",
+      "desc": "250 部名片蒸馏 / 58,610 精标母镜与场记单"
+    },
+    {
+      "name": "金泰国内直连总入口（四大资源库）",
+      "url": "https://aikingtai-ctrl.github.io/jintai-domestic-portal/",
+      "desc": "微信 / 浏览器统一入口"
+    }
+  ],
+  "demo_project": {
+    "manifest": {
+      "project_id": "demo_seventh_page",
+      "title": "第七页雨痕",
+      "entry_mode": "spark",
+      "entry_label": "一颗火花 / 原创概念起盘",
+      "genre": "犯罪悬疑 / 新黑色",
+      "format": "15秒电影概念短片",
+      "aspect_ratio": "16:9",
+      "target_duration_sec": 15.0,
+      "era": "1998 年南方潮湿旧城梅雨夜",
+      "version": "1.0.0",
+      "current_stage": "S0_启动",
+      "created_at": "2026-11-24T13:00:52+08:00",
+      "updated_at": "2026-11-24T13:00:52+08:00"
+    },
+    "creative_intent": {
+      "project_id": "demo_seventh_page",
+      "version": "1.0.0",
+      "title": "第七页雨痕",
+      "core_statement": "一位躲进旧书修复室十年的男人，无法永远把亲人失踪当成一页被撕掉的残纸封存。",
+      "theme": "沉默自保与迟到的真相清算",
+      "controlling_idea": "当修书匠周砚不再毁掉那张被水渍浸软的借书卡，他以重开十年旧伤为代价，守住了妹妹最后的真实行踪。",
+      "audience_takeaway": "湿冷安静却令人脊背发凉的窒息悬疑与克制余韵",
+      "genre": "犯罪悬疑 / 新黑色",
+      "tone": "冷峻潮湿、极静蓄力、压抑隐忍",
+      "emotional_destination": "从麻木孤僻的自我放逐，转入直面危险来客的清醒决断",
+      "creative_boundaries": [
+        "全程发生在1998年南方旧城即将拆迁的旧书店与雨夜门廊",
+        "绝不依赖大段独白或旁白解释十年前发生了什么"
+      ],
+      "must_not_become": [
+        "廉价喧闹的网大打脸反转短剧",
+        "全彩高饱和霓虹赛博朋克MV",
+        "直白交代前史的说明文对话"
+      ]
+    },
+    "story_architecture": {
+      "protagonist": "周砚（46岁，老城区旧书店修书匠）",
+      "external_goal": "在拆迁清库前修补完最后一批民国县志并销毁旧借阅档案",
+      "internal_need": "停止逃避十年前妹妹雨夜失踪当晚自己锁门的懦弱",
+      "ghost_and_wound": "十年前同一个梅雨夜，他听见妹妹拍门却误以为是讨债人没有开门",
+      "primary_conflict": "他以为借书卡是妹妹留下的唯一救命线索，而门口的黑伞来客正是当年追索这页记录的人",
+      "antagonistic_force": "雨水腐蚀证据的时间倒计时 + 撑黑伞来客的精准压迫",
+      "inciting_incident": "修补一本1988年旧书时，夹层滑出一张背面写着妹妹笔迹与日期的第七页借书卡",
+      "turning_points": [
+        "SH01: 借书卡正面编号 NO.007 与背面熟悉字迹迫使他停下手中的浆糊刷",
+        "SH02: 店门铜铃突然无风自响，雨水漫过门槛，磨砂玻璃外停住一把黑伞与修长身影",
+        "SH03: 周砚没有锁后门逃跑，而是用拇指抹干借书卡水渍后冷静迎向门影"
+      ],
+      "climax": "门铃余音未散，周砚把借书卡折进掌心，隔着水雾对视玻璃门外的来客开口试探",
+      "resolution": "他把选择权抓回自己手里，旧账清算正式开场",
+      "character_arcs": [
+        "周砚：逃避麻木 -> 惊觉戒备 -> 清醒应战"
+      ],
+      "causal_chain": [
+        "暴雨漏水渗进书架 -> 拆封潮湿旧书修补 -> 滑出第七页借书卡 -> 来客循雨水痕迹踩响门铃 -> 周砚决定摊牌"
+      ],
+      "theme_delivery": "不靠口号，只靠周砚从下意识藏卡到主动将卡面亮向台灯一角的动作完成主题转向"
+    },
+    "screenplay_md": "# 《第七页雨痕》15 秒概念电影短片分场剧本\n\n## 场景 1 ｜ 内景 · 1998 南方旧城「半卷斋」旧书店 · 梅雨夜\n\n△ 1998 年六月梅雨夜。狭窄潮湿的旧书店深处，仅一盏老式黄铜台灯在堆积如山的线装残卷上照出一小圈暖光。玻璃橱窗外暴雨倾泻。\n△ 46 岁的修书匠 **周砚** 戴着浅银细框眼镜，挽起深蓝工装衬衫袖口，正用竹起子小心揭开一本湿软古籍的夹层。\n△ 一张发黄边缘带水渍的 **第七页借书卡（NO.007）** 滑落桌面。周砚翻开背面，指腹停顿在泛蓝钢笔字迹上，呼吸微沉。\n△ 忽然——临街木框玻璃门上那只生锈铜铃“叮当”轻震。窗外冷青雨幕里，一把滴水的黑色长柄雨伞缓缓收拢，一道高大暗影停在门槛外。\n△ 周砚左手拇指将借书卡稳稳按入掌心，没有锁后门逃避，反而缓缓抬起头，透过细银框眼镜迎向门影，在门彻底推开前低沉稳稳吐出整句台词。\n\n**周砚**：第七页，你终于还是来拿了。\n\n△ 话音落地后，他指节微松，黄铜台灯暖光在他镜片边缘切出一线冷光，门轴吱呀推开半寸，黑伞雨水滴落青石门槛。\n",
+    "world_cinema_comps": {
+      "matches": [
+        {
+          "id": "WC01",
+          "title": "第三人 (The Third Man)",
+          "year": 1949,
+          "region": "英国",
+          "director": "Carol Reed",
+          "cinematographer": "Robert Krasker",
+          "genres": [
+            "犯罪悬疑",
+            "新黑色",
+            "谍战",
+            "历史"
+          ],
+          "tones": [
+            "冷峻潮湿",
+            "倾斜不安",
+            "幻灭"
+          ],
+          "keywords": [
+            "战后旧城",
+            "雨夜鹅卵石",
+            "长影",
+            "真相错位",
+            "门缝灯光"
+          ],
+          "facts_F": "1949 年上映，Robert Krasker 凭本片获第 23 届奥斯卡最佳黑白摄影奖；维也纳实景拍摄。",
+          "dramaturgy_mechanism": "将‘死去的好友其实活着且冷酷堕落’的认知冲击延迟至后半程，前期靠不同证词之间的微弱矛盾累积窒息感。",
+          "visual_camera_mechanism": "以克制的荷兰角倾斜构图与湿漉漉路面高反光长影，把‘城市道德地基失衡’物理化；门洞光束突袭角色面部揭露身份。",
+          "sound_tone_mechanism": "全程放弃宏大交响压迫，用单把齐特琴（Zither）的反差轻快拨弦制造冷幽默与宿命荒诞感。",
+          "transferable_rules": [
+            "泼湿地面与单点硬光制造可读取的人物长影，让光影先于台词预告压迫者到场。",
+            "真相揭露借‘门外光线突入黑暗房间/过道’一次性完成空间极性反转。"
+          ],
+          "identity_exclusions": [
+            "禁止复制维也纳摩天轮对话场景、白色大衣猫咪舔鞋或齐特琴具体旋律。"
+          ],
+          "failure_counterexample": "全片所有镜头无差别倾斜 30 度会迅速让观众视觉疲劳且丧失转折时的失衡冲击；倾斜仅用于认知失稳节点。",
+          "match_score": 50
+        },
+        {
+          "id": "WC02",
+          "title": "杀人回忆 (Memories of Murder)",
+          "year": 2003,
+          "region": "韩国",
+          "director": "奉俊昊",
+          "cinematographer": "金炯求",
+          "genres": [
+            "犯罪悬疑",
+            "现实主义",
+            "年代",
+            "警匪"
+          ],
+          "tones": [
+            "阴湿压抑",
+            "粗粝荒诞",
+            "无力宿命"
+          ],
+          "keywords": [
+            "雨夜",
+            "地方警局",
+            "田野",
+            "证物",
+            "年代",
+            "错位搭档"
+          ],
+          "facts_F": "2003 年韩国上映，奉俊昊执导、金炯求摄影，2.39:1 / 1.85:1 实景胶片质感。",
+          "dramaturgy_mechanism": "将粗野本土经验派与学院派搭档绑在同一件无法靠聪明破获的案件上，中段之后用环境湿冷与制度无力慢慢剥夺两人的确定性。",
+          "visual_camera_mechanism": "多人同框横向移动调度代替正反打碎切；阴天高湿度漫射光下用一点微弱手电或车灯划开黑暗，结尾正面直视镜头把悬案留给观众。",
+          "sound_tone_mechanism": "雨声、铁轨轰鸣与广播电台杂音构成时间迫近感，高潮处音乐骤停只留呼吸与列车声。",
+          "transferable_rules": [
+            "用‘单镜多人横移调度’处理办公室与案发现场的权力摩擦，少用廉价正反打。",
+            "雨夜空间把人物压在窄框边缘或手电筒有限光斑里，维持信息盲区。"
+          ],
+          "identity_exclusions": [
+            "禁止照搬飞踢嫌疑人、稻田排水沟或收音机点歌桥段。"
+          ],
+          "failure_counterexample": "若把案件拍成主角开挂推理秀，就会彻底失去本片最具穿透力的时代无力感与悬念重量。",
+          "match_score": 38
+        },
+        {
+          "id": "WC13",
+          "title": "银翼杀手 2049 (Blade Runner 2049)",
+          "year": 2017,
+          "region": "美国",
+          "director": "丹尼斯·维伦纽瓦",
+          "cinematographer": "罗杰·狄金斯",
+          "genres": [
+            "科幻",
+            "新黑色",
+            "犯罪悬疑"
+          ],
+          "tones": [
+            "巨物沉郁",
+            "孤寂诗意",
+            "高反差单色块"
+          ],
+          "keywords": [
+            "工业巨构",
+            "沙尘橙",
+            "水波反射光",
+            "身份追寻"
+          ],
+          "facts_F": "2017 年上映，罗杰·狄金斯凭本片获第 90 届奥斯卡最佳摄影奖。",
+          "dramaturgy_mechanism": "把经典科幻设定降维成一场安静的‘我是谁’侦查之旅：主角越接近答案越发现自己可能只是别人记忆的容器。",
+          "visual_camera_mechanism": "一个场景只用一个极其克制的几何光源（水波纹墙面漫反射、单色沙尘天光、雪夜车灯剪影），人物常以小比例置于宏大粗野主义空间中。",
+          "sound_tone_mechanism": "低频合成器如建筑震动般持续存在，与主角缓慢沉稳的脚步声形成尺度共鸣。",
+          "transferable_rules": [
+            "未来科技或架空世界必须有‘时间磨损痕迹与单一可信光源’，不要把屏幕和霓虹涂满每个角落。"
+          ],
+          "identity_exclusions": [
+            "禁止复制巨型全息广告投影互动、木马雕刻数字或拉丝维加斯橙尘蜂巢。"
+          ],
+          "failure_counterexample": "把赛博世界画成全彩高饱和紫粉网吧灯效，会破坏狄金斯式的沉静物理厚重感。",
+          "match_score": 34
+        },
+        {
+          "id": "WC05",
+          "title": "唐人街 (Chinatown)",
+          "year": 1974,
+          "region": "美国",
+          "director": "罗曼·波兰斯基",
+          "cinematographer": "约翰·A·阿隆佐",
+          "genres": [
+            "犯罪悬疑",
+            "新黑色",
+            "剧情"
+          ],
+          "tones": [
+            "日光灼热下的腐朽",
+            "主观窥视",
+            "宿命冷酷"
+          ],
+          "keywords": [
+            "私家侦探",
+            "水资源/地产阴谋",
+            "单一视点",
+            "日光黑色电影"
+          ],
+          "facts_F": "1974 年上映，Robert Towne 编剧获第 47 届奥斯卡最佳原创剧本奖。",
+          "dramaturgy_mechanism": "严格锁定侦探单一视点：观众知道的永远不多不少恰好等于主角此刻拼凑出的碎片，每次以为看清全局其实正步入更大陷阱。",
+          "visual_camera_mechanism": "把传统夜黑风高的新黑色电影搬到刺眼干燥的南加州烈日下，用百叶窗阴影、车窗反光和贴身过肩构图维持窥视压迫。",
+          "sound_tone_mechanism": "单把孤寂小号与稀疏弦乐在留白处响起，白天市井噪音掩盖暗涌。",
+          "transferable_rules": [
+            "坚守‘视点不越界’规则：主角未出场或未看见的密谋，绝不切到上帝视角剧透。",
+            "悬疑并非必须阴雨黑夜；高反差强日光与深阴影门廊同样能营造腐朽压迫。"
+          ],
+          "identity_exclusions": [
+            "禁止挪用鼻梁割伤绷带造型或水库家族乱伦谜底。"
+          ],
+          "failure_counterexample": "如果在第 20 分钟就切入反派密室交谈暴露动机，悬疑引擎会立刻泄气。",
+          "match_score": 34
+        }
+      ]
+    },
+    "director_visual_bible": {
+      "project_id": "demo_seventh_page",
+      "version": "1.0.0",
+      "director_primary": "杜琪峰",
+      "director_secondary_light_color": "王家卫",
+      "crew_master_consultants": [
+        "Roger Deakins 单点台灯与窗外街灯可指认光源逻辑",
+        "Robert Krasker 雨夜湿路面长影与门光极性反转",
+        "张叔平 湿润压抑留白呼吸剪辑"
+      ],
+      "cinematography": {
+        "aspect_ratio": "16:9",
+        "film_stock": "cinestill800t",
+        "focal_lengths": [
+          "35mm",
+          "50mm"
+        ],
+        "lighting_motivation": "店内仅有一盏 3200K 黄铜鹅颈台灯作为核心暖源，门外雨巷唯一冷青钨丝路灯穿透玻璃形成红晕与冷暗部对照",
+        "sightline_rule": "每镜先锁定台灯/雨窗物理光源，再经过前景书脊或门框阻断，最终停在手部动作与眼神微变"
+      },
+      "aesthetics_and_tone": {
+        "color_proposition": "大面积潮湿青蓝暗部逼近桌角最后一圈 3200K 暖琥珀光，象征孤独安全区被往事侵蚀",
+        "base_palette": [
+          "潮湿青灰",
+          "深海靛蓝",
+          "旧木深褐"
+        ],
+        "accent_palette": [
+          "3200K 琥珀钨丝暖黄",
+          "暗红旧印章微晕"
+        ],
+        "forbidden_colors": [
+          "赛博荧光粉",
+          "高饱和糖水亮绿",
+          "刺眼纯白棚拍光"
+        ],
+        "color_arc_nodes": [
+          "SH01 暖琥珀灯晕占 40%（尚处自保幻想）",
+          "SH02 门外冷青雨影与霓虹红晕占 75%（边界失守）",
+          "SH03 冷暖光在周砚镜片边沿各占一半（清醒迎战）"
+        ],
+        "tone_keywords": [
+          "湿冷窒息",
+          "极静蓄力",
+          "1998南国雨夜",
+          "克制决绝"
+        ],
+        "anti_tone_must_not_become": [
+          "狗血嘶吼抢戏",
+          "糖水复古风",
+          "僵硬假笑AI腔"
+        ],
+        "bgm_caption": "Film score instrumental soundtrack for 1998 rainy Hong Kong / southern Chinese neo-noir thriller, solo low-register cello, sparse muted felt piano chords, soft rain ambience, tense restrained silence and suspense without heavy percussion, studio master quality"
+      },
+      "compiled_prompts": {
+        "characters": [
+          {
+            "id": "CHR_ZHOUYAN",
+            "name": "周砚",
+            "prompt": "1-Head + 2-Headless studio character turnaround sheet on flat neutral mid-grey background (#6E7072), soft even natural studio light, natural luminous skin texture and crisp hair strands: Left panel shows chest-up portrait with clear facial bone structure of 周砚 (46-year-old lean Chinese male book restorer, calm weathered features, thin light-silver metal-rimmed glasses, neatly combed dark hair slightly damp at the temples, subtle quiet resilience), the ONLY head and face on the entire sheet; Middle panel shows headless front full-body from base of neck to shoes wearing faded dark indigo cotton work shirt with sleeves rolled to mid-forearm, worn charcoal wool trousers, brown leather work apron dusted with paper fiber; Right panel shows headless back full-body from base of neck to shoes wearing faded dark indigo cotton work shirt with sleeves rolled to mid-forearm, worn charcoal wool trousers, brown leather work apron dusted with paper fiber. Clean physical garment seams and authentic fabric weight.",
+            "aspect_ratio": "16:9",
+            "megapixels": 4,
+            "warnings": []
+          },
+          {
+            "id": "CHR_VISITOR",
+            "name": "黑伞来客",
+            "prompt": "1-Head + 2-Headless studio character turnaround sheet on flat neutral mid-grey background (#6E7072), soft even natural studio light, natural luminous skin texture and crisp hair strands: Left panel shows chest-up portrait with clear facial bone structure of 黑伞来客 (tall mysterious silhouette figure in dark charcoal raincoat holding a dripping black long-handle umbrella, face partially veiled by wet glass reflections), the ONLY head and face on the entire sheet; Middle panel shows headless front full-body from base of neck to shoes wearing matte dark charcoal trench raincoat glistening with raindrops, black rubber-soled oxford shoes; Right panel shows headless back full-body from base of neck to shoes wearing matte dark charcoal trench raincoat glistening with raindrops, black rubber-soled oxford shoes. Clean physical garment seams and authentic fabric weight.",
+            "aspect_ratio": "16:9",
+            "megapixels": 4,
+            "warnings": []
+          }
+        ],
+        "scenes": [
+          {
+            "id": "SCN_BOOKSHOP",
+            "name": "半卷斋旧书店梅雨夜内景",
+            "prompt": "Live-action architectural location plate with zero people, 1998 年南方潮湿旧城梅雨夜, 半卷斋旧书店梅雨夜内景: narrow 1998 southern Chinese secondhand bookshop interior lined with tall dark wooden bookshelves stacked with yellowing vintage books, damp plaster peeling walls, a worn oak restoration table lit solely by one warm 3200K brass gooseneck desk lamp, facing a rain-streaked frosted wooden glass street door lit from outside by a distant cool cyan streetlamp. Color palette dominated by 潮湿青灰, 深海靛蓝, 旧木深褐 with 3200K 琥珀钨丝暖黄, 暗红旧印章微晕 practical focal light; medium-long geometric ensemble staging like theatrical blocking, hard overhead and side rim light carving deep shadows with a single warm sodium practical lamp, cold slate-blue and cyan-grey night palette, prolonged tense stillness breaking into crisp decisive cut; shot on CineStill 800T 35mm tungsten film, cool teal-blue rainy shadows, warm amber practical tungsten highlights with subtle natural red halation around bare bulbs, organic silver halide grain. Authentic weathered lived-in surfaces, physically grounded light falloff.",
+            "aspect_ratio": "16:9",
+            "megapixels": 4,
+            "warnings": []
+          }
+        ],
+        "props": [
+          {
+            "id": "PRP_CARD",
+            "name": "第七页借书卡",
+            "prompt": "Studio hero prop photography on clean neutral surface, natural directional side light: 第七页借书卡 (aged yellowing cotton-paper library checkout card stained by water at one corner, red ink library stamp, 12x8cm) featuring crisp readable printed text \"NO.007\", showing authentic tactile wear, scratches, and material weight, isolated object.",
+            "aspect_ratio": "16:9",
+            "megapixels": 4,
+            "warnings": []
+          }
+        ]
+      }
+    },
+    "assets_manifest": {
+      "project_id": "demo_seventh_page",
+      "characters": [
+        {
+          "id": "CHR_ZHOUYAN",
+          "name": "周砚",
+          "visual_identity": "46-year-old lean Chinese male book restorer, calm weathered features, thin light-silver metal-rimmed glasses, neatly combed dark hair slightly damp at the temples, subtle quiet resilience",
+          "wardrobe": "faded dark indigo cotton work shirt with sleeves rolled to mid-forearm, worn charcoal wool trousers, brown leather work apron dusted with paper fiber",
+          "knowledge_state": {
+            "known_at_start": [
+              "十年前妹妹在梅雨夜失踪",
+              "书店将在月底拆迁"
+            ],
+            "unknown_before_shot": {
+              "雨伞编号": 2,
+              "来客左袖水渍": 3
+            }
+          }
+        },
+        {
+          "id": "CHR_VISITOR",
+          "name": "黑伞来客",
+          "visual_identity": "tall mysterious silhouette figure in dark charcoal raincoat holding a dripping black long-handle umbrella, face partially veiled by wet glass reflections",
+          "wardrobe": "matte dark charcoal trench raincoat glistening with raindrops, black rubber-soled oxford shoes",
+          "knowledge_state": {
+            "known_at_start": [
+              "第七页借书卡仍留在半卷斋某本古籍中"
+            ]
+          }
+        }
+      ],
+      "scenes": [
+        {
+          "id": "SCN_BOOKSHOP",
+          "name": "半卷斋旧书店梅雨夜内景",
+          "architecture_and_light": "narrow 1998 southern Chinese secondhand bookshop interior lined with tall dark wooden bookshelves stacked with yellowing vintage books, damp plaster peeling walls, a worn oak restoration table lit solely by one warm 3200K brass gooseneck desk lamp, facing a rain-streaked frosted wooden glass street door lit from outside by a distant cool cyan streetlamp"
+        }
+      ],
+      "props": [
+        {
+          "id": "PRP_CARD",
+          "name": "第七页借书卡",
+          "material_and_scale": "aged yellowing cotton-paper library checkout card stained by water at one corner, red ink library stamp, 12x8cm",
+          "exact_text": "NO.007"
+        }
+      ],
+      "voices": [
+        {
+          "id": "V_ZHOUYAN",
+          "name": "周砚原声",
+          "breeze_voice_id": "zh_adult_male_calm",
+          "duration": 5.0,
+          "instruction": "一位46岁中年男性，用克制、低沉、咬字干脆清晰的普通话平静开口，每字清楚不吞音。"
+        }
+      ]
+    },
+    "scene_intents": {
+      "scenes": [
+        {
+          "scene_id": "S01",
+          "story_function": "在梅雨夜旧书店的极静氛围里完成‘发现第七页借书卡’到‘主动迎对十年来客’的戏剧价值翻转",
+          "why_this_scene_exists": "删掉这场戏，主角从十年逃避转向直面清算的核心动机与黑伞来客压迫感将完全丧失",
+          "state_before": "周砚试图在拆迁前默默抹掉过去痕迹",
+          "state_after": "周砚选择留下直面门外的追索者",
+          "central_conflict": "藏起残页继续偷生 vs 摊牌追查妹妹失踪真相",
+          "emotion_start": "麻木孤僻的平静",
+          "emotion_end": "沉静凌厉的戒备决断",
+          "subtext": "那句欢迎不是客套，而是十年前错失开门后的自我救赎宣战"
+        }
+      ]
+    },
+    "shot_semantic_packets": {
+      "default_h3_frames": 124,
+      "shots": [
+        {
+          "shot_id": "SH01",
+          "scene_id": "S01",
+          "shot_order": 1,
+          "duration_sec": 5.0,
+          "h3_frames": 124,
+          "shot_size": "Medium Close-Up",
+          "lens": "35mm",
+          "action_type": "文戏微表情",
+          "story_function": "展现修书匠周砚发现夹层第七页借书卡时从麻木到骤然紧绷的0.5秒情绪失守，并在门铃声响起时冷静吐词迎战",
+          "visual_subject": "黄铜台灯暖光下戴细银框眼镜、手按借书卡正对门口的周砚",
+          "emotion_start": "专注麻木",
+          "emotion_end": "清醒戒备",
+          "subtext": "嘴上平静道出‘你终于还是来拿了’，实则暗示他早已做好十年前那场未竟摊牌的准备",
+          "visible_action": "周砚俯身在堆满旧书的木桌旁捏住一张发黄借书卡，门外雨夜光影闪动门铃微响时他缓缓抬头望向门口玻璃影",
+          "visible_action_en": "Inside a dim rainy 1998 wooden secondhand bookshop lit by one warm 3200K brass desk lamp against cool cyan rain outside, Zhou Yan leans over antique books holding a yellowed checkout card, pauses as the brass door bell trembles, and raises his gaze steadily toward the wet glass storefront",
+          "micro_action": "左手指节在台灯暖光下短暂攥紧卡片边缘半秒，随即呼吸沉稳放平双肩并站定开口",
+          "micro_action_en": "his fingers tighten briefly on the damp card edge for half a second, then his shoulders settle calmly and his jaw sets with quiet resolve before speaking",
+          "camera_intent": "35mm 稳态微推进至半身近景并在人物抬头对视门影瞬间锁死机位",
+          "camera_intent_en": "slow steady 35mm dolly push-in holding geometric stillness as he locks eyes toward the doorway",
+          "attention_path": "桌角黄铜暖灯光晕 -> 夹层滑出的借书卡 -> 周砚镜片反光与抬眼视线",
+          "continuity_in": "暴雨拍窗，店内只有右前方一盏暖黄台灯照亮桌面",
+          "continuity_out": "周砚手持卡片抬头面向店门玻璃定格",
+          "must_preserve": [
+            "1998旧书店窄纵深空间与单盏台灯暖源",
+            "周砚浅银细框眼镜与深蓝工装衬衫",
+            "发黄纸质借书卡"
+          ],
+          "must_not_invent": [
+            "现代手机或LED灯牌",
+            "多余顾客",
+            "夸张嘶吼表情"
+          ],
+          "reference_assets": [
+            "SCN_BOOKSHOP",
+            "CHR_ZHOUYAN",
+            "PRP_CARD"
+          ],
+          "speaker": "周砚",
+          "voice_id": "V_ZHOUYAN",
+          "dialogue_line": "第七页，你终于还是来拿了。",
+          "audio_sfx": "梅雨急雨敲打玻璃窗声、老式铜铃微弱清响、泛黄纸页摩擦声",
+          "audio_sfx_en": "steady heavy monsoon rain tapping storefront glass, subtle antique brass door bell chime, crisp paper rustle",
+          "seedance_prompt": "[参考图绑定] @image1 锁定场景 半卷斋旧书店梅雨夜内景 的空间结构、色温与主光源唯一基准，@image2 锁定角色 周砚 的面部骨相特征与服装材质（仅提取人物外貌材质，严禁复制灰底三视图拼版分栏），@image3 锁定核心道具 第七页借书卡 的物理尺度与磨损细节。生成一段5秒、16:9电影级实拍画面（杜琪峰几何调度与CineStill 800T质感，35mm镜头，35mm 稳态微推进至半身近景并在人物抬头对视门影瞬间锁死机位）。0-5秒：周砚俯身在堆满旧书的木桌旁捏住一张发黄借书卡，门外雨夜光影闪动门铃微响时他缓缓抬头望向门口玻璃影，微动作细节：左手指节在台灯暖光下短暂攥紧卡片边缘半秒，随即呼吸沉稳放平双肩并站定开口。 人物站稳完成呼吸后开口 {周砚：第七页，你终于还是来拿了。} 话音完整收束后再承接下一动作。 (不生成BGM，保持纯环境与人物实声) <梅雨急雨敲打玻璃窗声、老式铜铃微弱清响、泛黄纸页摩擦声> 画面干净无文字水印、无字幕、人物骨相与服装严格一致。",
+          "h3_prompt": "subject_definitions:\n<Scene> matches the exact architecture, practical lighting direction, and atmospheric palette of <Picture 1> (半卷斋旧书店梅雨夜内景).\n<Subject 2> is 周砚 from <Picture 2> (46-year-old lean Chinese male book restorer, calm weathered features, thin light-silver metal-rimmed glasses, neatly combed dark hair slightly damp at the temples, subtle quiet resilience, wearing faded dark indigo cotton work shirt with sleeves rolled to mid-forearm, worn charcoal wool trousers, brown leather work apron dusted with paper fiber).\n<Prop 3> matches 第七页借书卡 from <Picture 3>.\n\nsummary:\n[Shot SH01] Inside a dim rainy 1998 wooden secondhand bookshop lit by one warm 3200K brass desk lamp against cool cyan rain outside, Zhou Yan leans over antique books holding a yellowed checkout card, pauses as the brass door bell trembles, and raises his gaze steadily toward the wet glass storefront. After settling weight and taking a quiet breath, 周砚 speaks clearly in Mandarin: \"第七页，你终于还是来拿了。\", finishing the entire sentence calmly before moving.\n\nretention_analysis:\n<Scene> (<Picture 1>): preserve room geometry, light temperature, and weathered textures.\n<Subject 2> (<Picture 2>): maintain exact facial bone structure, eyewear, hairstyle, and clothing.\n<Prop 3> (<Picture 3>): maintain exact material and scale.\n\ndetailed_description:\nLive-action 24fps film footage (Medium Close-Up, 35mm), natural luminous skin texture and crisp fabric folds, slow steady 35mm dolly push-in holding geometric stillness as he locks eyes toward the doorway. Physical micro-acting: his fingers tighten briefly on the damp card edge for half a second, then his shoulders settle calmly and his jaw sets with quiet resolve before speaking. medium-long geometric ensemble staging like theatrical blocking, hard overhead and side rim light carving deep shadows with a single warm sodium practical lamp, cold slate-blue and cyan-grey night palette, prolonged tense stillness breaking into crisp decisive cut; secondary color-light atmosphere inspired by foreground obstruction framing through glass and doorframe with off-center subject, practical tungsten and wet neon reflections, deep teal shadows clashing with amber-crimson highlights, textured 35mm film grain; shot on CineStill 800T 35mm tungsten film, cool teal-blue rainy shadows, warm amber practical tungsten highlights with subtle natural red halation around bare bulbs, organic silver halide grain; visual color thesis: 大面积潮湿青蓝暗部逼近桌角最后一圈 3200K 暖琥珀光，象征孤独安全区被往事侵蚀.\n\noverall_soundscape:\nsteady heavy monsoon rain tapping storefront glass, subtle antique brass door bell chime, crisp paper rustle."
+        },
+        {
+          "shot_id": "SH02",
+          "scene_id": "S01",
+          "shot_order": 2,
+          "duration_sec": 5.0,
+          "h3_frames": 124,
+          "shot_size": "Medium Long Shot",
+          "lens": "50mm",
+          "action_type": "悬疑站位几何",
+          "story_function": "以杜琪峰式门框几何站位建立压迫者入场与双方空间距离",
+          "visual_subject": "磨砂木框玻璃门外缓缓收伞的黑色高大剪影与门缝透入的冷青路灯长影",
+          "emotion_start": "暗流涌动",
+          "emotion_end": "窒息压迫",
+          "subtext": "雨伞滴水落过门槛的每一秒都在蚕食周砚退缩十年的安全边界",
+          "visible_action": "木框玻璃门缓缓推开半尺，雨水顺着黑色长柄伞尖滴落在青石门槛上，黑伞来客隐在帽檐雨影下静立不动",
+          "visible_action_en": "From inside the darkened bookshop looking past tall foreground bookshelves toward the street entrance, the frosted wooden glass door opens slightly; cool cyan streetlight spills across the wet stone threshold as a tall visitor in a dark raincoat lowers a dripping black umbrella and stands motionless in silhouette",
+          "micro_action": "黑伞伞尖水珠连落两滴后手腕稳稳悬停，门扇阴影斜切过书店地板",
+          "micro_action_en": "raindrops fall steadily from the umbrella tip before the gloved hand stills completely, casting a sharp cold shadow across the floor",
+          "camera_intent": "50mm 绝对固定低机位门框透视构图（杜琪峰几何站位美学）",
+          "camera_intent_en": "50mm locked-off static camera framed symmetrically through foreground bookshelves like theatrical blocking",
+          "attention_path": "前景黑暗书架通道 -> 门缝切入冷青长影 -> 伞尖滴水落点",
+          "continuity_in": "承接SH01铜铃刚停、门影出现",
+          "continuity_out": "门缝半开、伞尖停止滴水、双方静止对峙",
+          "must_preserve": [
+            "黑伞与湿深灰风衣剪影",
+            "门外冷青路灯色温对照店内暗部"
+          ],
+          "must_not_invent": [
+            "突然掏枪或夸张特效闪光",
+            "现代街头霓虹汉字招牌"
+          ],
+          "reference_assets": [
+            "SCN_BOOKSHOP",
+            "CHR_VISITOR"
+          ],
+          "speaker": "",
+          "voice_id": "",
+          "dialogue_line": "",
+          "audio_sfx": "雨伞水珠砸落青石板声、老旧木门轴低沉吱呀声",
+          "audio_sfx_en": "water dripping onto wet stone threshold, low wooden door hinge creak, distant rain rush",
+          "seedance_prompt": "[参考图绑定] @image1 锁定场景 半卷斋旧书店梅雨夜内景 的空间结构、色温与主光源唯一基准，@image2 锁定角色 黑伞来客 的面部骨相特征与服装材质（仅提取人物外貌材质，严禁复制灰底三视图拼版分栏）。生成一段5秒、16:9电影级实拍画面（杜琪峰几何调度与CineStill 800T质感，50mm镜头，50mm 绝对固定低机位门框透视构图（杜琪峰几何站位美学））。0-5秒：木框玻璃门缓缓推开半尺，雨水顺着黑色长柄伞尖滴落在青石门槛上，黑伞来客隐在帽檐雨影下静立不动，微动作细节：黑伞伞尖水珠连落两滴后手腕稳稳悬停，门扇阴影斜切过书店地板。 (不生成BGM，保持纯环境与人物实声) <雨伞水珠砸落青石板声、老旧木门轴低沉吱呀声> 画面干净无文字水印、无字幕、人物骨相与服装严格一致。",
+          "h3_prompt": "subject_definitions:\n<Scene> matches the exact architecture, practical lighting direction, and atmospheric palette of <Picture 1> (半卷斋旧书店梅雨夜内景).\n<Subject 2> is 黑伞来客 from <Picture 2> (tall mysterious silhouette figure in dark charcoal raincoat holding a dripping black long-handle umbrella, face partially veiled by wet glass reflections, wearing matte dark charcoal trench raincoat glistening with raindrops, black rubber-soled oxford shoes).\n\nsummary:\n[Shot SH02] From inside the darkened bookshop looking past tall foreground bookshelves toward the street entrance, the frosted wooden glass door opens slightly; cool cyan streetlight spills across the wet stone threshold as a tall visitor in a dark raincoat lowers a dripping black umbrella and stands motionless in silhouette.\n\nretention_analysis:\n<Scene> (<Picture 1>): preserve room geometry, light temperature, and weathered textures.\n<Subject 2> (<Picture 2>): maintain exact facial bone structure, eyewear, hairstyle, and clothing.\n\ndetailed_description:\nLive-action 24fps film footage (Medium Long Shot, 50mm), natural luminous skin texture and crisp fabric folds, 50mm locked-off static camera framed symmetrically through foreground bookshelves like theatrical blocking. Physical micro-acting: raindrops fall steadily from the umbrella tip before the gloved hand stills completely, casting a sharp cold shadow across the floor. medium-long geometric ensemble staging like theatrical blocking, hard overhead and side rim light carving deep shadows with a single warm sodium practical lamp, cold slate-blue and cyan-grey night palette, prolonged tense stillness breaking into crisp decisive cut; secondary color-light atmosphere inspired by foreground obstruction framing through glass and doorframe with off-center subject, practical tungsten and wet neon reflections, deep teal shadows clashing with amber-crimson highlights, textured 35mm film grain; shot on CineStill 800T 35mm tungsten film, cool teal-blue rainy shadows, warm amber practical tungsten highlights with subtle natural red halation around bare bulbs, organic silver halide grain; visual color thesis: 大面积潮湿青蓝暗部逼近桌角最后一圈 3200K 暖琥珀光，象征孤独安全区被往事侵蚀.\n\noverall_soundscape:\nwater dripping onto wet stone threshold, low wooden door hinge creak, distant rain rush."
+        },
+        {
+          "shot_id": "SH03",
+          "scene_id": "S01",
+          "shot_order": 3,
+          "duration_sec": 5.0,
+          "h3_frames": 124,
+          "shot_size": "Close-Up",
+          "lens": "50mm",
+          "action_type": "潜台词收束与余韵",
+          "story_function": "通过借书卡水渍与眼镜冷暖双色交界完成短片尾声留白",
+          "visual_subject": "周砚稳握卡片摊在台灯边沿的手指与他半明半暗的冷静侧颜",
+          "emotion_start": "紧绷试探",
+          "emotion_end": "沉静决绝余韵",
+          "subtext": "卡片上十年前的日期不再被藏进抽屉，这一刻开始无人能全身而退",
+          "visible_action": "周砚用拇指指腹轻轻抹去借书卡边角的雨痕，将卡片推向黄铜台灯光圈正中，随后平静抬眼定格",
+          "visible_action_en": "Close-up of Zhou Yan gently wiping a drop of rain from the corner of the yellowed library card and sliding it squarely into the warm amber circle of the brass desk lamp, then lifting his cool gaze balanced between warm tungsten light and cyan doorway shadow",
+          "micro_action": "指腹停在红色印章旁边半秒，呼出一口极轻的气，眨眼缓慢而笃定",
+          "micro_action_en": "his thumb rests steadily beside the faded ink stamp, followed by one calm slow exhale and unblinking composure",
+          "camera_intent": "50mm 贴近手部缓慢上摇至眼部冷暖光交界特写后彻底静止",
+          "camera_intent_en": "50mm slow subtle tilt from the illuminated card on the oak table up to his eyes split by warm lamp and cool doorway light",
+          "attention_path": "被推入光圈的借书卡 -> 手指稳驻 -> 镜片冷暖反光双色交界",
+          "continuity_in": "承接SH02门外黑伞停驻对峙",
+          "continuity_out": "台灯下卡片与周砚冷静眼眸双双定格收束",
+          "must_preserve": [
+            "第七页借书卡水渍与旧木桌纹理",
+            "浅银细框眼镜与沉静神情"
+          ],
+          "must_not_invent": [
+            "突兀片名文字浮现",
+            "多余配角闯入"
+          ],
+          "reference_assets": [
+            "SCN_BOOKSHOP",
+            "CHR_ZHOUYAN",
+            "PRP_CARD"
+          ],
+          "speaker": "",
+          "voice_id": "",
+          "dialogue_line": "",
+          "audio_sfx": "老式机械座钟轻响、窗外细密雨声渐远",
+          "audio_sfx_en": "faint mechanical wall clock tick and lingering rain ambience",
+          "seedance_prompt": "[参考图绑定] @image1 锁定场景 半卷斋旧书店梅雨夜内景 的空间结构、色温与主光源唯一基准，@image2 锁定角色 周砚 的面部骨相特征与服装材质（仅提取人物外貌材质，严禁复制灰底三视图拼版分栏），@image3 锁定核心道具 第七页借书卡 的物理尺度与磨损细节。生成一段5秒、16:9电影级实拍画面（杜琪峰几何调度与CineStill 800T质感，50mm镜头，50mm 贴近手部缓慢上摇至眼部冷暖光交界特写后彻底静止）。0-5秒：周砚用拇指指腹轻轻抹去借书卡边角的雨痕，将卡片推向黄铜台灯光圈正中，随后平静抬眼定格，微动作细节：指腹停在红色印章旁边半秒，呼出一口极轻的气，眨眼缓慢而笃定。 (不生成BGM，保持纯环境与人物实声) <老式机械座钟轻响、窗外细密雨声渐远> 画面干净无文字水印、无字幕、人物骨相与服装严格一致。",
+          "h3_prompt": "subject_definitions:\n<Scene> matches the exact architecture, practical lighting direction, and atmospheric palette of <Picture 1> (半卷斋旧书店梅雨夜内景).\n<Subject 2> is 周砚 from <Picture 2> (46-year-old lean Chinese male book restorer, calm weathered features, thin light-silver metal-rimmed glasses, neatly combed dark hair slightly damp at the temples, subtle quiet resilience, wearing faded dark indigo cotton work shirt with sleeves rolled to mid-forearm, worn charcoal wool trousers, brown leather work apron dusted with paper fiber).\n<Prop 3> matches 第七页借书卡 from <Picture 3>.\n\nsummary:\n[Shot SH03] Close-up of Zhou Yan gently wiping a drop of rain from the corner of the yellowed library card and sliding it squarely into the warm amber circle of the brass desk lamp, then lifting his cool gaze balanced between warm tungsten light and cyan doorway shadow.\n\nretention_analysis:\n<Scene> (<Picture 1>): preserve room geometry, light temperature, and weathered textures.\n<Subject 2> (<Picture 2>): maintain exact facial bone structure, eyewear, hairstyle, and clothing.\n<Prop 3> (<Picture 3>): maintain exact material and scale.\n\ndetailed_description:\nLive-action 24fps film footage (Close-Up, 50mm), natural luminous skin texture and crisp fabric folds, 50mm slow subtle tilt from the illuminated card on the oak table up to his eyes split by warm lamp and cool doorway light. Physical micro-acting: his thumb rests steadily beside the faded ink stamp, followed by one calm slow exhale and unblinking composure. medium-long geometric ensemble staging like theatrical blocking, hard overhead and side rim light carving deep shadows with a single warm sodium practical lamp, cold slate-blue and cyan-grey night palette, prolonged tense stillness breaking into crisp decisive cut; secondary color-light atmosphere inspired by foreground obstruction framing through glass and doorframe with off-center subject, practical tungsten and wet neon reflections, deep teal shadows clashing with amber-crimson highlights, textured 35mm film grain; shot on CineStill 800T 35mm tungsten film, cool teal-blue rainy shadows, warm amber practical tungsten highlights with subtle natural red halation around bare bulbs, organic silver halide grain; visual color thesis: 大面积潮湿青蓝暗部逼近桌角最后一圈 3200K 暖琥珀光，象征孤独安全区被往事侵蚀.\n\noverall_soundscape:\nfaint mechanical wall clock tick and lingering rain ambience."
+        }
+      ]
+    },
+    "semantic_gate_report": {
+      "verdict": "PASS",
+      "rollback_count": 0,
+      "revise_count": 0,
+      "doctor_summary": {
+        "status": "PASS",
+        "error_count": 0,
+        "warning_count": 0,
+        "dialogue_speakers": {
+          "周砚": 1
+        },
+        "findings": []
+      },
+      "rollback_issues": [],
+      "revise_issues": [],
+      "shots_checked": 3
+    },
+    "avc_canvas_import": {
+      "version": "1.0",
+      "nodes": [
+        {
+          "id": "demo_seventh_page_voice_1",
+          "type": "audio",
+          "title": "周砚原声",
+          "position": {
+            "x": 0,
+            "y": 0
+          },
+          "data": {
+            "url": "/manus-storage/audio/jt_sw/V_ZHOUYAN.mp3",
+            "name": "周砚原声",
+            "status": "success",
+            "duration": 5.0,
+            "audioCategory": "upload"
+          }
+        },
+        {
+          "id": "demo_seventh_page_sh01",
+          "type": "video_task",
+          "title": "SH01｜00-05s",
+          "position": {
+            "x": 460,
+            "y": 0
+          },
+          "data": {
+            "provider": "jimeng_multimodal2video",
+            "status": "idle",
+            "referenceMode": "reference",
+            "prompt": "[参考图绑定] @image1 锁定场景 半卷斋旧书店梅雨夜内景 的空间结构、色温与主光源唯一基准，@image2 锁定角色 周砚 的面部骨相特征与服装材质（仅提取人物外貌材质，严禁复制灰底三视图拼版分栏），@image3 锁定核心道具 第七页借书卡 的物理尺度与磨损细节。生成一段5秒、16:9电影级实拍画面（杜琪峰几何调度与CineStill 800T质感，35mm镜头，35mm 稳态微推进至半身近景并在人物抬头对视门影瞬间锁死机位）。0-5秒：周砚俯身在堆满旧书的木桌旁捏住一张发黄借书卡，门外雨夜光影闪动门铃微响时他缓缓抬头望向门口玻璃影，微动作细节：左手指节在台灯暖光下短暂攥紧卡片边缘半秒，随即呼吸沉稳放平双肩并站定开口。 人物站稳完成呼吸后开口 {周砚：第七页，你终于还是来拿了。} 话音完整收束后再承接下一动作。 (不生成BGM，保持纯环境与人物实声) <梅雨急雨敲打玻璃窗声、老式铜铃微弱清响、泛黄纸页摩擦声> 画面干净无文字水印、无字幕、人物骨相与服装严格一致。",
+            "params": {
+              "model_version": "seedance2.5",
+              "ratio": "16:9",
+              "resolution": "720p",
+              "duration": 5
+            },
+            "referenceImages": [
+              {
+                "id": "demo_seventh_page_sh01_r1",
+                "url": "/manus-storage/generated/demo_seventh_page_SCN_BOOKSHOP.png",
+                "source": "upload"
+              },
+              {
+                "id": "demo_seventh_page_sh01_r2",
+                "url": "/manus-storage/generated/demo_seventh_page_CHR_ZHOUYAN.png",
+                "source": "upload"
+              },
+              {
+                "id": "demo_seventh_page_sh01_r3",
+                "url": "/manus-storage/generated/demo_seventh_page_PRP_CARD.png",
+                "source": "upload"
+              }
+            ],
+            "referenceImageUrl": "/manus-storage/generated/demo_seventh_page_SCN_BOOKSHOP.png",
+            "referenceAudioUrl": "/manus-storage/audio/jt_sw/V_ZHOUYAN.mp3"
+          }
+        },
+        {
+          "id": "demo_seventh_page_sh02",
+          "type": "video_task",
+          "title": "SH02｜05-10s",
+          "position": {
+            "x": 1140,
+            "y": 0
+          },
+          "data": {
+            "provider": "jimeng_multimodal2video",
+            "status": "idle",
+            "referenceMode": "reference",
+            "prompt": "[参考图绑定] @image1 锁定场景 半卷斋旧书店梅雨夜内景 的空间结构、色温与主光源唯一基准，@image2 锁定角色 黑伞来客 的面部骨相特征与服装材质（仅提取人物外貌材质，严禁复制灰底三视图拼版分栏）。生成一段5秒、16:9电影级实拍画面（杜琪峰几何调度与CineStill 800T质感，50mm镜头，50mm 绝对固定低机位门框透视构图（杜琪峰几何站位美学））。0-5秒：木框玻璃门缓缓推开半尺，雨水顺着黑色长柄伞尖滴落在青石门槛上，黑伞来客隐在帽檐雨影下静立不动，微动作细节：黑伞伞尖水珠连落两滴后手腕稳稳悬停，门扇阴影斜切过书店地板。 (不生成BGM，保持纯环境与人物实声) <雨伞水珠砸落青石板声、老旧木门轴低沉吱呀声> 画面干净无文字水印、无字幕、人物骨相与服装严格一致。",
+            "params": {
+              "model_version": "seedance2.5",
+              "ratio": "16:9",
+              "resolution": "720p",
+              "duration": 5
+            },
+            "referenceImages": [
+              {
+                "id": "demo_seventh_page_sh02_r1",
+                "url": "/manus-storage/generated/demo_seventh_page_SCN_BOOKSHOP.png",
+                "source": "upload"
+              },
+              {
+                "id": "demo_seventh_page_sh02_r2",
+                "url": "/manus-storage/generated/demo_seventh_page_CHR_VISITOR.png",
+                "source": "upload"
+              }
+            ],
+            "referenceImageUrl": "/manus-storage/generated/demo_seventh_page_SCN_BOOKSHOP.png"
+          }
+        },
+        {
+          "id": "demo_seventh_page_sh03",
+          "type": "video_task",
+          "title": "SH03｜10-15s",
+          "position": {
+            "x": 1820,
+            "y": 0
+          },
+          "data": {
+            "provider": "jimeng_multimodal2video",
+            "status": "idle",
+            "referenceMode": "reference",
+            "prompt": "[参考图绑定] @image1 锁定场景 半卷斋旧书店梅雨夜内景 的空间结构、色温与主光源唯一基准，@image2 锁定角色 周砚 的面部骨相特征与服装材质（仅提取人物外貌材质，严禁复制灰底三视图拼版分栏），@image3 锁定核心道具 第七页借书卡 的物理尺度与磨损细节。生成一段5秒、16:9电影级实拍画面（杜琪峰几何调度与CineStill 800T质感，50mm镜头，50mm 贴近手部缓慢上摇至眼部冷暖光交界特写后彻底静止）。0-5秒：周砚用拇指指腹轻轻抹去借书卡边角的雨痕，将卡片推向黄铜台灯光圈正中，随后平静抬眼定格，微动作细节：指腹停在红色印章旁边半秒，呼出一口极轻的气，眨眼缓慢而笃定。 (不生成BGM，保持纯环境与人物实声) <老式机械座钟轻响、窗外细密雨声渐远> 画面干净无文字水印、无字幕、人物骨相与服装严格一致。",
+            "params": {
+              "model_version": "seedance2.5",
+              "ratio": "16:9",
+              "resolution": "720p",
+              "duration": 5
+            },
+            "referenceImages": [
+              {
+                "id": "demo_seventh_page_sh03_r1",
+                "url": "/manus-storage/generated/demo_seventh_page_SCN_BOOKSHOP.png",
+                "source": "upload"
+              },
+              {
+                "id": "demo_seventh_page_sh03_r2",
+                "url": "/manus-storage/generated/demo_seventh_page_CHR_ZHOUYAN.png",
+                "source": "upload"
+              },
+              {
+                "id": "demo_seventh_page_sh03_r3",
+                "url": "/manus-storage/generated/demo_seventh_page_PRP_CARD.png",
+                "source": "upload"
+              }
+            ],
+            "referenceImageUrl": "/manus-storage/generated/demo_seventh_page_SCN_BOOKSHOP.png"
+          }
+        }
+      ],
+      "edges": [
+        {
+          "id": "e_demo_seventh_page_voice_1_demo_seventh_page_sh01",
+          "source": "demo_seventh_page_voice_1",
+          "target": "demo_seventh_page_sh01",
+          "sourceHandle": "output",
+          "targetHandle": "input",
+          "sourceNodeId": "demo_seventh_page_voice_1",
+          "targetNodeId": "demo_seventh_page_sh01",
+          "sourcePort": "output",
+          "targetPort": "input"
+        }
+      ]
+    },
+    "sample_reel_manifest": {
+      "project_id": "demo_seventh_page",
+      "mode": "remux",
+      "shot_id": "SH01",
+      "reference_image": "assets/SH01_anchor.jpg",
+      "raw_video": "06_sample_reel/probe_SH01_raw.mp4",
+      "tts_wav": "06_sample_reel/tts_SH01.wav",
+      "bgm_fulltrack": "06_sample_reel/bgm_fulltrack.flac",
+      "bgm_telemetry": {
+        "port": 8195,
+        "prompt_id": "42b1530f-e098-4382-823d-2479dbee4ebc",
+        "elapsed_sec": 64.63,
+        "bytes": 526354,
+        "output_path": "06_sample_reel/bgm_fulltrack.flac"
+      },
+      "final_mp4": "assets/sample_reel.mp4",
+      "final_mp4_bytes": 5725201,
+      "final_mp4_sha256": "07c7a07c286b3960b66ed8495e9da678faf02d49414d4dc6ed860311666ba2a8",
+      "duration_sec": 5.167,
+      "probe_meta": {
+        "resolution": "1344x768",
+        "codec": "h264",
+        "fps": "24/1",
+        "decode_rc": 0,
+        "video_port": 8195,
+        "mode": "remux",
+        "bgm_port": 8195,
+        "tts_mode": "direction"
+      },
+      "audit_mp3": "assets/sample_reel_audio.mp3",
+      "qa_quad_sheet": "assets/qa_quad_sheet.jpg",
+      "ear_check_status": "PASS",
+      "ear_check_note": "经 read_file 实耳听审 sample_reel_audio.mp3：0.45s 入话留白后清晰完整播报「第七页，你终于还是来拿了。」（zh_adult_male_calm direction），整轨大提琴与弱音钢琴 BGM 铺底平稳，无截字、无爆音。",
+      "visual_check_status": "PASS",
+      "visual_check_note": "经 read_file 实看 SH01_anchor.png 与 qa_quad_sheet.jpg：1998 雨夜旧书店黄铜台灯暖光与窗外冷青红晕光比精准，周砚细银框眼镜、皮肤肌理、手部持卡动作及首中末帧动态连贯，无水印无三视图拼版泄漏。"
+    },
+    "assets_info": {
+      "SH01_anchor.jpg": {
+        "path": "assets/SH01_anchor.jpg",
+        "bytes": 939024,
+        "resolution": "2720x1536"
+      },
+      "qa_quad_sheet.jpg": {
+        "path": "assets/qa_quad_sheet.jpg",
+        "bytes": 371434
+      },
+      "sample_reel.mp4": {
+        "path": "assets/sample_reel.mp4",
+        "bytes": 5725201
+      },
+      "sample_reel_audio.mp3": {
+        "path": "assets/sample_reel_audio.mp3",
+        "bytes": 38788
+      }
+    }
+  }
+}
