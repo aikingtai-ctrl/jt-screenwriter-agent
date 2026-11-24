@@ -30,7 +30,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site/downloads
-          rsync -a --exclude='.git' --exclude='.github' --exclude='tools' --exclude='scripts' --exclude='android_app' --exclude='downloads' ./ _site/
+          rsync -a --exclude='.git' --exclude='.github' --exclude='tools' --exclude='scripts' --exclude='android_app' --exclude='ios_app' --exclude='downloads' ./ _site/
           LATEST_TAG="$(gh release list --repo "${GITHUB_REPOSITORY}" --limit 1 --json tagName --jq '.[0].tagName' || true)"
           if [ -n "${LATEST_TAG}" ]; then
             gh release download "${LATEST_TAG}" --repo "${GITHUB_REPOSITORY}" --pattern 'JT-Screenwriter-Android.apk' --pattern 'SHA256SUMS.txt' -D _site/downloads --clobber || true

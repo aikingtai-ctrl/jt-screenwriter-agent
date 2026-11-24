@@ -847,6 +847,32 @@
   body.is-android-app .tab-download-btn { display: none !important; }
   body.is-android-app .mobile-tabbar { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 
+  html.jt-native-ios #openAppDownloadBtn,
+  html.jt-native-ios #tabDownloadBtn,
+  html.jt-native-ios #authGateAppBtn,
+  html.jt-native-ios #appDownloadModal,
+  html.jt-native-ios #bridgeOpenAppModalBtn { display: none !important; }
+  html.jt-native-ios .mobile-tabbar { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  .studio-media-card video,
+  .studio-media-card img.preview-img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 14px;
+    background: #141416;
+    display: block;
+    margin-top: 12px;
+  }
+  .studio-ref-thumb {
+    width: 72px;
+    height: 44px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--hairline-soft);
+    vertical-align: middle;
+  }
+
   .mobile-tabbar {
     display: none;
     position: fixed;
@@ -1264,6 +1290,7 @@
     <nav class="apple-links" aria-label="主导航">
       <a class="apple-link active" href="#writer-entry">写作</a>
       <a class="apple-link" href="#style-lab">主创班底</a>
+      <a class="apple-link" href="#jintai-studio">出图出片</a>
       <a class="apple-link" href="#comps-library">佳片库</a>
       <a class="apple-link" href="#reel-stage">实渲小样</a>
       <a class="apple-link" href="#platform-bridge">平台对接</a>
@@ -1514,6 +1541,8 @@
 
         <div class="hidden" id="styleResultWrap" style="margin-top:24px">
           <div class="row-actions" style="margin-top:0; margin-bottom:14px">
+            <button class="btn compact primary" id="sendCompiledImageBtn" type="button">发送到金泰生图 ›</button>
+            <button class="btn compact secondary-fill" id="sendCompiledVideoBtn" type="button">发送到金泰生视频 ›</button>
             <button class="btn compact secondary-on-gray" id="copyH3PromptBtn" type="button">复制 H3 Ref2VA 提示词</button>
             <button class="btn compact secondary-on-gray" id="copySeedanceBtn" type="button">复制 Seedance 2.5 提示词</button>
             <button class="btn compact secondary-on-gray" id="copyCrewBriefBtn" type="button">复制全班底工艺简报</button>
@@ -1535,9 +1564,137 @@
   </section>
 
   <!-- =========================================================
+       BAND 2.5: 金泰平台实时出图与出片（直连 A 机 8×H100 / 云端中继）
+       ========================================================= -->
+  <section class="band band-gray" id="jintai-studio">
+    <div class="band-inner">
+      <div class="section-head">
+        <div>
+          <h2>金泰平台出图与出片</h2>
+          <p class="sec-desc">一键调度工作室 A 机 8×H100（MiniMax-H3-Image &amp; Veda H3）生成 4MP 剧照与 768P 样片；内网与手机 4G/5G 均可使用。</p>
+        </div>
+        <div class="row-actions" style="margin-top:0">
+          <span class="status-pill-ok" id="jtStudioStatusPill">正在检测算力状态…</span>
+          <button class="link-action" id="jtRefreshJobsBtn" type="button">刷新状态与成品</button>
+        </div>
+      </div>
+
+      <div class="comps-toolbar" style="margin-bottom:18px">
+        <div class="segmented-track" id="jtGenTabs">
+          <button class="seg-btn active" type="button" data-gen-tab="image">生成剧照 / 概念图</button>
+          <button class="seg-btn" type="button" data-gen-tab="video">图生视频 / 文生视频</button>
+        </div>
+      </div>
+
+      <div class="panel-soft">
+        <div id="jtGenImagePane">
+          <label class="fld">生图提示词（可直接书写，或从「主创班底与胶片」一键带入）
+            <textarea class="txt-in" id="jtGenImgPrompt" rows="4" style="resize:vertical; line-height:1.6" placeholder="描述场景光线、人物造型与镜头质感，例如：Live-action 35mm cinema still frame, warm brass desk lamp against monsoon rain glass window..."></textarea>
+          </label>
+          <div class="form-grid-3" style="margin-top:12px">
+            <label class="fld">画幅比例
+              <select id="jtGenImgAspect">
+                <option value="16:9">16:9 电影宽银幕</option>
+                <option value="9:16">9:16 竖屏短剧</option>
+                <option value="21:9">21:9 变形宽银幕</option>
+                <option value="4:3">4:3 经典银幕</option>
+                <option value="3:4">3:4 竖版海报</option>
+                <option value="1:1">1:1 方形构图</option>
+              </select>
+            </label>
+            <label class="fld">清晰度档位
+              <select id="jtGenImgMp">
+                <option value="4">4MP 高速出图（全员可用）</option>
+                <option value="16">16MP 原生 4K（管理员）</option>
+              </select>
+            </label>
+            <label class="fld">提示词智能扩写
+              <select id="jtGenImgEnhance">
+                <option value="0">保持当前精炼提示词</option>
+                <option value="1">启用 Qwen3.5-9B 扩写（适合简短中文描述）</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-grid" style="margin-top:12px">
+            <label class="fld">可选垫图 / 参考图编辑（留空则为纯文生图）
+              <select id="jtGenImgRefSelect">
+                <option value="">不使用参考图（文生图 T2I）</option>
+              </select>
+            </label>
+            <label class="fld">或上传手机/电脑本地参考图（自动压缩上传）
+              <input class="txt-in" id="jtGenImgRefFile" type="file" accept="image/*" style="padding:8px 12px">
+            </label>
+          </div>
+          <div class="row-actions" style="margin-top:16px">
+            <button class="btn primary" id="jtSubmitImgBtn" type="button">立即在金泰平台生成图片</button>
+            <span class="small-muted" id="jtGenImgMsg" style="margin:0"></span>
+          </div>
+        </div>
+
+        <div class="hidden" id="jtGenVideoPane">
+          <label class="fld">视频动作与镜头提示词
+            <textarea class="txt-in" id="jtGenVidPrompt" rows="4" style="resize:vertical; line-height:1.6" placeholder="描述画面动作与摄影机调度，例如：Woman slowly turns toward the rain-streaked glass window under warm tungsten key light, subtle breathing and coat sleeve movement, steady 35mm push-in."></textarea>
+          </label>
+          <div class="form-grid-3" style="margin-top:12px">
+            <label class="fld">出片模式
+              <select id="jtGenVidMode">
+                <option value="r2va">图生视频 / 主体一致性锁脸 (R2VA)</option>
+                <option value="i2va">首帧延展动态 (I2VA)</option>
+                <option value="t2va">纯文字生视频 (T2VA)</option>
+              </select>
+            </label>
+            <label class="fld">画幅比例
+              <select id="jtGenVidAspect">
+                <option value="16:9">16:9 电影宽银幕 (1344×768)</option>
+                <option value="9:16">9:16 竖屏短剧 (768×1344)</option>
+                <option value="21:9">21:9 变形宽银幕</option>
+                <option value="4:3">4:3 经典银幕</option>
+                <option value="1:1">1:1 方形画幅</option>
+              </select>
+            </label>
+            <label class="fld">视频时长 (Veda 极速 H3)
+              <select id="jtGenVidFrames">
+                <option value="124">5.2 秒 (124 帧 · 推荐标准)</option>
+                <option value="56">2.3 秒 (56 帧 · 极速探针)</option>
+                <option value="243">10.1 秒 (243 帧 · 管理员长镜)</option>
+              </select>
+            </label>
+          </div>
+          <div class="form-grid" style="margin-top:12px">
+            <label class="fld">选用上面已生成的图片作参考
+              <select id="jtGenVidRefSelect">
+                <option value="">不选图（自动切换文生视频）</option>
+              </select>
+            </label>
+            <label class="fld">或直接从手机相册/电脑上传首帧/参考图
+              <input class="txt-in" id="jtGenVidRefFile" type="file" accept="image/*" style="padding:8px 12px">
+            </label>
+          </div>
+          <div class="hidden" id="jtGenVidRefWrap" style="margin-top:10px; display:flex; align-items:center; gap:10px">
+            <img class="studio-ref-thumb" id="jtGenVidRefThumb" src="" alt="视频参考图">
+            <span class="small-muted" id="jtGenVidRefName" style="margin:0">已选择参考图</span>
+            <button class="link-action" id="jtClearVidRefBtn" type="button">清除参考图</button>
+          </div>
+          <div class="row-actions" style="margin-top:16px">
+            <button class="btn primary" id="jtSubmitVidBtn" type="button">立即在金泰平台生成视频</button>
+            <span class="small-muted" id="jtGenVidMsg" style="margin:0"></span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:24px">
+        <div class="card-meta" style="margin-bottom:12px">生成队列与成片画廊（原始成片同步直落 A 机共享存储）</div>
+        <div class="grid-2" id="jtJobsGallery">
+          <div class="card"><p class="small-muted">暂无提交记录；在上方输入提示词或从主创编排带入即可直出。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================
        BAND 3: 世界佳片机制（单行 6 核心题材分段槽 + 下拉更多，默认留白）
        ========================================================= -->
-  <section class="band band-gray" id="comps-library">
+  <section class="band band-white" id="comps-library">
     <div class="band-inner">
       <div class="section-head">
         <div>
@@ -1563,7 +1720,7 @@
   <!-- =========================================================
        BAND 4: 示范小样参考（默认收起单条横幅卡）
        ========================================================= -->
-  <section class="band band-white" id="reel-stage">
+  <section class="band band-gray" id="reel-stage">
     <div class="band-inner">
       <div class="panel-soft">
         <div class="reel-banner">
@@ -1624,7 +1781,7 @@
   <!-- =========================================================
        BAND 5: 金泰平台对接、可选 LAN 引擎控制与极简页尾
        ========================================================= -->
-  <section class="band band-gray" id="platform-bridge">
+  <section class="band band-white" id="platform-bridge">
     <div class="band-inner">
       <div class="section-head">
         <div>
@@ -1850,7 +2007,7 @@
 
 <script>
 (function(){
-  var CLOUD_CFG = {"gateway_url": "https://ddzxsafkrwetdzhwlzxm.supabase.co/functions/v1/jt-gateway", "publishable_key": "sb_publishable_HkQP-dbekBcRJYMAnJoDQQ_sdAQvEFT"};
+  var CLOUD_CFG = {"gateway_url": "https://ddzxsafkrwetdzhwlzxm.supabase.co/functions/v1/jt-gateway", "publishable_key": "sb_publishable_HkQP-dbekBcRJYMAnJoDQQ_sdAQvEFT", "testflight_url": ""};
   var SESSION_STORAGE_KEY = 'jt_sw_session_v1';
   var DATA = null;
   var CURRENT_USER = null;
@@ -1909,6 +2066,13 @@
     if (window.JTAndroid && typeof window.JTAndroid.copyText === 'function') {
       try {
         window.JTAndroid.copyText(String(txt));
+        toast('已复制：' + label);
+        return;
+      } catch (e) {}
+    }
+    if (window.JTiOS && typeof window.JTiOS.copyText === 'function') {
+      try {
+        window.JTiOS.copyText(String(txt));
         toast('已复制：' + label);
         return;
       } catch (e) {}
@@ -2821,6 +2985,30 @@
     document.getElementById('copyH3PromptBtn').onclick = function(){ copyText(lastCompiled.h3, 'H3 Ref2VA 提示词'); };
     document.getElementById('copySeedanceBtn').onclick = function(){ copyText(lastCompiled.seedance, 'Seedance 2.5 提示词'); };
     document.getElementById('copyCrewBriefBtn').onclick = function(){ copyText(lastCompiled.brief, '全班底工艺简报'); };
+    var sendImgBtn = document.getElementById('sendCompiledImageBtn');
+    if (sendImgBtn) {
+      sendImgBtn.onclick = function(){
+        if (!lastCompiled.h3) { toast('请先生成主创编译提示词'); return; }
+        activateStudioTab('image');
+        var el = document.getElementById('jtGenImgPrompt');
+        if (el) el.value = lastCompiled.h3;
+        var sec = document.getElementById('jintai-studio');
+        if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        toast('已带入生图工作台');
+      };
+    }
+    var sendVidBtn = document.getElementById('sendCompiledVideoBtn');
+    if (sendVidBtn) {
+      sendVidBtn.onclick = function(){
+        if (!lastCompiled.h3) { toast('请先生成主创编译提示词'); return; }
+        activateStudioTab('video');
+        var el = document.getElementById('jtGenVidPrompt');
+        if (el) el.value = lastCompiled.h3;
+        var sec = document.getElementById('jintai-studio');
+        if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        toast('已带入视频工作台');
+      };
+    }
     document.getElementById('copySystemPromptBtn').onclick = function(){ copyText(DATA.system_prompt_md, '专家 System Prompt'); };
     document.getElementById('copyAvcBtn').onclick = function(){
       copyText(JSON.stringify((DATA.demo_project || {}).avc_canvas_import || {}, null, 2), 'AVC 画布 JSON');
@@ -2830,6 +3018,12 @@
       if (window.JTAndroid && typeof window.JTAndroid.shareText === 'function') {
         try {
           window.JTAndroid.shareText('JT编剧台 AVC 样例', raw);
+          return;
+        } catch (e) {}
+      }
+      if (window.JTiOS && typeof window.JTiOS.shareText === 'function') {
+        try {
+          window.JTiOS.shareText('JT编剧台 AVC 样例', raw);
           return;
         } catch (e) {}
       }
@@ -3451,6 +3645,336 @@
       if (savedDraft && wpEl && !wpEl.value) wpEl.value = savedDraft;
     } catch (e) {}
     enableLanModeIfAvailable();
+    if (CLOUD_CFG && CLOUD_CFG.testflight_url) {
+      var tfLink = document.getElementById('iosProfileDirectLink');
+      var pwaHintEl = document.getElementById('pwaInstallHint');
+      if (tfLink) {
+        tfLink.setAttribute('href', CLOUD_CFG.testflight_url);
+        tfLink.setAttribute('target', '_blank');
+        tfLink.setAttribute('rel', 'noopener');
+        tfLink.textContent = '通过 Apple TestFlight 安装 iPhone App ›';
+      }
+      if (pwaHintEl) {
+        pwaHintEl.textContent = '官方 TestFlight 测试通道已就绪：点击下方蓝色按钮，按 Apple 官方提示点「安装」即刻在 iPhone 桌面生成独立应用。';
+      }
+    }
+    bindJinTaiStudioOnce();
+    refreshStudioJobs();
+  }
+
+  var studioEventsBound = false;
+  var studioPollTimer = null;
+  var studioImgRefB64 = '';
+  var studioVidRefB64 = '';
+  var studioLastJobs = [];
+
+  function activateStudioTab(tabName) {
+    document.querySelectorAll('#jtGenTabs .seg-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-gen-tab') === tabName);
+    });
+    var imgPane = document.getElementById('jtGenImagePane');
+    var vidPane = document.getElementById('jtGenVideoPane');
+    if (imgPane) imgPane.classList.toggle('hidden', tabName !== 'image');
+    if (vidPane) vidPane.classList.toggle('hidden', tabName !== 'video');
+  }
+
+  function compressImageFileToBase64(file, maxSide, cb) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var img = new Image();
+      img.onload = function(){
+        var w = img.width || 1024;
+        var h = img.height || 1024;
+        var scale = Math.min(1, maxSide / Math.max(w, h));
+        var cw = Math.max(1, Math.round(w * scale));
+        var ch = Math.max(1, Math.round(h * scale));
+        var canvas = document.createElement('canvas');
+        canvas.width = cw;
+        canvas.height = ch;
+        var ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, cw, ch);
+        cb(canvas.toDataURL('image/jpeg', 0.88));
+      };
+      img.onerror = function(){ cb(String(reader.result || '')); };
+      img.src = String(reader.result || '');
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function renderStudioRefSelectors(jobs) {
+    var succeededImgs = (jobs || []).filter(function(j){
+      return j.job_type === 'image' && j.status === 'succeeded';
+    });
+    ['jtGenImgRefSelect', 'jtGenVidRefSelect'].forEach(function(selId, idx){
+      var sel = document.getElementById(selId);
+      if (!sel) return;
+      var prev = sel.value;
+      var defLabel = idx === 0 ? '不使用参考图（文生图 T2I）' : '不选图（自动切换文生视频）';
+      sel.innerHTML = '<option value="">' + defLabel + '</option>' + succeededImgs.map(function(it){
+        var sn = (it.prompt || '').slice(0, 26).replace(/</g, '');
+        return '<option value="' + esc(it.id) + '">' + esc(it.created_at ? it.created_at.slice(11, 16) : '') + ' · ' + esc(sn) + '…</option>';
+      }).join('');
+      if (prev && succeededImgs.some(function(it){ return it.id === prev; })) {
+        sel.value = prev;
+      }
+    });
+  }
+
+  function renderStudioJobsGallery(jobs) {
+    var box = document.getElementById('jtJobsGallery');
+    if (!box) return;
+    if (!jobs || !jobs.length) {
+      box.innerHTML = '<div class="card"><p class="small-muted">暂无提交记录；在上方输入提示词或从主创编排带入即可直出。</p></div>';
+      return;
+    }
+    var stLabel = { queued: '排队等待 A 机', running: 'H100 渲染中…', succeeded: '已完成', failed: '生成失败' };
+    box.innerHTML = jobs.map(function(j){
+      var isDone = j.status === 'succeeded';
+      var isFail = j.status === 'failed';
+      var pillCls = isFail ? 'status-pill-ban' : 'status-pill-ok';
+      var badgeTxt = j.job_type === 'video' ? '视频 · Veda H3' : '图片 · H3-Image';
+      var metaParts = [badgeTxt];
+      if (j.a_machine_port) metaParts.push('A机 :' + j.a_machine_port);
+      if (j.elapsed_sec) metaParts.push(Number(j.elapsed_sec).toFixed(1) + 's');
+      if (j.result && j.result.width && j.result.height) metaParts.push(j.result.width + '×' + j.result.height);
+      if (j.result && j.result.duration_sec) metaParts.push(j.result.duration_sec + 's');
+
+      var mediaHtml = '';
+      var actionsHtml = '';
+      if (isDone && j.media_url) {
+        if (j.job_type === 'image') {
+          mediaHtml = '<img class="preview-img" src="' + esc(j.media_url) + '" alt="金泰生图成片" data-zoom="' + esc(j.media_url) + '">';
+          actionsHtml = '<div class="row-actions">' +
+            '<button class="btn compact primary use-img-for-vid-btn" type="button" data-jid="' + esc(j.id) + '">用此图生成视频 ›</button>' +
+            '<a class="link-action" href="' + esc(j.media_url) + '" target="_blank" rel="noopener">查看/下载原图 ›</a>' +
+            '</div>';
+        } else {
+          mediaHtml = '<video controls playsinline preload="metadata"' +
+            (j.poster_url ? ' poster="' + esc(j.poster_url) + '"' : '') +
+            ' src="' + esc(j.media_url) + '"></video>';
+          actionsHtml = '<div class="row-actions">' +
+            '<a class="link-action" href="' + esc(j.media_url) + '" target="_blank" rel="noopener">打开 / 下载 MP4 ›</a>' +
+            '</div>';
+        }
+      } else if (isFail) {
+        mediaHtml = '<div class="warn-box" style="margin-top:10px; font-size:14px">' + esc(j.error_message || '任务执行异常') + '</div>';
+      } else {
+        mediaHtml = '<p class="small-muted" style="margin-top:10px">正在通过金泰工作室调度通道处理，系统每 3 秒自动刷新结果…</p>';
+      }
+
+      return '<article class="card studio-media-card">' +
+        '<div style="display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap">' +
+          '<div class="card-meta" style="margin:0">' + esc(metaParts.join(' · ')) + '</div>' +
+          '<span class="' + pillCls + '">' + esc(stLabel[j.status] || j.status) + '</span>' +
+        '</div>' +
+        '<p class="small-muted" style="margin:8px 0 0; font-size:15px">' + esc((j.prompt || '').slice(0, 140)) + ((j.prompt || '').length > 140 ? '…' : '') + '</p>' +
+        mediaHtml +
+        actionsHtml +
+      '</article>';
+    }).join('');
+
+    box.querySelectorAll('img.preview-img[data-zoom]').forEach(function(im){
+      im.onclick = function(){
+        var lb = document.getElementById('lightbox');
+        var lbImg = document.getElementById('lightboxImg');
+        if (lb && lbImg) {
+          lbImg.src = im.getAttribute('data-zoom');
+          lb.style.display = 'flex';
+        }
+      };
+    });
+    box.querySelectorAll('.use-img-for-vid-btn').forEach(function(b){
+      b.onclick = function(){
+        var jid = b.getAttribute('data-jid');
+        var found = studioLastJobs.find(function(x){ return x.id === jid; });
+        activateStudioTab('video');
+        studioVidRefB64 = '';
+        var fileIn = document.getElementById('jtGenVidRefFile');
+        if (fileIn) fileIn.value = '';
+        var sel = document.getElementById('jtGenVidRefSelect');
+        if (sel) sel.value = jid;
+        var modeSel = document.getElementById('jtGenVidMode');
+        if (modeSel) modeSel.value = 'r2va';
+        var vp = document.getElementById('jtGenVidPrompt');
+        if (vp && found && !vp.value.trim()) vp.value = found.prompt || '';
+        var wrap = document.getElementById('jtGenVidRefWrap');
+        var thumb = document.getElementById('jtGenVidRefThumb');
+        var lbl = document.getElementById('jtGenVidRefName');
+        if (found && found.media_url && wrap && thumb && lbl) {
+          thumb.src = found.media_url;
+          lbl.textContent = '已绑定参考图：' + (found.prompt || '').slice(0, 24);
+          wrap.classList.remove('hidden');
+          wrap.style.display = 'flex';
+        }
+        var sec = document.getElementById('jintai-studio');
+        if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        toast('已将此图设为视频参考锚点');
+      };
+    });
+  }
+
+  function updateStudioStatusPill(data) {
+    var pill = document.getElementById('jtStudioStatusPill');
+    if (!pill || !data) return;
+    if (isLanEnv() && data.cluster) {
+      var cl = data.cluster;
+      pill.className = cl.online_gpus > 0 ? 'status-pill-ok' : 'status-pill-ban';
+      pill.textContent = '局域网直连 A 机 · ' + cl.online_gpus + '/8 卡在线 (' + cl.total_free_vram_gib + ' GiB 空闲)';
+    } else if (data.worker) {
+      var wk = data.worker;
+      pill.className = (wk.online && wk.online_gpus > 0) ? 'status-pill-ok' : 'status-pill-ban';
+      pill.textContent = wk.online
+        ? ('云端中继 A 机在线 · ' + wk.online_gpus + '/8 卡 (' + wk.total_free_vram_gib + ' GiB 空闲)')
+        : '工作室算力守护离线（任务可先排队）';
+    }
+  }
+
+  function refreshStudioJobs() {
+    if (!CURRENT_USER) return Promise.resolve();
+    return apiAdminOrAuth('/jobs', '/api/jobs', 'GET', null).then(function(res){
+      if (!res || !res.ok || !res.data || !res.data.ok) return;
+      updateStudioStatusPill(res.data);
+      studioLastJobs = res.data.jobs || [];
+      renderStudioRefSelectors(studioLastJobs);
+      renderStudioJobsGallery(studioLastJobs);
+      var hasActive = studioLastJobs.some(function(j){
+        return j.status === 'queued' || j.status === 'running';
+      });
+      if (studioPollTimer) {
+        clearTimeout(studioPollTimer);
+        studioPollTimer = null;
+      }
+      if (hasActive) {
+        studioPollTimer = setTimeout(refreshStudioJobs, 3000);
+      }
+    }).catch(function(){});
+  }
+
+  function bindJinTaiStudioOnce() {
+    if (studioEventsBound) return;
+    studioEventsBound = true;
+
+    document.querySelectorAll('#jtGenTabs .seg-btn').forEach(function(btn){
+      btn.onclick = function(){ activateStudioTab(btn.getAttribute('data-gen-tab')); };
+    });
+
+    var refBtn = document.getElementById('jtRefreshJobsBtn');
+    if (refBtn) refBtn.onclick = function(){ refreshStudioJobs().then(function(){ toast('已刷新金泰任务与算力状态'); }); };
+
+    var imgFileIn = document.getElementById('jtGenImgRefFile');
+    if (imgFileIn) {
+      imgFileIn.onchange = function(){
+        var f = imgFileIn.files && imgFileIn.files[0];
+        if (!f) { studioImgRefB64 = ''; return; }
+        compressImageFileToBase64(f, 1600, function(b64){
+          studioImgRefB64 = b64;
+          toast('已加载图片参考，提交时将走参考编辑模式');
+        });
+      };
+    }
+
+    var vidFileIn = document.getElementById('jtGenVidRefFile');
+    if (vidFileIn) {
+      vidFileIn.onchange = function(){
+        var f = vidFileIn.files && vidFileIn.files[0];
+        if (!f) { studioVidRefB64 = ''; return; }
+        compressImageFileToBase64(f, 1600, function(b64){
+          studioVidRefB64 = b64;
+          var sel = document.getElementById('jtGenVidRefSelect');
+          if (sel) sel.value = '';
+          var wrap = document.getElementById('jtGenVidRefWrap');
+          var thumb = document.getElementById('jtGenVidRefThumb');
+          var lbl = document.getElementById('jtGenVidRefName');
+          if (wrap && thumb && lbl) {
+            thumb.src = b64;
+            lbl.textContent = '已选本地照片：' + f.name;
+            wrap.classList.remove('hidden');
+            wrap.style.display = 'flex';
+          }
+          toast('已上传本地参考图');
+        });
+      };
+    }
+
+    var clrVidRefBtn = document.getElementById('jtClearVidRefBtn');
+    if (clrVidRefBtn) {
+      clrVidRefBtn.onclick = function(){
+        studioVidRefB64 = '';
+        if (vidFileIn) vidFileIn.value = '';
+        var sel = document.getElementById('jtGenVidRefSelect');
+        if (sel) sel.value = '';
+        var wrap = document.getElementById('jtGenVidRefWrap');
+        if (wrap) { wrap.classList.add('hidden'); wrap.style.display = 'none'; }
+      };
+    }
+
+    var subImgBtn = document.getElementById('jtSubmitImgBtn');
+    if (subImgBtn) {
+      subImgBtn.onclick = function(){
+        var promptTxt = (document.getElementById('jtGenImgPrompt').value || '').trim();
+        var msgEl = document.getElementById('jtGenImgMsg');
+        if (!promptTxt) { toast('请先输入生图提示词'); return; }
+        subImgBtn.disabled = true;
+        if (msgEl) msgEl.textContent = '正在提交至金泰 A 机…';
+        var payload = {
+          prompt: promptTxt,
+          aspect_ratio: document.getElementById('jtGenImgAspect').value,
+          megapixels: Number(document.getElementById('jtGenImgMp').value || 4),
+          enhance_prompt: document.getElementById('jtGenImgEnhance').value === '1',
+          ref_job_id: document.getElementById('jtGenImgRefSelect').value || '',
+          ref_image_base64: studioImgRefB64 || ''
+        };
+        apiAdminOrAuth('/jobs/image', '/api/generate/image', 'POST', payload).then(function(res){
+          if (!res.ok || !res.data || !res.data.ok) {
+            var errTxt = (res.data && res.data.error) || '提交失败';
+            if (msgEl) msgEl.textContent = errTxt;
+            toast(errTxt);
+            return;
+          }
+          if (msgEl) msgEl.textContent = '已提交排队，A 机 8×H100 正在出图（约 25–45 秒）…';
+          toast('已派单金泰 A 机出图');
+          refreshStudioJobs();
+        }).catch(function(err){
+          if (msgEl) msgEl.textContent = '提交异常：' + err;
+        }).finally(function(){
+          subImgBtn.disabled = false;
+        });
+      };
+    }
+
+    var subVidBtn = document.getElementById('jtSubmitVidBtn');
+    if (subVidBtn) {
+      subVidBtn.onclick = function(){
+        var promptTxt = (document.getElementById('jtGenVidPrompt').value || '').trim();
+        var msgEl = document.getElementById('jtGenVidMsg');
+        if (!promptTxt) { toast('请先输入视频提示词'); return; }
+        subVidBtn.disabled = true;
+        if (msgEl) msgEl.textContent = '正在提交至金泰 A 机…';
+        var payload = {
+          prompt: promptTxt,
+          mode: document.getElementById('jtGenVidMode').value,
+          aspect_ratio: document.getElementById('jtGenVidAspect').value,
+          frames: Number(document.getElementById('jtGenVidFrames').value || 124),
+          ref_job_id: document.getElementById('jtGenVidRefSelect').value || '',
+          ref_image_base64: studioVidRefB64 || ''
+        };
+        apiAdminOrAuth('/jobs/video', '/api/generate/video', 'POST', payload).then(function(res){
+          if (!res.ok || !res.data || !res.data.ok) {
+            var errTxt = (res.data && res.data.error) || '提交失败';
+            if (msgEl) msgEl.textContent = errTxt;
+            toast(errTxt);
+            return;
+          }
+          if (msgEl) msgEl.textContent = '已提交排队，Veda H3 正在渲染视频（约 50–120 秒）…';
+          toast('已派单金泰 A 机出视频');
+          refreshStudioJobs();
+        }).catch(function(err){
+          if (msgEl) msgEl.textContent = '提交异常：' + err;
+        }).finally(function(){
+          subVidBtn.disabled = false;
+        });
+      };
+    }
   }
 
   function fetchAuthorizedWorkbenchData() {

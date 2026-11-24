@@ -5,6 +5,7 @@ on:
     branches: ["main"]
     paths-ignore:
       - "downloads/**"
+      - "ios_app/**"
   workflow_dispatch:
 
 permissions:

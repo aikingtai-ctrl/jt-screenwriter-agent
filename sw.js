@@ -1,4 +1,4 @@
-const CACHE_NAME = 'jt-sw-app-v1.2.0';
+const CACHE_NAME = 'jt-sw-app-v1.3.0';
 const PRECACHE_URLS = [
   './',
   './index.html',
