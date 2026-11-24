@@ -4,34 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<title>JT Screenwriter Agent — 专业编剧入口与电影小样工作台</title>
+<title>JT 编剧台 — 极简编剧工作台</title>
 <style>
   :root {
-    --bg-obsidian: #0a0b0a;
-    --bg-surface: #121412;
-    --bg-elevated: #191c19;
-    --bg-inset: #060706;
-    --ink-primary: #f3f5f1;
-    --ink-secondary: #b4bcb4;
-    --ink-muted: #7b837c;
-    --ink-dark: #0a0b0a;
-    --lime: #b5ec6a;
-    --lime-strong: #c8f77e;
-    --lime-glow: rgba(181, 236, 106, 0.24);
-    --lime-subtle: rgba(181, 236, 106, 0.10);
-    --crimson-ink: #ffb4a8;
-    --crimson-bg: rgba(186, 52, 36, 0.18);
-    --crimson-border: rgba(235, 95, 76, 0.55);
-    --hairline: rgba(255, 255, 255, 0.10);
-    --hairline-strong: rgba(255, 255, 255, 0.22);
-    --grid-line: rgba(255, 255, 255, 0.045);
-    --forest-deep: #1e330e;
-    --forest-mid: #406319;
-    --forest-light: #7da632;
-    --font-sans: "Microsoft YaHei", "PingFang SC", "Noto Sans SC", system-ui, -apple-system, sans-serif;
-    --font-mono: "Cascadia Mono", Consolas, "SFMono-Regular", monospace;
-    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --bg-white: #ffffff;
+    --bg-gray: #f5f5f7;
+    --bg-surface: #ffffff;
+    --bg-pill-track: #e8e8ed;
+    --ink-primary: #1d1d1f;
+    --ink-secondary: #6e6e73;
+    --ink-muted: #86868b;
+    --ink-on-accent: #ffffff;
+    --apple-blue: #0071e3;
+    --apple-blue-hover: #0077ed;
+    --apple-blue-active: #006edb;
+    --apple-link: #0066cc;
+    --hairline: #d2d2d7;
+    --hairline-soft: rgba(0, 0, 0, 0.08);
+    --ok-bg: #f0f7ff;
+    --ok-border: #0071e3;
+    --ok-ink: #1d1d1f;
+    --warn-bg: #fff5f5;
+    --warn-border: #f3c6c6;
+    --warn-ink: #b42318;
+    --lan-green: #248a3d;
+    --font-sans: "SF Pro SC", "SF Pro Display", "SF Pro Text", "PingFang SC", "Microsoft YaHei", "Noto Sans SC", -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: "SF Mono", "Cascadia Mono", Consolas, monospace;
+    --ease-apple: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   * { box-sizing: border-box; }
@@ -39,17 +38,18 @@
   body {
     margin: 0;
     overflow-x: clip;
-    background-color: var(--bg-obsidian);
+    background-color: var(--bg-white);
     color: var(--ink-primary);
     font-family: var(--font-sans);
     font-size: 20.5px;
-    line-height: 1.62;
+    line-height: 1.6;
+    letter-spacing: 0;
     -webkit-font-smoothing: antialiased;
   }
 
   :focus-visible {
-    outline: 2.5px solid var(--lime);
-    outline-offset: 2px;
+    outline: 2.5px solid var(--apple-blue);
+    outline-offset: 3px;
   }
 
   .sr-only {
@@ -61,561 +61,458 @@
     white-space: nowrap;
   }
 
-  /* PSP 风格吸顶顶栏（含命令方括号导航 + 顶部搜索） */
-  .psp-header {
+  /* Apple 吸顶半透明毛玻璃全局导航 */
+  .apple-nav {
     position: sticky;
     top: 0;
     z-index: 60;
-    background: rgba(10, 11, 10, 0.92);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--hairline-strong);
-    padding: 10px 22px;
+    min-height: 54px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-bottom: 1px solid var(--hairline-soft);
+    padding: 8px 28px;
+    display: flex;
+    align-items: center;
   }
-  .psp-header-inner {
-    max-width: 1420px;
+  .apple-nav-inner {
+    width: 100%;
+    max-width: 1120px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 12px 18px;
+    gap: 12px 20px;
   }
   .brand-lockup {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 9px;
     text-decoration: none;
     color: var(--ink-primary);
     flex-shrink: 0;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0;
   }
   .brand-mark {
-    width: 34px;
-    height: 34px;
-    color: var(--lime);
+    width: 24px;
+    height: 24px;
+    color: var(--ink-primary);
     flex-shrink: 0;
   }
-  .brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.08;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    font-size: 16px;
-  }
-  .brand-text span:last-child {
-    color: var(--ink-muted);
-    font-family: var(--font-mono);
-    font-size: 12.5px;
-    letter-spacing: 0.08em;
-  }
 
-  .psp-nav {
+  .apple-links {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 6px 14px;
+    gap: 6px 20px;
   }
-  .psp-link {
-    color: var(--ink-secondary);
+  .apple-link {
+    color: rgba(29, 29, 31, 0.8);
     text-decoration: none;
-    font-family: var(--font-mono);
-    font-size: 15.5px;
-    font-weight: 600;
-    padding: 6px 8px;
-    border-radius: 6px;
-    transition: color 200ms var(--ease-out), background-color 200ms var(--ease-out);
+    font-size: 14.5px;
+    font-weight: 400;
+    padding: 4px 2px;
+    transition: color 180ms var(--ease-apple);
   }
-  .psp-link:hover, .psp-link.active {
-    color: var(--lime);
-    background: var(--lime-subtle);
+  .apple-link:hover, .apple-link.active {
+    color: var(--ink-primary);
   }
 
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 1 350px;
+    justify-content: flex-end;
+  }
   .header-search-wrap {
     display: flex;
     align-items: center;
     gap: 8px;
-    flex: 1 1 260px;
-    max-width: 390px;
+    flex: 1 1 200px;
+    max-width: 245px;
   }
   #globalSearch {
     width: 100%;
     font-family: var(--font-sans);
-    font-size: 17.5px;
-    padding: 8px 14px;
-    border-radius: 8px;
-    border: 1px solid var(--hairline-strong);
-    background: var(--bg-inset);
+    font-size: 14.5px;
+    padding: 7px 14px;
+    border-radius: 980px;
+    border: 1px solid transparent;
+    background: var(--bg-gray);
     color: var(--ink-primary);
+    transition: background-color 180ms var(--ease-apple), border-color 180ms var(--ease-apple);
+  }
+  #globalSearch:focus {
+    background: var(--bg-white);
+    border-color: rgba(0, 113, 227, 0.45);
   }
   #globalSearch::placeholder { color: var(--ink-muted); }
 
-  /* Orvyn 微竖纹过场带 */
-  .stripe-divider {
-    height: 14px;
-    border-top: 1px solid var(--hairline);
-    border-bottom: 1px solid var(--hairline);
-    background: repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.04) 0px,
-      rgba(255, 255, 255, 0.04) 1px,
-      transparent 1px,
-      transparent 16px
-    );
+  .btn-nav-clear {
+    background: none;
+    border: none;
+    padding: 4px 6px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--ink-secondary);
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: color 160ms var(--ease-apple);
+  }
+  .btn-nav-clear:hover { color: var(--ink-primary); }
+
+  .lan-dot-link {
+    display: none;
+    align-items: center;
+    gap: 6px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--ink-secondary);
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 980px;
+    background: var(--bg-gray);
+    flex-shrink: 0;
+  }
+  .lan-dot-link:hover { color: var(--ink-primary); }
+  .lan-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--lan-green);
   }
 
-  .container { max-width: 1420px; margin: 0 auto; padding: 0 22px; }
+  /* 全宽浅白 / 浅灰交替带节奏 */
+  section.band {
+    width: 100%;
+    padding: 84px 0;
+  }
+  section.band-white { background-color: var(--bg-white); }
+  section.band-gray { background-color: var(--bg-gray); }
+
+  .band-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
 
   /* ==============================================================
-     HERO: Orvyn 4 拍编剧入口开场舞台（1280x800 一屏完整呈现）
+     HERO: Apple Mac 极简开场与 ChapterNav 五入口横排带
      ============================================================== */
   .hero-stage {
-    position: relative;
-    padding: 26px 22px 28px;
-    background-image:
-      radial-gradient(circle at 50% 68%, rgba(181, 236, 106, 0.11), transparent 46%),
-      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
-    background-size: 100% 100%, 48px 48px, 48px 48px;
-    overflow: hidden;
+    padding: 68px 28px 56px;
+    text-align: center;
   }
   .hero-inner {
-    max-width: 1380px;
+    max-width: 1040px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
   }
-  .hero-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 5px 15px;
-    border-radius: 999px;
-    border: 1px solid var(--hairline-strong);
-    background: var(--bg-surface);
-    color: var(--ink-secondary);
-    font-size: 15px;
-    font-weight: 600;
-    margin-bottom: 12px;
-    opacity: 1;
-  }
-  .hero-pill svg { width: 16px; height: 16px; color: var(--lime); }
-
   .hero-title {
     margin: 0;
-    font-size: clamp(38px, 4.1vw, 60px);
-    font-weight: 800;
-    line-height: 1.09;
-    letter-spacing: -0.03em;
-    max-width: 980px;
+    font-size: clamp(44px, 5vw, 68px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: 0;
+    max-width: 820px;
   }
   .hero-line-clip {
     display: block;
     overflow: hidden;
     padding-bottom: 4px;
   }
-  .hero-line-clip > span {
-    display: inline-block;
-  }
+  .hero-line-clip > span { display: inline-block; }
   .hero-line-primary { color: var(--ink-primary); }
-  .hero-line-secondary { color: var(--ink-muted); }
+  .hero-line-secondary { color: var(--ink-secondary); }
 
   .hero-sub {
-    margin: 10px 0 16px;
-    max-width: 760px;
+    margin: 18px 0 28px;
+    max-width: 820px;
     color: var(--ink-secondary);
-    font-size: 19px;
+    font-size: 20.5px;
     line-height: 1.5;
+    font-weight: 400;
   }
   .hero-actions {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
-    margin-bottom: 20px;
+    align-items: center;
+    gap: 14px 24px;
+    margin-bottom: 46px;
   }
 
+  /* Apple 规范按钮体系（仅实心主胶囊、柔灰次按钮、纯文字链接） */
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 11px 22px;
-    border-radius: 9px;
-    border: 1px solid var(--hairline-strong);
-    background: var(--bg-elevated);
+    gap: 6px;
+    padding: 10px 22px;
+    border-radius: 980px;
+    border: 1px solid transparent;
+    background: var(--bg-pill-track);
     color: var(--ink-primary);
     font-family: var(--font-sans);
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.25;
     white-space: nowrap;
     flex-shrink: 0;
     cursor: pointer;
     text-decoration: none;
-    transition: transform 200ms var(--ease-out), background-color 200ms var(--ease-out), border-color 200ms var(--ease-out), opacity 200ms var(--ease-out);
+    transition: transform 120ms var(--ease-apple), background-color 180ms var(--ease-apple), color 180ms var(--ease-apple), border-color 180ms var(--ease-apple);
   }
-  .btn:hover { transform: translateY(-1px); border-color: var(--lime); }
-  .btn.lime {
-    background: var(--lime);
-    color: var(--ink-dark);
-    border-color: var(--lime);
-    box-shadow: 0 0 28px rgba(181, 236, 106, 0.22);
+  .btn:active { transform: scale(0.98); }
+  .btn.primary {
+    background: var(--apple-blue);
+    color: var(--ink-on-accent);
   }
-  .btn.lime:hover { background: var(--lime-strong); border-color: var(--lime-strong); }
-  .btn.ghost { background: var(--bg-surface); color: var(--ink-primary); }
-  .btn.compact { padding: 8px 14px; font-size: 16px; }
-  .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+  .btn.primary:hover { background: var(--apple-blue-hover); }
+  .btn.primary:active { background: var(--apple-blue-active); }
 
-  /* 5 -> JT. -> 4 工作流拓扑画板 */
-  .wf-board {
-    position: relative;
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 10px 8px;
-    display: grid;
-    grid-template-columns: minmax(240px, 1fr) 170px minmax(240px, 1fr);
-    align-items: center;
-    gap: 16px;
-    transform-origin: center center;
-  }
-  .wf-svg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 1;
-  }
-  .wf-wire {
-    fill: none;
-    stroke: rgba(255, 255, 255, 0.16);
-    stroke-width: 1.5;
-    stroke-linecap: round;
-    stroke-dasharray: 420;
-  }
-  .wf-pulse {
-    fill: none;
-    stroke: var(--lime);
-    stroke-width: 2.3;
-    stroke-linecap: round;
-    opacity: 0.2;
-    filter: drop-shadow(0 0 6px rgba(181, 236, 106, 0.55));
-    transition: opacity 260ms var(--ease-out);
-  }
-  .wf-pulse.active {
-    opacity: 1;
-  }
-  .wf-pulse.flow-dash {
-    stroke-dasharray: 42 226;
-    animation: beamTravel 2.2s linear infinite;
-  }
-
-  .wf-col {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .wf-col.left { align-items: flex-start; }
-  .wf-col.right { align-items: flex-end; }
-
-  .wf-node {
-    width: 100%;
-    max-width: 325px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 9px 14px;
-    border-radius: 10px;
-    background: rgba(20, 22, 20, 0.94);
-    border: 1px solid var(--hairline);
+  .btn.secondary-fill {
+    background: var(--bg-gray);
     color: var(--ink-primary);
-    text-align: left;
-    cursor: pointer;
+  }
+  .btn.secondary-fill:hover { background: var(--bg-pill-track); }
+
+  .btn.secondary-on-gray {
+    background: var(--bg-white);
+    color: var(--ink-primary);
+    border-color: rgba(0, 0, 0, 0.08);
+  }
+  .btn.secondary-on-gray:hover { border-color: rgba(0, 0, 0, 0.22); }
+
+  .btn.compact {
+    padding: 7px 16px;
+    font-size: 15px;
+  }
+
+  .link-action, .btn-subtle-link {
+    background: none;
+    border: none;
+    padding: 4px 2px;
     font-family: var(--font-sans);
-    transition: transform 240ms var(--ease-out), border-color 240ms var(--ease-out), background-color 240ms var(--ease-out);
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--apple-link);
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 160ms var(--ease-apple);
   }
-  .wf-node:nth-child(2) { margin-left: 16px; }
-  .wf-node:nth-child(3) { margin-left: 32px; }
-  .wf-node:nth-child(4) { margin-left: 16px; }
-  .wf-col.right .wf-node:nth-child(1) { margin-right: 12px; }
-  .wf-col.right .wf-node:nth-child(2) { margin-right: 32px; }
-  .wf-col.right .wf-node:nth-child(3) { margin-right: 32px; }
-  .wf-col.right .wf-node:nth-child(4) { margin-right: 12px; }
+  .link-action:hover { text-decoration: underline; text-underline-offset: 4px; }
+  .btn-subtle-link {
+    color: var(--ink-secondary);
+    font-size: 15px;
+  }
+  .btn-subtle-link:hover { color: var(--ink-primary); }
 
-  .wf-node:hover, .wf-node.active {
-    border-color: var(--lime);
-    background: var(--bg-elevated);
-    transform: translateY(-1px);
-  }
-  .wf-node-ico {
-    width: 34px;
-    height: 34px;
-    border-radius: 8px;
-    background: var(--bg-inset);
-    border: 1px solid var(--hairline);
-    display: grid;
-    place-items: center;
-    color: var(--lime);
-    flex-shrink: 0;
-  }
-  .wf-node-ico svg { width: 18px; height: 18px; }
-  .wf-node-body { flex: 1; min-width: 0; }
-  .wf-node-title {
-    display: block;
-    font-size: 16.5px;
-    font-weight: 700;
-    line-height: 1.25;
-    color: var(--ink-primary);
-  }
-  .wf-node-meta {
-    display: block;
-    font-size: 13.5px;
-    color: var(--ink-muted);
-    line-height: 1.3;
-  }
-  .wf-check-ring {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    border: 1.5px solid var(--hairline-strong);
-    display: grid;
-    place-items: center;
-    color: transparent;
-    flex-shrink: 0;
-    transition: border-color 220ms var(--ease-out), background-color 220ms var(--ease-out), color 220ms var(--ease-out);
-  }
-  .wf-check-ring svg { width: 13px; height: 13px; }
-  .wf-node.active .wf-check-ring {
-    border-color: var(--lime);
-    background: var(--lime-subtle);
-    color: var(--lime);
-  }
-
-  /* 中央六边形发光中枢 */
-  .wf-center {
-    position: relative;
-    z-index: 3;
-    display: grid;
-    place-items: center;
-  }
-  .jt-hex-hub {
-    width: 118px;
-    height: 118px;
-    display: grid;
-    place-items: center;
-    position: relative;
-    filter: drop-shadow(0 0 28px rgba(181, 236, 106, 0.32));
-  }
-  .jt-hex-hub svg.hex-shell {
-    position: absolute;
-    inset: 0;
+  /* Apple ChapterNav 5 入口纯图标横排带 */
+  .chapter-nav {
     width: 100%;
-    height: 100%;
+    max-width: 920px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 10px;
+    padding-top: 8px;
   }
-  .jt-hex-label {
+  .chapter-item {
     position: relative;
-    z-index: 2;
+    background: transparent;
+    border: none;
+    border-radius: 18px;
+    padding: 16px 10px 18px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: 1.05;
+    text-align: center;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--ink-primary);
+    font-family: var(--font-sans);
+    transition: background-color 200ms var(--ease-apple), transform 120ms var(--ease-apple);
   }
-  .jt-hex-label strong {
-    font-size: 24px;
-    font-weight: 900;
-    color: var(--lime);
-    letter-spacing: -0.02em;
+  .chapter-item:hover { background: var(--bg-gray); }
+  .chapter-item:active { transform: scale(0.98); }
+  .chapter-item.active {
+    background: var(--bg-gray);
   }
-  .jt-hex-label span {
-    font-family: var(--font-mono);
-    font-size: 11px;
+  .chapter-item.active::after {
+    content: "";
+    position: absolute;
+    bottom: 6px;
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--apple-blue);
+  }
+  .chapter-ico {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    color: var(--ink-primary);
+    transition: color 180ms var(--ease-apple);
+  }
+  .chapter-item.active .chapter-ico { color: var(--apple-blue); }
+  .chapter-ico svg { width: 28px; height: 28px; }
+  .chapter-title {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--ink-primary);
+  }
+  .chapter-meta {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.35;
     color: var(--ink-secondary);
-    letter-spacing: 0.08em;
   }
 
-  /* 4 拍开场动画关键帧（仅 transform / opacity / stroke-dashoffset） */
-  .intro-playing .wf-board {
-    animation: heroZoomPull 850ms var(--ease-out) both;
-  }
-  .intro-playing .wf-wire {
-    animation: drawWire 700ms var(--ease-out) 120ms both;
-  }
-  .intro-playing .jt-hex-hub {
-    animation: hubBeacon 900ms var(--ease-out) both;
-  }
+  /* Apple 流体入场（仅 transform + opacity，无弹性过冲） */
   .intro-playing .hero-line-clip > .hero-line-primary {
-    animation: textMaskRise 620ms var(--ease-out) 220ms both;
+    animation: appleRise 680ms var(--ease-apple) both;
   }
   .intro-playing .hero-line-clip > .hero-line-secondary {
-    animation: textMaskRise 640ms var(--ease-out) 350ms both;
+    animation: appleRise 680ms var(--ease-apple) 110ms both;
   }
   .intro-playing .hero-sub {
-    animation: fadeLift 520ms var(--ease-out) 480ms both;
+    animation: appleFadeLift 540ms var(--ease-apple) 200ms both;
   }
   .intro-playing .hero-actions {
-    animation: fadeLift 520ms var(--ease-out) 580ms both;
+    animation: appleFadeLift 540ms var(--ease-apple) 260ms both;
   }
-  .intro-playing .wf-col.left .wf-node {
-    animation: nodeSlideInLeft 520ms var(--ease-out) 360ms both;
-  }
-  .intro-playing .wf-col.right .wf-node {
-    animation: nodeSlideInRight 560ms var(--ease-out) 500ms both;
-  }
+  .intro-playing .chapter-item:nth-child(1) { animation: appleFadeLift 520ms var(--ease-apple) 240ms both; }
+  .intro-playing .chapter-item:nth-child(2) { animation: appleFadeLift 520ms var(--ease-apple) 290ms both; }
+  .intro-playing .chapter-item:nth-child(3) { animation: appleFadeLift 520ms var(--ease-apple) 340ms both; }
+  .intro-playing .chapter-item:nth-child(4) { animation: appleFadeLift 520ms var(--ease-apple) 390ms both; }
+  .intro-playing .chapter-item:nth-child(5) { animation: appleFadeLift 520ms var(--ease-apple) 440ms both; }
 
-  @keyframes heroZoomPull {
-    from { transform: scale(1.16); opacity: 0.45; }
-    to { transform: scale(1); opacity: 1; }
-  }
-  @keyframes hubBeacon {
-    0% { transform: scale(1.22); opacity: 0.4; }
-    60% { transform: scale(1.04); opacity: 1; }
-    100% { transform: scale(1); opacity: 1; }
-  }
-  @keyframes drawWire {
-    from { stroke-dashoffset: 420; opacity: 0.2; }
-    to { stroke-dashoffset: 0; opacity: 1; }
-  }
-  @keyframes beamTravel {
-    from { stroke-dashoffset: 268; }
-    to { stroke-dashoffset: 0; }
-  }
-  @keyframes textMaskRise {
-    from { transform: translateY(108%); opacity: 0; }
+  @keyframes appleRise {
+    from { transform: translateY(105%); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
   }
-  @keyframes fadeLift {
-    from { transform: translateY(14px); opacity: 0; }
+  @keyframes appleFadeLift {
+    from { transform: translateY(12px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
   }
-  @keyframes nodeSlideInLeft {
-    from { transform: translateX(-18px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-  }
-  @keyframes nodeSlideInRight {
-    from { transform: translateX(18px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-  }
 
-  /* ==============================================================
-     PSP 通用版块骨架 & 发丝网格
-     ============================================================== */
-  section.section-band {
-    padding: 46px 0;
-    border-bottom: 1px solid var(--hairline);
-  }
+  /* 通用板块标题与排版层级 */
   .section-head {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
-    gap: 14px;
-    margin-bottom: 24px;
-    padding-bottom: 14px;
-    border-bottom: 1px solid var(--hairline);
-  }
-  .sec-index {
-    font-family: var(--font-mono);
-    font-size: 14.5px;
-    color: var(--lime);
-    letter-spacing: 0.08em;
-    display: block;
-    margin-bottom: 4px;
+    gap: 12px 24px;
+    margin-bottom: 28px;
   }
   .section-head h2 {
     margin: 0;
-    font-size: clamp(26px, 2.5vw, 34px);
-    line-height: 1.22;
-    letter-spacing: -0.02em;
+    font-size: clamp(32px, 3.2vw, 44px);
+    font-weight: 600;
+    line-height: 1.18;
+    letter-spacing: 0;
     color: var(--ink-primary);
   }
   .sec-desc {
-    margin: 0;
-    max-width: 640px;
+    margin: 6px 0 0;
+    max-width: 680px;
     color: var(--ink-secondary);
     font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
   }
 
-  .split-5-7 {
-    display: grid;
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-    gap: 24px;
-    align-items: start;
-  }
   .split-7-5 {
     display: grid;
     grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-    gap: 24px;
+    gap: 28px;
     align-items: start;
   }
   .grid-2 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-    gap: 18px;
+    gap: 22px;
   }
+  .grid-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
   .card {
-    background: var(--bg-surface);
-    border: 1px solid var(--hairline);
-    border-radius: 12px;
-    padding: 20px 22px;
+    background: var(--bg-white);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 24px;
+    padding: 26px 28px;
     min-width: 0;
   }
+  section.band-white .card {
+    background: var(--bg-gray);
+    border-color: transparent;
+  }
+  .panel-soft {
+    background: var(--bg-gray);
+    border-radius: 28px;
+    padding: 32px 34px;
+  }
+  .panel-soft .card {
+    background: var(--bg-white);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+  }
+
   .card h3 {
     margin: 6px 0 10px;
-    font-size: 22.5px;
-    line-height: 1.3;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.32;
     overflow-wrap: break-word;
     color: var(--ink-primary);
   }
   .card-meta {
-    font-family: var(--font-mono);
-    font-size: 14.5px;
-    color: var(--lime);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink-secondary);
     margin-bottom: 6px;
   }
-  .small-muted { color: var(--ink-secondary); font-size: 17.5px; }
-
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    padding: 4px 12px;
-    border-radius: 999px;
-    font-size: 14.5px;
-    font-weight: 700;
-    background: var(--lime-subtle);
-    color: var(--lime);
-    border: 1px solid rgba(181, 236, 106, 0.32);
-  }
-  .badge.lan { display: none; }
+  .small-muted { color: var(--ink-secondary); font-size: 17px; line-height: 1.55; }
 
   .ok-box {
-    background: var(--lime-subtle);
-    border-left: 4px solid var(--lime);
-    padding: 12px 16px;
-    border-radius: 0 8px 8px 0;
-    margin: 12px 0;
+    background: var(--ok-bg);
+    border-left: 3.5px solid var(--ok-border);
+    padding: 16px 20px;
+    border-radius: 0 14px 14px 0;
+    margin: 16px 0 0;
     font-size: 18px;
+    color: var(--ok-ink);
   }
   .warn-box {
-    background: var(--crimson-bg);
-    border-left: 4px solid var(--crimson-border);
-    padding: 12px 16px;
-    border-radius: 0 8px 8px 0;
-    margin: 12px 0;
-    font-size: 17.5px;
-    color: var(--crimson-ink);
+    background: var(--warn-bg);
+    border-left: 3.5px solid var(--warn-border);
+    padding: 14px 18px;
+    border-radius: 0 14px 14px 0;
+    margin: 14px 0;
+    font-size: 17px;
+    color: var(--warn-ink);
   }
   .mono-box {
-    background: var(--bg-inset);
-    border: 1px solid var(--hairline);
-    border-radius: 10px;
-    padding: 14px 16px;
+    background: var(--bg-gray);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 14px;
+    padding: 16px 18px;
     font-family: var(--font-mono);
-    font-size: 16px;
-    line-height: 1.55;
+    font-size: 15.5px;
+    line-height: 1.6;
     color: var(--ink-primary);
     white-space: pre-wrap;
     word-break: break-word;
@@ -623,94 +520,131 @@
     overflow: auto;
   }
 
-  /* Section 02: Orvyn 斑驳林影绿磨砂起盘卡 */
-  .dappled-forest-card {
-    position: relative;
-    border-radius: 16px;
-    padding: 26px;
-    border: 1px solid rgba(181, 236, 106, 0.28);
-    background:
-      radial-gradient(ellipse at 18% 20%, rgba(168, 224, 99, 0.48), transparent 46%),
-      radial-gradient(ellipse at 82% 28%, rgba(44, 72, 18, 0.92), transparent 55%),
-      radial-gradient(ellipse at 45% 82%, rgba(125, 166, 50, 0.56), transparent 52%),
-      linear-gradient(135deg, var(--forest-deep) 0%, var(--forest-mid) 52%, var(--forest-light) 100%);
-    box-shadow: 0 24px 56px rgba(0, 0, 0, 0.5);
+  /* Apple 分段胶囊底槽 */
+  .segmented-track {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    padding: 4px;
+    background: var(--bg-pill-track);
+    border-radius: 999px;
+    margin-bottom: 24px;
   }
-  .frosted-prompt-box {
-    background: rgba(12, 15, 12, 0.76);
-    backdrop-filter: blur(18px);
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    border-radius: 12px;
-    padding: 18px;
+  .seg-btn {
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: none;
+    background: transparent;
+    color: var(--ink-primary);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 180ms var(--ease-apple), color 180ms var(--ease-apple), transform 100ms var(--ease-apple);
   }
-  .frosted-label {
+  .seg-btn:hover { background: rgba(255, 255, 255, 0.6); }
+  .seg-btn:active { transform: scale(0.98); }
+  .seg-btn.active {
+    background: var(--ink-primary);
+    color: var(--ink-on-accent);
+  }
+
+  /* Band 1: 纯白无框 Apple 写作纸面 */
+  .writer-canvas-wrap {
+    max-width: 980px;
+  }
+  .apple-sheet {
+    background: var(--bg-white);
+    border-radius: 28px;
+    padding: 28px 34px;
+  }
+  .sheet-mode-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
-    font-size: 16.5px;
-    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--ink-secondary);
+  }
+  .sheet-mode-bar strong {
     color: var(--ink-primary);
+    font-weight: 600;
   }
   #writerPromptInput {
     width: 100%;
-    min-height: 112px;
+    min-height: 184px;
     resize: vertical;
-    background: rgba(6, 7, 6, 0.72);
-    border: 1px solid rgba(255, 255, 255, 0.14);
-    border-radius: 9px;
-    padding: 14px;
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    padding: 8px 0;
     font-family: var(--font-sans);
-    font-size: 20px;
-    line-height: 1.5;
+    font-size: 20.5px;
+    line-height: 1.65;
     color: var(--ink-primary);
   }
-  .prompt-toolbar {
+  #writerPromptInput::placeholder { color: var(--ink-muted); }
+  .sheet-footer {
+    border-top: 1px solid var(--hairline-soft);
+    padding-top: 18px;
+    margin-top: 12px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 10px;
-    margin-top: 12px;
+    gap: 12px 20px;
   }
-  .chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
-  .chip {
-    padding: 7px 14px;
-    border-radius: 999px;
-    border: 1px solid var(--hairline-strong);
-    background: rgba(10, 11, 10, 0.78);
-    color: var(--ink-secondary);
-    font-family: var(--font-sans);
-    font-size: 16px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: border-color 180ms var(--ease-out), background-color 180ms var(--ease-out), color 180ms var(--ease-out);
-  }
-  .chip:hover { border-color: var(--lime); color: var(--ink-primary); }
-  .chip.active { background: var(--lime); color: var(--ink-dark); border-color: var(--lime); }
-
-  /* Section 03: PSP 电影监视器与编号切换条 */
-  .monitor-frame {
-    position: relative;
-    background: var(--bg-inset);
-    border: 1px solid var(--hairline-strong);
-    border-radius: 12px;
-    padding: 16px;
-  }
-  .monitor-tabs {
+  .sheet-footer-group {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 12px;
+    align-items: center;
+    gap: 12px 18px;
   }
+
+  /* Band 3: 单行世界佳片筛选条（取代 33 枚药丸墙） */
+  .comps-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+    margin-bottom: 18px;
+  }
+  .comps-toolbar .segmented-track { margin-bottom: 0; }
+  select.apple-select-inline {
+    height: 40px;
+    padding: 0 16px;
+    border-radius: 999px;
+    border: 1px solid rgba(0, 0, 0, 0.10);
+    background: var(--bg-white);
+    color: var(--ink-primary);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  /* Band 4: 示范小样收起横幅 & 展开审片区 */
+  .reel-banner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px 28px;
+  }
+  .monitor-frame {
+    background: var(--bg-white);
+    border-radius: 24px;
+    padding: 20px;
+  }
+  .monitor-frame .segmented-track { margin-bottom: 14px; }
   video, audio, img.preview-img {
     width: 100%;
-    border-radius: 8px;
-    border: 1px solid var(--hairline);
-    background: var(--bg-inset);
+    border-radius: 14px;
+    background: #0a0b0c;
     display: block;
   }
-  img.preview-img { cursor: zoom-in; }
+  img.preview-img { background: var(--bg-gray); cursor: zoom-in; }
 
   .shot-index-list {
     display: flex;
@@ -724,541 +658,492 @@
     justify-content: space-between;
     align-items: center;
     gap: 12px;
-    padding: 12px 16px;
-    border-radius: 10px;
-    border: 1px solid var(--hairline);
-    background: var(--bg-surface);
+    padding: 14px 18px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: var(--bg-white);
     color: var(--ink-primary);
     font-family: var(--font-sans);
-    font-size: 17.5px;
-    font-weight: 700;
+    font-size: 17px;
+    font-weight: 600;
     cursor: pointer;
     text-align: left;
+    transition: border-color 180ms var(--ease-apple), transform 100ms var(--ease-apple);
   }
+  .shot-index-btn:active { transform: scale(0.99); }
   .shot-index-btn span.num {
     font-family: var(--font-mono);
-    color: var(--lime);
+    color: var(--apple-blue);
+    margin-right: 4px;
   }
   .shot-index-btn.active {
-    border-color: var(--lime);
-    background: var(--bg-elevated);
+    border-color: var(--apple-blue);
   }
 
-  /* 表单控件 */
+  /* 表单网格（3x2 宽敞对齐） */
+  .form-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 20px;
+    margin-bottom: 18px;
+  }
   .form-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 14px;
-    margin-bottom: 16px;
+    gap: 16px 20px;
+    margin-bottom: 18px;
   }
-  label.fld { display: flex; flex-direction: column; gap: 6px; font-weight: 700; font-size: 17.5px; color: var(--ink-secondary); }
+  label.fld {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--ink-secondary);
+  }
   select, input.txt-in {
     font-family: var(--font-sans);
-    font-size: 18px;
-    padding: 10px 12px;
-    border: 1px solid var(--hairline-strong);
-    border-radius: 8px;
-    background: var(--bg-inset);
+    font-size: 17px;
+    padding: 11px 14px;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    background: var(--bg-gray);
+    color: var(--ink-primary);
+    transition: border-color 180ms var(--ease-apple), background-color 180ms var(--ease-apple);
+  }
+  .panel-soft select, .panel-soft input.txt-in {
+    background: var(--bg-white);
+  }
+  select:focus, input.txt-in:focus {
+    border-color: var(--apple-blue);
+  }
+  input.txt-in::placeholder { color: var(--ink-muted); }
+
+  /* Band 5: Apple 极简页尾收束 */
+  .apple-footer-closing {
+    margin-top: 64px;
+    padding-top: 52px;
+    border-top: 1px solid var(--hairline);
+    text-align: center;
+  }
+  .apple-footer-closing h2 {
+    margin: 0 0 18px;
+    font-size: clamp(28px, 3vw, 40px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0;
     color: var(--ink-primary);
   }
-
-  /* PSP 高对比细网格收尾宣言带 */
-  .psp-closing {
-    margin-top: 28px;
-    padding: 36px 28px;
-    border-radius: 14px;
-    border: 1px solid rgba(181, 236, 106, 0.32);
-    background:
-      radial-gradient(circle at 12% 85%, rgba(181, 236, 106, 0.18), transparent 45%),
-      radial-gradient(circle at 88% 15%, rgba(181, 236, 106, 0.16), transparent 45%),
-      linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-      var(--bg-surface);
-    background-size: 100% 100%, 100% 100%, 28px 28px, 28px 28px, 100% 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-  }
-  .psp-closing h2 {
-    margin: 0;
-    font-size: clamp(28px, 3vw, 42px);
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+  .footer-note {
+    margin: 26px 0 0;
+    font-size: 14px;
+    color: var(--ink-muted);
   }
 
-  .row-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; align-items: center; }
+  .row-actions { display: flex; flex-wrap: wrap; gap: 12px 18px; margin-top: 14px; align-items: center; }
   .hidden { display: none !important; }
 
   #toast {
     position: fixed;
-    right: 22px;
-    bottom: 22px;
+    right: 24px;
+    bottom: 24px;
     z-index: 95;
-    background: var(--lime);
-    color: var(--ink-dark);
-    padding: 12px 20px;
-    border-radius: 10px;
-    font-size: 17.5px;
-    font-weight: 800;
+    background: var(--ink-primary);
+    color: var(--ink-on-accent);
+    padding: 12px 22px;
+    border-radius: 980px;
+    font-size: 16px;
+    font-weight: 500;
     display: none;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
   }
   #lightbox {
     position: fixed;
     inset: 0;
-    background: rgba(6, 7, 6, 0.92);
+    background: rgba(29, 29, 31, 0.88);
+    backdrop-filter: blur(12px);
     z-index: 100;
     display: none;
     align-items: center;
     justify-content: center;
     padding: 24px;
   }
-  #lightbox img { max-width: 96vw; max-height: 92vh; border-radius: 10px; border: 1px solid var(--lime); }
+  #lightbox img { max-width: 94vw; max-height: 90vh; border-radius: 16px; }
 
   @media (max-width: 980px) {
     body { font-size: 18.5px; }
-    .wf-board { grid-template-columns: 1fr; }
-    .wf-svg { display: none; }
-    .wf-node, .wf-node:nth-child(n) { margin: 0 !important; max-width: 100%; }
-    .split-5-7, .split-7-5, .grid-2 { grid-template-columns: 1fr; }
+    .chapter-nav { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+    .form-grid-3, .split-7-5, .grid-2, .grid-links { grid-template-columns: 1fr; }
+    .apple-sheet, .panel-soft { padding: 22px 20px; border-radius: 22px; }
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    .apple-nav {
+      background: var(--bg-white);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .intro-playing .wf-board,
-    .intro-playing .wf-wire,
-    .intro-playing .jt-hex-hub,
     .intro-playing .hero-line-clip > span,
     .intro-playing .hero-sub,
     .intro-playing .hero-actions,
-    .intro-playing .wf-node,
-    .wf-pulse.flow-dash {
+    .intro-playing .chapter-item {
       animation: none !important;
       opacity: 1 !important;
       transform: none !important;
-      stroke-dashoffset: 0 !important;
+    }
+    .btn:active, .seg-btn:active, .chapter-item:active, .shot-index-btn:active {
+      transform: none !important;
     }
   }
 </style>
 </head>
 <body>
 
-<header class="psp-header">
-  <div class="psp-header-inner">
+<header class="apple-nav">
+  <div class="apple-nav-inner">
     <a class="brand-lockup" href="#hero-intro">
-      <svg class="brand-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-        <polygon points="18,2 32,10 32,26 18,34 4,26 4,10" stroke="currentColor" stroke-width="2" fill="rgba(181,236,106,0.12)"/>
-        <path d="M12 14h12M18 14v10" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      <svg class="brand-mark" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+        <rect x="3" y="3" width="22" height="22" rx="6" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M9.5 11.5h9M14 11.5v6.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
       </svg>
-      <span class="brand-text">
-        <span>JT°</span>
-        <span>SCREENWRITER</span>
-      </span>
+      <span>JT 编剧台</span>
     </a>
 
-    <nav class="psp-nav" aria-label="主导航">
-      <a class="psp-link active" href="#writer-entry">[编剧入口]</a>
-      <a class="psp-link" href="#reel-stage">[实渲小样]</a>
-      <a class="psp-link" href="#comps-library">[世界佳片]</a>
-      <a class="psp-link" href="#style-lab">[导演胶片]</a>
-      <a class="psp-link" href="#platform-bridge">[平台对接]</a>
+    <nav class="apple-links" aria-label="主导航">
+      <a class="apple-link active" href="#writer-entry">写作</a>
+      <a class="apple-link" href="#style-lab">导演与胶片</a>
+      <a class="apple-link" href="#comps-library">佳片库</a>
+      <a class="apple-link" href="#reel-stage">实渲小样</a>
+      <a class="apple-link" href="#platform-bridge">平台对接</a>
     </nav>
 
-    <div class="header-search-wrap">
-      <label class="sr-only" for="globalSearch">全局搜索</label>
-      <input id="globalSearch" type="search" autofocus placeholder="搜索佳片、导演、分镜或台词…">
-      <button class="btn compact ghost" id="clearSearchBtn" type="button">清空</button>
+    <div class="header-right">
+      <div class="header-search-wrap">
+        <label class="sr-only" for="globalSearch">全局搜索</label>
+        <input id="globalSearch" type="search" autofocus placeholder="搜索佳片或导演…">
+        <button class="btn-nav-clear" id="clearSearchBtn" type="button">清空</button>
+      </div>
+      <a class="lan-dot-link" id="lanBadge" href="#lanPanel" style="display:none"><span class="lan-dot" aria-hidden="true"></span>本地引擎</a>
     </div>
-
-    <span class="badge lan" id="lanBadge">LAN LIVE :8795</span>
   </div>
 </header>
 
-<!-- =========================================================
-     SECTION 01: Orvyn 4 拍开场动画 × 编剧核心拓扑入口
-     ========================================================= -->
-<section class="hero-stage intro-playing" id="hero-intro">
-  <div class="hero-inner">
-    <div class="hero-pill">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="12 2 21 7 21 17 12 22 3 17 3 7"/></svg>
-      <span id="metaStatsBadge">32 部世界佳片 / 59 位导演 / 6 款胶片</span>
-    </div>
+<main>
+  <!-- =========================================================
+       BAND 0: Apple Mac 风格极简开场与 ChapterNav 五入口横排带
+       ========================================================= -->
+  <section class="band band-white hero-stage intro-playing" id="hero-intro">
+    <div class="hero-inner">
+      <h1 class="hero-title">
+        <span class="hero-line-clip"><span class="hero-line-primary">一处编剧台。</span></span>
+        <span class="hero-line-clip"><span class="hero-line-secondary">直出电影小样。</span></span>
+      </h1>
 
-    <h1 class="hero-title">
-      <span class="hero-line-clip"><span class="hero-line-primary">一处编剧台。</span></span>
-      <span class="hero-line-clip"><span class="hero-line-secondary">直出电影小样。</span></span>
-    </h1>
+      <p class="hero-sub">面向成熟编剧的极简创作与制片工作台。空白起稿，按需调用佳片机制与导演光学。</p>
 
-    <p class="hero-sub">面向成熟编剧的创作总控引擎：从一颗火花、大纲、初稿或历史 IP 入口起步，经 13 层防漂移门禁直达金泰平台出片。</p>
-
-    <div class="hero-actions">
-      <a class="btn lime" href="#writer-entry" id="enterWriterBtn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
-        进入编剧入口
-      </a>
-      <a class="btn ghost" href="#reel-stage">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polygon points="6 4 20 12 6 20 6 4"/></svg>
-        审看实渲小样
-      </a>
-      <button class="btn compact ghost" id="replayIntroBtn" type="button">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg>
-        重播开场
-      </button>
-    </div>
-
-    <!-- 5 编剧入口 -> JT. 六边形中枢 -> 4 金泰制片通道 -->
-    <div class="wf-board" id="workflowBoard">
-      <svg class="wf-svg" id="workflowSvg" aria-hidden="true"></svg>
-
-      <div class="wf-col left" id="wfInputsCol">
-        <button class="wf-node active" type="button" data-entry="spark">
-          <span class="wf-node-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
-          </span>
-          <span class="wf-node-body">
-            <span class="wf-node-title">01 一颗火花起盘</span>
-            <span class="wf-node-meta">立意主控思想 + STORY_BIBLE</span>
-          </span>
-        </button>
-
-        <button class="wf-node" type="button" data-entry="outline">
-          <span class="wf-node-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg>
-          </span>
-          <span class="wf-node-body">
-            <span class="wf-node-title">02 已有大纲与分场</span>
-            <span class="wf-node-meta">单场正负翻转与标准场号落盘</span>
-          </span>
-        </button>
-
-        <button class="wf-node" type="button" data-entry="script_doctor">
-          <span class="wf-node-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><rect x="3" y="4" width="18" height="16" rx="2"/></svg>
-          </span>
-          <span class="wf-node-body">
-            <span class="wf-node-title">03 初稿外科会诊</span>
-            <span class="wf-node-meta">打击同声病 / 说教 / 剧透穿帮</span>
-          </span>
-        </button>
-
-        <button class="wf-node" type="button" data-entry="adaptation">
-          <span class="wf-node-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
-          </span>
-          <span class="wf-node-body">
-            <span class="wf-node-title">04 小说与历史 IP 改编</span>
-            <span class="wf-node-meta">中国历史图库三级真实性边界</span>
-          </span>
-        </button>
-
-        <button class="wf-node" type="button" data-entry="series_bible">
-          <span class="wf-node-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
-          </span>
-          <span class="wf-node-body">
-            <span class="wf-node-title">05 多季剧集引擎</span>
-            <span class="wf-node-meta">百集耐力钩子与 A/B/C 多线交织</span>
-          </span>
-        </button>
+      <div class="hero-actions">
+        <a class="btn primary" href="#writer-entry" id="enterWriterBtn">开始写作</a>
+        <a class="link-action" href="#reel-stage">观看实渲小样 ›</a>
+        <button class="btn-subtle-link" id="replayIntroBtn" type="button">重播开场</button>
       </div>
 
-      <div class="wf-center">
-        <div class="jt-hex-hub" id="jtHexHub">
-          <svg class="hex-shell" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-            <polygon points="60,4 110,32 110,88 60,116 10,88 10,32" fill="#141814" stroke="#b5ec6a" stroke-width="2.2"/>
-            <polygon points="60,13 102,37 102,83 60,107 18,83 18,37" fill="rgba(181,236,106,0.06)" stroke="rgba(181,236,106,0.28)" stroke-width="1"/>
-          </svg>
-          <div class="jt-hex-label">
-            <strong>JT.</strong>
-            <span>13-GATE</span>
-          </div>
-        </div>
-      </div>
+      <div class="chapter-nav" id="wfInputsCol">
+        <button class="chapter-item" type="button" data-entry="spark">
+          <span class="chapter-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 3v3M12 18v3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M3 12h3M18 12h3M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/></svg>
+          </span>
+          <span class="chapter-title">一颗火花</span>
+          <span class="chapter-meta">立意与圣经</span>
+        </button>
 
-      <div class="wf-col right" id="wfOutputsCol">
-        <a class="wf-node active" href="#comps-library" data-out="0">
-          <span class="wf-node-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>
+        <button class="chapter-item" type="button" data-entry="outline">
+          <span class="chapter-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><line x1="8" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="20" y2="12"/><line x1="8" y1="18" x2="20" y2="18"/><circle cx="4.5" cy="6" r="1"/><circle cx="4.5" cy="12" r="1"/><circle cx="4.5" cy="18" r="1"/></svg>
           </span>
-          <span class="wf-node-body">
-            <span class="wf-node-title">32 部世界佳片机制</span>
-            <span class="wf-node-meta">F/O 汲取与防抄袭红线隔离</span>
-          </span>
-          <span class="wf-check-ring"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg></span>
-        </a>
+          <span class="chapter-title">大纲分场</span>
+          <span class="chapter-meta">节奏与场号</span>
+        </button>
 
-        <a class="wf-node active" href="#style-lab" data-out="1">
-          <span class="wf-node-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg>
+        <button class="chapter-item" type="button" data-entry="script_doctor">
+          <span class="chapter-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><rect x="4" y="4" width="16" height="16" rx="4"/></svg>
           </span>
-          <span class="wf-node-body">
-            <span class="wf-node-title">59 导演 × 6 胶片编译</span>
-            <span class="wf-node-meta">光学冲突检查 + @CHR/@SCN</span>
-          </span>
-          <span class="wf-check-ring"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg></span>
-        </a>
+          <span class="chapter-title">初稿会诊</span>
+          <span class="chapter-meta">台词与穿帮</span>
+        </button>
 
-        <a class="wf-node active" href="#platform-bridge" data-out="2">
-          <span class="wf-node-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h18"/></svg>
+        <button class="chapter-item" type="button" data-entry="adaptation">
+          <span class="chapter-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19.5A2.5 2.5 0 0 1 7.5 17H19"/><path d="M7.5 3H19v18H7.5A2.5 2.5 0 0 1 5 18.5v-13A2.5 2.5 0 0 1 7.5 3Z"/></svg>
           </span>
-          <span class="wf-node-body">
-            <span class="wf-node-title">金泰 AVC 画布直导</span>
-            <span class="wf-node-meta">Seedance 2.5 分镜 + 音色连线</span>
-          </span>
-          <span class="wf-check-ring"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg></span>
-        </a>
+          <span class="chapter-title">IP 改编</span>
+          <span class="chapter-meta">史料边界</span>
+        </button>
 
-        <a class="wf-node active" href="#reel-stage" data-out="3">
-          <span class="wf-node-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="6 4 20 12 6 20 6 4"/></svg>
+        <button class="chapter-item" type="button" data-entry="series_bible">
+          <span class="chapter-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg>
           </span>
-          <span class="wf-node-body">
-            <span class="wf-node-title">A 机 8×H100 影片小样</span>
-            <span class="wf-node-meta">配音 + 整轨音乐 + 四联检视板</span>
-          </span>
-          <span class="wf-check-ring"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="3.5 8.5 6.5 11.5 12.5 4.5"/></svg></span>
-        </a>
+          <span class="chapter-title">多季引擎</span>
+          <span class="chapter-meta">多线钩子</span>
+        </button>
       </div>
     </div>
-  </div>
-</section>
-
-<div class="stripe-divider" aria-hidden="true"></div>
-
-<main class="container">
-
-  <!-- 局域网实时控制带（仅 :8795 模式显现） -->
-  <section class="card" id="lanPanel" style="display:none; margin-top:26px; border-color: var(--lime);">
-    <div class="card-meta">LAN WORKSTATION LIVE :8795</div>
-    <h3>局域网全功能生产控制台（直连本机与 A 机探针）</h3>
-    <div class="form-grid">
-      <label class="fld">当前工作区项目
-        <select id="lanProjectSelect"></select>
-      </label>
-      <label class="fld">A 机集群即时状态
-        <input class="txt-in" id="lanClusterStatus" readonly value="正在探测…">
-      </label>
-    </div>
-    <div class="row-actions">
-      <button class="btn lime" id="lanDoctorBtn" type="button">实时运行剧本会诊 / 13层门禁</button>
-      <button class="btn ghost" id="lanBuildBtn" type="button">重编译金泰平台交付包</button>
-      <button class="btn ghost" id="lanProbePlanBtn" type="button">生成 A 机单卡 5s 探针预演计划</button>
-    </div>
-    <div class="mono-box" id="lanActionOut" style="margin-top:14px; display:none;"></div>
   </section>
 
   <!-- =========================================================
-       SECTION 02: 编剧入口中枢（Orvyn 斑驳林影绿磨砂起盘器）
+       BAND 1: 纯净白纸空白写作画布
        ========================================================= -->
-  <section class="section-band" id="writer-entry">
-    <div class="section-head">
-      <div>
-        <span class="sec-index">01 / WRITER ENTRY HUB</span>
-        <h2>编剧入口工作台：选择入口，立即生成开工方案</h2>
-      </div>
-      <p class="sec-desc">拒绝教科书式说教。输入您的故事火花、大纲场次或修改困惑，即时匹配世界佳片机制、导演胶片参数与金泰平台开工指令。</p>
-    </div>
-
-    <div class="split-5-7">
-      <article class="card">
-        <div class="card-meta" id="activeEntrySkill">ROUTED SKILL: sw-story-architecture</div>
-        <h3 id="activeEntryTitle">1. 一颗火花起盘</h3>
-        <p id="activeEntryWhen" class="small-muted"></p>
-        <p><strong>关键交付：</strong><span id="activeEntryDeliverable"></span></p>
-        <div class="mono-box" id="activeEntryCliBox" style="max-height:110px"></div>
-        <div class="row-actions">
-          <button class="btn lime" id="copySystemPromptBtn" type="button">一键复制完整 System Prompt</button>
-          <button class="btn ghost" id="copySelectedCliBtn" type="button">复制 CLI 开工命令</button>
+  <section class="band band-gray" id="writer-entry">
+    <div class="band-inner">
+      <div class="section-head">
+        <div>
+          <h2>写作画布</h2>
+          <p class="sec-desc">完全空白起稿，零预设干扰；点击生成时再按需匹配佳片机制与开工数据包。</p>
         </div>
-      </article>
+      </div>
 
-      <div class="dappled-forest-card">
-        <div class="frosted-prompt-box">
-          <div class="frosted-label">
-            <span>描述你的剧本念头、场次冲突或想对标的气质</span>
-            <span class="badge" id="writerEntryModeTag">火花起盘模式</span>
+      <div class="segmented-track" id="entryChipRow"></div>
+
+      <div class="writer-canvas-wrap">
+        <div class="apple-sheet">
+          <div class="sheet-mode-bar">
+            <span>当前模式：<strong id="writerEntryModeTag">空白自由起稿</strong></span>
           </div>
           <label class="sr-only" for="writerPromptInput">编剧输入区</label>
-          <textarea id="writerPromptInput" placeholder="例如：1998年南方梅雨夜旧书店，十年前失踪妹妹的第七页借书卡滑出，门口黑伞来客悄然停下…"></textarea>
-          <div class="prompt-toolbar">
-            <div class="chip-row" id="entryChipRow"></div>
-            <button class="btn lime" id="writerBuildBtn" type="button">生成编剧开工方案 →</button>
+          <textarea id="writerPromptInput" rows="7" placeholder="写下你的故事、人物、场次，或直接粘贴剧本…"></textarea>
+          <div class="sheet-footer">
+            <div class="sheet-footer-group">
+              <button class="btn primary" id="writerBuildBtn" type="button">生成编剧方案</button>
+              <button class="btn secondary-fill" id="writerClearBtn" type="button">清空</button>
+            </div>
+            <div class="sheet-footer-group">
+              <button class="link-action" id="copySystemPromptBtn" type="button">复制 System Prompt</button>
+              <button class="link-action" id="toggleSystemPromptBtn" type="button">查看原文 ›</button>
+            </div>
           </div>
         </div>
-        <div class="ok-box" id="writerPlanResult" style="margin-top:14px; background:rgba(10,11,10,0.88); color:var(--ink-primary);">
-          <strong>实时响应就绪：</strong>点击上方入口或点击「生成编剧开工方案 →」，立即抽取 Top 3 世界对标佳片机制、推荐导演×胶片、及可粘贴进 AI 编剧台的完整提示词包。
-        </div>
-      </div>
-    </div>
 
-    <div class="grid-2" style="margin-top:22px">
-      <article class="card">
-        <div class="card-meta">SYSTEM PROMPT SPEC</div>
-        <h3>JT_SCREENWRITER_AGENT_SYSTEM_PROMPT.md</h3>
-        <div class="mono-box" id="systemPromptBox"></div>
-      </article>
-      <article class="card">
-        <div class="card-meta">DEMO SCREENPLAY & 13-LAYER GATE</div>
-        <h3>《第七页雨痕》示例分场剧本 <span id="gateVerdictBadge" class="badge">PASS</span></h3>
-        <div class="mono-box" id="demoScreenplayBox"></div>
-      </article>
+        <div class="ok-box hidden" id="writerPlanResult"></div>
+
+        <article class="card hidden" id="systemPromptWrap" style="margin-top:20px">
+          <div class="row-actions" style="justify-content:space-between; margin-top:0; margin-bottom:12px">
+            <div class="card-meta" style="margin-bottom:0">专家规则原文</div>
+            <button class="link-action" id="closeSystemPromptBtn" type="button">收起</button>
+          </div>
+          <div class="mono-box" id="systemPromptBox"></div>
+        </article>
+      </div>
     </div>
   </section>
 
   <!-- =========================================================
-       SECTION 03: PSP Production 风格实渲电影小样展映台
+       BAND 2: 导演与胶片光学编译（3x2 宽敞留白控制台）
        ========================================================= -->
-  <section class="section-band" id="reel-stage">
-    <div class="section-head">
-      <div>
-        <span class="sec-index">02 / SCREENING ROOM & QC BOARD</span>
-        <h2>《第七页雨痕》实渲电影小样与四联审片台</h2>
-      </div>
-      <p class="sec-desc" id="demoLogline">正在加载《第七页雨痕》主控思想与声画验收摘要…</p>
-    </div>
-
-    <div class="split-7-5">
-      <div class="monitor-frame">
-        <div class="monitor-tabs">
-          <button class="chip active" type="button" data-stage="video">成片小样视频 (5.17s)</button>
-          <button class="chip" type="button" data-stage="quad">四联标准检视板</button>
-          <button class="chip" type="button" data-stage="anchor">4MP 视觉锚点母图</button>
+  <section class="band band-white" id="style-lab">
+    <div class="band-inner">
+      <div class="section-head">
+        <div>
+          <h2>导演与胶片</h2>
+          <p class="sec-desc">59 位导演几何调度 × 6 款 35mm 胶片乳剂，全空白起手，点击后编译提示词并做物理冲突检测。</p>
         </div>
-
-        <div id="stagePaneVideo">
-          <video controls preload="metadata" playsinline src="assets/sample_reel.mp4"></video>
-        </div>
-        <div id="stagePaneQuad" class="hidden">
-          <img class="preview-img" src="assets/qa_quad_sheet.jpg" alt="《第七页雨痕》四联标准检视板" data-zoom="assets/qa_quad_sheet.jpg">
-        </div>
-        <div id="stagePaneAnchor" class="hidden">
-          <img class="preview-img" src="assets/SH01_anchor.jpg" alt="SH01 4MP 视觉锚点图" data-zoom="assets/SH01_anchor.jpg">
-        </div>
-
-        <div style="margin-top:14px">
-          <div class="card-meta">独立审听音轨（Breeze-TTS 演员声线 + MiniMax Music 3 整轨大提琴与钢琴）</div>
-          <audio controls preload="metadata" src="assets/sample_reel_audio.mp3"></audio>
-        </div>
-        <div class="ok-box" id="reelAuditVerdict"></div>
       </div>
 
-      <div>
-        <div class="card-meta">PSP NUMBERED SHOT INDEX</div>
-        <div class="shot-index-list" id="shotIndexTabs"></div>
-        <article class="card" id="activeShotCard"></article>
-        <div id="demoShotsGrid" class="hidden" style="margin-top:14px"></div>
+      <div class="panel-soft">
+        <div class="form-grid-3">
+          <label class="fld">主导演
+            <select id="selDirector"></select>
+          </label>
+          <label class="fld">副导演（可选）
+            <select id="selSecondaryDirector"></select>
+          </label>
+          <label class="fld">胶片乳剂
+            <select id="selFilmStock"></select>
+          </label>
+        </div>
+        <div class="form-grid-3">
+          <label class="fld">景别与焦段
+            <input class="txt-in" id="inpShotScale" placeholder="例：中近景 / 35mm">
+          </label>
+          <label class="fld">场景空间与光源
+            <input class="txt-in" id="inpScene" placeholder="输入场景空间与物理光源（选填）">
+          </label>
+          <label class="fld">动作与微表情
+            <input class="txt-in" id="inpAction" placeholder="输入人物动作与生理微反应（选填）">
+          </label>
+        </div>
+
         <div class="row-actions">
-          <button class="btn compact ghost" id="toggleAllShotsBtn" type="button">展开查看全部 3 镜详情</button>
+          <button class="btn primary" id="compileStyleBtn" type="button">生成提示词</button>
+          <button class="btn secondary-on-gray" id="resetStyleBtn" type="button">清空重置</button>
+        </div>
+
+        <div class="hidden" id="styleResultWrap" style="margin-top:24px">
+          <div class="row-actions" style="margin-top:0; margin-bottom:14px">
+            <button class="btn compact secondary-on-gray" id="copyH3PromptBtn" type="button">复制 H3 Ref2VA 提示词</button>
+            <button class="btn compact secondary-on-gray" id="copySeedanceBtn" type="button">复制 Seedance 2.5 提示词</button>
+          </div>
+          <div id="styleWarningsBox"></div>
+          <div class="grid-2" style="margin-top:16px">
+            <article class="card">
+              <div class="card-meta" id="dirProfileTitle">导演与胶片参数</div>
+              <div id="dirProfileDetails"></div>
+            </article>
+            <article class="card">
+              <div class="card-meta">双模型编译输出</div>
+              <div class="mono-box" id="compiledPromptsOut"></div>
+            </article>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- =========================================================
-       SECTION 04: 世界同类型优秀影片四层机制库
+       BAND 3: 世界佳片机制（单行 6 核心题材分段槽 + 下拉更多，默认留白）
        ========================================================= -->
-  <section class="section-band" id="comps-library">
-    <div class="section-head">
-      <div>
-        <span class="sec-index">03 / WORLD CINEMA MECHANICS (32 FILMS)</span>
-        <h2>世界佳片四层机制汲取库（含抄袭隔离红线）</h2>
+  <section class="band band-gray" id="comps-library">
+    <div class="band-inner">
+      <div class="section-head">
+        <div>
+          <h2>世界佳片机制</h2>
+          <p class="sec-desc">32 部高分佳片四层机制与防抄袭隔离红线。默认留白，检索或点选题材后按需展开。</p>
+        </div>
       </div>
-      <p class="sec-desc">只拆解可迁移的剧作信息差与视听调度机制，严禁复制标志性台词与签名桥段。</p>
-    </div>
-    <div class="chip-row" id="genreChips" style="margin-bottom:18px"></div>
-    <div class="grid-2" id="compsGrid"></div>
-  </section>
 
-  <!-- =========================================================
-       SECTION 05: 59 位导演 × 6 款胶片光学编译器
-       ========================================================= -->
-  <section class="section-band" id="style-lab">
-    <div class="section-head">
-      <div>
-        <span class="sec-index">04 / DIRECTOR & ANALOG OPTICS COMPILER</span>
-        <h2>59 位导演 × 6 款胶片光学编译器</h2>
+      <div class="comps-toolbar">
+        <div class="segmented-track" id="genreChips"></div>
+        <select class="apple-select-inline" id="genreSelect" aria-label="更多题材筛选">
+          <option value="">更多题材…</option>
+        </select>
+        <button class="link-action" id="browseAllCompsBtn" type="button">浏览全部 32 部 ›</button>
+        <button class="link-action hidden" id="collapseCompsBtn" type="button">收起全部</button>
       </div>
-      <p class="sec-desc">淘汰“8K、HDR、电影感”空洞套话，编译可验证物理光源、焦段、银盐色温与零否定词模型提示词。</p>
-    </div>
 
-    <div class="form-grid">
-      <label class="fld">主导演（机位几何与剪辑呼吸）
-        <select id="selDirector"></select>
-      </label>
-      <label class="fld">副导演（光色与介质辅助）
-        <select id="selSecondaryDirector"></select>
-      </label>
-      <label class="fld">6 款胶片物理乳剂
-        <select id="selFilmStock"></select>
-      </label>
-      <label class="fld">景别与焦段
-        <input class="txt-in" id="inpShotScale" value="Medium Close-Up, 35mm">
-      </label>
-    </div>
-    <div class="form-grid">
-      <label class="fld">场景空间与物理光源（@SCN 基准）
-        <input class="txt-in" id="inpScene" value="1998年南方潮湿旧城半卷斋旧书店梅雨夜，唯一一盏3200K黄铜台灯照亮旧木桌，窗外冷青街灯穿透雨水玻璃">
-      </label>
-      <label class="fld">角色动作与生理反应链
-        <input class="txt-in" id="inpAction" value="修书匠周砚手指按住发黄借书卡停滞半秒，门铃轻震后缓缓抬头迎向门口黑伞阴影">
-      </label>
-    </div>
-
-    <div class="row-actions">
-      <button class="btn lime" id="compileStyleBtn" type="button">编译双语导演提示词</button>
-      <button class="btn ghost" id="copyH3PromptBtn" type="button">复制 H3 Ref2VA 提示词</button>
-      <button class="btn ghost" id="copySeedanceBtn" type="button">复制 Seedance 2.5 提示词</button>
-    </div>
-    <div id="styleWarningsBox" style="margin-top:14px"></div>
-
-    <div class="grid-2" style="margin-top:16px">
-      <article class="card">
-        <div class="card-meta" id="dirProfileTitle">导演六维参数与胶片属性</div>
-        <div id="dirProfileDetails"></div>
-      </article>
-      <article class="card">
-        <div class="card-meta">COMPILED MODEL PROMPTS (H3 / SEEDANCE 2.5)</div>
-        <div class="mono-box" id="compiledPromptsOut"></div>
-      </article>
+      <p class="small-muted" id="compsEmptyHint">当前处于留白状态：请在顶部搜索框输入关键词、点选上方 6 个核心题材或下拉选择更多题材。</p>
+      <div class="grid-2 hidden" id="compsGrid"></div>
     </div>
   </section>
 
   <!-- =========================================================
-       SECTION 06: 金泰平台四通道 + AVC 导出 + PSP 收尾网格
+       BAND 4: 示范小样参考（默认收起单条横幅卡）
        ========================================================= -->
-  <section class="section-band" id="platform-bridge" style="border-bottom:none;">
-    <div class="section-head">
-      <div>
-        <span class="sec-index">05 / JINTAI PLATFORM & AVC EXPORT</span>
-        <h2>金泰全平台一键对接与 AVC 画布导出</h2>
+  <section class="band band-white" id="reel-stage">
+    <div class="band-inner">
+      <div class="panel-soft">
+        <div class="reel-banner">
+          <div>
+            <h2 style="margin:0; font-size:clamp(28px, 2.8vw, 38px); font-weight:600; line-height:1.2;">实渲影片小样</h2>
+            <p class="sec-desc">《第七页雨痕》5.17s 实机渲染、演员声线与四联检视参考（默认收起）。</p>
+          </div>
+          <button class="btn secondary-on-gray" id="toggleReelBtn" type="button">展开观看小样</button>
+        </div>
+
+        <div class="hidden" id="reelContentWrap" style="margin-top:26px">
+          <p class="small-muted" id="demoLogline" style="margin:0 0 18px"></p>
+          <div class="split-7-5">
+            <div class="monitor-frame">
+              <div class="segmented-track monitor-tabs">
+                <button class="seg-btn active" type="button" data-stage="video">成片小样 (5.17s)</button>
+                <button class="seg-btn" type="button" data-stage="quad">四联标准检视板</button>
+                <button class="seg-btn" type="button" data-stage="anchor">4MP 视觉锚点</button>
+              </div>
+
+              <div id="stagePaneVideo">
+                <video controls preload="metadata" playsinline src="assets/sample_reel.mp4"></video>
+              </div>
+              <div id="stagePaneQuad" class="hidden">
+                <img class="preview-img" src="assets/qa_quad_sheet.jpg" alt="四联标准检视板" data-zoom="assets/qa_quad_sheet.jpg">
+              </div>
+              <div id="stagePaneAnchor" class="hidden">
+                <img class="preview-img" src="assets/SH01_anchor.jpg" alt="4MP 视觉锚点图" data-zoom="assets/SH01_anchor.jpg">
+              </div>
+
+              <div style="margin-top:16px">
+                <div class="card-meta">独立审听音轨（演员声线 + 整轨音乐）</div>
+                <audio controls preload="metadata" src="assets/sample_reel_audio.mp3"></audio>
+              </div>
+              <div class="ok-box" id="reelAuditVerdict"></div>
+            </div>
+
+            <div>
+              <div class="card-meta" style="margin-bottom:10px">分镜索引与语义规格</div>
+              <div class="shot-index-list" id="shotIndexTabs"></div>
+              <article class="card" id="activeShotCard"></article>
+              <div id="demoShotsGrid" class="hidden" style="margin-top:16px"></div>
+              <div class="row-actions">
+                <button class="btn compact secondary-on-gray" id="toggleAllShotsBtn" type="button">展开全部 3 镜详情</button>
+                <button class="link-action" id="toggleDemoScriptBtn" type="button">查看示例剧本 ›</button>
+              </div>
+              <article class="card hidden" id="demoScriptWrap" style="margin-top:14px">
+                <div class="card-meta">示例分场剧本与门禁结果：<span id="gateVerdictBadge">PASS</span></div>
+                <div class="mono-box" id="demoScreenplayBox"></div>
+              </article>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="sec-desc">一键打通外网安全画布、历史文化图库与 Story2Board 分镜副导演。</p>
     </div>
+  </section>
 
-    <div class="grid-2" id="publicLinksGrid"></div>
+  <!-- =========================================================
+       BAND 5: 金泰平台对接、可选 LAN 引擎控制与极简页尾
+       ========================================================= -->
+  <section class="band band-gray" id="platform-bridge">
+    <div class="band-inner">
+      <div class="section-head">
+        <div>
+          <h2>金泰平台对接</h2>
+          <p class="sec-desc">直连金泰画布、Smart 工作台与图库资源，或按需导出标准 AVC 工程文件。</p>
+        </div>
+        <div class="row-actions" style="margin-top:0">
+          <button class="link-action" id="toggleAvcJsonBtn" type="button">查看示例 JSON ›</button>
+          <button class="link-action" id="copyAvcBtn" type="button">复制 JSON</button>
+          <button class="link-action" id="downloadAvcBtn" type="button">下载 JSON</button>
+        </div>
+      </div>
 
-    <article class="card" style="margin-top:18px">
-      <div class="card-meta">VALIDATED ZERO-EXTERNAL-URL AVC CANVAS JSON</div>
-      <h3>《第七页雨痕》avc_canvas_import.json</h3>
-      <div class="row-actions" style="margin-bottom:12px">
-        <button class="btn lime" id="copyAvcBtn" type="button">一键复制 AVC 画布 JSON</button>
-        <button class="btn ghost" id="downloadAvcBtn" type="button">下载 avc_canvas_import.json</button>
-      </div>
-      <div class="mono-box" id="avcJsonBox"></div>
-    </article>
+      <div class="grid-links" id="publicLinksGrid"></div>
 
-    <div class="psp-closing">
-      <div>
-        <span class="sec-index">READY TO WRITE & SHOOT</span>
-        <h2>每一行扎实对白，都值得立刻上屏验证。</h2>
-      </div>
-      <div class="row-actions" style="margin-top:0">
-        <a class="btn lime" href="#writer-entry">回到编剧入口起盘</a>
-        <a class="btn ghost" href="#hero-intro">重返开场拓扑</a>
-      </div>
+      <!-- 局域网实时生产控制台（仅 :8795 启用时静默显现于底部平台区，绝不打断顶部写作流） -->
+      <section class="card" id="lanPanel" style="display:none; margin-top:26px;">
+        <div class="card-meta">本地算力与工程调度台</div>
+        <h3>局域网实时联动</h3>
+        <div class="form-grid">
+          <label class="fld">当前工作区项目
+            <select id="lanProjectSelect"></select>
+          </label>
+          <label class="fld">算力集群即时状态
+            <input class="txt-in" id="lanClusterStatus" readonly value="正在探测…">
+          </label>
+        </div>
+        <div class="row-actions">
+          <button class="btn primary" id="lanDoctorBtn" type="button">运行剧本会诊与 13 层门禁</button>
+          <button class="btn secondary-fill" id="lanBuildBtn" type="button">重编译交付包</button>
+          <button class="btn secondary-fill" id="lanProbePlanBtn" type="button">生成 5s 探针预演计划</button>
+        </div>
+        <div class="mono-box" id="lanActionOut" style="margin-top:14px; display:none;"></div>
+      </section>
+
+      <article class="card hidden" id="avcJsonWrap" style="margin-top:22px">
+        <div class="row-actions" style="justify-content:space-between; margin-top:0; margin-bottom:12px">
+          <div class="card-meta" style="margin-bottom:0">《第七页雨痕》AVC 画布导出样例（已通过零外链校验）</div>
+          <button class="link-action" id="closeAvcJsonBtn" type="button">收起</button>
+        </div>
+        <div class="mono-box" id="avcJsonBox"></div>
+      </article>
+
+      <footer class="apple-footer-closing">
+        <h2>回到空白画布，写下第一场戏。</h2>
+        <div class="row-actions" style="justify-content:center; margin-top:0">
+          <a class="btn primary" href="#writer-entry">开始写作</a>
+          <a class="link-action" href="#hero-intro">回到顶部 ›</a>
+        </div>
+        <p class="footer-note">JT 编剧工作台 · 极简空白起稿 · 公网零内网泄露保障</p>
+      </footer>
     </div>
   </section>
 </main>
@@ -1269,20 +1154,21 @@
 <script>
 (function(){
   var DATA = null;
-  var activeEntryKey = 'spark';
+  var activeEntryKey = 'blank';
   var activeGenre = '全部';
+  var compsExpanded = false;
   var activeShotIdx = 0;
   var lastCompiled = { h3: '', seedance: '' };
   var lastWriterPackage = '';
-  var typewriterTimer = null;
-  var userTouchedInput = false;
+  var CORE_GENRES = ['犯罪悬疑', '历史', '剧情', '心理惊悚', '动作', '黑色喜剧'];
 
-  var ENTRY_LINK_OUTS = {
-    spark: [0, 1],
-    outline: [1, 2],
-    script_doctor: [2, 3],
-    adaptation: [0, 3],
-    series_bible: [0, 1, 2, 3]
+  var ENTRY_LABELS = {
+    blank: '空白自由起稿',
+    spark: '一颗火花',
+    outline: '大纲分场',
+    script_doctor: '初稿会诊',
+    adaptation: 'IP 改编',
+    series_bible: '多季引擎'
   };
 
   function esc(s) {
@@ -1295,10 +1181,11 @@
 
   function toast(msg) {
     var el = document.getElementById('toast');
+    if (!el) return;
     el.textContent = msg;
     el.style.display = 'block';
     clearTimeout(window.__jtToastT);
-    window.__jtToastT = setTimeout(function(){ el.style.display = 'none'; }, 3000);
+    window.__jtToastT = setTimeout(function(){ el.style.display = 'none'; }, 2800);
   }
 
   function copyText(txt, label) {
@@ -1320,88 +1207,17 @@
     toast('已复制：' + label);
   }
 
-  /* 精确测量左右节点与六边形中枢边界并生成正交贝塞尔连线 */
-  function layoutWorkflowPaths() {
-    var board = document.getElementById('workflowBoard');
-    var svg = document.getElementById('workflowSvg');
-    var hub = document.getElementById('jtHexHub');
-    if (!board || !svg || !hub) return;
-    if (window.innerWidth <= 980) {
-      svg.innerHTML = '';
-      return;
-    }
-
-    var bRect = board.getBoundingClientRect();
-    if (!bRect.width || !bRect.height) return;
-    svg.setAttribute('viewBox', '0 0 ' + bRect.width + ' ' + bRect.height);
-
-    var hRect = hub.getBoundingClientRect();
-    var hLeftX = hRect.left - bRect.left + 8;
-    var hRightX = hRect.right - bRect.left - 8;
-    var hCenterY = (hRect.top + hRect.bottom) / 2 - bRect.top;
-
-    var wiresHtml = '';
-    var inNodes = board.querySelectorAll('.wf-col.left .wf-node');
-    inNodes.forEach(function(nd, idx){
-      var r = nd.getBoundingClientRect();
-      var x1 = r.right - bRect.left;
-      var y1 = (r.top + r.bottom) / 2 - bRect.top;
-      var x2 = hLeftX;
-      var y2 = hCenterY + (idx - 2) * 8;
-      var midX = x1 + (x2 - x1) * 0.52;
-      var d = 'M ' + x1.toFixed(1) + ' ' + y1.toFixed(1) +
-        ' C ' + midX.toFixed(1) + ' ' + y1.toFixed(1) + ', ' +
-        midX.toFixed(1) + ' ' + y2.toFixed(1) + ', ' +
-        x2.toFixed(1) + ' ' + y2.toFixed(1);
-      var key = nd.getAttribute('data-entry');
-      var isAct = key === activeEntryKey;
-      wiresHtml += '<path class="wf-wire" pathLength="420" d="' + d + '"/>';
-      wiresHtml += '<path class="wf-pulse' + (isAct ? ' active flow-dash' : '') + '" pathLength="268" d="' + d + '"/>';
-    });
-
-    var litOuts = ENTRY_LINK_OUTS[activeEntryKey] || [0, 3];
-    var outNodes = board.querySelectorAll('.wf-col.right .wf-node');
-    outNodes.forEach(function(nd, idx){
-      var r = nd.getBoundingClientRect();
-      var x1 = hRightX;
-      var y1 = hCenterY + (idx - 1.5) * 9;
-      var x2 = r.left - bRect.left;
-      var y2 = (r.top + r.bottom) / 2 - bRect.top;
-      var midX = x1 + (x2 - x1) * 0.48;
-      var d = 'M ' + x1.toFixed(1) + ' ' + y1.toFixed(1) +
-        ' C ' + midX.toFixed(1) + ' ' + y1.toFixed(1) + ', ' +
-        midX.toFixed(1) + ' ' + y2.toFixed(1) + ', ' +
-        x2.toFixed(1) + ' ' + y2.toFixed(1);
-      var isOutAct = litOuts.indexOf(idx) !== -1;
-      nd.classList.toggle('active', isOutAct);
-      wiresHtml += '<path class="wf-wire" pathLength="420" d="' + d + '"/>';
-      wiresHtml += '<path class="wf-pulse' + (isOutAct ? ' active flow-dash' : '') + '" pathLength="268" d="' + d + '"/>';
-    });
-
-    svg.innerHTML = wiresHtml;
-  }
-
   function setEntryMode(entryKey, focusEditor) {
     activeEntryKey = entryKey;
-    document.querySelectorAll('.wf-col.left .wf-node').forEach(function(nd){
+    document.querySelectorAll('#wfInputsCol .chapter-item').forEach(function(nd){
       nd.classList.toggle('active', nd.getAttribute('data-entry') === entryKey);
     });
-    document.querySelectorAll('#entryChipRow .chip').forEach(function(ch){
+    document.querySelectorAll('#entryChipRow .seg-btn').forEach(function(ch){
       ch.classList.toggle('active', ch.getAttribute('data-entry') === entryKey);
     });
+    var tagEl = document.getElementById('writerEntryModeTag');
+    if (tagEl) tagEl.textContent = ENTRY_LABELS[entryKey] || '空白自由起稿';
 
-    if (DATA && DATA.entry_modes) {
-      var mode = DATA.entry_modes.find(function(m){ return m.key === entryKey; }) || DATA.entry_modes[0];
-      if (mode) {
-        document.getElementById('activeEntrySkill').textContent = 'ROUTED SKILL: ' + mode.route_skill;
-        document.getElementById('activeEntryTitle').textContent = mode.title;
-        document.getElementById('activeEntryWhen').textContent = mode.when;
-        document.getElementById('activeEntryDeliverable').textContent = mode.deliverable;
-        document.getElementById('activeEntryCliBox').textContent = mode.cmd;
-        document.getElementById('writerEntryModeTag').textContent = mode.title.replace(/^\d+\.\s*/, '');
-      }
-    }
-    layoutWorkflowPaths();
     if (focusEditor) {
       var target = document.getElementById('writer-entry');
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1418,72 +1234,24 @@
     hero.classList.remove('intro-playing');
     void hero.offsetWidth;
     hero.classList.add('intro-playing');
-    layoutWorkflowPaths();
-  }
-
-  function startDemoTypewriter() {
-    var inp = document.getElementById('writerPromptInput');
-    if (!inp || userTouchedInput) return;
-    var samples = [
-      '1998年南方梅雨夜旧书店，十年前失踪妹妹的第七页借书卡滑出，门口黑伞来客悄然停下…',
-      '帮我检查这场二人对质戏是否出现“同声病”和提前剧透秘密的穿帮漏洞…',
-      '明代万历边关雪夜送密信，按历史真实性三级边界梳理官服形制与暗夜台词潜台词…'
-    ];
-    var sIdx = 0;
-    var cIdx = 0;
-    clearInterval(typewriterTimer);
-    typewriterTimer = setInterval(function(){
-      if (userTouchedInput || document.activeElement === inp) {
-        clearInterval(typewriterTimer);
-        return;
-      }
-      var target = samples[sIdx];
-      cIdx += 1;
-      inp.value = target.slice(0, cIdx);
-      if (cIdx >= target.length) {
-        clearInterval(typewriterTimer);
-        setTimeout(function(){
-          if (!userTouchedInput) {
-            sIdx = (sIdx + 1) % samples.length;
-            cIdx = 0;
-            startDemoTypewriterLoop(samples, sIdx);
-          }
-        }, 2600);
-      }
-    }, 55);
-  }
-
-  function startDemoTypewriterLoop(samples, startIdx) {
-    var inp = document.getElementById('writerPromptInput');
-    if (!inp || userTouchedInput) return;
-    var sIdx = startIdx;
-    var cIdx = 0;
-    clearInterval(typewriterTimer);
-    typewriterTimer = setInterval(function(){
-      if (userTouchedInput || document.activeElement === inp) {
-        clearInterval(typewriterTimer);
-        return;
-      }
-      var target = samples[sIdx];
-      cIdx += 1;
-      inp.value = target.slice(0, cIdx);
-      if (cIdx >= target.length) {
-        clearInterval(typewriterTimer);
-        setTimeout(function(){
-          if (!userTouchedInput) {
-            sIdx = (sIdx + 1) % samples.length;
-            startDemoTypewriterLoop(samples, sIdx);
-          }
-        }, 2600);
-      }
-    }, 52);
   }
 
   function scoreAndBuildWriterPlan() {
     if (!DATA) return;
-    var rawText = (document.getElementById('writerPromptInput').value || '').trim();
-    if (!rawText) rawText = '1998年梅雨夜旧书店犯罪悬疑短片';
-    var mode = (DATA.entry_modes || []).find(function(m){ return m.key === activeEntryKey; }) || (DATA.entry_modes || [])[0];
+    var inpEl = document.getElementById('writerPromptInput');
+    var rawText = (inpEl.value || '').trim();
+    var outEl = document.getElementById('writerPlanResult');
+    if (!rawText) {
+      outEl.classList.remove('hidden');
+      outEl.innerHTML = '请先在上方空白画布写下你的故事、人物、场次，或直接粘贴剧本片段。<div class="row-actions"><button class="link-action" id="hideWriterResultBtn" type="button">收起</button></div>';
+      document.getElementById('hideWriterResultBtn').onclick = function(){ outEl.classList.add('hidden'); };
+      inpEl.focus();
+      return;
+    }
+
+    var modeList = DATA.entry_modes || [];
+    var mode = modeList.find(function(m){ return m.key === activeEntryKey; }) || modeList[0];
+    var modeName = ENTRY_LABELS[activeEntryKey] || (mode ? mode.title : '空白自由起稿');
     var libs = DATA.world_cinema_library || [];
     var tokens = rawText.replace(/[^\u4e00-\u9fa5A-Za-z0-9]+/g, ' ').split(/\s+/).filter(function(w){ return w.length >= 2; });
 
@@ -1501,32 +1269,35 @@
     scored.sort(function(a, b){ return b.pts - a.pts; });
     var topComps = scored.slice(0, 3).map(function(x){ return x.item; });
 
-    var dName = document.getElementById('selDirector') ? document.getElementById('selDirector').value : '杜琪峰';
-    var fKey = document.getElementById('selFilmStock') ? document.getElementById('selFilmStock').value : 'cinestill800t';
+    var dName = (document.getElementById('selDirector') && document.getElementById('selDirector').value) || '暂未指定';
+    var fKey = (document.getElementById('selFilmStock') && document.getElementById('selFilmStock').value) || '暂未指定';
     var promptPkg =
-      '【JT Screenwriter Agent · 编剧开工数据包】\n' +
-      '入口模式：' + mode.title + ' (' + mode.route_skill + ')\n' +
+      '【JT 编剧工作台 · 开工数据包】\n' +
+      '创作模式：' + modeName + '\n' +
       '创作者来稿：' + rawText + '\n' +
       '推荐世界对标佳片：' + topComps.map(function(c){ return '《' + c.title + '》(' + c.year + ')'; }).join('、') + '\n' +
       '禁止抄袭隔离红线：' + topComps.map(function(c){ return (c.identity_exclusions || [])[0] || ''; }).join('；') + '\n' +
-      '建议视听编译器：主导演 ' + dName + ' × 胶片 ' + fKey + '\n' +
-      '落地命令行：\n' + mode.cmd;
+      '视听参数：主导演 ' + dName + ' / 胶片 ' + fKey + '\n' +
+      'CLI 命令：\n' + (mode ? mode.cmd : 'python jt_sw.py init --project my_film --title "片名"');
     lastWriterPackage = promptPkg;
 
-    var outEl = document.getElementById('writerPlanResult');
+    outEl.classList.remove('hidden');
     outEl.innerHTML =
-      '<div><strong>已生成「' + esc(mode.title) + '」专属方案</strong></div>' +
+      '<div><strong>已为你匹配「' + esc(modeName) + '」建议</strong></div>' +
       '<p class="small-muted" style="margin:6px 0"><strong>Top 3 机制对标：</strong>' +
       topComps.map(function(c){ return '《' + esc(c.title) + '》(' + esc(c.director) + ')'; }).join(' / ') + '</p>' +
-      '<p class="small-muted" style="margin:6px 0"><strong>隔离红线提醒：</strong>' +
+      '<p class="small-muted" style="margin:6px 0"><strong>隔离红线：</strong>' +
       esc(((topComps[0] || {}).identity_exclusions || ['严禁挪用原型名场面与招牌台词'])[0]) + '</p>' +
       '<div class="row-actions">' +
-      '<button class="btn compact lime" id="copyWriterPkgBtn" type="button">复制AI编剧开工数据包</button>' +
-      '<a class="btn compact ghost" href="#style-lab">带入导演×胶片编译器 ↓</a>' +
+      '<button class="btn compact primary" id="copyWriterPkgBtn" type="button">复制编剧方案数据包</button>' +
+      '<button class="link-action" id="hideWriterResultBtn" type="button">收起</button>' +
       '</div>';
 
     document.getElementById('copyWriterPkgBtn').onclick = function(){
-      copyText(lastWriterPackage, 'AI 编剧开工数据包');
+      copyText(lastWriterPackage, 'AI 编剧方案数据包');
+    };
+    document.getElementById('hideWriterResultBtn').onclick = function(){
+      outEl.classList.add('hidden');
     };
 
     var isLan = (location.port === '8795') || (document.querySelector('meta[name="jt-lan-mode"]') !== null);
@@ -1540,7 +1311,8 @@
           var sw = js.route.screenwriting;
           var note = document.createElement('p');
           note.className = 'small-muted';
-          note.innerHTML = '<strong>LAN :8795 实调主帅：</strong>' + esc(sw.l1_primary || sw.route_title || 'OK');
+          note.style.margin = '10px 0 0';
+          note.innerHTML = '<strong>本地路由命中：</strong>' + esc(sw.l1_primary || sw.route_title || 'OK');
           outEl.appendChild(note);
         }
       }).catch(function(){});
@@ -1578,14 +1350,14 @@
 
     document.getElementById('demoShotsGrid').innerHTML = shots.map(function(sh){
       return '<article class="card search-item">' +
-        '<div class="card-meta">' + esc(sh.shot_id) + ' / ' + esc(sh.duration_sec) + 's (' + esc(sh.h3_frames) + '帧)</div>' +
+        '<div class="card-meta">' + esc(sh.shot_id) + ' · ' + esc(sh.duration_sec) + 's (' + esc(sh.h3_frames) + '帧)</div>' +
         '<h3>' + esc(sh.story_function || '') + '</h3>' +
         '<p><strong>动作：</strong>' + esc(sh.visible_action || '') + '</p>' +
         '<p><strong>微表情与潜台词：</strong>' + esc(sh.micro_action || '') + ' / ' + esc(sh.subtext || '') + '</p>' +
         '</article>';
     }).join('');
 
-    document.getElementById('gateVerdictBadge').textContent = (gate.verdict || 'PASS') + ' / 0 穿帮';
+    document.getElementById('gateVerdictBadge').textContent = (gate.verdict || 'PASS') + ' · 0 穿帮';
     document.getElementById('demoScreenplayBox').textContent = demo.screenplay_md || '';
     document.getElementById('systemPromptBox').textContent = DATA.system_prompt_md || '';
     document.getElementById('avcJsonBox').textContent = JSON.stringify(demo.avc_canvas_import || {}, null, 2);
@@ -1596,12 +1368,12 @@
     var card = document.getElementById('activeShotCard');
     if (!sh || !card) return;
     card.innerHTML =
-      '<div class="card-meta">' + esc(sh.shot_id) + ' / ' + esc(sh.duration_sec) + 's (' + esc(sh.h3_frames) + '帧) / ' + esc(sh.shot_size) + ' ' + esc(sh.lens) + '</div>' +
+      '<div class="card-meta">' + esc(sh.shot_id) + ' · ' + esc(sh.duration_sec) + 's (' + esc(sh.h3_frames) + '帧) · ' + esc(sh.shot_size) + ' ' + esc(sh.lens) + '</div>' +
       '<h3>' + esc(sh.story_function || '') + '</h3>' +
       '<p><strong>可见动作：</strong>' + esc(sh.visible_action || '') + '</p>' +
       '<p><strong>微表情与潜台词：</strong>' + esc(sh.micro_action || '') + '<br><em>' + esc(sh.subtext || '') + '</em></p>' +
       '<p><strong>对白：</strong>' + esc(sh.speaker || '（无对白）') + (sh.dialogue_line ? '：「' + esc(sh.dialogue_line) + '」' : '') + '</p>' +
-      '<div class="row-actions"><button class="btn compact lime" id="copyActiveShotBtn" type="button">复制本镜 H3 提示词</button></div>';
+      '<div class="row-actions"><button class="btn compact primary" id="copyActiveShotBtn" type="button">复制本镜 H3 提示词</button></div>';
     document.getElementById('copyActiveShotBtn').onclick = function(){
       copyText(sh.h3_prompt || '', sh.shot_id + ' H3 提示词');
     };
@@ -1609,51 +1381,96 @@
 
   function renderComps(kw) {
     var libs = DATA.world_cinema_library || [];
-    var genresMap = { '全部': 1 };
+    var extraGenresMap = {};
     libs.forEach(function(it){
-      (it.genres || []).forEach(function(g){ genresMap[g] = 1; });
+      (it.genres || []).forEach(function(g){
+        if (CORE_GENRES.indexOf(g) === -1) extraGenresMap[g] = 1;
+      });
     });
+
     var bar = document.getElementById('genreChips');
+    var sel = document.getElementById('genreSelect');
     if (!bar.children.length) {
-      Object.keys(genresMap).forEach(function(g){
+      CORE_GENRES.forEach(function(g){
         var b = document.createElement('button');
         b.type = 'button';
-        b.className = 'chip' + (g === activeGenre ? ' active' : '');
+        b.className = 'seg-btn';
         b.textContent = g;
         b.onclick = function(){
           activeGenre = g;
+          compsExpanded = true;
+          if (sel) sel.value = '';
           Array.from(bar.children).forEach(function(c){ c.classList.toggle('active', c.textContent === g); });
           renderComps(document.getElementById('globalSearch').value);
         };
         bar.appendChild(b);
       });
     }
+    if (sel && sel.options.length <= 1) {
+      Object.keys(extraGenresMap).forEach(function(g){
+        var opt = document.createElement('option');
+        opt.value = g;
+        opt.textContent = g;
+        sel.appendChild(opt);
+      });
+      sel.onchange = function(){
+        var v = sel.value;
+        Array.from(bar.children).forEach(function(c){ c.classList.remove('active'); });
+        if (!v) {
+          activeGenre = '全部';
+          compsExpanded = false;
+        } else {
+          activeGenre = v;
+          compsExpanded = true;
+        }
+        renderComps(document.getElementById('globalSearch').value);
+      };
+    }
 
     var q = (kw || '').trim().toLowerCase();
+    var grid = document.getElementById('compsGrid');
+    var hint = document.getElementById('compsEmptyHint');
+    var collapseBtn = document.getElementById('collapseCompsBtn');
+    var browseBtn = document.getElementById('browseAllCompsBtn');
+
+    var shouldShow = Boolean(q) || compsExpanded;
+    if (!shouldShow) {
+      grid.innerHTML = '';
+      grid.classList.add('hidden');
+      if (hint) hint.classList.remove('hidden');
+      if (collapseBtn) collapseBtn.classList.add('hidden');
+      if (browseBtn) browseBtn.classList.remove('hidden');
+      return;
+    }
+
+    grid.classList.remove('hidden');
+    if (hint) hint.classList.add('hidden');
+    if (collapseBtn) collapseBtn.classList.remove('hidden');
+    if (browseBtn) browseBtn.classList.add('hidden');
+
     var filtered = libs.filter(function(it){
       if (activeGenre !== '全部' && (it.genres || []).indexOf(activeGenre) === -1) return false;
       if (!q) return true;
       return JSON.stringify(it).toLowerCase().indexOf(q) !== -1;
     });
 
-    var grid = document.getElementById('compsGrid');
     if (!filtered.length) {
-      grid.innerHTML = '<div class="card"><p>没有匹配「' + esc(kw) + '」的佳片记录，请更换关键词或点选「全部」。</p></div>';
+      grid.innerHTML = '<div class="card"><p>没有匹配「' + esc(kw) + '」的佳片记录，请更换关键词或重置筛选。</p></div>';
       return;
     }
     grid.innerHTML = filtered.map(function(m){
       var rules = (m.transferable_rules || []).map(function(r){ return '<li>' + esc(r) + '</li>'; }).join('');
       var excls = (m.identity_exclusions || []).map(function(e){ return '<li>' + esc(e) + '</li>'; }).join('');
       return '<article class="card search-item">' +
-        '<div class="card-meta">' + esc(m.id) + ' / ' + esc(m.year) + ' / ' + esc(m.region) + ' / 导演 ' + esc(m.director) + '</div>' +
+        '<div class="card-meta">' + esc(m.id) + ' · ' + esc(m.year) + ' · ' + esc(m.region) + ' · 导演 ' + esc(m.director) + '</div>' +
         '<h3>《' + esc(m.title) + '》</h3>' +
-        '<p class="small-muted"><strong>[F 核验]</strong> ' + esc(m.facts_F) + '</p>' +
-        '<p><strong>[O 剧作]</strong> ' + esc(m.dramaturgy_mechanism) + '</p>' +
-        '<p><strong>[O 视听]</strong> ' + esc(m.visual_camera_mechanism) + '</p>' +
-        '<p><strong>[可迁移法则]</strong></p><ul>' + rules + '</ul>' +
+        '<p class="small-muted"><strong>事实核验：</strong>' + esc(m.facts_F) + '</p>' +
+        '<p><strong>剧作机制：</strong>' + esc(m.dramaturgy_mechanism) + '</p>' +
+        '<p><strong>视听调度：</strong>' + esc(m.visual_camera_mechanism) + '</p>' +
+        '<p><strong>可迁移法则：</strong></p><ul>' + rules + '</ul>' +
         '<div class="warn-box"><strong>禁止抄袭隔离红线：</strong><ul style="margin:6px 0 0 18px">' + excls + '</ul>' +
-        '<div><strong>反例预警：</strong>' + esc(m.failure_counterexample) + '</div></div>' +
-        '<div class="row-actions"><button class="btn compact ghost copy-comp-btn" data-cid="' + esc(m.id) + '" type="button">复制机制借鉴卡</button></div>' +
+        '<div style="margin-top:6px"><strong>反例预警：</strong>' + esc(m.failure_counterexample) + '</div></div>' +
+        '<div class="row-actions"><button class="btn compact secondary-fill copy-comp-btn" data-cid="' + esc(m.id) + '" type="button">复制机制卡</button></div>' +
         '</article>';
     }).join('');
     grid.querySelectorAll('.copy-comp-btn').forEach(function(btn){
@@ -1676,25 +1493,21 @@
     var selS = document.getElementById('selSecondaryDirector');
     var selF = document.getElementById('selFilmStock');
 
-    selD.innerHTML = dirs.map(function(d){
+    selD.innerHTML = '<option value="">不限主导演</option>' + dirs.map(function(d){
       return '<option value="' + esc(d.name) + '">' + esc(d.name) + (d.name_en ? ' (' + esc(d.name_en) + ')' : '') + '</option>';
     }).join('');
-    selS.innerHTML = '<option value="">无（保持单一主导演视觉纯度）</option>' + dirs.map(function(d){
+    selS.innerHTML = '<option value="">不选副导演</option>' + dirs.map(function(d){
       return '<option value="' + esc(d.name) + '">' + esc(d.name) + '</option>';
     }).join('');
-    selF.innerHTML = stocks.map(function(st){
+    selF.innerHTML = '<option value="">不选胶片</option>' + stocks.map(function(st){
       return '<option value="' + esc(st.key) + '">' + esc(st.label) + ' — ' + esc(st.temp) + '</option>';
     }).join('');
 
-    if (dirs.some(function(d){ return d.name === '杜琪峰'; })) selD.value = '杜琪峰';
-    if (dirs.some(function(d){ return d.name === '王家卫'; })) selS.value = '王家卫';
-    selF.value = 'cinestill800t';
+    selD.value = '';
+    selS.value = '';
+    selF.value = '';
 
     document.getElementById('compileStyleBtn').onclick = compileStyle;
-    selD.onchange = compileStyle;
-    selS.onchange = compileStyle;
-    selF.onchange = compileStyle;
-    compileStyle();
   }
 
   function detectConflicts(text, stockKey, shotScale) {
@@ -1733,13 +1546,19 @@
     var dName = document.getElementById('selDirector').value;
     var sName = document.getElementById('selSecondaryDirector').value;
     var fKey = document.getElementById('selFilmStock').value;
-    var scale = document.getElementById('inpShotScale').value.trim() || 'Medium Close-Up, 35mm';
+    var scale = document.getElementById('inpShotScale').value.trim();
     var scene = document.getElementById('inpScene').value.trim();
     var action = document.getElementById('inpAction').value.trim();
+    var wrap = document.getElementById('styleResultWrap');
 
-    var dirObj = (DATA.directors || []).find(function(x){ return x.name === dName; }) || {};
-    var secObj = sName ? (DATA.directors || []).find(function(x){ return x.name === sName; }) : null;
-    var stockObj = (DATA.film_stocks || []).find(function(x){ return x.key === fKey; }) || {};
+    if (!dName && !sName && !fKey && !scale && !scene && !action) {
+      toast('请先选择至少一位导演/胶片或输入场景动作');
+      return;
+    }
+
+    var dirObj = dName ? ((DATA.directors || []).find(function(x){ return x.name === dName; }) || {}) : null;
+    var secObj = sName ? ((DATA.directors || []).find(function(x){ return x.name === sName; }) || null) : null;
+    var stockObj = fKey ? ((DATA.film_stocks || []).find(function(x){ return x.key === fKey; }) || {}) : null;
 
     var warns = detectConflicts(scene + ' ' + action, fKey, scale);
     document.getElementById('styleWarningsBox').innerHTML = warns.length
@@ -1747,41 +1566,58 @@
         warns.map(function(w){ return '<li>' + esc(w) + '</li>'; }).join('') + '</ul></div>'
       : '<div class="ok-box">光学物理链、胶片色温与 DiT 零否定检测全部通过（0 冲突）。</div>';
 
-    document.getElementById('dirProfileTitle').textContent =
-      dirObj.name + (dirObj.name_en ? ' (' + dirObj.name_en + ')' : '') + ' × ' + (stockObj.label || '');
-    document.getElementById('dirProfileDetails').innerHTML =
-      '<p><strong>焦段画幅：</strong>' + esc(dirObj.lens_aspect || '') + '</p>' +
-      '<p><strong>构图调度：</strong>' + esc(dirObj.composition || '') + '</p>' +
-      '<p><strong>光源逻辑：</strong>' + esc(dirObj.lighting || '') + '</p>' +
-      '<p><strong>色彩与质感：</strong>' + esc(dirObj.color || '') + ' / ' + esc(stockObj.prompt_zh || '') + '</p>' +
-      '<p><strong>运动与节奏：</strong>' + esc(dirObj.movement || '') + ' / ' + esc(dirObj.rhythm || '') + '</p>';
+    var titleParts = [];
+    if (dirObj && dirObj.name) titleParts.push(dirObj.name + (dirObj.name_en ? ' (' + dirObj.name_en + ')' : ''));
+    if (secObj && secObj.name) titleParts.push('辅: ' + secObj.name);
+    if (stockObj && stockObj.label) titleParts.push(stockObj.label);
+    document.getElementById('dirProfileTitle').textContent = titleParts.join(' × ') || '通用电影物理编译';
 
-    var h3 = 'Live-action 24fps film footage (' + scale + '), natural luminous skin texture and authentic fabric folds. ' +
-      (scene ? 'Scene & motivated light: ' + scene + '. ' : '') +
-      (action ? 'Physical action & micro-reaction: ' + action + '. ' : '') +
-      'Primary visual blocking: ' + (dirObj.prompt_en || '') + '. ' +
-      (secObj ? 'Secondary color/atmosphere touch: ' + (secObj.prompt_en || '') + '. ' : '') +
-      'Film stock emulsion: ' + (stockObj.prompt_en || '') + '.';
+    if (dirObj && dirObj.name) {
+      document.getElementById('dirProfileDetails').innerHTML =
+        '<p><strong>焦段画幅：</strong>' + esc(dirObj.lens_aspect || '') + '</p>' +
+        '<p><strong>构图调度：</strong>' + esc(dirObj.composition || '') + '</p>' +
+        '<p><strong>光源逻辑：</strong>' + esc(dirObj.lighting || '') + '</p>' +
+        '<p><strong>色彩与质感：</strong>' + esc(dirObj.color || '') + (stockObj ? ' / ' + esc(stockObj.prompt_zh || '') : '') + '</p>' +
+        '<p><strong>运动与节奏：</strong>' + esc(dirObj.movement || '') + ' / ' + esc(dirObj.rhythm || '') + '</p>';
+    } else {
+      document.getElementById('dirProfileDetails').innerHTML =
+        '<p class="small-muted">' + (stockObj ? esc(stockObj.prompt_zh || '') : '未指定导演参数，仅按现场光学物理条件编译。') + '</p>';
+    }
 
-    var sd = '[电影实拍参考编译] 景别与焦段：' + scale + '；主导演几何调度：' + (dirObj.prompt_zh || '') +
-      (secObj ? '；光色辅助气质：' + (secObj.prompt_zh || '') : '') +
-      '；胶片乳剂：' + (stockObj.prompt_zh || '') +
-      (scene ? '。场景光源：' + scene : '') +
-      (action ? '。动作与反应：' + action : '') + '。画面干净无水印字幕。';
+    var h3Parts = ['Live-action 24fps film footage' + (scale ? ' (' + scale + ')' : '') + ', natural luminous skin texture and authentic fabric folds.'];
+    if (scene) h3Parts.push('Scene & motivated light: ' + scene + '.');
+    if (action) h3Parts.push('Physical action & micro-reaction: ' + action + '.');
+    if (dirObj && dirObj.prompt_en) h3Parts.push('Primary visual blocking: ' + dirObj.prompt_en + '.');
+    if (secObj && secObj.prompt_en) h3Parts.push('Secondary color/atmosphere touch: ' + secObj.prompt_en + '.');
+    if (stockObj && stockObj.prompt_en) h3Parts.push('Film stock emulsion: ' + stockObj.prompt_en + '.');
+    var h3 = h3Parts.join(' ');
+
+    var sdParts = ['[电影实拍编译]'];
+    if (scale) sdParts.push('景别与焦段：' + scale);
+    if (dirObj && dirObj.prompt_zh) sdParts.push('主导演几何调度：' + dirObj.prompt_zh);
+    if (secObj && secObj.prompt_zh) sdParts.push('光色辅助气质：' + secObj.prompt_zh);
+    if (stockObj && stockObj.prompt_zh) sdParts.push('胶片乳剂：' + stockObj.prompt_zh);
+    if (scene) sdParts.push('场景光源：' + scene);
+    if (action) sdParts.push('动作与反应：' + action);
+    sdParts.push('画面干净无水印字幕。');
+    var sd = sdParts.join('；');
 
     lastCompiled = { h3: h3, seedance: sd };
     document.getElementById('compiledPromptsOut').textContent =
       '=== MiniMax H3 Ref2VA / Image 提示词 ===\n' + h3 + '\n\n=== Seedance 2.5 中文分镜提示词 ===\n' + sd;
+    if (wrap) wrap.classList.remove('hidden');
   }
 
   function renderEntryControlsAndLinks() {
     var modes = DATA.entry_modes || [];
     var chipRow = document.getElementById('entryChipRow');
-    chipRow.innerHTML = modes.map(function(m){
-      var shortName = m.title.replace(/^\d+\.\s*/, '');
-      return '<button class="chip' + (m.key === activeEntryKey ? ' active' : '') + '" type="button" data-entry="' + esc(m.key) + '">' + esc(shortName) + '</button>';
+    var items = [{ key: 'blank', label: '空白自由起稿' }].concat(modes.map(function(m){
+      return { key: m.key, label: ENTRY_LABELS[m.key] || m.title.replace(/^\d+\.\s*/, '') };
+    }));
+    chipRow.innerHTML = items.map(function(it){
+      return '<button class="seg-btn' + (it.key === activeEntryKey ? ' active' : '') + '" type="button" data-entry="' + esc(it.key) + '">' + esc(it.label) + '</button>';
     }).join('');
-    chipRow.querySelectorAll('.chip').forEach(function(ch){
+    chipRow.querySelectorAll('.seg-btn').forEach(function(ch){
       ch.onclick = function(){ setEntryMode(ch.getAttribute('data-entry'), false); };
     });
 
@@ -1789,7 +1625,7 @@
       return '<article class="card">' +
         '<h3>' + esc(lk.name) + '</h3>' +
         '<p class="small-muted">' + esc(lk.desc) + '</p>' +
-        '<div class="row-actions"><a class="btn compact lime" href="' + esc(lk.url) + '" target="_blank" rel="noopener">立即打开</a></div>' +
+        '<div class="row-actions"><a class="link-action" href="' + esc(lk.url) + '" target="_blank" rel="noopener">立即打开 ›</a></div>' +
         '</article>';
     }).join('');
     document.getElementById('publicLinksGrid').innerHTML = linksHtml;
@@ -1799,8 +1635,9 @@
     var q = (kw || '').trim().toLowerCase();
     renderComps(q);
     var grid = document.getElementById('demoShotsGrid');
-    if (q && grid.classList.contains('hidden')) {
+    if (q) {
       grid.classList.remove('hidden');
+      document.getElementById('reelContentWrap').classList.remove('hidden');
     }
     document.querySelectorAll('#demoShotsGrid .search-item').forEach(function(el){
       var hit = !q || el.textContent.toLowerCase().indexOf(q) !== -1;
@@ -1816,7 +1653,7 @@
       document.getElementById('lanBadge').style.display = 'inline-flex';
       document.getElementById('lanPanel').style.display = 'block';
       document.getElementById('lanClusterStatus').value =
-        'A机在线 ' + (h.a_online_count || 0) + '/8 卡 / 可用显存 ' + (h.a_total_free_vram_gib || 0) + ' GiB';
+        'A机在线 ' + (h.a_online_count || 0) + '/8 卡 · 可用显存 ' + (h.a_total_free_vram_gib || 0) + ' GiB';
       return fetch('./api/projects').then(function(pr){ return pr.ok ? pr.json() : null; });
     }).then(function(pdata){
       if (!pdata || !pdata.projects) return;
@@ -1851,32 +1688,101 @@
     document.getElementById('clearSearchBtn').onclick = function(){
       searchInp.value = '';
       activeGenre = '全部';
-      document.querySelectorAll('#genreChips .chip').forEach(function(c){ c.classList.toggle('active', c.textContent === '全部'); });
+      compsExpanded = false;
+      var gs = document.getElementById('genreSelect');
+      if (gs) gs.value = '';
+      document.querySelectorAll('#genreChips .seg-btn').forEach(function(c){ c.classList.remove('active'); });
       applyGlobalSearch('');
       searchInp.focus();
     };
 
-    document.querySelectorAll('.wf-col.left .wf-node').forEach(function(nd){
-      var key = nd.getAttribute('data-entry');
-      nd.addEventListener('mouseenter', function(){
-        activeEntryKey = key;
-        document.querySelectorAll('.wf-col.left .wf-node').forEach(function(x){ x.classList.toggle('active', x.getAttribute('data-entry') === key); });
-        layoutWorkflowPaths();
+    var enterBtn = document.getElementById('enterWriterBtn');
+    if (enterBtn) {
+      enterBtn.addEventListener('click', function(){
+        setTimeout(function(){
+          var inp = document.getElementById('writerPromptInput');
+          if (inp) inp.focus();
+        }, 380);
       });
+    }
+
+    document.querySelectorAll('#wfInputsCol .chapter-item').forEach(function(nd){
+      var key = nd.getAttribute('data-entry');
       nd.addEventListener('click', function(){ setEntryMode(key, true); });
     });
 
     document.getElementById('replayIntroBtn').onclick = replayIntroAnimation;
     document.getElementById('writerBuildBtn').onclick = scoreAndBuildWriterPlan;
+    document.getElementById('writerClearBtn').onclick = function(){
+      var wpInp = document.getElementById('writerPromptInput');
+      wpInp.value = '';
+      var outEl = document.getElementById('writerPlanResult');
+      outEl.classList.add('hidden');
+      outEl.innerHTML = '';
+      wpInp.focus();
+    };
+    document.getElementById('toggleSystemPromptBtn').onclick = function(){
+      document.getElementById('systemPromptWrap').classList.toggle('hidden');
+    };
+    document.getElementById('closeSystemPromptBtn').onclick = function(){
+      document.getElementById('systemPromptWrap').classList.add('hidden');
+    };
 
-    var wpInp = document.getElementById('writerPromptInput');
-    wpInp.addEventListener('focus', function(){ userTouchedInput = true; clearInterval(typewriterTimer); });
-    wpInp.addEventListener('input', function(){ userTouchedInput = true; clearInterval(typewriterTimer); });
+    document.getElementById('resetStyleBtn').onclick = function(){
+      document.getElementById('selDirector').value = '';
+      document.getElementById('selSecondaryDirector').value = '';
+      document.getElementById('selFilmStock').value = '';
+      document.getElementById('inpShotScale').value = '';
+      document.getElementById('inpScene').value = '';
+      document.getElementById('inpAction').value = '';
+      document.getElementById('styleResultWrap').classList.add('hidden');
+    };
 
-    document.querySelectorAll('.monitor-tabs .chip').forEach(function(tb){
+    document.getElementById('browseAllCompsBtn').onclick = function(){
+      activeGenre = '全部';
+      compsExpanded = true;
+      var gs = document.getElementById('genreSelect');
+      if (gs) gs.value = '';
+      document.querySelectorAll('#genreChips .seg-btn').forEach(function(c){ c.classList.remove('active'); });
+      renderComps(document.getElementById('globalSearch').value);
+    };
+    document.getElementById('collapseCompsBtn').onclick = function(){
+      compsExpanded = false;
+      activeGenre = '全部';
+      var gs = document.getElementById('genreSelect');
+      if (gs) gs.value = '';
+      document.querySelectorAll('#genreChips .seg-btn').forEach(function(c){ c.classList.remove('active'); });
+      renderComps(document.getElementById('globalSearch').value);
+    };
+
+    function openReelStage() {
+      var wrap = document.getElementById('reelContentWrap');
+      var btn = document.getElementById('toggleReelBtn');
+      wrap.classList.remove('hidden');
+      if (btn) btn.textContent = '收起小样参考';
+    }
+    document.getElementById('toggleReelBtn').onclick = function(){
+      var wrap = document.getElementById('reelContentWrap');
+      var hiddenNow = wrap.classList.toggle('hidden');
+      this.textContent = hiddenNow ? '展开观看小样' : '收起小样参考';
+    };
+    document.querySelectorAll('a[href="#reel-stage"]').forEach(function(a){
+      a.addEventListener('click', openReelStage);
+    });
+    document.getElementById('toggleDemoScriptBtn').onclick = function(){
+      document.getElementById('demoScriptWrap').classList.toggle('hidden');
+    };
+    document.getElementById('toggleAvcJsonBtn').onclick = function(){
+      document.getElementById('avcJsonWrap').classList.toggle('hidden');
+    };
+    document.getElementById('closeAvcJsonBtn').onclick = function(){
+      document.getElementById('avcJsonWrap').classList.add('hidden');
+    };
+
+    document.querySelectorAll('.monitor-tabs .seg-btn').forEach(function(tb){
       tb.onclick = function(){
         var st = tb.getAttribute('data-stage');
-        document.querySelectorAll('.monitor-tabs .chip').forEach(function(c){ c.classList.toggle('active', c.getAttribute('data-stage') === st); });
+        document.querySelectorAll('.monitor-tabs .seg-btn').forEach(function(c){ c.classList.toggle('active', c.getAttribute('data-stage') === st); });
         document.getElementById('stagePaneVideo').classList.toggle('hidden', st !== 'video');
         document.getElementById('stagePaneQuad').classList.toggle('hidden', st !== 'quad');
         document.getElementById('stagePaneAnchor').classList.toggle('hidden', st !== 'anchor');
@@ -1886,15 +1792,12 @@
     document.getElementById('toggleAllShotsBtn').onclick = function(){
       var grid = document.getElementById('demoShotsGrid');
       grid.classList.toggle('hidden');
-      this.textContent = grid.classList.contains('hidden') ? '展开查看全部 3 镜详情' : '收起分镜详单';
+      this.textContent = grid.classList.contains('hidden') ? '展开全部 3 镜详情' : '收起分镜详单';
     };
 
     document.getElementById('copyH3PromptBtn').onclick = function(){ copyText(lastCompiled.h3, 'H3 Ref2VA 提示词'); };
     document.getElementById('copySeedanceBtn').onclick = function(){ copyText(lastCompiled.seedance, 'Seedance 2.5 提示词'); };
-    document.getElementById('copySystemPromptBtn').onclick = function(){ copyText(DATA.system_prompt_md, '完整专家 System Prompt'); };
-    document.getElementById('copySelectedCliBtn').onclick = function(){
-      copyText(document.getElementById('activeEntryCliBox').textContent, 'CLI 开工命令');
-    };
+    document.getElementById('copySystemPromptBtn').onclick = function(){ copyText(DATA.system_prompt_md, '专家 System Prompt'); };
     document.getElementById('copyAvcBtn').onclick = function(){
       copyText(JSON.stringify((DATA.demo_project || {}).avc_canvas_import || {}, null, 2), 'AVC 画布 JSON');
     };
@@ -1917,27 +1820,20 @@
     document.getElementById('lightbox').onclick = function(){
       document.getElementById('lightbox').style.display = 'none';
     };
-
-    window.addEventListener('resize', layoutWorkflowPaths);
   }
 
-  layoutWorkflowPaths();
-  fetch('data/workbench_data.json?v=2').then(function(r){ return r.json(); }).then(function(js){
+  fetch('data/workbench_data.json?v=4').then(function(r){ return r.json(); }).then(function(js){
     DATA = js;
-    var meta = js.meta || {};
-    document.getElementById('metaStatsBadge').textContent =
-      meta.comps_count + ' 部世界佳片 / ' + meta.directors_count + ' 位导演 / ' + meta.film_stocks_count + ' 款胶片';
     renderDemoSection();
     renderComps('');
     initStyleLab();
     renderEntryControlsAndLinks();
     bindEvents();
-    setEntryMode('spark', false);
+    setEntryMode('blank', false);
     enableLanModeIfAvailable();
-    requestAnimationFrame(layoutWorkflowPaths);
-    startDemoTypewriter();
   }).catch(function(err){
-    document.getElementById('demoLogline').textContent = '加载工作台数据失败：' + err;
+    var dl = document.getElementById('demoLogline');
+    if (dl) dl.textContent = '加载工作台数据失败：' + err;
   });
 })();
 </script>
