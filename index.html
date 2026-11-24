@@ -1734,7 +1734,7 @@
       <div class="app-option-box">
         <div>
           <h3>iPhone / 电脑桌面直装（PWA）</h3>
-          <p class="small-muted" id="pwaInstallHint" style="font-size:15px; margin:8px 0 0;">iPhone Safari：点分享 ➔「添加到主屏幕」；Windows / Mac（Chrome/Edge）：点地址栏右侧安装图标或点下方按钮，生成桌面 LOGO 独立打开。</p>
+          <p class="small-muted" id="pwaInstallHint" style="font-size:15px; margin:8px 0 0;">iPhone 请用 Safari 打开（微信内先点右上角 ··· ➔「在默认浏览器中打开」），轻点底部「共享」➔ 向上滑动或点「更多」➔「添加到主屏幕」；Windows / Mac（Chrome/Edge）：点地址栏右侧安装图标或点下方按钮。</p>
         </div>
         <img class="app-qr-img" src="icons/app_download_qr.png" alt="手机扫码打开或下载 JT 编剧台">
         <div class="row-actions" style="margin-top:4px">
@@ -2880,7 +2880,7 @@
         } else {
           var hint = document.getElementById('pwaInstallHint');
           if (hint) {
-            hint.textContent = 'iPhone Safari：轻点底部分享按钮 ->「添加到主屏幕」；Android Chrome：轻点浏览器菜单 ->「安装应用」。';
+            hint.textContent = 'iPhone 请用 Safari 打开（微信内先点右上角 ··· ➔「在默认浏览器中打开」），点底部「共享」➔ 向上滑动或点「更多」➔「添加到主屏幕」；Android Chrome：点菜单 ➔「安装应用」。';
           }
           toast('请使用浏览器菜单中的「添加到主屏幕」完成安装');
         }
