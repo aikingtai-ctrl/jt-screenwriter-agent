@@ -1,0 +1,99 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: ["main"]
+    paths-ignore:
+      - "downloads/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Setup Gradle 8.7
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "8.7"
+
+      - name: Stage web assets into Android assets/www
+        run: |
+          set -euo pipefail
+          WWW_DIR="android_app/app/src/main/assets/www"
+          rm -rf "$WWW_DIR"
+          mkdir -p "$WWW_DIR"
+          cp index.html "$WWW_DIR/"
+          [ -f manifest.webmanifest ] && cp manifest.webmanifest "$WWW_DIR/" || true
+          [ -f sw.js ] && cp sw.js "$WWW_DIR/" || true
+          for d in data assets icons; do
+            if [ -d "$d" ]; then
+              cp -a "$d" "$WWW_DIR/"
+            fi
+          done
+          ls -la "$WWW_DIR"
+
+      - name: Generate Release Keystore and Assemble Signed APK
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/jt-keystore dist
+          KS_PATH="/tmp/jt-keystore/jt-release.jks"
+          KS_PASS="jt-screenwriter-2026-ci"
+          KEY_ALIAS="jtscreenwriter"
+          keytool -genkeypair -v -keystore "$KS_PATH" -alias "$KEY_ALIAS" \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -storepass "$KS_PASS" -keypass "$KS_PASS" \
+            -dname "CN=JT Screenwriter Agent, OU=JinTai Film Studio, O=JinTai, L=Beijing, C=CN"
+
+          JT_KEYSTORE_PATH="$KS_PATH" \
+          JT_KEYSTORE_PASS="$KS_PASS" \
+          JT_KEY_ALIAS="$KEY_ALIAS" \
+          JT_KEY_PASS="$KS_PASS" \
+          gradle -p android_app assembleRelease --no-daemon
+
+          ls -la android_app/app/build/outputs/apk/release/
+          cp android_app/app/build/outputs/apk/release/app-release.apk dist/JT-Screenwriter-Android.apk
+
+      - name: Verify APK Signature and Manifest Badging
+        run: |
+          set -euo pipefail
+          SDK_ROOT="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          BT_DIR="$(ls -d "$SDK_ROOT"/build-tools/* | sort -V | tail -n 1)"
+          echo "Using Android build-tools: $BT_DIR"
+          "$BT_DIR/apksigner" verify --verbose dist/JT-Screenwriter-Android.apk
+          "$BT_DIR/aapt2" dump badging dist/JT-Screenwriter-Android.apk > /tmp/badging.txt
+          head -n 25 /tmp/badging.txt
+          python3 -c 'txt=open("/tmp/badging.txt",encoding="utf-8",errors="replace").read(); assert "com.jintai.screenwriter" in txt and "JT \u7f16\u5267\u53f0" in txt, txt[:600]; print("APK badging verified OK.")'
+          (cd dist && sha256sum JT-Screenwriter-Android.apk > SHA256SUMS.txt && cat SHA256SUMS.txt)
+
+      - name: Upload APK Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: JT-Screenwriter-Android-apk
+          path: dist/
+
+      - name: Publish APK to GitHub Release v1.1.0
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if gh release view v1.1.0 >/dev/null 2>&1; then
+            gh release upload v1.1.0 dist/JT-Screenwriter-Android.apk dist/SHA256SUMS.txt --clobber
+          else
+            gh release create v1.1.0 dist/JT-Screenwriter-Android.apk dist/SHA256SUMS.txt \
+              --title "JT Screenwriter App v1.1.0 (Android APK + Offline PWA)" \
+              --notes "JT Screenwriter Agent v1.1.0 signed offline Android APK (com.jintai.screenwriter) with bundled 166 film masters, 6 film stocks, 32 comps, and H3/Seedance 2.0 prompt compiler."
+          fi

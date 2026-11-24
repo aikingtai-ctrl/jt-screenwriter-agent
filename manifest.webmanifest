@@ -1,0 +1,25 @@
+{
+  "name": "JT 编剧台",
+  "short_name": "JT编剧台",
+  "description": "面向成熟编剧的极简创作与制片工作台 · 166 位世界主创大师 · 离线随身写作",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

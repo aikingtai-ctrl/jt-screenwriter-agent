@@ -28,7 +28,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site
-          rsync -a --exclude='.git' --exclude='.github' --exclude='tools' --exclude='scripts' ./ _site/
+          rsync -a --exclude='.git' --exclude='.github' --exclude='tools' --exclude='scripts' --exclude='android_app' ./ _site/
           touch _site/.nojekyll
           total_bytes="$(du -sb _site | awk '{print $1}')"
           echo "Staged _site bytes: ${total_bytes}"

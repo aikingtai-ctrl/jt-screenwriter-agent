@@ -1,0 +1,53 @@
+plugins {
+    id "com.android.application"
+}
+
+def ksPath = System.getenv("JT_KEYSTORE_PATH")
+def ksPass = System.getenv("JT_KEYSTORE_PASS")
+def ksAlias = System.getenv("JT_KEY_ALIAS")
+def ksKeyPass = System.getenv("JT_KEY_PASS")
+def hasReleaseSigning = ksPath && new File(ksPath).isFile() && ksPass && ksAlias && ksKeyPass
+
+android {
+    namespace "com.jintai.screenwriter"
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.jintai.screenwriter"
+        minSdk 24
+        targetSdk 35
+        versionCode 10100
+        versionName "1.1.0"
+    }
+
+    if (hasReleaseSigning) {
+        signingConfigs {
+            release {
+                storeFile file(ksPath)
+                storePassword ksPass
+                keyAlias ksAlias
+                keyPassword ksKeyPass
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            shrinkResources false
+            if (hasReleaseSigning) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:1.7.0"
+    implementation "androidx.webkit:webkit:1.12.1"
+}

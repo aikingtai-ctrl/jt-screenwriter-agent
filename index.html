@@ -2,8 +2,16 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta name="theme-color" content="#ffffff">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="JT 编剧台">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180.png">
 <title>JT 编剧台 — 极简编剧工作台</title>
 <style>
   :root {
@@ -820,15 +828,164 @@
   }
   #lightbox img { max-width: 94vw; max-height: 90vh; border-radius: 16px; }
 
+  /* 移动端底部原生感毛玻璃 Tab Bar（仅 <= 860px 显示） */
+  .btn-nav-app {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--apple-link);
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .btn-nav-app:hover { text-decoration: underline; text-underline-offset: 4px; }
+  body.is-android-app .btn-nav-app,
+  body.is-android-app .tab-download-btn { display: none !important; }
+  body.is-android-app .mobile-tabbar { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  .mobile-tabbar {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 70;
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.90);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    border-top: 1px solid rgba(0, 0, 0, 0.09);
+  }
+  .mobile-tab-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: 4px 2px;
+    border: none;
+    background: transparent;
+    color: var(--ink-secondary);
+    text-decoration: none;
+    font-family: var(--font-sans);
+    font-size: 11.5px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .mobile-tab-item svg { width: 21px; height: 21px; }
+  .mobile-tab-item.active,
+  .mobile-tab-item:active { color: var(--apple-blue); }
+
+  /* Apple 极简手机 App 下载与安装弹窗 */
+  .modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 98;
+    background: rgba(29, 29, 31, 0.42);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .app-modal-card {
+    width: 100%;
+    max-width: 680px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--bg-white);
+    border-radius: 28px;
+    padding: 28px 30px;
+  }
+  .app-modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--hairline-soft);
+    margin-bottom: 20px;
+  }
+  .app-brand-mini {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .app-brand-mini img {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  .app-modal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+  .app-option-box {
+    background: var(--bg-gray);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .app-option-box h3 {
+    margin: 0;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--ink-primary);
+  }
+  .app-qr-img {
+    width: 132px;
+    height: 132px;
+    border-radius: 12px;
+    background: var(--bg-white);
+    padding: 6px;
+    align-self: flex-start;
+  }
+
   @media (max-width: 980px) {
     body { font-size: 18.5px; }
     .chapter-nav { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
-    .form-grid-3, .split-7-5, .grid-2, .grid-links { grid-template-columns: 1fr; }
+    .form-grid-3, .split-7-5, .grid-2, .grid-links, .app-modal-grid { grid-template-columns: 1fr; }
     .apple-sheet, .panel-soft { padding: 22px 20px; border-radius: 22px; }
   }
 
+  @media (max-width: 860px) {
+    body {
+      font-size: 17px;
+      padding-bottom: calc(82px + env(safe-area-inset-bottom));
+    }
+    .apple-links { display: none; }
+    .mobile-tabbar { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .apple-nav { padding: 8px 14px; min-height: 52px; }
+    .apple-nav-inner { gap: 8px 10px; }
+    .header-right { flex: 1 1 auto; min-width: 0; max-width: 100%; gap: 6px; }
+    .header-search-wrap { flex: 1 1 110px; min-width: 0; max-width: 100%; }
+    #globalSearch { font-size: 16px; padding: 6px 12px; }
+    section.band { padding: 48px 0; }
+    .hero-stage { padding: 38px 16px 34px; }
+    .band-inner { padding: 0 16px; }
+    .hero-title { font-size: clamp(32px, 9vw, 48px); }
+    .hero-sub { font-size: 17px; margin: 14px 0 22px; }
+    .chapter-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+    .chapter-item:nth-child(5) { grid-column: 1 / -1; }
+    .segmented-track { border-radius: 18px; width: 100%; padding: 4px; }
+    .seg-btn { font-size: 14px; padding: 7px 12px; }
+    #writerPromptInput { min-height: 150px; font-size: 17.5px; }
+    .app-modal-card { padding: 22px 18px; border-radius: 22px; }
+    #toast { bottom: calc(74px + env(safe-area-inset-bottom)); right: 16px; left: 16px; text-align: center; }
+  }
+
   @media (prefers-reduced-transparency: reduce) {
-    .apple-nav {
+    .apple-nav,
+    .mobile-tabbar {
       background: var(--bg-white);
       backdrop-filter: none;
       -webkit-backdrop-filter: none;
@@ -877,6 +1034,7 @@
         <input id="globalSearch" type="search" autofocus placeholder="搜索佳片或导演…">
         <button class="btn-nav-clear" id="clearSearchBtn" type="button">清空</button>
       </div>
+      <button class="btn-nav-app" id="openAppDownloadBtn" type="button">下载 App</button>
       <a class="lan-dot-link" id="lanBadge" href="#lanPanel" style="display:none"><span class="lan-dot" aria-hidden="true"></span>本地引擎</a>
     </div>
   </div>
@@ -1252,6 +1410,68 @@
 <div id="lightbox"><img id="lightboxImg" src="" alt="放大预览"></div>
 <div id="toast"></div>
 
+<nav class="mobile-tabbar" aria-label="移动端底部导航">
+  <a class="mobile-tab-item active" href="#writer-entry">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+    <span>写作</span>
+  </a>
+  <a class="mobile-tab-item" href="#style-lab">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="3" y="6" width="18" height="12" rx="3"/><circle cx="12" cy="12" r="3"/></svg>
+    <span>主创</span>
+  </a>
+  <a class="mobile-tab-item" href="#comps-library">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/></svg>
+    <span>佳片</span>
+  </a>
+  <a class="mobile-tab-item" href="#reel-stage">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="7 5 19 12 7 19 7 5"/></svg>
+    <span>小样</span>
+  </a>
+  <button class="mobile-tab-item tab-download-btn" id="tabDownloadBtn" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><polyline points="7 11 12 16 17 11"/><path d="M5 20h14"/></svg>
+    <span>下载</span>
+  </button>
+</nav>
+
+<div class="modal-backdrop hidden" id="appDownloadModal" role="dialog" aria-modal="true" aria-labelledby="appModalTitle">
+  <div class="app-modal-card">
+    <div class="app-modal-head">
+      <div class="app-brand-mini">
+        <img src="icons/icon-192.png" alt="JT 编剧台图标">
+        <div>
+          <h2 id="appModalTitle" style="margin:0; font-size:22px; font-weight:600; color:var(--ink-primary);">JT 编剧台 · 手机 App</h2>
+          <p class="small-muted" style="margin:2px 0 0; font-size:14.5px;">v1.1.0 · 内置 166 位世界主创与 32 部佳片机制 · 离线可用</p>
+        </div>
+      </div>
+      <button class="link-action" id="closeAppModalBtn" type="button">关闭</button>
+    </div>
+
+    <div class="app-modal-grid">
+      <div class="app-option-box">
+        <div>
+          <h3>安卓 / 鸿蒙安装包</h3>
+          <p class="small-muted" style="font-size:15px; margin:8px 0 0;">原生离线运行环境（com.jintai.screenwriter），飞行模式下亦可创作画布与编译双模型提示词。</p>
+        </div>
+        <div class="row-actions" style="margin-top:8px">
+          <a class="btn primary" id="apkDirectLink" href="./downloads/JT-Screenwriter-Android.apk" download="JT-Screenwriter-Android.apk">下载安卓 APK</a>
+          <a class="link-action" href="https://github.com/aikingtai-ctrl/jt-screenwriter-agent/releases/latest/download/JT-Screenwriter-Android.apk" target="_blank" rel="noopener">GitHub Releases 镜像 ›</a>
+        </div>
+      </div>
+
+      <div class="app-option-box">
+        <div>
+          <h3>iPhone / Safari 安装与扫码</h3>
+          <p class="small-muted" id="pwaInstallHint" style="font-size:15px; margin:8px 0 0;">iPhone / iPad：使用 Safari 浏览器点击底部分享图标，选择「添加到主屏幕」，即可离线全屏启动。</p>
+        </div>
+        <img class="app-qr-img" src="icons/app_download_qr.png" alt="手机扫码打开或下载 JT 编剧台">
+        <div class="row-actions" style="margin-top:4px">
+          <button class="btn secondary-on-gray" id="installPwaBtn" type="button">安装到主屏幕 (PWA)</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
   var DATA = null;
@@ -1306,6 +1526,13 @@
 
   function copyText(txt, label) {
     if (!txt) { toast('暂无可复制内容'); return; }
+    if (window.JTAndroid && typeof window.JTAndroid.copyText === 'function') {
+      try {
+        window.JTAndroid.copyText(String(txt));
+        toast('已复制：' + label);
+        return;
+      } catch (e) {}
+    }
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(txt).then(function(){ toast('已复制：' + label); }).catch(function(){ fallbackCopy(txt, label); });
     } else {
@@ -1958,7 +2185,16 @@
         '<div class="row-actions"><a class="link-action" href="' + esc(lk.url) + '" target="_blank" rel="noopener">立即打开 ›</a></div>' +
         '</article>';
     }).join('');
+    linksHtml += '<article class="card">' +
+      '<h3>JT 编剧台 · 手机版 App (Android / iPhone)</h3>' +
+      '<p class="small-muted">离线内置 166 位电影大师与 6 款胶片；安卓支持独立安装包直装，iPhone/安卓浏览器支持主屏幕 App 安装。</p>' +
+      '<div class="row-actions"><button type="button" class="btn primary" id="bridgeOpenAppModalBtn">下载手机 App ›</button></div>' +
+      '</article>';
     document.getElementById('publicLinksGrid').innerHTML = linksHtml;
+    var bridgeAppBtn = document.getElementById('bridgeOpenAppModalBtn');
+    if (bridgeAppBtn) {
+      bridgeAppBtn.onclick = function(){ openAppDownloadModal(); };
+    }
   }
 
   function applyGlobalSearch(kw) {
@@ -2073,6 +2309,7 @@
     document.getElementById('writerClearBtn').onclick = function(){
       var wpInp = document.getElementById('writerPromptInput');
       wpInp.value = '';
+      try { localStorage.removeItem('jt_sw_draft_v1'); } catch (e) {}
       var outEl = document.getElementById('writerPlanResult');
       outEl.classList.add('hidden');
       outEl.innerHTML = '';
@@ -2188,6 +2425,12 @@
     };
     document.getElementById('downloadAvcBtn').onclick = function(){
       var raw = JSON.stringify((DATA.demo_project || {}).avc_canvas_import || {}, null, 2);
+      if (window.JTAndroid && typeof window.JTAndroid.shareText === 'function') {
+        try {
+          window.JTAndroid.shareText('JT编剧台 AVC 样例', raw);
+          return;
+        } catch (e) {}
+      }
       var blob = new Blob([raw], { type: 'application/json;charset=utf-8' });
       var a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
@@ -2195,6 +2438,61 @@
       a.click();
       toast('已下载 avc_canvas_import.json');
     };
+
+    var wpInputEl = document.getElementById('writerPromptInput');
+    if (wpInputEl) {
+      wpInputEl.addEventListener('input', function(){
+        try {
+          if (wpInputEl.value) {
+            localStorage.setItem('jt_sw_draft_v1', wpInputEl.value);
+          } else {
+            localStorage.removeItem('jt_sw_draft_v1');
+          }
+        } catch (e) {}
+      });
+    }
+
+    var openAppBtn = document.getElementById('openAppDownloadBtn');
+    if (openAppBtn) openAppBtn.onclick = openAppDownloadModal;
+    var tabDownloadBtn = document.getElementById('tabDownloadBtn');
+    if (tabDownloadBtn) tabDownloadBtn.onclick = openAppDownloadModal;
+    var closeAppBtn = document.getElementById('closeAppModalBtn');
+    if (closeAppBtn) closeAppBtn.onclick = closeAppDownloadModal;
+    var appModalEl = document.getElementById('appDownloadModal');
+    if (appModalEl) {
+      appModalEl.addEventListener('click', function(ev){
+        if (ev.target === appModalEl) closeAppDownloadModal();
+      });
+    }
+    var installPwaBtn = document.getElementById('installPwaBtn');
+    if (installPwaBtn) {
+      installPwaBtn.onclick = function(){
+        if (deferredInstallPrompt) {
+          deferredInstallPrompt.prompt();
+          deferredInstallPrompt.userChoice.then(function(choice){
+            if (choice && choice.outcome === 'accepted') {
+              toast('正在将 JT 编剧台安装到主屏幕');
+              closeAppDownloadModal();
+            }
+            deferredInstallPrompt = null;
+          }).catch(function(){ deferredInstallPrompt = null; });
+        } else {
+          var hint = document.getElementById('pwaInstallHint');
+          if (hint) {
+            hint.textContent = 'iPhone Safari：轻点底部分享按钮 ->「添加到主屏幕」；Android Chrome：轻点浏览器菜单 ->「安装应用」。';
+          }
+          toast('请使用浏览器菜单中的「添加到主屏幕」完成安装');
+        }
+      };
+    }
+    document.querySelectorAll('.mobile-tabbar .mobile-tab-item').forEach(function(item){
+      item.addEventListener('click', function(){
+        document.querySelectorAll('.mobile-tabbar .mobile-tab-item').forEach(function(el){
+          el.classList.remove('active');
+        });
+        item.classList.add('active');
+      });
+    });
 
     document.querySelectorAll('img[data-zoom]').forEach(function(im){
       im.onclick = function(){
@@ -2205,6 +2503,52 @@
     document.getElementById('lightbox').onclick = function(){
       document.getElementById('lightbox').style.display = 'none';
     };
+  }
+
+  var deferredInstallPrompt = null;
+  var isAndroidApp = Boolean(window.JTAndroid) || navigator.userAgent.indexOf('JTScreenwriterApp') !== -1;
+
+  function openAppDownloadModal() {
+    var modal = document.getElementById('appDownloadModal');
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function closeAppDownloadModal() {
+    var modal = document.getElementById('appDownloadModal');
+    if (modal) modal.classList.add('hidden');
+  }
+
+  window.addEventListener('beforeinstallprompt', function(ev){
+    ev.preventDefault();
+    deferredInstallPrompt = ev;
+  });
+
+  window.__jtHandleBack = function(){
+    var lb = document.getElementById('lightbox');
+    if (lb && lb.style.display === 'flex') {
+      lb.style.display = 'none';
+      return true;
+    }
+    var modal = document.getElementById('appDownloadModal');
+    if (modal && !modal.classList.contains('hidden')) {
+      modal.classList.add('hidden');
+      return true;
+    }
+    var mdWrap = document.getElementById('mastersDirectoryWrap');
+    if (mdWrap && !mdWrap.classList.contains('hidden')) {
+      mdWrap.classList.add('hidden');
+      var mdBtn = document.getElementById('toggleMastersDirectoryBtn');
+      if (mdBtn) mdBtn.textContent = '浏览全部大师库 ›';
+      return true;
+    }
+    return false;
+  };
+
+  if (isAndroidApp) {
+    document.body.classList.add('is-android-app');
+  }
+  if (!isAndroidApp && 'serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.port === '8795')) {
+    navigator.serviceWorker.register('./sw.js').catch(function(){});
   }
 
   fetch('data/workbench_data.json?v=5').then(function(r){ return r.json(); }).then(function(js){
@@ -2223,6 +2567,11 @@
     renderEntryControlsAndLinks();
     bindEvents();
     setEntryMode('blank', false);
+    try {
+      var savedDraft = localStorage.getItem('jt_sw_draft_v1');
+      var wpEl = document.getElementById('writerPromptInput');
+      if (savedDraft && wpEl && !wpEl.value) wpEl.value = savedDraft;
+    } catch (e) {}
     enableLanModeIfAvailable();
   }).catch(function(err){
     var dl = document.getElementById('demoLogline');
