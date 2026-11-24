@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         settings.setSupportZoom(false);
         settings.setBuiltInZoomControls(false);
         settings.setDisplayZoomControls(false);
-        settings.setUserAgentString(settings.getUserAgentString() + " JTScreenwriterApp/1.1.0");
+        settings.setUserAgentString(settings.getUserAgentString() + " JTScreenwriterApp/1.2.0");
 
         webView.setWebViewClient(new WebViewClient() {
             @Nullable

@@ -1,9 +1,9 @@
-const CACHE_NAME = 'jt-sw-app-v1.1.0';
+const CACHE_NAME = 'jt-sw-app-v1.2.0';
 const PRECACHE_URLS = [
   './',
   './index.html',
   './manifest.webmanifest',
-  './data/workbench_data.json?v=5',
+  './favicon.ico',
   './icons/icon-192.png',
   './icons/icon-512.png'
 ];
@@ -29,9 +29,9 @@ self.addEventListener('fetch', (event) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
-  if (url.pathname.includes('/api/') || url.pathname.includes('/downloads/')) return;
+  if (url.pathname.includes('/api/') || url.pathname.includes('/downloads/') || url.pathname.endsWith('.json')) return;
 
-  if (req.mode === 'navigate' || url.pathname.endsWith('.html') || url.pathname.endsWith('.json')) {
+  if (req.mode === 'navigate' || url.pathname.endsWith('.html')) {
     event.respondWith(
       fetch(req)
         .then((res) => {

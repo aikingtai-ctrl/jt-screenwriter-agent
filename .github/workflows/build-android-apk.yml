@@ -9,6 +9,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 jobs:
   build-apk:
@@ -39,11 +40,13 @@ jobs:
           cp index.html "$WWW_DIR/"
           [ -f manifest.webmanifest ] && cp manifest.webmanifest "$WWW_DIR/" || true
           [ -f sw.js ] && cp sw.js "$WWW_DIR/" || true
-          for d in data assets icons; do
+          for d in assets icons; do
             if [ -d "$d" ]; then
               cp -a "$d" "$WWW_DIR/"
             fi
           done
+          [ -f favicon.ico ] && cp favicon.ico "$WWW_DIR/" || true
+          test ! -f "$WWW_DIR/data/workbench_data.json"
           ls -la "$WWW_DIR"
 
       - name: Generate Release Keystore and Assemble Signed APK
@@ -85,15 +88,22 @@ jobs:
           name: JT-Screenwriter-Android-apk
           path: dist/
 
-      - name: Publish APK to GitHub Release v1.1.0
+      - name: Publish APK to GitHub Release v1.2.0
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          if gh release view v1.1.0 >/dev/null 2>&1; then
-            gh release upload v1.1.0 dist/JT-Screenwriter-Android.apk dist/SHA256SUMS.txt --clobber
+          if gh release view v1.2.0 >/dev/null 2>&1; then
+            gh release upload v1.2.0 dist/JT-Screenwriter-Android.apk dist/SHA256SUMS.txt --clobber
           else
-            gh release create v1.1.0 dist/JT-Screenwriter-Android.apk dist/SHA256SUMS.txt \
-              --title "JT Screenwriter App v1.1.0 (Android APK + Offline PWA)" \
-              --notes "JT Screenwriter Agent v1.1.0 signed offline Android APK (com.jintai.screenwriter) with bundled 166 film masters, 6 film stocks, 32 comps, and H3/Seedance 2.0 prompt compiler."
+            gh release create v1.2.0 dist/JT-Screenwriter-Android.apk dist/SHA256SUMS.txt \
+              --title "JT Screenwriter App v1.2.0 (RBAC Auth + Anti-Abuse Monitoring + Android APK)" \
+              --notes "JT Screenwriter Agent v1.2.0 signed Android APK (com.jintai.screenwriter) requiring authenticated access via cloud Supabase gateway with instant ban revocation and zero public data leak."
           fi
+
+      - name: Trigger GitHub Pages Redeploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh workflow run pages.yml --ref main

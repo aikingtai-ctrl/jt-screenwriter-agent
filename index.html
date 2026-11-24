@@ -10,6 +10,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="JT 编剧台">
 <link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon-180.png">
 <title>JT 编剧台 — 极简编剧工作台</title>
@@ -950,6 +951,246 @@
     align-self: flex-start;
   }
 
+  /* 账号鉴权门禁与安全监控看板（Apple Minimalist） */
+  body.auth-locked {
+    overflow: hidden;
+    background: var(--bg-gray);
+  }
+  body.auth-locked main,
+  body.auth-locked .mobile-tabbar,
+  body.auth-locked .apple-links,
+  body.auth-locked .header-search-wrap,
+  body.auth-locked #userAccountBar {
+    display: none !important;
+  }
+  .auth-gate-overlay {
+    position: fixed;
+    inset: 0;
+    top: 54px;
+    z-index: 95;
+    background: var(--bg-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+    overflow-y: auto;
+  }
+  .auth-card {
+    width: 100%;
+    max-width: 440px;
+    background: var(--bg-white);
+    border-radius: 28px;
+    padding: 32px 30px;
+    border: 1px solid var(--hairline-soft);
+  }
+  .auth-brand-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .auth-brand-top img {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+  }
+  .auth-brand-top h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink-primary);
+  }
+  .auth-brand-top p {
+    margin: 6px 0 0;
+    font-size: 14.5px;
+    color: var(--ink-secondary);
+  }
+  .auth-mode-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 4px 12px;
+    border-radius: 980px;
+    background: var(--bg-gray);
+    color: var(--ink-secondary);
+    font-size: 12.5px;
+    font-weight: 500;
+  }
+  .auth-field {
+    margin-bottom: 14px;
+  }
+  .auth-field label {
+    display: block;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--ink-secondary);
+    margin-bottom: 6px;
+  }
+  .auth-field input,
+  .auth-field select {
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    padding: 11px 14px;
+    border-radius: 12px;
+    border: 1px solid var(--hairline);
+    background: var(--bg-white);
+    color: var(--ink-primary);
+  }
+  .auth-error-box {
+    margin: 12px 0;
+    padding: 10px 14px;
+    border-radius: 12px;
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    color: var(--warn-ink);
+    font-size: 14px;
+  }
+  .user-account-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .user-role-chip {
+    display: inline-flex;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink-primary);
+    background: var(--bg-gray);
+    padding: 5px 11px;
+    border-radius: 980px;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .admin-modal-card {
+    max-width: 880px;
+  }
+  .kpi-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+  }
+  .kpi-box {
+    background: var(--bg-gray);
+    border-radius: 16px;
+    padding: 14px 16px;
+  }
+  .kpi-val {
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--ink-primary);
+  }
+  .kpi-lbl {
+    font-size: 13px;
+    color: var(--ink-secondary);
+    margin-top: 4px;
+  }
+  .alert-banner {
+    background: var(--warn-bg);
+    border: 1px solid var(--warn-border);
+    color: var(--warn-ink);
+    border-radius: 16px;
+    padding: 14px 16px;
+    margin-bottom: 18px;
+    font-size: 14.5px;
+  }
+  .alert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+  }
+  .admin-section-box {
+    background: var(--bg-gray);
+    border-radius: 18px;
+    padding: 18px;
+    margin-bottom: 18px;
+  }
+  .admin-section-box h3 {
+    margin: 0 0 12px;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .admin-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .admin-list-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .admin-user-row {
+    background: var(--bg-white);
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--hairline-soft);
+  }
+  .admin-user-meta {
+    font-size: 13.5px;
+    color: var(--ink-secondary);
+    margin-top: 3px;
+  }
+  .status-pill-ok {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 980px;
+    font-size: 12px;
+    background: rgba(36, 138, 61, 0.12);
+    color: #1b6e2f;
+    font-weight: 600;
+  }
+  .status-pill-ban {
+    display: inline-block;
+    padding: 2px 9px;
+    border-radius: 980px;
+    font-size: 12px;
+    background: var(--warn-bg);
+    color: var(--warn-ink);
+    font-weight: 600;
+  }
+  .audit-log-box {
+    max-height: 240px;
+    overflow-y: auto;
+    background: var(--bg-white);
+    border-radius: 14px;
+    padding: 10px 14px;
+    border: 1px solid var(--hairline-soft);
+    font-size: 13px;
+  }
+  .audit-row {
+    padding: 7px 0;
+    border-bottom: 1px solid var(--hairline-soft);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .audit-row:last-child { border-bottom: none; }
+
+  @media (max-width: 640px) {
+    .kpi-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .admin-form-grid { grid-template-columns: 1fr; }
+    .auth-card { padding: 26px 20px; border-radius: 22px; }
+  }
+
   @media (max-width: 980px) {
     body { font-size: 18.5px; }
     .chapter-nav { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
@@ -1008,7 +1249,7 @@
   }
 </style>
 </head>
-<body>
+<body class="auth-locked">
 
 <header class="apple-nav">
   <div class="apple-nav-inner">
@@ -1036,9 +1277,41 @@
       </div>
       <button class="btn-nav-app" id="openAppDownloadBtn" type="button">下载 App</button>
       <a class="lan-dot-link" id="lanBadge" href="#lanPanel" style="display:none"><span class="lan-dot" aria-hidden="true"></span>本地引擎</a>
+      <div class="user-account-bar hidden" id="userAccountBar">
+        <span class="user-role-chip" id="userBadgeText"></span>
+        <button class="btn-nav-clear hidden" id="openAdminModalBtn" type="button">安全监控</button>
+        <button class="btn-nav-clear" id="openChangePwdBtn" type="button">改密</button>
+        <button class="btn-nav-clear" id="authLogoutBtn" type="button">退出</button>
+      </div>
     </div>
   </div>
 </header>
+
+<div class="auth-gate-overlay" id="authGateOverlay" role="dialog" aria-modal="true" aria-labelledby="authGateTitle">
+  <div class="auth-card">
+    <div class="auth-brand-top">
+      <img src="icons/icon-192.png" alt="JT 编剧台">
+      <h1 id="authGateTitle">登录 JT 编剧台</h1>
+      <p>仅限授权主创与编剧访问 · 账号由管理员统一发放与管控</p>
+      <div class="auth-mode-badge" id="authModeBadge">鉴权网关就绪</div>
+    </div>
+    <form id="authLoginForm">
+      <div class="auth-field">
+        <label for="authUsernameInput">用户名</label>
+        <input id="authUsernameInput" type="text" autocomplete="username" placeholder="请输入分配的用户名" required>
+      </div>
+      <div class="auth-field">
+        <label for="authPasswordInput">密码</label>
+        <input id="authPasswordInput" type="password" autocomplete="current-password" placeholder="请输入登录密码" required>
+      </div>
+      <div class="auth-error-box hidden" id="authErrorBox"></div>
+      <button class="btn primary" id="authLoginBtn" type="submit" style="width:100%; margin-top:4px">登录进入工作台</button>
+    </form>
+    <div class="row-actions" style="justify-content:center; margin-top:16px">
+      <button class="link-action" id="authOpenDownloadBtn" type="button">获取手机 App / APK 安装包 ›</button>
+    </div>
+  </div>
+</div>
 
 <main>
   <!-- =========================================================
@@ -1439,8 +1712,8 @@
       <div class="app-brand-mini">
         <img src="icons/icon-192.png" alt="JT 编剧台图标">
         <div>
-          <h2 id="appModalTitle" style="margin:0; font-size:22px; font-weight:600; color:var(--ink-primary);">JT 编剧台 · 手机 App</h2>
-          <p class="small-muted" style="margin:2px 0 0; font-size:14.5px;">v1.1.0 · 内置 166 位世界主创与 32 部佳片机制 · 离线可用</p>
+          <h2 id="appModalTitle" style="margin:0; font-size:22px; font-weight:600; color:var(--ink-primary);">JT 编剧台 · 手机与桌面 App</h2>
+          <p class="small-muted" style="margin:2px 0 0; font-size:14.5px;">v1.2.0 · 账号鉴权门禁 · 点击图标直开全屏工作台（支持安卓 / iPhone / 电脑桌面）</p>
         </div>
       </div>
       <button class="link-action" id="closeAppModalBtn" type="button">关闭</button>
@@ -1450,7 +1723,7 @@
       <div class="app-option-box">
         <div>
           <h3>安卓 / 鸿蒙安装包</h3>
-          <p class="small-muted" style="font-size:15px; margin:8px 0 0;">原生离线运行环境（com.jintai.screenwriter），飞行模式下亦可创作画布与编译双模型提示词。</p>
+          <p class="small-muted" style="font-size:15px; margin:8px 0 0;">原生 App 安装包（com.jintai.screenwriter），装好后点击手机桌面「JT 编剧台」LOGO 直接打开。</p>
         </div>
         <div class="row-actions" style="margin-top:8px">
           <a class="btn primary" id="apkDirectLink" href="./downloads/JT-Screenwriter-Android.apk" download="JT-Screenwriter-Android.apk">下载安卓 APK</a>
@@ -1460,21 +1733,127 @@
 
       <div class="app-option-box">
         <div>
-          <h3>iPhone / Safari 安装与扫码</h3>
-          <p class="small-muted" id="pwaInstallHint" style="font-size:15px; margin:8px 0 0;">iPhone / iPad：使用 Safari 浏览器点击底部分享图标，选择「添加到主屏幕」，即可离线全屏启动。</p>
+          <h3>iPhone / 电脑桌面直装（PWA）</h3>
+          <p class="small-muted" id="pwaInstallHint" style="font-size:15px; margin:8px 0 0;">iPhone Safari：点分享 ➔「添加到主屏幕」；Windows / Mac（Chrome/Edge）：点地址栏右侧安装图标或点下方按钮，生成桌面 LOGO 独立打开。</p>
         </div>
         <img class="app-qr-img" src="icons/app_download_qr.png" alt="手机扫码打开或下载 JT 编剧台">
         <div class="row-actions" style="margin-top:4px">
-          <button class="btn secondary-on-gray" id="installPwaBtn" type="button">安装到主屏幕 (PWA)</button>
+          <button class="btn secondary-on-gray" id="installPwaBtn" type="button">安装到手机 / 电脑桌面 (PWA)</button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
+<div class="modal-backdrop hidden" id="changePwdModal" role="dialog" aria-modal="true" aria-labelledby="changePwdTitle">
+  <div class="app-modal-card" style="max-width:440px">
+    <div class="app-modal-head">
+      <h2 id="changePwdTitle" style="margin:0; font-size:21px; font-weight:600">修改登录密码</h2>
+      <button class="link-action" id="closeChangePwdBtn" type="button">关闭</button>
+    </div>
+    <form id="changePwdForm">
+      <div class="auth-field">
+        <label for="curPwdInput">当前密码</label>
+        <input id="curPwdInput" type="password" autocomplete="current-password" required>
+      </div>
+      <div class="auth-field">
+        <label for="newPwdInput">新密码（至少 8 位）</label>
+        <input id="newPwdInput" type="password" autocomplete="new-password" minlength="8" required>
+      </div>
+      <div class="auth-field">
+        <label for="confirmPwdInput">确认新密码</label>
+        <input id="confirmPwdInput" type="password" autocomplete="new-password" minlength="8" required>
+      </div>
+      <div class="auth-error-box hidden" id="changePwdMsg"></div>
+      <button class="btn primary" id="savePwdBtn" type="submit" style="width:100%">确认修改</button>
+    </form>
+  </div>
+</div>
+
+<div class="modal-backdrop hidden" id="adminUsersModal" role="dialog" aria-modal="true" aria-labelledby="adminModalTitle">
+  <div class="app-modal-card admin-modal-card">
+    <div class="app-modal-head">
+      <div>
+        <h2 id="adminModalTitle" style="margin:0; font-size:22px; font-weight:600">安全监控与账号管理</h2>
+        <p class="small-muted" style="margin:2px 0 0; font-size:14px">实时监测多 IP 共享、撞库拦截与授权有效期，支持一键停用踢下线</p>
+      </div>
+      <div class="row-actions" style="margin-top:0">
+        <button class="btn compact secondary-fill" id="exportAuditCsvBtn" type="button">导出审计 CSV</button>
+        <button class="btn compact secondary-fill" id="refreshAdminBtn" type="button">刷新</button>
+        <button class="link-action" id="closeAdminModalBtn" type="button">关闭</button>
+      </div>
+    </div>
+
+    <div class="kpi-grid-4">
+      <div class="kpi-box"><div class="kpi-val" id="kpiActive24h">0</div><div class="kpi-lbl">24h 活跃账号</div></div>
+      <div class="kpi-box"><div class="kpi-val" id="kpiLogins24h">0</div><div class="kpi-lbl">24h 成功登录</div></div>
+      <div class="kpi-box"><div class="kpi-val" id="kpiBlocked24h">0</div><div class="kpi-lbl">失败 / 拦截</div></div>
+      <div class="kpi-box"><div class="kpi-val" id="kpiAlerts24h">0</div><div class="kpi-lbl">风险告警</div></div>
+    </div>
+
+    <div class="alert-banner hidden" id="adminAlertsWrap"></div>
+
+    <div class="admin-section-box">
+      <h3>开通新编剧 / 协作账号</h3>
+      <form id="createAcctForm">
+        <div class="admin-form-grid">
+          <div class="auth-field" style="margin-bottom:0">
+            <label for="newAcctUsername">用户名（英文/数字）</label>
+            <input id="newAcctUsername" type="text" placeholder="如 writer_zhang" required>
+          </div>
+          <div class="auth-field" style="margin-bottom:0">
+            <label for="newAcctPassword">初始密码（至少 8 位）</label>
+            <div style="display:flex; gap:6px">
+              <input id="newAcctPassword" type="text" placeholder="点击右侧生成强密码" required>
+              <button class="btn compact secondary-fill" id="genAcctPwdBtn" type="button" style="flex-shrink:0">生成</button>
+            </div>
+          </div>
+          <div class="auth-field" style="margin-bottom:0">
+            <label for="newAcctNote">备注（编剧姓名 / 项目）</label>
+            <input id="newAcctNote" type="text" placeholder="如 外部合作编剧-张老师">
+          </div>
+          <div class="auth-field" style="margin-bottom:0">
+            <label for="newAcctRole">权限角色 / 有效期</label>
+            <div style="display:flex; gap:6px">
+              <select id="newAcctRole">
+                <option value="writer">编剧（仅创作/编译）</option>
+                <option value="admin">管理员（可管号/A机探针）</option>
+              </select>
+              <select id="newAcctDays">
+                <option value="30">30 天</option>
+                <option value="7">7 天试用</option>
+                <option value="90">90 天</option>
+                <option value="0">长期有效</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row-actions">
+          <button class="btn compact primary" id="createAcctBtn" type="submit">立即开通账号</button>
+        </div>
+      </form>
+      <div class="ok-box hidden" id="createdCredBox" style="margin-top:12px"></div>
+    </div>
+
+    <div class="admin-section-box">
+      <h3>已授权账号名单</h3>
+      <div class="admin-list-stack" id="adminUsersList"></div>
+    </div>
+
+    <div class="admin-section-box" style="margin-bottom:0">
+      <h3>最近安全审计日志（最新 50 条）</h3>
+      <div class="audit-log-box" id="adminAuditList"></div>
+    </div>
+  </div>
+</div>
+
 <script>
 (function(){
+  var CLOUD_CFG = {"gateway_url": "https://ddzxsafkrwetdzhwlzxm.supabase.co/functions/v1/jt-gateway", "publishable_key": "sb_publishable_HkQP-dbekBcRJYMAnJoDQQ_sdAQvEFT"};
+  var SESSION_STORAGE_KEY = 'jt_sw_session_v1';
   var DATA = null;
+  var CURRENT_USER = null;
+  var LAST_ADMIN_SNAPSHOT = null;
   var activeEntryKey = 'blank';
   var activeGenre = '全部';
   var compsExpanded = false;
@@ -1579,6 +1958,18 @@
     hero.classList.add('intro-playing');
   }
 
+  function lanFetchJson(path, opts) {
+    var init = Object.assign({ credentials: 'same-origin' }, opts || {});
+    return fetch('.' + path, init).then(function(r){
+      return r.json().catch(function(){ return {}; }).then(function(js){
+        if (r.status === 401 || (r.status === 403 && js && (js.code === 'ACCOUNT_DISABLED' || js.code === 'ACCOUNT_EXPIRED' || js.code === 'TOKEN_REVOKED'))) {
+          forceLockOut((js && js.error) || '登录态已失效，请重新登录');
+        }
+        return { ok: r.ok, status: r.status, data: js };
+      });
+    });
+  }
+
   function scoreAndBuildWriterPlan() {
     if (!DATA) return;
     var inpEl = document.getElementById('writerPromptInput');
@@ -1649,12 +2040,13 @@
 
     var isLan = (location.port === '8795') || (document.querySelector('meta[name="jt-lan-mode"]') !== null);
     if (isLan) {
-      fetch('./api/route', {
+      lanFetchJson('/api/route', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: rawText })
-      }).then(function(r){ return r.ok ? r.json() : null; }).then(function(js){
-        if (js && js.ok && js.route && js.route.screenwriting) {
+      }).then(function(res){
+        var js = res && res.data;
+        if (res && res.ok && js && js.ok && js.route && js.route.screenwriting) {
           var sw = js.route.screenwriting;
           var note = document.createElement('p');
           note.className = 'small-muted';
@@ -2241,15 +2633,17 @@
   function enableLanModeIfAvailable() {
     var isLan = (location.port === '8795') || (document.querySelector('meta[name="jt-lan-mode"]') !== null);
     if (!isLan) return;
-    fetch('./api/health').then(function(r){ return r.ok ? r.json() : null; }).then(function(h){
-      if (!h || !h.ok) return;
+    lanFetchJson('/api/health').then(function(res){
+      var h = res && res.data;
+      if (!res || !res.ok || !h || !h.ok || !h.authenticated) return null;
       document.getElementById('lanBadge').style.display = 'inline-flex';
       document.getElementById('lanPanel').style.display = 'block';
       document.getElementById('lanClusterStatus').value =
         'A机在线 ' + (h.a_online_count || 0) + '/8 卡 · 可用显存 ' + (h.a_total_free_vram_gib || 0) + ' GiB';
-      return fetch('./api/projects').then(function(pr){ return pr.ok ? pr.json() : null; });
-    }).then(function(pdata){
-      if (!pdata || !pdata.projects) return;
+      return lanFetchJson('/api/projects');
+    }).then(function(pres){
+      var pdata = pres && pres.data;
+      if (!pres || !pres.ok || !pdata || !pdata.projects) return;
       var sel = document.getElementById('lanProjectSelect');
       sel.innerHTML = pdata.projects.map(function(p){
         return '<option value="' + esc(p.slug) + '">' + esc(p.title || p.slug) + ' (' + esc(p.slug) + ')</option>';
@@ -2259,12 +2653,12 @@
         box.style.display = 'block';
         box.textContent = '正在请求 ' + ep + ' …';
         var body = Object.assign({ project_slug: sel.value }, extra || {});
-        fetch('.' + ep, {
+        lanFetchJson(ep, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(body)
-        }).then(function(res){ return res.json(); }).then(function(js){
-          box.textContent = JSON.stringify(js, null, 2);
+        }).then(function(r2){
+          box.textContent = JSON.stringify(r2.data || {}, null, 2);
         }).catch(function(err){
           box.textContent = '请求异常: ' + err;
         });
@@ -2273,6 +2667,13 @@
       document.getElementById('lanBuildBtn').onclick = function(){ callLanPost('/api/build-platform'); };
       document.getElementById('lanProbePlanBtn').onclick = function(){ callLanPost('/api/render-probe', { dry_run: true }); };
     }).catch(function(){});
+  }
+
+  var eventsBound = false;
+  function bindEventsOnce() {
+    if (eventsBound) return;
+    eventsBound = true;
+    bindEvents();
   }
 
   function bindEvents() {
@@ -2529,6 +2930,16 @@
       lb.style.display = 'none';
       return true;
     }
+    var adminModal = document.getElementById('adminUsersModal');
+    if (adminModal && !adminModal.classList.contains('hidden')) {
+      adminModal.classList.add('hidden');
+      return true;
+    }
+    var pwdModal = document.getElementById('changePwdModal');
+    if (pwdModal && !pwdModal.classList.contains('hidden')) {
+      pwdModal.classList.add('hidden');
+      return true;
+    }
     var modal = document.getElementById('appDownloadModal');
     if (modal && !modal.classList.contains('hidden')) {
       modal.classList.add('hidden');
@@ -2551,9 +2962,463 @@
     navigator.serviceWorker.register('./sw.js').catch(function(){});
   }
 
-  fetch('data/workbench_data.json?v=5').then(function(r){ return r.json(); }).then(function(js){
-    DATA = js;
-    var mt = js.meta || {};
+  function isLanEnv() {
+    return (location.port === '8795') || (document.querySelector('meta[name="jt-lan-mode"]') !== null);
+  }
+
+  function readStoredSession() {
+    try {
+      var raw = localStorage.getItem(SESSION_STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function writeStoredSession(obj) {
+    try { localStorage.setItem(SESSION_STORAGE_KEY, JSON.stringify(obj)); } catch (e) {}
+  }
+
+  function clearStoredSession() {
+    try { localStorage.removeItem(SESSION_STORAGE_KEY); } catch (e) {}
+  }
+
+  function showAuthError(msg) {
+    var box = document.getElementById('authErrorBox');
+    if (!box) return;
+    if (!msg) {
+      box.classList.add('hidden');
+      box.textContent = '';
+    } else {
+      box.textContent = msg;
+      box.classList.remove('hidden');
+    }
+  }
+
+  function forceLockOut(reasonMsg) {
+    clearStoredSession();
+    DATA = null;
+    CURRENT_USER = null;
+    LAST_ADMIN_SNAPSHOT = null;
+    document.body.classList.add('auth-locked');
+    var gate = document.getElementById('authGateOverlay');
+    if (gate) gate.classList.remove('hidden');
+    var ubar = document.getElementById('userAccountBar');
+    if (ubar) ubar.classList.add('hidden');
+    var admBtn = document.getElementById('openAdminModalBtn');
+    if (admBtn) admBtn.classList.add('hidden');
+    var admModal = document.getElementById('adminUsersModal');
+    if (admModal) admModal.classList.add('hidden');
+    var pwdModal = document.getElementById('changePwdModal');
+    if (pwdModal) pwdModal.classList.add('hidden');
+    var loginPwd = document.getElementById('authPasswordInput');
+    if (loginPwd) loginPwd.value = '';
+    showAuthError(reasonMsg || '');
+  }
+
+  function cloudRequest(path, method, body, token) {
+    var gw = (CLOUD_CFG && CLOUD_CFG.gateway_url ? CLOUD_CFG.gateway_url : '').replace(/\/+$/, '');
+    var pub = CLOUD_CFG && CLOUD_CFG.publishable_key ? CLOUD_CFG.publishable_key : '';
+    if (!gw || !pub) {
+      return Promise.resolve({ ok: false, status: 500, data: { error: '云端鉴权配置缺失' } });
+    }
+    var headers = { 'Content-Type': 'application/json', 'apikey': pub };
+    if (token) headers['Authorization'] = 'Bearer ' + token;
+    var opts = { method: method || 'GET', headers: headers };
+    if (body !== undefined && body !== null) opts.body = JSON.stringify(body);
+    return fetch(gw + path, opts).then(function(r){
+      return r.json().catch(function(){ return {}; }).then(function(js){
+        return { ok: r.ok, status: r.status, data: js };
+      });
+    });
+  }
+
+  function apiAdminOrAuth(cloudPath, lanPath, method, body) {
+    if (isLanEnv()) {
+      return lanFetchJson(lanPath, {
+        method: method || 'GET',
+        headers: { 'Content-Type': 'application/json' },
+        body: body !== undefined && body !== null ? JSON.stringify(body) : undefined
+      });
+    }
+    var sess = readStoredSession() || {};
+    return cloudRequest(cloudPath, method, body, sess.access_token || '').then(function(res){
+      if ((res.status === 401 || (res.status === 403 && res.data && res.data.code === 'ACCOUNT_DISABLED')) && res.status === 401 && sess.refresh_token) {
+        return cloudRequest('/refresh', 'POST', { refresh_token: sess.refresh_token }, '').then(function(refRes){
+          if (refRes.ok && refRes.data && refRes.data.access_token) {
+            writeStoredSession({ mode: 'cloud', access_token: refRes.data.access_token, refresh_token: refRes.data.refresh_token || sess.refresh_token, user: refRes.data.user });
+            return cloudRequest(cloudPath, method, body, refRes.data.access_token);
+          }
+          forceLockOut((refRes.data && refRes.data.error) || '登录态已过期，请重新登录');
+          return refRes;
+        });
+      }
+      if (res.status === 401 || (res.status === 403 && res.data && (res.data.code === 'ACCOUNT_DISABLED' || res.data.code === 'ACCOUNT_EXPIRED'))) {
+        forceLockOut((res.data && res.data.error) || '账号登录态已失效');
+      }
+      return res;
+    });
+  }
+
+  function generateStrongPwd() {
+    var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789';
+    var out = 'Jt-';
+    var arr = new Uint8Array(10);
+    if (window.crypto && window.crypto.getRandomValues) {
+      window.crypto.getRandomValues(arr);
+    } else {
+      for (var i = 0; i < arr.length; i++) arr[i] = Math.floor(Math.random() * 256);
+    }
+    for (var j = 0; j < arr.length; j++) out += chars[arr[j] % chars.length];
+    return out;
+  }
+
+  function formatShortTime(isoStr) {
+    if (!isoStr) return '从未';
+    var d = new Date(isoStr);
+    if (isNaN(d.getTime())) return String(isoStr).slice(0, 16);
+    return d.getFullYear() + '-' +
+      String(d.getMonth() + 1).padStart(2, '0') + '-' +
+      String(d.getDate()).padStart(2, '0') + ' ' +
+      String(d.getHours()).padStart(2, '0') + ':' +
+      String(d.getMinutes()).padStart(2, '0');
+  }
+
+  function translateAuditAction(act) {
+    var m = {
+      bootstrap_admin: '初始化管理员',
+      login_ok: '登录成功',
+      login_fail: '密码错误拦截',
+      login_rate_limited: '防爆破触发冷却',
+      login_blocked_disabled: '已停用账号尝试登录',
+      login_blocked_expired: '过期账号尝试登录',
+      logout: '主动退出登录',
+      change_password: '自助修改密码',
+      admin_create_user: '开通新账号',
+      admin_toggle_user: '切换启停状态',
+      admin_reset_password: '管理员重置密码',
+      admin_delete_user: '删除账号',
+      admin_sync_bundle: '同步工作台数据包',
+      gpu_probe_ok: '触发 A 机实测探针',
+      gpu_probe_denied: '越权调用 A 机被拒'
+    };
+    return m[act] || act;
+  }
+
+  function renderAdminSnapshot(snap) {
+    LAST_ADMIN_SNAPSHOT = snap;
+    var sum = snap.monitoring_summary || {};
+    document.getElementById('kpiActive24h').textContent = String(sum.active_users_24h || 0);
+    document.getElementById('kpiLogins24h').textContent = String(sum.logins_24h || 0);
+    document.getElementById('kpiBlocked24h').textContent = String((sum.failed_logins_24h || 0) + (sum.blocked_attempts_24h || 0));
+    document.getElementById('kpiAlerts24h').textContent = String(sum.alerts_count || 0);
+
+    var alertBox = document.getElementById('adminAlertsWrap');
+    var alerts = sum.alerts || [];
+    if (alerts.length) {
+      alertBox.classList.remove('hidden');
+      alertBox.innerHTML = '<strong>反滥用预警（检测到 ' + alerts.length + ' 项）：</strong>' +
+        alerts.map(function(al){
+          var btn = al.user_id && al.code !== 'EXPIRING_SOON'
+            ? '<button class="btn compact secondary-fill alert-ban-btn" type="button" data-uid="' + esc(al.user_id) + '">立即停用</button>'
+            : '';
+          return '<div class="alert-item"><span>[' + esc(al.code) + '] ' + esc(al.message) + '</span>' + btn + '</div>';
+        }).join('');
+      alertBox.querySelectorAll('.alert-ban-btn').forEach(function(b){
+        b.onclick = function(){ toggleTargetUser(b.getAttribute('data-uid'), 'disabled'); };
+      });
+    } else {
+      alertBox.classList.add('hidden');
+      alertBox.innerHTML = '';
+    }
+
+    var users = snap.users || [];
+    var uList = document.getElementById('adminUsersList');
+    uList.innerHTML = users.map(function(u){
+      var isSelf = CURRENT_USER && u.user_id === CURRENT_USER.user_id;
+      var active = u.status === 'active';
+      var pill = active ? '<span class="status-pill-ok">正常使用</span>' : '<span class="status-pill-ban">已停用</span>';
+      var roleLbl = u.role === 'admin' ? '管理员' : '编剧';
+      var expTxt = u.expires_at ? ('到期: ' + formatShortTime(u.expires_at)) : '长期有效';
+      var ipTxt = ' · 近24h IP数: ' + (u.distinct_ips_24h || 0) + (u.last_ip ? (' (' + esc(u.last_ip) + ')') : '');
+      var noteTxt = u.note ? (' · 备注: ' + esc(u.note)) : '';
+      var btns = isSelf
+        ? '<span class="small-muted">当前登录账号</span>'
+        : '<div class="row-actions" style="margin-top:0">' +
+            '<button class="btn compact secondary-fill adm-toggle-btn" type="button" data-uid="' + esc(u.user_id) + '" data-next="' + (active ? 'disabled' : 'active') + '">' + (active ? '停用' : '启用') + '</button>' +
+            '<button class="btn compact secondary-fill adm-reset-btn" type="button" data-uid="' + esc(u.user_id) + '" data-uname="' + esc(u.username) + '">改密</button>' +
+            '<button class="btn compact secondary-fill adm-del-btn" type="button" data-uid="' + esc(u.user_id) + '" data-uname="' + esc(u.username) + '">删除</button>' +
+          '</div>';
+      return '<div class="admin-user-row">' +
+        '<div><strong>' + esc(u.username) + '</strong> (' + esc(u.display_name || u.username) + ' · ' + roleLbl + ') ' + pill +
+        '<div class="admin-user-meta">累计登录 ' + (u.login_count || 0) + ' 次 · 最近 ' + esc(formatShortTime(u.last_login_at)) + ' · ' + esc(expTxt) + ipTxt + noteTxt + '</div></div>' +
+        btns + '</div>';
+    }).join('');
+
+    uList.querySelectorAll('.adm-toggle-btn').forEach(function(b){
+      b.onclick = function(){ toggleTargetUser(b.getAttribute('data-uid'), b.getAttribute('data-next')); };
+    });
+    uList.querySelectorAll('.adm-reset-btn').forEach(function(b){
+      b.onclick = function(){
+        var newPwd = generateStrongPwd();
+        apiAdminOrAuth('/admin/users/reset-password', '/api/admin/users/reset-password', 'POST', {
+          user_id: b.getAttribute('data-uid'),
+          new_password: newPwd
+        }).then(function(res){
+          if (!res.ok) { toast((res.data && res.data.error) || '重置密码失败'); return; }
+          var credBox = document.getElementById('createdCredBox');
+          credBox.classList.remove('hidden');
+          credBox.innerHTML = '<strong>已重置账号密码：</strong>' + esc(b.getAttribute('data-uname')) + ' ｜ 新密码：<code>' + esc(newPwd) + '</code> ' +
+            '<button class="btn compact primary" id="copyResetCredBtn" type="button" style="margin-left:8px">复制发给对方</button>';
+          document.getElementById('copyResetCredBtn').onclick = function(){
+            copyText('账号：' + b.getAttribute('data-uname') + '\n新密码：' + newPwd + '\n登录入口：' + location.origin + location.pathname, '新账号密码');
+          };
+          loadAdminDashboard();
+        });
+      };
+    });
+    uList.querySelectorAll('.adm-del-btn').forEach(function(b){
+      b.onclick = function(){
+        if (!window.confirm('确认彻底删除账号「' + b.getAttribute('data-uname') + '」？删除后无法恢复。')) return;
+        apiAdminOrAuth('/admin/users/delete', '/api/admin/users/delete', 'POST', {
+          user_id: b.getAttribute('data-uid')
+        }).then(function(res){
+          if (!res.ok) { toast((res.data && res.data.error) || '删除失败'); return; }
+          toast('已删除账号：' + b.getAttribute('data-uname'));
+          loadAdminDashboard();
+        });
+      };
+    });
+
+    var logs = snap.audit_logs || [];
+    var aList = document.getElementById('adminAuditList');
+    aList.innerHTML = logs.length ? logs.map(function(lg){
+      var dt = lg.detail && Object.keys(lg.detail).length ? JSON.stringify(lg.detail) : '';
+      return '<div class="audit-row">' +
+        '<span><strong>' + esc(lg.username || '-') + '</strong> · ' + esc(translateAuditAction(lg.action)) + (dt ? ' <span class="small-muted">' + esc(dt) + '</span>' : '') + '</span>' +
+        '<span class="small-muted">' + esc(lg.ip_hint || '') + ' · ' + esc(formatShortTime(lg.created_at)) + '</span>' +
+        '</div>';
+    }).join('') : '<div class="small-muted">暂无日志</div>';
+  }
+
+  function toggleTargetUser(uid, nextStatus) {
+    apiAdminOrAuth('/admin/users/toggle', '/api/admin/users/toggle', 'POST', {
+      user_id: uid,
+      status: nextStatus
+    }).then(function(res){
+      if (!res.ok) { toast((res.data && res.data.error) || '操作失败'); return; }
+      toast(nextStatus === 'disabled' ? '已立即停用并踢出该账号' : '已恢复启用该账号');
+      loadAdminDashboard();
+    });
+  }
+
+  function loadAdminDashboard() {
+    apiAdminOrAuth('/admin/users', '/api/admin/users', 'GET', null).then(function(res){
+      if (!res.ok || !res.data || !res.data.ok) {
+        toast((res.data && res.data.error) || '加载监控面板失败');
+        return;
+      }
+      renderAdminSnapshot(res.data);
+    });
+  }
+
+  function bindAuthModalsOnce() {
+    var modeBadge = document.getElementById('authModeBadge');
+    if (modeBadge) {
+      modeBadge.textContent = isLanEnv() ? '工作室本地引擎安全鉴权' : '云端 Supabase 安全网关鉴权';
+    }
+    var authDlBtn = document.getElementById('authOpenDownloadBtn');
+    if (authDlBtn) authDlBtn.onclick = openAppDownloadModal;
+
+    var openAdminBtn = document.getElementById('openAdminModalBtn');
+    if (openAdminBtn) {
+      openAdminBtn.onclick = function(){
+        var m = document.getElementById('adminUsersModal');
+        if (m) m.classList.remove('hidden');
+        var np = document.getElementById('newAcctPassword');
+        if (np && !np.value) np.value = generateStrongPwd();
+        loadAdminDashboard();
+      };
+    }
+    var closeAdminBtn = document.getElementById('closeAdminModalBtn');
+    if (closeAdminBtn) {
+      closeAdminBtn.onclick = function(){
+        document.getElementById('adminUsersModal').classList.add('hidden');
+      };
+    }
+    var refreshAdminBtn = document.getElementById('refreshAdminBtn');
+    if (refreshAdminBtn) refreshAdminBtn.onclick = loadAdminDashboard;
+    var genPwdBtn = document.getElementById('genAcctPwdBtn');
+    if (genPwdBtn) {
+      genPwdBtn.onclick = function(){
+        document.getElementById('newAcctPassword').value = generateStrongPwd();
+      };
+    }
+    var exportCsvBtn = document.getElementById('exportAuditCsvBtn');
+    if (exportCsvBtn) {
+      exportCsvBtn.onclick = function(){
+        var logs = (LAST_ADMIN_SNAPSHOT && LAST_ADMIN_SNAPSHOT.audit_logs) || [];
+        var rows = [['时间', '用户名', '动作', 'IP摘要', '详情']];
+        logs.forEach(function(lg){
+          rows.push([
+            lg.created_at || '',
+            lg.username || '',
+            lg.action || '',
+            lg.ip_hint || '',
+            JSON.stringify(lg.detail || {})
+          ]);
+        });
+        var csvTxt = '\ufeff' + rows.map(function(cols){
+          return cols.map(function(c){ return '"' + String(c).replace(/"/g, '""') + '"'; }).join(',');
+        }).join('\n');
+        if (window.JTAndroid && typeof window.JTAndroid.shareText === 'function') {
+          window.JTAndroid.shareText('JT编剧台安全审计日志.csv', csvTxt);
+          return;
+        }
+        var blob = new Blob([csvTxt], { type: 'text/csv;charset=utf-8' });
+        var a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'jt_audit_logs.csv';
+        a.click();
+        toast('已导出审计日志 CSV');
+      };
+    }
+
+    var createForm = document.getElementById('createAcctForm');
+    if (createForm) {
+      createForm.onsubmit = function(ev){
+        ev.preventDefault();
+        var uname = document.getElementById('newAcctUsername').value.trim();
+        var pwd = document.getElementById('newAcctPassword').value;
+        var note = document.getElementById('newAcctNote').value.trim();
+        var role = document.getElementById('newAcctRole').value;
+        var days = Number(document.getElementById('newAcctDays').value || 0);
+        apiAdminOrAuth('/admin/users', '/api/admin/users', 'POST', {
+          username: uname,
+          password: pwd,
+          display_name: note || uname,
+          role: role,
+          expires_days: days > 0 ? days : null,
+          note: note
+        }).then(function(res){
+          if (!res.ok) { toast((res.data && res.data.error) || '创建失败'); return; }
+          var credBox = document.getElementById('createdCredBox');
+          credBox.classList.remove('hidden');
+          credBox.innerHTML = '<strong>账号开通成功：</strong>' + esc(uname) + ' ｜ 密码：<code>' + esc(pwd) + '</code> ' +
+            '<button class="btn compact primary" id="copyNewCredBtn" type="button" style="margin-left:8px">复制账号密码发给对方</button>';
+          document.getElementById('copyNewCredBtn').onclick = function(){
+            copyText('JT 编剧台登录地址：https://aikingtai-ctrl.github.io/jt-screenwriter-agent/\n用户名：' + uname + '\n密码：' + pwd, '新账号登录凭据');
+          };
+          document.getElementById('newAcctUsername').value = '';
+          document.getElementById('newAcctPassword').value = generateStrongPwd();
+          document.getElementById('newAcctNote').value = '';
+          loadAdminDashboard();
+        });
+      };
+    }
+
+    var openPwdBtn = document.getElementById('openChangePwdBtn');
+    if (openPwdBtn) {
+      openPwdBtn.onclick = function(){
+        document.getElementById('changePwdMsg').classList.add('hidden');
+        document.getElementById('changePwdForm').reset();
+        document.getElementById('changePwdModal').classList.remove('hidden');
+      };
+    }
+    var closePwdBtn = document.getElementById('closeChangePwdBtn');
+    if (closePwdBtn) {
+      closePwdBtn.onclick = function(){
+        document.getElementById('changePwdModal').classList.add('hidden');
+      };
+    }
+    var pwdForm = document.getElementById('changePwdForm');
+    if (pwdForm) {
+      pwdForm.onsubmit = function(ev){
+        ev.preventDefault();
+        var cur = document.getElementById('curPwdInput').value;
+        var nw = document.getElementById('newPwdInput').value;
+        var cf = document.getElementById('confirmPwdInput').value;
+        var msgEl = document.getElementById('changePwdMsg');
+        if (nw !== cf) {
+          msgEl.textContent = '两次输入的新密码不一致';
+          msgEl.classList.remove('hidden');
+          return;
+        }
+        apiAdminOrAuth('/change-password', '/api/auth/change-password', 'POST', {
+          current_password: cur,
+          new_password: nw
+        }).then(function(res){
+          if (!res.ok) {
+            msgEl.textContent = (res.data && res.data.error) || '修改失败';
+            msgEl.classList.remove('hidden');
+            return;
+          }
+          document.getElementById('changePwdModal').classList.add('hidden');
+          toast('密码修改成功');
+        });
+      };
+    }
+
+    var logoutBtn = document.getElementById('authLogoutBtn');
+    if (logoutBtn) {
+      logoutBtn.onclick = function(){
+        apiAdminOrAuth('/logout', '/api/auth/logout', 'POST', {}).finally(function(){
+          forceLockOut('');
+          toast('已安全退出');
+        });
+      };
+    }
+
+    var loginForm = document.getElementById('authLoginForm');
+    if (loginForm) {
+      loginForm.onsubmit = function(ev){
+        ev.preventDefault();
+        showAuthError('');
+        var uname = document.getElementById('authUsernameInput').value.trim();
+        var pwd = document.getElementById('authPasswordInput').value;
+        var btn = document.getElementById('authLoginBtn');
+        btn.disabled = true;
+        btn.textContent = '正在校验身份…';
+
+        var loginPromise = isLanEnv()
+          ? fetch('./api/auth/login', {
+              method: 'POST',
+              credentials: 'same-origin',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ username: uname, password: pwd })
+            }).then(function(r){ return r.json().catch(function(){ return {}; }).then(function(js){ return { ok: r.ok, status: r.status, data: js }; }); })
+          : cloudRequest('/login', 'POST', { username: uname, password: pwd }, '');
+
+        loginPromise.then(function(res){
+          if (!res.ok || !res.data || !res.data.ok) {
+            showAuthError((res.data && res.data.error) || '登录失败，请检查账号或密码');
+            return;
+          }
+          if (isLanEnv()) {
+            writeStoredSession({ mode: 'lan', user: res.data.user });
+          } else {
+            writeStoredSession({
+              mode: 'cloud',
+              access_token: res.data.access_token,
+              refresh_token: res.data.refresh_token,
+              user: res.data.user
+            });
+          }
+          return fetchAuthorizedWorkbenchData();
+        }).catch(function(err){
+          showAuthError('网络异常：' + err);
+        }).finally(function(){
+          btn.disabled = false;
+          btn.textContent = '登录进入工作台';
+        });
+      };
+    }
+  }
+
+  function unlockAndBootWorkbench(user, wbData) {
+    CURRENT_USER = user;
+    DATA = wbData;
+    var mt = (wbData && wbData.meta) || {};
     var subEl = document.getElementById('styleLabSubtitle');
     if (subEl && mt.directors_count) {
       subEl.textContent =
@@ -2561,11 +3426,23 @@
         (mt.art_directors_count || 20) + ' 位美术 · ' + (mt.screenwriters_count || 24) + ' 位编剧 · ' +
         (mt.editors_sound_count || 16) + ' 位剪辑与声音 · ' + (mt.film_stocks_count || 6) + ' 款胶片，全空白按需组合。';
     }
+    var ubar = document.getElementById('userAccountBar');
+    var badge = document.getElementById('userBadgeText');
+    var admBtn = document.getElementById('openAdminModalBtn');
+    if (ubar) ubar.classList.remove('hidden');
+    if (badge) badge.textContent = (user.username || '用户') + ' · ' + (user.role === 'admin' ? '管理员' : '编剧');
+    if (admBtn) admBtn.classList.toggle('hidden', user.role !== 'admin');
+
+    var gate = document.getElementById('authGateOverlay');
+    if (gate) gate.classList.add('hidden');
+    document.body.classList.remove('auth-locked');
+    showAuthError('');
+
     renderDemoSection();
     renderComps('');
     initStyleLab();
     renderEntryControlsAndLinks();
-    bindEvents();
+    bindEventsOnce();
     setEntryMode('blank', false);
     try {
       var savedDraft = localStorage.getItem('jt_sw_draft_v1');
@@ -2573,10 +3450,63 @@
       if (savedDraft && wpEl && !wpEl.value) wpEl.value = savedDraft;
     } catch (e) {}
     enableLanModeIfAvailable();
-  }).catch(function(err){
-    var dl = document.getElementById('demoLogline');
-    if (dl) dl.textContent = '加载工作台数据失败：' + err;
-  });
+  }
+
+  function fetchAuthorizedWorkbenchData() {
+    if (isLanEnv()) {
+      return Promise.all([
+        lanFetchJson('/api/auth/me'),
+        fetch('./api/workbench-data', { credentials: 'same-origin' }).then(function(r){
+          return r.json().catch(function(){ return {}; }).then(function(js){ return { ok: r.ok, status: r.status, data: js }; });
+        })
+      ]).then(function(pair){
+        var meRes = pair[0];
+        var wbRes = pair[1];
+        if (!meRes.ok || !meRes.data || !meRes.data.user || !wbRes.ok || !wbRes.data || !wbRes.data.directors) {
+          return false;
+        }
+        unlockAndBootWorkbench(meRes.data.user, wbRes.data);
+        return true;
+      });
+    }
+
+    var sess = readStoredSession();
+    if (!sess || !sess.access_token) {
+      return Promise.resolve(false);
+    }
+    return cloudRequest('/bootstrap', 'GET', null, sess.access_token).then(function(res){
+      if (res.status === 401 && sess.refresh_token) {
+        return cloudRequest('/refresh', 'POST', { refresh_token: sess.refresh_token }, '').then(function(refRes){
+          if (!refRes.ok || !refRes.data || !refRes.data.access_token) {
+            forceLockOut((refRes.data && refRes.data.error) || '');
+            return false;
+          }
+          writeStoredSession({
+            mode: 'cloud',
+            access_token: refRes.data.access_token,
+            refresh_token: refRes.data.refresh_token || sess.refresh_token,
+            user: refRes.data.user
+          });
+          return cloudRequest('/bootstrap', 'GET', null, refRes.data.access_token);
+        });
+      }
+      return res;
+    }).then(function(finalRes){
+      if (!finalRes || finalRes === false) return false;
+      if (!finalRes.ok || !finalRes.data || !finalRes.data.ok || !finalRes.data.workbench_data) {
+        if (finalRes.status === 403 || finalRes.status === 401) {
+          forceLockOut((finalRes.data && finalRes.data.error) || '');
+        }
+        return false;
+      }
+      unlockAndBootWorkbench(finalRes.data.user, finalRes.data.workbench_data);
+      return true;
+    });
+  }
+
+  bindAuthModalsOnce();
+  bindEventsOnce();
+  fetchAuthorizedWorkbenchData().catch(function(){});
 })();
 </script>
 </body>
