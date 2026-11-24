@@ -1733,12 +1733,13 @@
 
       <div class="app-option-box">
         <div>
-          <h3>iPhone / 电脑桌面直装（PWA）</h3>
-          <p class="small-muted" id="pwaInstallHint" style="font-size:15px; margin:8px 0 0;">iPhone 请用 Safari 打开（微信内先点右上角 ··· ➔「在默认浏览器中打开」），轻点底部「共享」➔ 向上滑动或点「更多」➔「添加到主屏幕」；Windows / Mac（Chrome/Edge）：点地址栏右侧安装图标或点下方按钮。</p>
+          <h3>iPhone 直装桌面图标 / 电脑桌面 PWA</h3>
+          <p class="small-muted" id="pwaInstallHint" style="font-size:15px; margin:8px 0 0;">iPhone 无需翻找「添加到主屏幕」：用 Safari 点下方「一键安装 iPhone 桌面图标」➔ 点「允许」➔ 打开手机「设置」点顶部「已下载描述文件」➔ 点「安装」并输入锁屏密码，桌面立即生成带 JT 图标的全屏 App（可随时长按删除）。</p>
         </div>
         <img class="app-qr-img" src="icons/app_download_qr.png" alt="手机扫码打开或下载 JT 编剧台">
         <div class="row-actions" style="margin-top:4px">
-          <button class="btn secondary-on-gray" id="installPwaBtn" type="button">安装到手机 / 电脑桌面 (PWA)</button>
+          <a class="btn primary" id="iosProfileDirectLink" href="https://ddzxsafkrwetdzhwlzxm.supabase.co/functions/v1/jt-gateway/ios-profile">一键安装 iPhone 桌面图标</a>
+          <button class="btn secondary-on-gray" id="installPwaBtn" type="button">电脑桌面直装 (PWA)</button>
         </div>
       </div>
     </div>
