@@ -719,6 +719,57 @@
   }
   input.txt-in::placeholder { color: var(--ink-muted); }
 
+  /* 按需展开大师库抽屉 & 多工种编译分节 */
+  .crew-actions-split {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px 20px;
+    margin-top: 14px;
+  }
+  .masters-drawer {
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px solid var(--hairline-soft);
+  }
+  .drawer-head {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px 16px;
+    margin-bottom: 18px;
+  }
+  .drawer-head .segmented-track { margin-bottom: 0; }
+  .pill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 10px 0 6px;
+  }
+  .pill-tag {
+    font-size: 13.5px;
+    color: var(--ink-secondary);
+    background: var(--bg-gray);
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+  .crew-subblock {
+    padding: 14px 0;
+    border-top: 1px solid var(--hairline-soft);
+  }
+  .crew-subblock:first-child {
+    border-top: none;
+    padding-top: 0;
+  }
+  .crew-subblock h4 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink-primary);
+  }
+
   /* Band 5: Apple 极简页尾收束 */
   .apple-footer-closing {
     margin-top: 64px;
@@ -814,7 +865,7 @@
 
     <nav class="apple-links" aria-label="主导航">
       <a class="apple-link active" href="#writer-entry">写作</a>
-      <a class="apple-link" href="#style-lab">导演与胶片</a>
+      <a class="apple-link" href="#style-lab">主创班底</a>
       <a class="apple-link" href="#comps-library">佳片库</a>
       <a class="apple-link" href="#reel-stage">实渲小样</a>
       <a class="apple-link" href="#platform-bridge">平台对接</a>
@@ -941,24 +992,35 @@
   </section>
 
   <!-- =========================================================
-       BAND 2: 导演与胶片光学编译（3x2 宽敞留白控制台）
+       BAND 2: 世界级五大工种主创与胶片光学编译（3×3 极简控制台）
        ========================================================= -->
   <section class="band band-white" id="style-lab">
     <div class="band-inner">
       <div class="section-head">
         <div>
-          <h2>导演与胶片</h2>
-          <p class="sec-desc">59 位导演几何调度 × 6 款 35mm 胶片乳剂，全空白起手，点击后编译提示词并做物理冲突检测。</p>
+          <h2>主创班底与胶片</h2>
+          <p class="sec-desc" id="styleLabSubtitle">82 位导演 · 24 位摄影 · 20 位美术 · 24 位编剧 · 16 位剪辑与声音 · 6 款胶片，全空白按需组合。</p>
         </div>
       </div>
 
       <div class="panel-soft">
         <div class="form-grid-3">
-          <label class="fld">主导演
+          <label class="fld">导演
             <select id="selDirector"></select>
           </label>
-          <label class="fld">副导演（可选）
-            <select id="selSecondaryDirector"></select>
+          <label class="fld">摄影指导
+            <select id="selCinematographer"></select>
+          </label>
+          <label class="fld">美术指导
+            <select id="selArtDirector"></select>
+          </label>
+        </div>
+        <div class="form-grid-3">
+          <label class="fld">编剧风格
+            <select id="selScreenwriter"></select>
+          </label>
+          <label class="fld">剪辑与声音
+            <select id="selEditorSound"></select>
           </label>
           <label class="fld">胶片乳剂
             <select id="selFilmStock"></select>
@@ -976,24 +1038,63 @@
           </label>
         </div>
 
-        <div class="row-actions">
-          <button class="btn primary" id="compileStyleBtn" type="button">生成提示词</button>
-          <button class="btn secondary-on-gray" id="resetStyleBtn" type="button">清空重置</button>
+        <div class="form-grid-3 hidden" id="secondaryDirWrap">
+          <label class="fld">副导演（光色辅助，可选）
+            <select id="selSecondaryDirector"></select>
+          </label>
+        </div>
+
+        <div class="crew-actions-split">
+          <div class="row-actions" style="margin-top:0">
+            <button class="btn primary" id="compileStyleBtn" type="button">生成主创编译</button>
+            <button class="btn secondary-on-gray" id="resetStyleBtn" type="button">清空重置</button>
+          </div>
+          <div class="row-actions" style="margin-top:0">
+            <button class="link-action" id="toggleSecondaryDirBtn" type="button">+ 叠加副导演光色</button>
+            <button class="link-action" id="toggleMastersDirectoryBtn" type="button">浏览全部大师库 ›</button>
+          </div>
+        </div>
+
+        <div class="masters-drawer hidden" id="mastersSearchWrap">
+          <div class="card-meta" style="margin-bottom:12px">匹配到的世界主创大师（点击即填入上方班底）</div>
+          <div class="grid-2" id="mastersSearchGrid"></div>
+        </div>
+
+        <div class="masters-drawer hidden" id="mastersDirectoryWrap">
+          <div class="drawer-head">
+            <div class="segmented-track" id="mastersDeptTabs">
+              <button class="seg-btn active" type="button" data-dept="director">导演</button>
+              <button class="seg-btn" type="button" data-dept="cinematographer">摄影</button>
+              <button class="seg-btn" type="button" data-dept="art_director">美术</button>
+              <button class="seg-btn" type="button" data-dept="screenwriter">编剧</button>
+              <button class="seg-btn" type="button" data-dept="editor_sound">剪辑与声音</button>
+            </div>
+            <div class="row-actions" style="margin-top:0">
+              <select class="apple-select-inline" id="mastersRegionFilter" aria-label="按地区筛选大师">
+                <option value="all">全部地区</option>
+                <option value="华语与亚洲">华语与亚洲</option>
+                <option value="欧美与国际">欧美与国际</option>
+              </select>
+              <button class="link-action" id="closeMastersDirectoryBtn" type="button">收起</button>
+            </div>
+          </div>
+          <div class="grid-2" id="mastersDirectoryGrid"></div>
         </div>
 
         <div class="hidden" id="styleResultWrap" style="margin-top:24px">
           <div class="row-actions" style="margin-top:0; margin-bottom:14px">
             <button class="btn compact secondary-on-gray" id="copyH3PromptBtn" type="button">复制 H3 Ref2VA 提示词</button>
             <button class="btn compact secondary-on-gray" id="copySeedanceBtn" type="button">复制 Seedance 2.5 提示词</button>
+            <button class="btn compact secondary-on-gray" id="copyCrewBriefBtn" type="button">复制全班底工艺简报</button>
           </div>
           <div id="styleWarningsBox"></div>
           <div class="grid-2" style="margin-top:16px">
             <article class="card">
-              <div class="card-meta" id="dirProfileTitle">导演与胶片参数</div>
+              <div class="card-meta" id="dirProfileTitle">主创班底与胶片参数</div>
               <div id="dirProfileDetails"></div>
             </article>
             <article class="card">
-              <div class="card-meta">双模型编译输出</div>
+              <div class="card-meta">剧作与双模型编译输出</div>
               <div class="mono-box" id="compiledPromptsOut"></div>
             </article>
           </div>
@@ -1158,9 +1259,24 @@
   var activeGenre = '全部';
   var compsExpanded = false;
   var activeShotIdx = 0;
-  var lastCompiled = { h3: '', seedance: '' };
+  var activeMasterDept = 'director';
+  var lastCompiled = { h3: '', seedance: '', brief: '' };
   var lastWriterPackage = '';
   var CORE_GENRES = ['犯罪悬疑', '历史', '剧情', '心理惊悚', '动作', '黑色喜剧'];
+  var DEPT_TO_SELECT = {
+    director: 'selDirector',
+    cinematographer: 'selCinematographer',
+    art_director: 'selArtDirector',
+    screenwriter: 'selScreenwriter',
+    editor_sound: 'selEditorSound'
+  };
+  var DEPT_LABEL_ZH = {
+    director: '导演',
+    cinematographer: '摄影指导',
+    art_director: '美术指导',
+    screenwriter: '编剧风格',
+    editor_sound: '剪辑与声音'
+  };
 
   var ENTRY_LABELS = {
     blank: '空白自由起稿',
@@ -1270,6 +1386,10 @@
     var topComps = scored.slice(0, 3).map(function(x){ return x.item; });
 
     var dName = (document.getElementById('selDirector') && document.getElementById('selDirector').value) || '暂未指定';
+    var dpName = (document.getElementById('selCinematographer') && document.getElementById('selCinematographer').value) || '暂未指定';
+    var artName = (document.getElementById('selArtDirector') && document.getElementById('selArtDirector').value) || '暂未指定';
+    var swName = (document.getElementById('selScreenwriter') && document.getElementById('selScreenwriter').value) || '暂未指定';
+    var edName = (document.getElementById('selEditorSound') && document.getElementById('selEditorSound').value) || '暂未指定';
     var fKey = (document.getElementById('selFilmStock') && document.getElementById('selFilmStock').value) || '暂未指定';
     var promptPkg =
       '【JT 编剧工作台 · 开工数据包】\n' +
@@ -1277,7 +1397,7 @@
       '创作者来稿：' + rawText + '\n' +
       '推荐世界对标佳片：' + topComps.map(function(c){ return '《' + c.title + '》(' + c.year + ')'; }).join('、') + '\n' +
       '禁止抄袭隔离红线：' + topComps.map(function(c){ return (c.identity_exclusions || [])[0] || ''; }).join('；') + '\n' +
-      '视听参数：主导演 ' + dName + ' / 胶片 ' + fKey + '\n' +
+      '主创班底：导演 ' + dName + ' / 摄影 ' + dpName + ' / 美术 ' + artName + ' / 编剧 ' + swName + ' / 剪辑声音 ' + edName + ' / 胶片 ' + fKey + '\n' +
       'CLI 命令：\n' + (mode ? mode.cmd : 'python jt_sw.py init --project my_film --title "片名"');
     lastWriterPackage = promptPkg;
 
@@ -1486,31 +1606,66 @@
     });
   }
 
+  function getDeptPool(dept) {
+    if (!DATA) return [];
+    if (dept === 'director') return DATA.directors || [];
+    if (dept === 'cinematographer') return DATA.cinematographers || [];
+    if (dept === 'art_director') return DATA.art_directors || [];
+    if (dept === 'screenwriter') return DATA.screenwriters || [];
+    if (dept === 'editor_sound') return DATA.editors_sound || [];
+    return [];
+  }
+
+  function buildGroupedOptions(list, emptyLabel, includeRole) {
+    var asian = list.filter(function(x){ return x.region === '华语与亚洲'; });
+    var intl = list.filter(function(x){ return x.region !== '华语与亚洲'; });
+    function optHtml(it) {
+      var lbl = it.name + (it.name_en ? ' (' + it.name_en + ')' : '');
+      if (includeRole && it.role_sub) lbl += ' · ' + it.role_sub;
+      return '<option value="' + esc(it.name) + '">' + esc(lbl) + '</option>';
+    }
+    var html = '<option value="">' + esc(emptyLabel) + '</option>';
+    if (asian.length) html += '<optgroup label="华语与亚洲">' + asian.map(optHtml).join('') + '</optgroup>';
+    if (intl.length) html += '<optgroup label="欧美与国际">' + intl.map(optHtml).join('') + '</optgroup>';
+    return html;
+  }
+
   function initStyleLab() {
-    var dirs = DATA.directors || [];
+    var dirs = getDeptPool('director');
+    var dps = getDeptPool('cinematographer');
+    var arts = getDeptPool('art_director');
+    var sws = getDeptPool('screenwriter');
+    var eds = getDeptPool('editor_sound');
     var stocks = DATA.film_stocks || [];
+
     var selD = document.getElementById('selDirector');
     var selS = document.getElementById('selSecondaryDirector');
+    var selDP = document.getElementById('selCinematographer');
+    var selArt = document.getElementById('selArtDirector');
+    var selSW = document.getElementById('selScreenwriter');
+    var selED = document.getElementById('selEditorSound');
     var selF = document.getElementById('selFilmStock');
 
-    selD.innerHTML = '<option value="">不限主导演</option>' + dirs.map(function(d){
-      return '<option value="' + esc(d.name) + '">' + esc(d.name) + (d.name_en ? ' (' + esc(d.name_en) + ')' : '') + '</option>';
-    }).join('');
+    selD.innerHTML = buildGroupedOptions(dirs, '不限导演', false);
     selS.innerHTML = '<option value="">不选副导演</option>' + dirs.map(function(d){
       return '<option value="' + esc(d.name) + '">' + esc(d.name) + '</option>';
     }).join('');
+    if (selDP) selDP.innerHTML = buildGroupedOptions(dps, '不限摄影', false);
+    if (selArt) selArt.innerHTML = buildGroupedOptions(arts, '不限美术', false);
+    if (selSW) selSW.innerHTML = buildGroupedOptions(sws, '不限编剧', false);
+    if (selED) selED.innerHTML = buildGroupedOptions(eds, '不限剪辑/声音', true);
     selF.innerHTML = '<option value="">不选胶片</option>' + stocks.map(function(st){
       return '<option value="' + esc(st.key) + '">' + esc(st.label) + ' — ' + esc(st.temp) + '</option>';
     }).join('');
 
-    selD.value = '';
-    selS.value = '';
-    selF.value = '';
+    [selD, selS, selDP, selArt, selSW, selED, selF].forEach(function(el){
+      if (el) el.value = '';
+    });
 
     document.getElementById('compileStyleBtn').onclick = compileStyle;
   }
 
-  function detectConflicts(text, stockKey, shotScale) {
+  function detectConflicts(text, stockKey, shotScale, dpObj) {
     var warns = [];
     var low = (text + ' ' + shotScale).toLowerCase();
     var g = DATA.guards || {};
@@ -1539,73 +1694,248 @@
         return false;
       });
     }
+    if (dpObj && dpObj.is_monochrome) {
+      if (stockKey && stockKey !== 'hp5plus400') {
+        warns.push('黑白体系提示：摄影指导「' + dpObj.name + '」专长纯正交黑白影像，建议胶片切换为 Ilford HP5 Plus 400（或留空）。');
+      }
+      ['红','蓝','绿','黄','青','紫','霓虹','crimson','teal','neon','amber'].some(function(c){
+        if (low.indexOf(c) !== -1) {
+          warns.push('色彩描述提示：黑白摄影指导「' + dpObj.name + '」模式下出现彩色描述词（' + c + '），建议改为明暗灰阶描写。');
+          return true;
+        }
+        return false;
+      });
+    }
     return warns;
+  }
+
+  function renderSubblockHtml(title, rows, motto) {
+    var body = rows.filter(function(r){ return r && r[1]; }).map(function(r){
+      return '<p style="margin:4px 0"><strong>' + esc(r[0]) + '：</strong>' + esc(r[1]) + '</p>';
+    }).join('');
+    if (motto) body += '<p class="small-muted" style="margin:6px 0 0"><em>「' + esc(motto) + '」</em></p>';
+    return '<div class="crew-subblock"><h4>' + esc(title) + '</h4>' + body + '</div>';
   }
 
   function compileStyle() {
     var dName = document.getElementById('selDirector').value;
     var sName = document.getElementById('selSecondaryDirector').value;
+    var dpName = document.getElementById('selCinematographer') ? document.getElementById('selCinematographer').value : '';
+    var artName = document.getElementById('selArtDirector') ? document.getElementById('selArtDirector').value : '';
+    var swName = document.getElementById('selScreenwriter') ? document.getElementById('selScreenwriter').value : '';
+    var edName = document.getElementById('selEditorSound') ? document.getElementById('selEditorSound').value : '';
     var fKey = document.getElementById('selFilmStock').value;
     var scale = document.getElementById('inpShotScale').value.trim();
     var scene = document.getElementById('inpScene').value.trim();
     var action = document.getElementById('inpAction').value.trim();
     var wrap = document.getElementById('styleResultWrap');
 
-    if (!dName && !sName && !fKey && !scale && !scene && !action) {
-      toast('请先选择至少一位导演/胶片或输入场景动作');
+    if (!dName && !sName && !dpName && !artName && !swName && !edName && !fKey && !scale && !scene && !action) {
+      toast('请先选择至少一位主创或胶片、或输入场景动作');
       return;
     }
 
-    var dirObj = dName ? ((DATA.directors || []).find(function(x){ return x.name === dName; }) || {}) : null;
-    var secObj = sName ? ((DATA.directors || []).find(function(x){ return x.name === sName; }) || null) : null;
-    var stockObj = fKey ? ((DATA.film_stocks || []).find(function(x){ return x.key === fKey; }) || {}) : null;
+    var dirObj = dName ? (getDeptPool('director').find(function(x){ return x.name === dName; }) || null) : null;
+    var secObj = sName ? (getDeptPool('director').find(function(x){ return x.name === sName; }) || null) : null;
+    var dpObj = dpName ? (getDeptPool('cinematographer').find(function(x){ return x.name === dpName; }) || null) : null;
+    var artObj = artName ? (getDeptPool('art_director').find(function(x){ return x.name === artName; }) || null) : null;
+    var swObj = swName ? (getDeptPool('screenwriter').find(function(x){ return x.name === swName; }) || null) : null;
+    var edObj = edName ? (getDeptPool('editor_sound').find(function(x){ return x.name === edName; }) || null) : null;
+    var stockObj = fKey ? ((DATA.film_stocks || []).find(function(x){ return x.key === fKey; }) || null) : null;
 
-    var warns = detectConflicts(scene + ' ' + action, fKey, scale);
+    var warns = detectConflicts(scene + ' ' + action, fKey, scale, dpObj);
     document.getElementById('styleWarningsBox').innerHTML = warns.length
       ? '<div class="warn-box"><strong>光学与 DiT 物理冲突检测 (' + warns.length + ' 项)：</strong><ul>' +
         warns.map(function(w){ return '<li>' + esc(w) + '</li>'; }).join('') + '</ul></div>'
-      : '<div class="ok-box">光学物理链、胶片色温与 DiT 零否定检测全部通过（0 冲突）。</div>';
+      : '<div class="ok-box">多工种光学物理链、胶片色温与 DiT 零否定检测全部通过（0 冲突）。</div>';
 
     var titleParts = [];
-    if (dirObj && dirObj.name) titleParts.push(dirObj.name + (dirObj.name_en ? ' (' + dirObj.name_en + ')' : ''));
-    if (secObj && secObj.name) titleParts.push('辅: ' + secObj.name);
-    if (stockObj && stockObj.label) titleParts.push(stockObj.label);
+    if (dirObj) titleParts.push('导: ' + dirObj.name);
+    if (dpObj) titleParts.push('摄: ' + dpObj.name);
+    if (artObj) titleParts.push('美: ' + artObj.name);
+    if (swObj) titleParts.push('编: ' + swObj.name);
+    if (edObj) titleParts.push('剪声: ' + edObj.name);
+    if (secObj) titleParts.push('辅导: ' + secObj.name);
+    if (stockObj) titleParts.push(stockObj.label);
     document.getElementById('dirProfileTitle').textContent = titleParts.join(' × ') || '通用电影物理编译';
 
-    if (dirObj && dirObj.name) {
-      document.getElementById('dirProfileDetails').innerHTML =
-        '<p><strong>焦段画幅：</strong>' + esc(dirObj.lens_aspect || '') + '</p>' +
-        '<p><strong>构图调度：</strong>' + esc(dirObj.composition || '') + '</p>' +
-        '<p><strong>光源逻辑：</strong>' + esc(dirObj.lighting || '') + '</p>' +
-        '<p><strong>色彩与质感：</strong>' + esc(dirObj.color || '') + (stockObj ? ' / ' + esc(stockObj.prompt_zh || '') : '') + '</p>' +
-        '<p><strong>运动与节奏：</strong>' + esc(dirObj.movement || '') + ' / ' + esc(dirObj.rhythm || '') + '</p>';
-    } else {
-      document.getElementById('dirProfileDetails').innerHTML =
-        '<p class="small-muted">' + (stockObj ? esc(stockObj.prompt_zh || '') : '未指定导演参数，仅按现场光学物理条件编译。') + '</p>';
+    var blocks = [];
+    if (dirObj) {
+      blocks.push(renderSubblockHtml(
+        '导演 · ' + dirObj.name + (dirObj.name_en ? ' (' + dirObj.name_en + ')' : ''),
+        [
+          ['代表作', (dirObj.representative_works || []).join(' / ')],
+          ['焦段画幅', dirObj.lens_aspect],
+          ['构图调度', dirObj.composition],
+          ['光源逻辑', dirObj.lighting],
+          ['色彩与质感', dirObj.color],
+          ['运动与节奏', [dirObj.movement, dirObj.rhythm].filter(Boolean).join(' / ')],
+        ],
+        dirObj.motto
+      ));
     }
+    if (dpObj) {
+      blocks.push(renderSubblockHtml(
+        '摄影指导 · ' + dpObj.name + (dpObj.name_en ? ' (' + dpObj.name_en + ')' : ''),
+        [
+          ['代表作', (dpObj.representative_works || []).join(' / ')],
+          ['光影动机', dpObj.lighting],
+          ['光学镜位', dpObj.lens_camera],
+          ['曝光色彩', dpObj.color_exposure],
+        ],
+        dpObj.motto
+      ));
+    }
+    if (artObj) {
+      blocks.push(renderSubblockHtml(
+        '美术指导 · ' + artObj.name + (artObj.name_en ? ' (' + artObj.name_en + ')' : ''),
+        [
+          ['代表作', (artObj.representative_works || []).join(' / ')],
+          ['空间叙事', artObj.spatial_philosophy],
+          ['材质与色域', artObj.materials_palette],
+          ['陈设纪律', artObj.set_discipline],
+        ],
+        artObj.motto
+      ));
+    }
+    if (swObj) {
+      blocks.push(renderSubblockHtml(
+        '编剧大师 · ' + swObj.name + (swObj.name_en ? ' (' + swObj.name_en + ')' : ''),
+        [
+          ['代表作', (swObj.representative_works || []).join(' / ')],
+          ['结构引擎', swObj.structure_method],
+          ['对白与潜台词', swObj.dialogue_subtext],
+          ['签名戏眼', swObj.signature_device],
+        ],
+        swObj.motto
+      ));
+    }
+    if (edObj) {
+      blocks.push(renderSubblockHtml(
+        (edObj.role_sub || '剪辑与声音') + ' · ' + edObj.name + (edObj.name_en ? ' (' + edObj.name_en + ')' : ''),
+        [
+          ['代表作', (edObj.representative_works || []).join(' / ')],
+          ['节奏法则', edObj.rhythm_philosophy],
+          ['声效与配乐', edObj.sound_technique],
+        ],
+        edObj.motto
+      ));
+    }
+    if (secObj) {
+      blocks.push(renderSubblockHtml(
+        '副导演光色辅助 · ' + secObj.name,
+        [['光色参考', [secObj.lighting, secObj.color].filter(Boolean).join(' / ')]],
+        secObj.motto
+      ));
+    }
+    if (stockObj) {
+      blocks.push(renderSubblockHtml(
+        '胶片乳剂 · ' + stockObj.label,
+        [['物理质感', stockObj.prompt_zh], ['物理提醒', stockObj.conflict_note]],
+        ''
+      ));
+    }
+    document.getElementById('dirProfileDetails').innerHTML = blocks.length
+      ? blocks.join('')
+      : '<p class="small-muted">未指定大师预设，仅按现场光学与行动物理条件编译。</p>';
 
     var h3Parts = ['Live-action 24fps film footage' + (scale ? ' (' + scale + ')' : '') + ', natural luminous skin texture and authentic fabric folds.'];
     if (scene) h3Parts.push('Scene & motivated light: ' + scene + '.');
     if (action) h3Parts.push('Physical action & micro-reaction: ' + action + '.');
-    if (dirObj && dirObj.prompt_en) h3Parts.push('Primary visual blocking: ' + dirObj.prompt_en + '.');
+    if (dirObj && dirObj.prompt_en) h3Parts.push('Director spatial blocking: ' + dirObj.prompt_en + '.');
+    if (dpObj && dpObj.prompt_en) h3Parts.push('Cinematography & lighting: ' + dpObj.prompt_en + '.');
+    if (artObj && artObj.prompt_en) h3Parts.push('Production design & textures: ' + artObj.prompt_en + '.');
+    if (swObj && swObj.prompt_en) h3Parts.push('Dramatic subtext staging: ' + swObj.prompt_en + '.');
+    if (edObj && edObj.prompt_en) h3Parts.push('Editorial pacing & soundscape mood: ' + edObj.prompt_en + '.');
     if (secObj && secObj.prompt_en) h3Parts.push('Secondary color/atmosphere touch: ' + secObj.prompt_en + '.');
     if (stockObj && stockObj.prompt_en) h3Parts.push('Film stock emulsion: ' + stockObj.prompt_en + '.');
     var h3 = h3Parts.join(' ');
 
-    var sdParts = ['[电影实拍编译]'];
+    var sdParts = ['[电影实拍多工种编译]'];
     if (scale) sdParts.push('景别与焦段：' + scale);
-    if (dirObj && dirObj.prompt_zh) sdParts.push('主导演几何调度：' + dirObj.prompt_zh);
-    if (secObj && secObj.prompt_zh) sdParts.push('光色辅助气质：' + secObj.prompt_zh);
+    if (dirObj && dirObj.prompt_zh) sdParts.push('导演调度：' + dirObj.prompt_zh);
+    if (dpObj && dpObj.prompt_zh) sdParts.push('摄影光影：' + dpObj.prompt_zh);
+    if (artObj && artObj.prompt_zh) sdParts.push('美术材质：' + artObj.prompt_zh);
+    if (swObj && swObj.prompt_zh) sdParts.push('剧作潜台词：' + swObj.prompt_zh);
+    if (edObj && edObj.prompt_zh) sdParts.push('剪辑声景：' + edObj.prompt_zh);
+    if (secObj && secObj.prompt_zh) sdParts.push('辅色气质：' + secObj.prompt_zh);
     if (stockObj && stockObj.prompt_zh) sdParts.push('胶片乳剂：' + stockObj.prompt_zh);
     if (scene) sdParts.push('场景光源：' + scene);
     if (action) sdParts.push('动作与反应：' + action);
     sdParts.push('画面干净无水印字幕。');
     var sd = sdParts.join('；');
 
-    lastCompiled = { h3: h3, seedance: sd };
-    document.getElementById('compiledPromptsOut').textContent =
-      '=== MiniMax H3 Ref2VA / Image 提示词 ===\n' + h3 + '\n\n=== Seedance 2.5 中文分镜提示词 ===\n' + sd;
+    var guidanceLines = [];
+    if (swObj) guidanceLines.push('【剧作核心 · ' + swObj.name + '】结构：' + swObj.structure_method + '｜潜台词：' + swObj.dialogue_subtext);
+    if (edObj) guidanceLines.push('【剪辑声音 · ' + edObj.name + '】节奏：' + edObj.rhythm_philosophy + '｜声景：' + edObj.sound_technique);
+
+    var outSections = [];
+    if (guidanceLines.length) {
+      outSections.push('=== 剧作与剪辑声景指导 ===\n' + guidanceLines.join('\n'));
+    }
+    outSections.push('=== MiniMax H3 Ref2VA / Image 提示词 ===\n' + h3);
+    outSections.push('=== Seedance 2.5 中文分镜提示词 ===\n' + sd);
+
+    var briefLines = ['【JT 多工种主创工艺简报】', '组合：' + (titleParts.join(' × ') || '通用电影物理编译')];
+    if (scale) briefLines.push('景别焦段：' + scale);
+    if (scene) briefLines.push('场景光源：' + scene);
+    if (action) briefLines.push('动作反应：' + action);
+    briefLines = briefLines.concat(outSections);
+
+    lastCompiled = { h3: h3, seedance: sd, brief: briefLines.join('\n\n') };
+    document.getElementById('compiledPromptsOut').textContent = outSections.join('\n\n');
     if (wrap) wrap.classList.remove('hidden');
+  }
+
+  function renderMasterCardHtml(item, dept) {
+    var deptLbl = DEPT_LABEL_ZH[dept] || '主创';
+    if (dept === 'editor_sound' && item.role_sub) deptLbl = item.role_sub;
+    var works = (item.representative_works || []).slice(0, 3).join(' · ');
+    var tags = (item.tags || []).slice(0, 4).map(function(t){ return '<span class="pill-tag">' + esc(t) + '</span>'; }).join('');
+    var summary = item.lighting || item.spatial_philosophy || item.structure_method || item.rhythm_philosophy || item.composition || '';
+    var mottoLine = item.motto ? '<p class="small-muted" style="margin:8px 0 0"><em>「' + esc(item.motto) + '」</em></p>' : '';
+    return '<article class="card">' +
+      '<div class="card-meta">' + esc(deptLbl) + ' · ' + esc(item.region || '国际') + (works ? ' · ' + esc(works) : '') + '</div>' +
+      '<h3>' + esc(item.name) + (item.name_en ? ' <span class="small-muted">(' + esc(item.name_en) + ')</span>' : '') + '</h3>' +
+      (summary ? '<p style="margin:6px 0">' + esc(summary) + '</p>' : '') +
+      (tags ? '<div class="pill-tags">' + tags + '</div>' : '') +
+      mottoLine +
+      '<div class="row-actions"><button class="btn compact secondary-fill apply-master-btn" type="button" data-dept="' + esc(dept) + '" data-name="' + esc(item.name) + '">选用并填入</button></div>' +
+      '</article>';
+  }
+
+  function bindMasterPickButtons(containerEl) {
+    if (!containerEl) return;
+    containerEl.querySelectorAll('.apply-master-btn').forEach(function(btn){
+      btn.onclick = function(){
+        var dept = btn.getAttribute('data-dept');
+        var name = btn.getAttribute('data-name');
+        var selId = DEPT_TO_SELECT[dept];
+        var selEl = selId ? document.getElementById(selId) : null;
+        if (selEl) {
+          selEl.value = name;
+          toast('已填入' + (DEPT_LABEL_ZH[dept] || '主创') + '：' + name);
+          var lab = document.getElementById('style-lab');
+          if (lab) lab.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+    });
+  }
+
+  function renderMastersDirectory() {
+    var grid = document.getElementById('mastersDirectoryGrid');
+    if (!grid) return;
+    var reg = document.getElementById('mastersRegionFilter') ? document.getElementById('mastersRegionFilter').value : 'all';
+    var pool = getDeptPool(activeMasterDept).filter(function(x){
+      if (reg === 'all') return true;
+      return (x.region || '欧美与国际') === reg;
+    });
+    if (!pool.length) {
+      grid.innerHTML = '<div class="card"><p>当前地区暂无记录，请切换「全部地区」。</p></div>';
+      return;
+    }
+    grid.innerHTML = pool.map(function(it){ return renderMasterCardHtml(it, activeMasterDept); }).join('');
+    bindMasterPickButtons(grid);
   }
 
   function renderEntryControlsAndLinks() {
@@ -1634,6 +1964,33 @@
   function applyGlobalSearch(kw) {
     var q = (kw || '').trim().toLowerCase();
     renderComps(q);
+
+    var mWrap = document.getElementById('mastersSearchWrap');
+    var mGrid = document.getElementById('mastersSearchGrid');
+    if (mWrap && mGrid) {
+      if (!q) {
+        mWrap.classList.add('hidden');
+        mGrid.innerHTML = '';
+      } else {
+        var hits = [];
+        ['director', 'cinematographer', 'art_director', 'screenwriter', 'editor_sound'].forEach(function(dept){
+          getDeptPool(dept).forEach(function(item){
+            if (JSON.stringify(item).toLowerCase().indexOf(q) !== -1) {
+              hits.push({ dept: dept, item: item });
+            }
+          });
+        });
+        if (hits.length) {
+          mWrap.classList.remove('hidden');
+          mGrid.innerHTML = hits.slice(0, 12).map(function(h){ return renderMasterCardHtml(h.item, h.dept); }).join('');
+          bindMasterPickButtons(mGrid);
+        } else {
+          mWrap.classList.add('hidden');
+          mGrid.innerHTML = '';
+        }
+      }
+    }
+
     var grid = document.getElementById('demoShotsGrid');
     if (q) {
       grid.classList.remove('hidden');
@@ -1728,14 +2085,41 @@
       document.getElementById('systemPromptWrap').classList.add('hidden');
     };
 
+    document.getElementById('toggleSecondaryDirBtn').onclick = function(){
+      var wrap = document.getElementById('secondaryDirWrap');
+      var hiddenNow = wrap.classList.toggle('hidden');
+      this.textContent = hiddenNow ? '+ 叠加副导演光色' : '收起副导演';
+    };
+
+    document.getElementById('toggleMastersDirectoryBtn').onclick = function(){
+      var wrap = document.getElementById('mastersDirectoryWrap');
+      var hiddenNow = wrap.classList.toggle('hidden');
+      this.textContent = hiddenNow ? '浏览全部大师库 ›' : '收起大师库';
+      if (!hiddenNow) renderMastersDirectory();
+    };
+    document.getElementById('closeMastersDirectoryBtn').onclick = function(){
+      document.getElementById('mastersDirectoryWrap').classList.add('hidden');
+      document.getElementById('toggleMastersDirectoryBtn').textContent = '浏览全部大师库 ›';
+    };
+    document.querySelectorAll('#mastersDeptTabs .seg-btn').forEach(function(tb){
+      tb.onclick = function(){
+        activeMasterDept = tb.getAttribute('data-dept') || 'director';
+        document.querySelectorAll('#mastersDeptTabs .seg-btn').forEach(function(b){
+          b.classList.toggle('active', b.getAttribute('data-dept') === activeMasterDept);
+        });
+        renderMastersDirectory();
+      };
+    });
+    document.getElementById('mastersRegionFilter').onchange = renderMastersDirectory;
+
     document.getElementById('resetStyleBtn').onclick = function(){
-      document.getElementById('selDirector').value = '';
-      document.getElementById('selSecondaryDirector').value = '';
-      document.getElementById('selFilmStock').value = '';
-      document.getElementById('inpShotScale').value = '';
-      document.getElementById('inpScene').value = '';
-      document.getElementById('inpAction').value = '';
+      ['selDirector', 'selSecondaryDirector', 'selCinematographer', 'selArtDirector', 'selScreenwriter', 'selEditorSound', 'selFilmStock', 'inpShotScale', 'inpScene', 'inpAction'].forEach(function(id){
+        var el = document.getElementById(id);
+        if (el) el.value = '';
+      });
       document.getElementById('styleResultWrap').classList.add('hidden');
+      document.getElementById('secondaryDirWrap').classList.add('hidden');
+      document.getElementById('toggleSecondaryDirBtn').textContent = '+ 叠加副导演光色';
     };
 
     document.getElementById('browseAllCompsBtn').onclick = function(){
@@ -1797,6 +2181,7 @@
 
     document.getElementById('copyH3PromptBtn').onclick = function(){ copyText(lastCompiled.h3, 'H3 Ref2VA 提示词'); };
     document.getElementById('copySeedanceBtn').onclick = function(){ copyText(lastCompiled.seedance, 'Seedance 2.5 提示词'); };
+    document.getElementById('copyCrewBriefBtn').onclick = function(){ copyText(lastCompiled.brief, '全班底工艺简报'); };
     document.getElementById('copySystemPromptBtn').onclick = function(){ copyText(DATA.system_prompt_md, '专家 System Prompt'); };
     document.getElementById('copyAvcBtn').onclick = function(){
       copyText(JSON.stringify((DATA.demo_project || {}).avc_canvas_import || {}, null, 2), 'AVC 画布 JSON');
@@ -1822,8 +2207,16 @@
     };
   }
 
-  fetch('data/workbench_data.json?v=4').then(function(r){ return r.json(); }).then(function(js){
+  fetch('data/workbench_data.json?v=5').then(function(r){ return r.json(); }).then(function(js){
     DATA = js;
+    var mt = js.meta || {};
+    var subEl = document.getElementById('styleLabSubtitle');
+    if (subEl && mt.directors_count) {
+      subEl.textContent =
+        mt.directors_count + ' 位导演 · ' + (mt.cinematographers_count || 24) + ' 位摄影 · ' +
+        (mt.art_directors_count || 20) + ' 位美术 · ' + (mt.screenwriters_count || 24) + ' 位编剧 · ' +
+        (mt.editors_sound_count || 16) + ' 位剪辑与声音 · ' + (mt.film_stocks_count || 6) + ' 款胶片，全空白按需组合。';
+    }
     renderDemoSection();
     renderComps('');
     initStyleLab();

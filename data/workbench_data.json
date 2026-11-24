@@ -1,9 +1,14 @@
 {
   "meta": {
     "name": "JT Screenwriter Agent",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "comps_count": 32,
-    "directors_count": 59,
+    "directors_count": 82,
+    "cinematographers_count": 24,
+    "art_directors_count": 20,
+    "screenwriters_count": 24,
+    "editors_sound_count": 16,
+    "total_masters_count": 166,
     "film_stocks_count": 6,
     "semantic_layers": 13
   },
@@ -1184,6 +1189,9 @@
       "name": "王家卫",
       "name_en": "Wong Kar-wai",
       "id": "01",
+      "region": "华语与亚洲",
+      "representative_works": [],
+      "motto": "",
       "source": "director-style-prompts-handbook + chinese-directors",
       "tags": [
         "霓虹湿街",
@@ -1205,6 +1213,9 @@
       "name": "张艺谋",
       "name_en": "Zhang Yimou",
       "id": "02",
+      "region": "华语与亚洲",
+      "representative_works": [],
+      "motto": "",
       "source": "director-style-prompts-handbook + chinese-directors",
       "tags": [
         "单一主色块",
@@ -1226,6 +1237,9 @@
       "name": "侯孝贤",
       "name_en": "Hou Hsiao-hsien",
       "id": "03",
+      "region": "华语与亚洲",
+      "representative_works": [],
+      "motto": "",
       "source": "director-style-prompts-handbook + chinese-directors",
       "tags": [
         "中长焦固定机位",
@@ -1247,6 +1261,7 @@
       "name": "姜文",
       "name_en": "Jiang Wen",
       "id": "04",
+      "region": "华语与亚洲",
       "source": "director-style-prompts-handbook",
       "issue": "第一期 (7694929307038240043)",
       "tags": [
@@ -1269,6 +1284,9 @@
       "name": "杜琪峰",
       "name_en": "Johnnie To",
       "id": "05",
+      "region": "华语与亚洲",
+      "representative_works": [],
+      "motto": "",
       "source": "director-style-prompts-handbook + chinese-directors",
       "tags": [
         "冷蓝夜色",
@@ -1290,6 +1308,7 @@
       "name": "贾樟柯",
       "name_en": "Jia Zhangke",
       "id": "06",
+      "region": "华语与亚洲",
       "source": "director-style-prompts-handbook",
       "issue": "第一期 (7694929307038240043)",
       "tags": [
@@ -1312,6 +1331,9 @@
       "name": "克里斯托弗·诺兰",
       "name_en": "Christopher Nolan",
       "id": "07",
+      "region": "欧美与国际",
+      "representative_works": [],
+      "motto": "",
       "source": "director-style-prompts-handbook + cinematic-director",
       "tags": [
         "IMAX 实拍纵深",
@@ -1333,6 +1355,9 @@
       "name": "韦斯·安德森",
       "name_en": "Wes Anderson",
       "id": "08",
+      "region": "欧美与国际",
+      "representative_works": [],
+      "motto": "",
       "source": "director-style-prompts-handbook + cinematic-director",
       "tags": [
         "绝对中心对称",
@@ -1354,6 +1379,7 @@
       "name": "昆汀·塔伦蒂诺",
       "name_en": "Quentin Tarantino",
       "id": "09",
+      "region": "欧美与国际",
       "source": "director-style-prompts-handbook",
       "issue": "第一期 (7694929307038240043)",
       "tags": [
@@ -1376,6 +1402,9 @@
       "name": "大卫·芬奇",
       "name_en": "David Fincher",
       "id": "10",
+      "region": "欧美与国际",
+      "representative_works": [],
+      "motto": "",
       "source": "director-style-prompts-handbook + cinematic-director",
       "tags": [
         "幽暗青绿琥珀",
@@ -1397,6 +1426,7 @@
       "name": "史蒂文·斯皮尔伯格",
       "name_en": "Steven Spielberg",
       "id": "11",
+      "region": "欧美与国际",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1419,6 +1449,7 @@
       "name": "斯坦利·库布里克",
       "name_en": "Stanley Kubrick",
       "id": "12",
+      "region": "欧美与国际",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1441,6 +1472,7 @@
       "name": "蒂姆·波顿",
       "name_en": "Tim Burton",
       "id": "13",
+      "region": "欧美与国际",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1463,6 +1495,7 @@
       "name": "大卫·林奇",
       "name_en": "David Lynch",
       "id": "14",
+      "region": "欧美与国际",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1485,6 +1518,7 @@
       "name": "雷德利·斯科特",
       "name_en": "Ridley Scott",
       "id": "15",
+      "region": "欧美与国际",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1507,6 +1541,9 @@
       "name": "丹尼斯·维伦纽瓦",
       "name_en": "Denis Villeneuve",
       "id": "16",
+      "region": "欧美与国际",
+      "representative_works": [],
+      "motto": "",
       "source": "director-style-prompts-handbook + cinematic-director",
       "tags": [
         "巨物尺度压迫",
@@ -1528,6 +1565,7 @@
       "name": "让-皮埃尔·热内",
       "name_en": "Jean-Pierre Jeunet",
       "id": "17",
+      "region": "欧美与国际",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1550,6 +1588,7 @@
       "name": "阿方索·卡隆",
       "name_en": "Alfonso Cuarón",
       "id": "18",
+      "region": "欧美与国际",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1572,6 +1611,7 @@
       "name": "佩德罗·阿莫多瓦",
       "name_en": "Pedro Almodóvar",
       "id": "19",
+      "region": "欧美与国际",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1594,6 +1634,7 @@
       "name": "安德烈·塔可夫斯基",
       "name_en": "Andrei Tarkovsky",
       "id": "20",
+      "region": "欧美与国际",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1616,6 +1657,9 @@
       "name": "黑泽明",
       "name_en": "Akira Kurosawa",
       "id": "21",
+      "region": "华语与亚洲",
+      "representative_works": [],
+      "motto": "",
       "source": "director-style-prompts-handbook + film-crew-masters",
       "tags": [
         "长焦压缩群体",
@@ -1637,6 +1681,7 @@
       "name": "是枝裕和",
       "name_en": "Hirokazu Kore-eda",
       "id": "22",
+      "region": "华语与亚洲",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1659,6 +1704,7 @@
       "name": "岩井俊二",
       "name_en": "Shunji Iwai",
       "id": "23",
+      "region": "华语与亚洲",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1681,6 +1727,7 @@
       "name": "北野武",
       "name_en": "Takeshi Kitano",
       "id": "24",
+      "region": "华语与亚洲",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1703,6 +1750,9 @@
       "name": "朴赞郁",
       "name_en": "Park Chan-wook",
       "id": "25",
+      "region": "华语与亚洲",
+      "representative_works": [],
+      "motto": "",
       "source": "director-style-prompts-handbook + sw-korean-french-screenwriting",
       "tags": [
         "极繁对称美学",
@@ -1724,6 +1774,7 @@
       "name": "新海诚",
       "name_en": "Makoto Shinkai",
       "id": "26",
+      "region": "华语与亚洲",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1746,6 +1797,7 @@
       "name": "宫崎骏",
       "name_en": "Hayao Miyazaki",
       "id": "27",
+      "region": "华语与亚洲",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1768,6 +1820,7 @@
       "name": "大友克洋",
       "name_en": "Katsuhiro Otomo",
       "id": "28",
+      "region": "华语与亚洲",
       "source": "director-style-prompts-handbook",
       "issue": "第二期 (7699006867904761098)",
       "tags": [
@@ -1790,6 +1843,9 @@
       "name": "奉俊昊",
       "name_en": "",
       "id": "bong",
+      "region": "华语与亚洲",
+      "representative_works": [],
+      "motto": "",
       "source": "sw-korean-french-screenwriting",
       "tags": [
         "阶层垂直空间",
@@ -1808,30 +1864,684 @@
       "full_profile": true
     },
     {
-      "name": "罗杰·狄金斯",
-      "name_en": "",
-      "id": "deakins",
-      "source": "film-crew-masters/01_cinematography + 04_lighting",
-      "tags": [
-        "单一主光动机",
-        "剪影反差",
-        "极简干净构图",
-        "钠灯或窗光"
+      "name": "阿巴斯·基亚罗斯塔米",
+      "name_en": "Abbas Kiarostami",
+      "id": "dir-abbas",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《樱桃的滋味》",
+        "《特写》",
+        "《何处是我朋友的家》"
       ],
-      "lens_aspect": "32-40mm 主力定焦，摄影机只讲最简单的物理事实",
-      "composition": "画面干净克制，绝不炫技，让空间阴影与人物轮廓完成叙事",
-      "lighting": "每一束光必须能指出现实光源（火光、走廊单灯、百叶窗天光），极少补光",
-      "color": "大面积中性暗部托举纯净暖光或冷月光",
-      "movement": "沉稳丝滑推轨，只在人物情感或空间关系变化时移动",
-      "rhythm": "克制沉静、一针见血",
-      "prompt_en": "clean restrained 35mm-40mm prime lens framing, strictly motivated single practical light source (window daylight or bare tungsten bulb) casting crisp silhouettes against deep clean shadows, zero artificial fill light",
-      "prompt_zh": "干净克制的 35-40mm 叙事构图，严格可指认的单一现实光源（窗光或孤灯）打出清晰轮廓剪影，绝不滥用无动机补光",
+      "motto": "一半的电影应该留给银幕外观众自己的心去补完。",
+      "source": "master-crew-library",
+      "tags": [
+        "车窗对话画框",
+        "黄土盘山诗路",
+        "极简旁观长镜",
+        "真实伪纪录"
+      ],
+      "lens_aspect": "50mm 固定车载机位与中远景自然观察，1.66:1 或 1.37:1",
+      "composition": "汽车侧窗充当天然画中画框，蜿蜒之字形土路承载哲学跋涉",
+      "lighting": "纯粹地中海/高原干爽自然日光与温柔暮色",
+      "color": "干涸黄土金、橄榄枝灰绿与蔚蓝晴空",
+      "movement": "随车前行节奏平稳滑行或远观山路独行人物的长定镜",
+      "rhythm": "留给风景与风声极大宽容度，让现实自身涌现诗意",
+      "prompt_en": "poetic minimalist car-window framing looking out onto winding ochre hillside paths under warm golden afternoon sunlight, quiet wind and dust, serene realism",
+      "prompt_zh": "车载侧窗框景与盘山黄土坡极简诗意长镜，金黄午后干爽自然日光，在沉默跋涉中流露哲思",
+      "full_profile": true
+    },
+    {
+      "name": "吕克·贝松",
+      "name_en": "Luc Besson",
+      "id": "dir-besson",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《这个杀手不太冷》",
+        "《碧海蓝天》",
+        "《第五元素》"
+      ],
+      "motto": "用最简洁有力的一束光和一件随身旧物，就能立住最难忘的人物。",
+      "source": "master-crew-library",
+      "tags": [
+        "漫画感高对比",
+        "走廊疾冲追踪",
+        "纯真碰撞冷硬",
+        "饱和暖橙青"
+      ],
+      "lens_aspect": "18mm-32mm 戏剧性广角与 2.39:1 宽银幕",
+      "composition": "极简孤独身影背光立足门框或深海蓝调中，突出天真物品与冷硬环境的反差",
+      "lighting": "通透室内百叶窗金色日光柱或深海幽蓝背光，轮廓锐利明快",
+      "color": "明亮明黄橙、纯净深海蓝与暖灰纽约公寓砖墙对比",
+      "movement": "贴地疾走跟拍、门孔视角推拉与利落的动作定位切",
+      "rhythm": "爽脆明快、动静切换乾脆利落",
+      "prompt_en": "bold 2.39:1 wide framing with sharp dusty golden sunbeams slanting across weathered apartment wood, punchy contrast and graphic silhouette geometry",
+      "prompt_zh": "鲜明爽脆的 2.39:1 宽银幕戏剧构图，金色百叶窗光束穿透旧公寓木质尘埃，剪影与细节对比鲜明",
+      "full_profile": true
+    },
+    {
+      "name": "努里·比格·锡兰",
+      "name_en": "Nuri Bilge Ceylan",
+      "id": "dir-ceylan",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《冬眠》",
+        "《安纳托利亚往事》",
+        "《枯草》"
+      ],
+      "motto": "自然风景从不评判人的渺小，它只在雪落时静静显影人的自私与温柔。",
+      "source": "master-crew-library",
+      "tags": [
+        "契诃夫式冬雪孤旅",
+        "炉火夜谈群像",
+        "摄影师级静态构图",
+        "宽屏苍茫"
+      ],
+      "lens_aspect": "28mm-50mm 高解析静照感构图，2.39:1 宽银幕",
+      "composition": "草原大雾、石屋壁炉前长桌或白雪覆盖的小径，赋予人物小传式摄影厚重感",
+      "lighting": "阴沉雪天散射微光、汽车前灯划破夜原以及壁炉侧照人文暖光",
+      "color": "严冬冷灰、炭木深褐、壁炉橙红与泛青黄荒野",
+      "movement": "凝重几乎静止的构图偶尔配以长走廊缓缓侧移",
+      "rhythm": "耐人寻味的知识分子交锋配大地沉默",
+      "prompt_en": "painterly 2.39:1 wide shot of snow-covered Anatolian plateau and stone study lit by warm fireplace embers and cold overcast winter window daylight, quiet Chekhovian tension",
+      "prompt_zh": "2.39:1 安纳托利亚寒冬原野与石屋炉火静态史诗构图，严冬窗口漫射天光配壁炉余烬暖影",
+      "full_profile": true
+    },
+    {
+      "name": "达米恩·查泽雷",
+      "name_en": "Damien Chazelle",
+      "id": "dir-chazelle",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《爆裂鼓手》",
+        "《爱乐之城》",
+        "《巴比伦》"
+      ],
+      "motto": "摄影机就是乐队里那支看不见的乐器，必须踩在最锋利的鼓点上。",
+      "source": "master-crew-library",
+      "tags": [
+        "高速甩镜卡点",
+        "舞台追光浸染",
+        "乐句驱动剪辑",
+        "梦幻色彩"
+      ],
+      "lens_aspect": "32mm-50mm 变形宽银幕与高对比舞台特写，2.55:1 或 2.39:1",
+      "composition": "人物随乐句节奏在舞台追光与广角景深中不断切换重心",
+      "lighting": "浓烈舞台聚光灯、爵士暗室金黄射灯或黄昏紫蓝天光剪影",
+      "color": "钴蓝、品红紫霞、爵士暖金与深黑背景激烈碰撞",
+      "movement": "疾速甩镜、360 度圆轨环绕与贴合鼓点的精确机位推进",
+      "rhythm": "严格吸附音乐重音与鼓点加速，情绪随节拍层层推高",
+      "prompt_en": "kinetic whip pans and gliding circular tracking shot synchronized with musical rhythm, bold theatrical spotlight cutting through indigo twilight sky and warm amber stage glow",
+      "prompt_zh": "随音乐节拍律动的甩镜与环轨推进，高饱和钴蓝暮色碰撞舞台暖金追光，充满生命力与韵律感",
+      "full_profile": true
+    },
+    {
+      "name": "科恩兄弟",
+      "name_en": "Joel & Ethan Coen",
+      "id": "dir-coen",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《老无所依》",
+        "《冰血暴》",
+        "《醉乡民谣》"
+      ],
+      "motto": "当普通人执迷不悟地走进广角景深里，荒诞与悲剧便同时成立。",
+      "source": "master-crew-library",
+      "tags": [
+        "广角荒诞低机位",
+        "宿命冷幽默",
+        "荒漠雪原孤绝",
+        "静态悬念"
+      ],
+      "lens_aspect": "21mm-28mm 轻微夸张广角中近景，1.85:1 或 2.39:1",
+      "composition": "低机位广角凸显人物固执或渺小，空旷公路/雪原与旅馆房间呈几何规整",
+      "lighting": "偏冷阴天漫射或旅馆台灯单源硬阴影，突出粗糙质感与荒诞冷冽",
+      "color": "苍白雪地灰、荒漠土黄、旅馆暗琥珀或青灰阴湿民谣色调",
+      "movement": "推向门缝或通道尽头的宿命直推，以及冷静锁定全场的定格旁观",
+      "rhythm": "荒诞停顿与冷峻突袭交替，命运失控感自然渗出",
+      "prompt_en": "wide 24mm low-angle deadpan framing in desolate snowy plains or quiet motel interiors, clean motel lamp practical shadows, muted winter slate and dusty desert palette",
+      "prompt_zh": "24mm 冷面荒诞广角低机位，空旷雪原或寂静汽车旅馆单灯投影，克制清冷冬日或荒漠色调",
+      "full_profile": true
+    },
+    {
+      "name": "弗朗西斯·福特·科波拉",
+      "name_en": "Francis Ford Coppola",
+      "id": "dir-coppola",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《教父》",
+        "《现代启示录》",
+        "《窃听大阴谋》"
+      ],
+      "motto": "伟大电影像一台家族歌剧，每一束没照亮眼睛的阴影都在说话。",
+      "source": "master-crew-library",
+      "tags": [
+        "家族歌剧调度",
+        "明暗权力切割",
+        "平行对比剪辑",
+        "暖琥珀暗调"
+      ],
+      "lens_aspect": "40mm-50mm 古典中近景与深焦走廊调度，1.85:1 或 2.39:1",
+      "composition": "仪式场合与暗室交易形成强烈空间等级秩序，门框切割人物归属",
+      "lighting": "顶部低垂柔光隐去眼窝眼神，室内深沉暖琥珀光对比室外强日光",
+      "color": "温暖木质琥珀、墨黑阴影与深勃艮第红构成经典质感",
+      "movement": "庄重慢速推轨与稳态固定机位，突出权谋静水深流",
+      "rhythm": "盛大婚礼或洗礼仪式与冷酷暴力并行推进的歌剧节拍",
+      "prompt_en": "operatic classical blocking in shadowed amber-wood interiors, overhead soft key leaving eyes half-veiled in deep chiaroscuro, contrast between sunlit courtyard and dimly lit study",
+      "prompt_zh": "家族歌剧式古典空间调度，顶部低垂柔光让眼窝落入微暗阴影，褪色暖琥珀与深沉木质暗调交织",
+      "full_profile": true
+    },
+    {
+      "name": "克莱尔·德尼",
+      "name_en": "Claire Denis",
+      "id": "dir-denis",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《军中禁恋》",
+        "《白鬼子》",
+        "《星辰正午》"
+      ],
+      "motto": "身体记忆、汗水与风声早已先于语言把人物故事讲完了。",
+      "source": "master-crew-library",
+      "tags": [
+        "身体近距感官",
+        "炽烈盐碱日光",
+        "省略叙事诗",
+        "夜色肌肤质感"
+      ],
+      "lens_aspect": "40mm-75mm 贴近人体动作与肌理，1.85:1 或 1.66:1",
+      "composition": "切去常规全景交代，直接聚焦颈背肩线、汗珠微尘与空间角落的身体律动",
+      "lighting": "炽热盐碱戈壁强侧逆光或潮湿热带夜里的单灯暖光勾勒肤色",
+      "color": "蔚蓝海盐、炽白沙地、古铜与深赭石质感",
+      "movement": "像呼吸般轻柔跟随舞动与行走的手持摄影",
+      "rhythm": "以物理动作与音乐节奏直接替代信息说明台词",
+      "prompt_en": "intimate tactile close-range framing capturing silhouette of shoulders, wind and desert sunlight, luminous skin glow under harsh arid sky or humid tropical practical glow",
+      "prompt_zh": "贴近人体肩线与物理感知的诗意近摄，炽烈沙漠侧逆光或潮湿夜灯勾勒质感，以身姿替代冗余解说",
+      "full_profile": true
+    },
+    {
+      "name": "刁亦男",
+      "name_en": "Diao Yinan",
+      "id": "dir-diaoyn",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《白日焰火》",
+        "《南方车站的聚会》",
+        "《夜车》"
+      ],
+      "motto": "用高纯度廉价霓虹照亮中国城乡接合部的冷硬暗影，拍出东方新黑色奇观。",
+      "source": "master-crew-library",
+      "tags": [
+        "冷工业城市霓虹",
+        "奇情暗黑投影",
+        "湿冷筒子楼",
+        "动物影戏"
+      ],
+      "lens_aspect": "35mm-75mm 新黑色变形宽银幕或高对比广角，2.39:1",
+      "composition": "斑驳霓虹在雨伞与水泥墙投下诡谲几何，筒子楼与夜市角落构成致命迷宫",
+      "lighting": "北方雪夜工业钠灯或南方城中村高纯度单色霓虹射影",
+      "color": "冰冻夜蓝、高饱和霓虹红绿紫光渗入灰黑水汽之中",
+      "movement": "冷眼定机位骤然切换追逐晃动手持与定格剪影",
+      "rhythm": "荒凉寒意潜行后突发的暴烈奇情瞬间",
+      "prompt_en": "neo-noir rainy urban village and frozen industrial bridge lit by vivid neon reds and greens casting sharp silhouettes on wet concrete walls, stark shadows",
+      "prompt_zh": "新黑色潮湿城中村与北方工业桥影，高纯度霓虹红绿穿透雨雾在水泥墙投出冷峻剪影奇观",
+      "full_profile": true
+    },
+    {
+      "name": "罗伯特·艾格斯",
+      "name_en": "Robert Eggers",
+      "id": "dir-eggers",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《灯塔》",
+        "《女巫》",
+        "《诺斯费拉图》"
+      ],
+      "motto": "每一颗扣子、每一缕烛烟都必须经得起博物馆考据，恐惧才会真实。",
+      "source": "master-crew-library",
+      "tags": [
+        "1.19:1 窒息画幅",
+        "纯粹烛火油灯",
+        "民俗考古质感",
+        "银盐明暗"
+      ],
+      "lens_aspect": "1.19:1 或 1.37:1 窄方画幅正交古董定焦镜头",
+      "composition": "人物紧贴窄画幅边缘与对称门廊，制造时代囚笼般的心理压迫",
+      "lighting": "严格仅使用自然阴云、蜂蜡烛火与煤油灯等时代真实光源",
+      "color": "铅灰海雾、高反差正交银盐黑白或冷铁青暗部配极微弱橙焰",
+      "movement": "缓慢机械平移或如幽灵贴地凝视的极慢推轨",
+      "rhythm": "肃穆缓慢的仪式感累积，直抵恐惧深处",
+      "prompt_en": "claustrophobic 1.19:1 vintage prime lens composition lit purely by flickering beeswax candles and overcast coastal mist, historical timber and weathered stone textures",
+      "prompt_zh": "复古窄画幅定焦肃穆构图，纯靠蜂蜡烛火与海雾散射照明，充满历史颗粒与木石磨损肌理",
+      "full_profile": true
+    },
+    {
+      "name": "阿斯哈·法哈蒂",
+      "name_en": "Asghar Farhadi",
+      "id": "dir-farhadi",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《一次别离》",
+        "《关于伊丽》",
+        "《推销员》"
+      ],
+      "motto": "没有纯粹的坏人，只有各自守着半截真相拼命自卫的普通人。",
+      "source": "master-crew-library",
+      "tags": [
+        "玻璃隔断多方对峙",
+        "信息不对称风暴",
+        "近身纪实手持",
+        "道德困境"
+      ],
+      "lens_aspect": "35mm-50mm 纪实贴身跟拍，1.85:1",
+      "composition": "利用走廊玻璃窗、半掩房门将争执双方与隐情第三者同时收入浅景深框内",
+      "lighting": "真实家庭吸顶白灯、走廊弱光与灰蒙午后自然光",
+      "color": "中性水泥灰、淡青瓷砖与日常家居暖棕，零美化滤镜",
+      "movement": "随情绪急促穿行房间的灵活手持，视线与门框不断开合改写立场",
+      "rhythm": "多方互相隐瞒的微小细节在三分钟内滚雪球成不可收拾的道德风暴",
+      "prompt_en": "urgent handheld realism in cluttered middle-class apartment separated by frosted glass doors, natural interior fluorescent and overcast daylight, multi-plane moral confrontation",
+      "prompt_zh": "贴近公寓廊道与磨砂玻璃门的多人即时手持调度，日常自然微光下用信息落差引爆道德僵局",
+      "full_profile": true
+    },
+    {
+      "name": "滨口龙介",
+      "name_en": "Ryusuke Hamaguchi",
+      "id": "dir-hamaguchi",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《驾驶我的车》",
+        "《偶然与想象》",
+        "《恶不存在》"
+      ],
+      "motto": "当人物只是冷静地看着彼此说完长长一段真话，剧场就已经诞生。",
+      "source": "master-crew-library",
+      "tags": [
+        "车厢密闭对白",
+        "冷静正反打",
+        "读本声律节奏",
+        "森林静谧突变"
+      ],
+      "lens_aspect": "40mm-50mm 克制中性焦点，1.85:1",
+      "composition": "红车厢前后排空间、排练厅椅子或森林雪坡，在稳定对称景框内承载长篇告白",
+      "lighting": "干净均匀的城市日光、隧道冷荧光扫过侧脸与林间清冽晨光",
+      "color": "红色车身穿透冷青港城、松林深绿与澄澈雪白",
+      "movement": "汽车平滑巡航、缓缓环绕谈话者的稳定推镜与雪林间沉默横摇",
+      "rhythm": "先让平实语言匀速流淌十五分钟，再用沉默一击刺穿",
+      "prompt_en": "clean calm interior of a red sedan gliding through coastal dusk tunnels, balanced neutral daylight across expressive quiet faces, serene evergreen forest mist",
+      "prompt_zh": "红色车厢驶过海滨隧道与凛冽松林的静谧对称视听，干净中性光线照亮语言交锋下的隐秘克制",
+      "full_profile": true
+    },
+    {
+      "name": "洪尚秀",
+      "name_en": "Hong Sang-soo",
+      "id": "dir-hong",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《这时对，那时错》",
+        "《独自在夜晚的海边》",
+        "《小说家的电影》"
+      ],
+      "motto": "最诚实的变焦推近，比十场戏剧化冲突更能扒光角色的体面。",
+      "source": "master-crew-library",
+      "tags": [
+        "固定机位酒桌",
+        "突发机械变焦",
+        "自然日光白墙",
+        "对位结构重复"
+      ],
+      "lens_aspect": "35mm-85mm 固定三脚架配直白变焦镜头，1.85:1",
+      "composition": "两人同桌平视中景构图，酒杯、窗台、巷口楼梯直接暴露人物尴尬微表情",
+      "lighting": "自然窗光或室外阴晴自然光，零人工装饰补光",
+      "color": "清淡冬日灰白、复古木桌面与纯净黑白反差",
+      "movement": "极静长镜中突如其来一次直白推近变焦（Zoom-in）直刺人物撒谎瞬间",
+      "rhythm": "絮叨日常对谈中突然暴露自我欺骗的微妙尴尬节拍",
+      "prompt_en": "unadorned static table two-shot by a sunlit cafe window, crisp natural daylight, authentic wooden table and glass bottles, abrupt candid framing focus on subtle hesitation",
+      "prompt_zh": "朴素静观的小酒馆窗边固定机位双人中景，纯自然日光照亮人物酒后犹豫微表情，毫无刻意粉饰",
+      "full_profile": true
+    },
+    {
+      "name": "今敏",
+      "name_en": "Satoshi Kon",
+      "id": "dir-kon",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《红辣椒》",
+        "《未麻的部屋》",
+        "《千年女优》"
+      ],
+      "motto": "只要动作或声音轴心不断，这一门推开就能跨越半个世纪。",
+      "source": "master-crew-library",
+      "tags": [
+        "无缝动作匹配切",
+        "现实梦境折叠",
+        "都市玻璃镜像",
+        "高密度心理蒙太奇"
+      ],
+      "lens_aspect": "24mm-50mm 现实透视与狂放广角切换，1.85:1",
+      "composition": "利用电车玻璃反光、电视屏幕、剧场后台与门扉完成时空无缝嫁接",
+      "lighting": "都会便利店冷荧光、霓虹粉紫与剧场聚光暖色调剧烈跳变",
+      "color": "日常暖米突然坍缩为高对比霓虹洋红、钴蓝与纯白冲击",
+      "movement": "奔跑动作中跨越数十年与数个梦境层的无缝连续推进",
+      "rhythm": "闪电般精准的匹配转场（Match Cut），瞬间模糊意识与现实边界",
+      "prompt_en": "seamless architectural reflection framing through train windows and backstage mirrors bridging urban dusk and surreal dreamlike theater lights, crisp vivid contrast",
+      "prompt_zh": "车窗镜像与后台门框构成的无缝心理转场空间，都会日常荧光陡然折入剧场追光幻境",
+      "full_profile": true
+    },
+    {
+      "name": "欧格斯·兰斯莫斯",
+      "name_en": "Yorgos Lanthimos",
+      "id": "dir-lanthimos",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《宠儿》",
+        "《可怜的东西》",
+        "《圣鹿之死》"
+      ],
+      "motto": "超广角让华丽建筑弯曲成水族箱，里面的每个欲望都一目了然。",
+      "source": "master-crew-library",
+      "tags": [
+        "超广角鱼眼畸变",
+        "冷漠仰视走廊",
+        "荒诞宫廷仪式",
+        "反常自然光"
+      ],
+      "lens_aspect": "10mm-18mm 超广角与鱼眼镜头极端透视，1.66:1 或 1.85:1",
+      "composition": "大厅穹顶与弧形边界将渺小荒诞的人物压在中央，制造冷眼审视感",
+      "lighting": "全靠窗外自然天光或古堡蜡烛亮部，少见温柔讨好式柔光",
+      "color": "象牙白大理石、冷灰丝绒、浓重暗绿与高对比古典华彩",
+      "movement": "沿长廊底部滑行的极低机位跟踪与机械横摇",
+      "rhythm": "零情绪起伏的冷酷节拍与突然打破常规的怪诞顿点",
+      "prompt_en": "extreme wide-angle low tracking perspective curving grand classical palace geometry, cool crisp window daylight on pale stone, detached surreal symmetry",
+      "prompt_zh": "超广角低机位弯曲古典建筑空间的冷峻审视，惨白窗光与华丽冷冽色调制造荒诞疏离感",
+      "full_profile": true
+    },
+    {
+      "name": "李沧东",
+      "name_en": "Lee Chang-dong",
+      "id": "dir-leecd",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《燃烧》",
+        "《密阳》",
+        "《诗》"
+      ],
+      "motto": "在平淡如尘的日常光线下直面人性的不可解，力量远胜于刻意奇观。",
+      "source": "master-crew-library",
+      "tags": [
+        "近身手持写实",
+        "暮色虚无长镜",
+        "日常尘埃质感",
+        "穿透灵魂凝视"
+      ],
+      "lens_aspect": "35mm-50mm 手持贴近人物背部与侧面，2.39:1 或 1.85:1",
+      "composition": "将人物置入粗糙真实的小城斜坡、果园与暮色原野中，留出无法消解的生活沉重",
+      "lighting": "纯粹真实现场光——薄暮蓝调天光、荧光灯管与枯黄阳光自然直射",
+      "color": "平淡灰褐、枯草黄与沉郁深蓝夜幕，拒绝一切美容式柔焦",
+      "movement": "贴合人物步履微颤的纪实跟拍与长久凝望的暮色定格",
+      "rhythm": "克制真实直到心理缺口无声裂开",
+      "prompt_en": "raw naturalistic twilight sky casting blue-grey chill over rural hills and hillside alleys, authentic unvarnished fluorescent and dusk daylight, unyielding observational realism",
+      "prompt_zh": "毫无修饰的小城斜坡与暮色原野纪实光影，枯草黄碰撞沉郁蓝调黄昏，冷峻逼视内心虚无",
+      "full_profile": true
+    },
+    {
+      "name": "塞尔乔·莱昂内",
+      "name_en": "Sergio Leone",
+      "id": "dir-leone",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《黄金三镖客》",
+        "《西部往事》",
+        "《美国往事》"
+      ],
+      "motto": "只有用极度耐心让时间凝固在汗水与眼神里，那一秒的扣动扳机才有重量。",
+      "source": "master-crew-library",
+      "tags": [
+        "极限大远景接特写",
+        "眼睛极近特写",
+        "等待肃杀长景",
+        "双色调沙尘"
+      ],
+      "lens_aspect": "28mm 大远景与 100mm+ 切割双眼特写的极端反差，2.35:1 技术色宽银幕",
+      "composition": "同一镜内前景半边帽檐或枪套与百米外沙尘人影同框，再用只留眉眼的特写定生死",
+      "lighting": "烈日干燥沙漠硬光、黄昏金属暖反射光与老木酒馆尘光柱",
+      "color": "枯黄戈壁、晒伤古铜、铁锈红与老旧怀表金",
+      "movement": "极慢揭示式摇升与凝滞决斗间的纹丝不动",
+      "rhythm": "把十秒钟的拨枪等待拉长到五分钟的极限心理悬停",
+      "prompt_en": "extreme 2.35:1 widescreen juxtaposition of giant foreground eye close-up and tiny sunlit desert town horizon, dusty amber sun shafts and weathered bronze faces",
+      "prompt_zh": "2.35:1 宽银幕极限大特写与戈壁远景并置，酷烈沙漠光柱配风霜古铜肌肤，在凝滞等待中引爆张力",
+      "full_profile": true
+    },
+    {
+      "name": "娄烨",
+      "name_en": "Lou Ye",
+      "id": "dir-louye",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《苏州河》",
+        "《推拿》",
+        "《浮城谜事》"
+      ],
+      "motto": "摄影机不是高高在上的观察者，它就在演员耳边一起喘息与奔跑。",
+      "source": "master-crew-library",
+      "tags": [
+        "贴身晃动呼吸手持",
+        "湿润江雾雨夜",
+        "主观失焦光晕",
+        "急促情绪逼近"
+      ],
+      "lens_aspect": "28mm-50mm 贴近呼吸的自由手持变焦，1.85:1",
+      "composition": "贴着主角肩头与耳后随时跟跑、穿行狭小廊道与雨水街面，视点永远在场",
+      "lighting": "南方潮湿雨夜钠灯、斑驳树影、廊道节能灯管与盲室弱反光",
+      "color": "湿冷青绿、暗红霓虹水洼与南方霉雨灰调",
+      "movement": "充满临场焦虑与体温的自由肩扛手持与主观游移失焦",
+      "rhythm": "破碎急促的情感冲击与迷离长音过渡",
+      "prompt_en": "visceral intimate handheld camera breathing beside the actor through rainy neon alleys and narrow damp hallways, shallow selective focus and humid southern city mist",
+      "prompt_zh": "紧贴人物喘息的湿润南城雨夜手持摄影，狭小廊道荧光与水洼霓虹迷离光晕，情绪极具临场穿透力",
+      "full_profile": true
+    },
+    {
+      "name": "沟口健二",
+      "name_en": "Kenji Mizoguchi",
+      "id": "dir-mizoguchi",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《雨月物语》",
+        "《西鹤一代女》",
+        "《山椒大夫》"
+      ],
+      "motto": "绝不用琐碎特写打断人类命运的完整呼吸。",
+      "source": "master-crew-library",
+      "tags": [
+        "一镜一景长镜头",
+        "高机位俯瞰悲悯",
+        "卷轴画横移",
+        "湖雾水月银光"
+      ],
+      "lens_aspect": "35mm-50mm 中远景卷轴视野，1.37:1 经典比例",
+      "composition": "高视角俯瞰庭院与湖面，借屏障、竹帘、柱廊展开东方绘画卷轴式构图",
+      "lighting": "薄雾散射银白月光与木屋纸灯暖晕柔和交融",
+      "color": "黑白水墨银盐灰阶或淡雅宋元山水浅绛韵味",
+      "movement": "如展开东方长卷般缓慢优雅的升降摇移",
+      "rhythm": "行云流水的长镜呼吸感，从容悲悯地包裹角色命运",
+      "prompt_en": "elevated classical long-take perspective unfolding like a misty ink scroll painting through wooden screens and lantern haze, serene moonlight reflections over calm lake",
+      "prompt_zh": "如东方长卷缓缓展开的高机位一镜一景调度，薄雾月色水光与古宅纸灯暖晕交融出悲悯诗意",
+      "full_profile": true
+    },
+    {
+      "name": "乔丹·皮尔",
+      "name_en": "Jordan Peele",
+      "id": "dir-peele",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《逃出绝命镇》",
+        "《我们》",
+        "《不》"
+      ],
+      "motto": "最令人不安的惊悚往往发生在阳光明媚的客厅礼貌寒暄之中。",
+      "source": "master-crew-library",
+      "tags": [
+        "对称恐怖镜像",
+        "日常光下渗寒意",
+        "长镜悬疑凝视",
+        "声音母题"
+      ],
+      "lens_aspect": "32mm-65mm 清晰变形宽银幕与夜间广角，2.39:1 或 1.43:1",
+      "composition": "镜像倒影构图与背景细节隐喻，看似正常的阳光草坪下埋藏异常动线",
+      "lighting": "明亮日光与夜间冷蓝手电/霓虹高对比反差，面部保留眼神光直视不安",
+      "color": "温暖生活家居米黄骤然切入冷铁青暗影或正红预警色",
+      "movement": "缓慢逼近肖像特写的稳健推轨，及仰望夜空的震撼定格",
+      "rhythm": "先让日常笑声松弛警惕，再用寂静与声音锚点拉紧弦",
+      "prompt_en": "deceptively calm sunlit suburban symmetry shifting into eerie deep-blue nocturnal tension, crisp facial reflection detail and deliberate uncanny visual stillness",
+      "prompt_zh": "日光家居对称秩序中暗藏不安镜像，稳步逼近面部细节与清冽夜色蓝调形成惊悚张力",
+      "full_profile": true
+    },
+    {
+      "name": "万玛才旦",
+      "name_en": "Pema Tseden",
+      "id": "dir-pema",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《撞死了一只羊》",
+        "《气球》",
+        "《塔洛》"
+      ],
+      "motto": "把摄影机安稳地架在高原的风雪里，真实的生活自会开口成诗。",
+      "source": "master-crew-library",
+      "tags": [
+        "藏地高原极简视听",
+        "汽车挡风玻璃长镜",
+        "黑白寓言张力",
+        "冷静悲悯"
+      ],
+      "lens_aspect": "35mm-50mm 克制高原中远景，1.33:1 经典方框或 1.85:1",
+      "composition": "无人区公路、简陋照相馆白墙与高原草甸构成传统信仰与现代冲击的对称坐标",
+      "lighting": "高海拔通透紫外线硬日光、黑白高反差或帐篷内微弱暖光",
+      "color": "黑白银盐高灰阶，或高饱和藏红僧衣点缀荒凉黄土草原",
+      "movement": "稳如磐石的车内固定摄影与客观跟随长镜头",
+      "rhythm": "冷静幽默中潜藏宿命回响",
+      "prompt_en": "stark high-altitude Tibetan plateau highway seen through truck windshield or tranquil 1.33:1 black-and-white interior, crisp plateau sunlight and windblown dust",
+      "prompt_zh": "高海拔藏地公路车载构图与纯净黑白照相馆空间，凛冽高原日光与荒凉草甸承载沉静寓言",
+      "full_profile": true
+    },
+    {
+      "name": "保罗·托马斯·安德森",
+      "name_en": "Paul Thomas Anderson",
+      "id": "dir-pta",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《血色将至》",
+        "《大师》",
+        "《魅影缝匠》"
+      ],
+      "motto": "大画幅银盐的质感会替角色呼吸，不用急着切镜。",
+      "source": "master-crew-library",
+      "tags": [
+        "70mm 触觉肖像",
+        "流体斯坦尼康穿梭",
+        "年代尘土质地",
+        "压抑张力"
+      ],
+      "lens_aspect": "65mm/70mm 大画幅中近景与 28-40mm 经典变焦推进，2.39:1 或 1.85:1",
+      "composition": "双人对峙偏侧重压或斯坦尼康穿越繁复长廊直抵情绪核心",
+      "lighting": "油灯火光、高窗自然侧光与柔和阴天漫射光构建年代可信度",
+      "color": "原木褐、铁锈红、奶白绸缎与泥土灰的沉实胶片色卡",
+      "movement": "流畅不断的长距离斯坦尼康跟拍与克制慢速推镜",
+      "rhythm": "用极长沉默酝酿后骤然爆发的精神角力",
+      "prompt_en": "tactile 70mm film portrait framing, fluid unbroken Steadicam corridor glide, high-window natural side light and warm oil lamp glow, earthy ochre and rich timber textures",
+      "prompt_zh": "大画幅 70mm 胶片触觉肖像，流畅连贯的长廊斯坦尼康调度，高窗侧光配泥土赭石质感",
+      "full_profile": true
+    },
+    {
+      "name": "瑟琳·席安玛",
+      "name_en": "Céline Sciamma",
+      "id": "dir-sciamma",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《燃烧女子的画》",
+        "《小妈妈》",
+        "《假小子》"
+      ],
+      "motto": "真正的戏剧发生在一个人看着另一个人却克制住不转头的半秒钟里。",
+      "source": "master-crew-library",
+      "tags": [
+        "油画凝视眼神",
+        "纯烛火海岸蓝",
+        "静音细响张力",
+        "对称互视"
+      ],
+      "lens_aspect": "35mm-65mm 精密凝视特写与油画静物质感，1.85:1",
+      "composition": "严格控制正反打互视距离，手部动作与裙褶占满画面下半部情感重心",
+      "lighting": "海岸漫射银光、石壁壁炉余烬与柔和蜡烛肤光，油画级高光滚降",
+      "color": "海风群青、亚麻米白、朱砂暖红与森林深翠",
+      "movement": "近乎静止的三脚架凝视与偶尔跟随目光的缓慢横移",
+      "rhythm": "在长久压抑与细微呼吸、裙摆摩挲声里累积情感爆发",
+      "prompt_en": "painterly classical portraiture bathed in coastal overcast daylight and warm hearth firelight, luminous skin tone, aquamarine dress against linen ivory and deep emerald",
+      "prompt_zh": "古典油画般纯净的凝视构图，海岸柔光配壁炉暖焰照亮细微眼神流转，裙褶与海岸青翠交相呼应",
+      "full_profile": true
+    },
+    {
+      "name": "雅克·塔蒂",
+      "name_en": "Jacques Tati",
+      "id": "dir-tati",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《玩乐时间》",
+        "《我的舅舅》",
+        "《于洛先生的假期》"
+      ],
+      "motto": "好喜剧不用特写去挠观众咯吱窝，把全景推远，现代生活的荒谬自己就会走出来。",
+      "source": "master-crew-library",
+      "tags": [
+        "70mm 全景民主",
+        "声效喜剧错位",
+        "现代玻璃讽刺",
+        "零特写长镜"
+      ],
+      "lens_aspect": "50mm-65mm 宽阔远全景与高透明度景深，1.85:1 或 70mm 宽画幅",
+      "composition": "如精密建筑蓝图般的多层玻璃倒影与走廊矩阵，让五组喜剧事件在画幅角落同步发生",
+      "lighting": "明亮通透的城市阴晴柔光与现代办公室冷白灯光",
+      "color": "钢铁蓝灰、浅绿玻璃反光配上一点红领带或黄衣作视线导航",
+      "movement": "极其平稳客观的全景固定与礼貌平摇，从不强行用特写喂笑点",
+      "rhythm": "依靠玻璃开关、皮鞋吱嘎等拟音制造延迟幽默",
+      "prompt_en": "wide deep-focus architectural ensemble shot through clean modernist glass walls and steel offices, crisp daylight reflections and playful multi-plane visual comedy",
+      "prompt_zh": "宽阔大景深现代玻璃幕墙全景构图，通透明亮城市日光下多层视觉同步上演幽默错位",
+      "full_profile": true
+    },
+    {
+      "name": "比利·怀尔德",
+      "name_en": "Billy Wilder",
+      "id": "dir-wilder",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《双重赔偿》",
+        "《日落大道》",
+        "《公寓春光》"
+      ],
+      "motto": "好镜头从不炫耀摄影机，它只服务于下一句最锋利的台词与伏笔。",
+      "source": "master-crew-library",
+      "tags": [
+        "黑色电影百叶窗",
+        "精密道具机关",
+        "冷峻讽刺节奏",
+        "经济高效构图"
+      ],
+      "lens_aspect": "35mm-50mm 清晰叙事构图，1.37:1 或 2.35:1 变形宽银幕",
+      "composition": "服务于台词与道具反讽的双人正侧面调度，前景物体直接点题人物关系",
+      "lighting": "百叶窗斜切光带划分黑白心理层次，室内实用台灯干净利落",
+      "color": "高反差银盐黑白层次或干练暖灰都市质感",
+      "movement": "紧贴人物起落与物件特写的简洁摇移，每尺胶片直指剧情钩子",
+      "rhythm": "机锋台词接紧凑行动节拍，毫不拖泥带水",
+      "prompt_en": "razor-sharp classical narrative framing with venetian blind shadow stripes cutting across dusty sunlit living rooms, crisp dialogue two-shots, clean silver-halide contrast",
+      "prompt_zh": "百叶窗斜切光影的高反差经典叙事构图，双人对话与核心道具紧扣景框，简洁干练毫无冗余",
       "full_profile": true
     },
     {
       "name": "小津安二郎",
       "name_en": "",
       "id": "ozu",
+      "region": "华语与亚洲",
+      "representative_works": [],
+      "motto": "",
       "source": "ozu-screenplay-style",
       "tags": [
         "榻榻米低机位",
@@ -1853,6 +2563,7 @@
       "name": "乌尔善",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -1872,6 +2583,7 @@
       "name": "冯小刚",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -1891,6 +2603,7 @@
       "name": "刘镇伟",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -1910,6 +2623,7 @@
       "name": "吴京",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -1929,6 +2643,7 @@
       "name": "吴宇森",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -1948,6 +2663,7 @@
       "name": "周星驰",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -1967,6 +2683,7 @@
       "name": "宁浩",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -1986,6 +2703,7 @@
       "name": "徐克",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2005,6 +2723,7 @@
       "name": "徐峥",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2024,6 +2743,7 @@
       "name": "李安",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2043,6 +2763,7 @@
       "name": "杨德昌",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2062,6 +2783,7 @@
       "name": "林超贤",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2081,6 +2803,7 @@
       "name": "管虎",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2100,6 +2823,7 @@
       "name": "胡金铨",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2119,6 +2843,7 @@
       "name": "蔡明亮",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2138,6 +2863,7 @@
       "name": "许诚毅",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2157,6 +2883,7 @@
       "name": "许鞍华",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2176,6 +2903,7 @@
       "name": "费穆",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2195,6 +2923,7 @@
       "name": "郭帆",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2214,6 +2943,7 @@
       "name": "陈凯歌",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2233,6 +2963,7 @@
       "name": "陈可辛",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2252,6 +2983,7 @@
       "name": "陈思诚",
       "name_en": "",
       "id": "cn-dir",
+      "region": "华语与亚洲",
       "source": "chinese-directors",
       "tags": [
         "华语导演风格",
@@ -2271,6 +3003,7 @@
       "name": "尼古拉斯·温丁·雷弗恩",
       "name_en": "",
       "id": "intl-dir",
+      "region": "欧美与国际",
       "source": "cinematic-director",
       "tags": [
         "国际大师视听",
@@ -2279,7 +3012,7 @@
       "lens_aspect": "35mm/50mm 电影定焦透视",
       "composition": "采用 尼古拉斯·温丁·雷弗恩 典型视觉秩序与景框层次调度",
       "lighting": "单主光物理动机与自然光影反差",
-      "color": "克制色彩命题，杜绝塑料高亮过滤感",
+      "color": "克制色彩命题，营造自然真实胶片反差",
       "movement": "精确动机运镜与落幅定势",
       "rhythm": "按心理转折切入切出",
       "prompt_en": "feature film cinematography evoking the framing geometry and lighting ethos of 尼古拉斯·温丁·雷弗恩, grounded optical realism, organic grain",
@@ -2290,6 +3023,7 @@
       "name": "毕赣",
       "name_en": "",
       "id": "intl-dir",
+      "region": "华语与亚洲",
       "source": "cinematic-director",
       "tags": [
         "国际大师视听",
@@ -2298,7 +3032,7 @@
       "lens_aspect": "35mm/50mm 电影定焦透视",
       "composition": "采用 毕赣 典型视觉秩序与景框层次调度",
       "lighting": "单主光物理动机与自然光影反差",
-      "color": "克制色彩命题，杜绝塑料高亮过滤感",
+      "color": "克制色彩命题，营造自然真实胶片反差",
       "movement": "精确动机运镜与落幅定势",
       "rhythm": "按心理转折切入切出",
       "prompt_en": "feature film cinematography evoking the framing geometry and lighting ethos of 毕赣, grounded optical realism, organic grain",
@@ -2309,6 +3043,7 @@
       "name": "英格玛·伯格曼",
       "name_en": "",
       "id": "intl-dir",
+      "region": "欧美与国际",
       "source": "cinematic-director",
       "tags": [
         "国际大师视听",
@@ -2317,7 +3052,7 @@
       "lens_aspect": "35mm/50mm 电影定焦透视",
       "composition": "采用 英格玛·伯格曼 典型视觉秩序与景框层次调度",
       "lighting": "单主光物理动机与自然光影反差",
-      "color": "克制色彩命题，杜绝塑料高亮过滤感",
+      "color": "克制色彩命题，营造自然真实胶片反差",
       "movement": "精确动机运镜与落幅定势",
       "rhythm": "按心理转折切入切出",
       "prompt_en": "feature film cinematography evoking the framing geometry and lighting ethos of 英格玛·伯格曼, grounded optical realism, organic grain",
@@ -2328,6 +3063,7 @@
       "name": "费德里科·费里尼",
       "name_en": "",
       "id": "intl-dir",
+      "region": "欧美与国际",
       "source": "cinematic-director",
       "tags": [
         "国际大师视听",
@@ -2336,7 +3072,7 @@
       "lens_aspect": "35mm/50mm 电影定焦透视",
       "composition": "采用 费德里科·费里尼 典型视觉秩序与景框层次调度",
       "lighting": "单主光物理动机与自然光影反差",
-      "color": "克制色彩命题，杜绝塑料高亮过滤感",
+      "color": "克制色彩命题，营造自然真实胶片反差",
       "movement": "精确动机运镜与落幅定势",
       "rhythm": "按心理转折切入切出",
       "prompt_en": "feature film cinematography evoking the framing geometry and lighting ethos of 费德里科·费里尼, grounded optical realism, organic grain",
@@ -2347,6 +3083,7 @@
       "name": "阿尔弗雷德·希区柯克",
       "name_en": "",
       "id": "intl-dir",
+      "region": "欧美与国际",
       "source": "cinematic-director",
       "tags": [
         "国际大师视听",
@@ -2355,7 +3092,7 @@
       "lens_aspect": "35mm/50mm 电影定焦透视",
       "composition": "采用 阿尔弗雷德·希区柯克 典型视觉秩序与景框层次调度",
       "lighting": "单主光物理动机与自然光影反差",
-      "color": "克制色彩命题，杜绝塑料高亮过滤感",
+      "color": "克制色彩命题，营造自然真实胶片反差",
       "movement": "精确动机运镜与落幅定势",
       "rhythm": "按心理转折切入切出",
       "prompt_en": "feature film cinematography evoking the framing geometry and lighting ethos of 阿尔弗雷德·希区柯克, grounded optical realism, organic grain",
@@ -2366,6 +3103,7 @@
       "name": "马丁·斯科塞斯",
       "name_en": "",
       "id": "intl-dir",
+      "region": "欧美与国际",
       "source": "cinematic-director",
       "tags": [
         "国际大师视听",
@@ -2374,12 +3112,2014 @@
       "lens_aspect": "35mm/50mm 电影定焦透视",
       "composition": "采用 马丁·斯科塞斯 典型视觉秩序与景框层次调度",
       "lighting": "单主光物理动机与自然光影反差",
-      "color": "克制色彩命题，杜绝塑料高亮过滤感",
+      "color": "克制色彩命题，营造自然真实胶片反差",
       "movement": "精确动机运镜与落幅定势",
       "rhythm": "按心理转折切入切出",
       "prompt_en": "feature film cinematography evoking the framing geometry and lighting ethos of 马丁·斯科塞斯, grounded optical realism, organic grain",
       "prompt_zh": "遵循 马丁·斯科塞斯 经典视听美学与物理光影逻辑的电影摄影质感",
       "full_profile": false
+    }
+  ],
+  "cinematographers": [
+    {
+      "id": "dp-deakins",
+      "name": "罗杰·狄金斯",
+      "name_en": "Roger Deakins",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《银翼杀手2049》",
+        "《1917》",
+        "《老无所依》"
+      ],
+      "tags": [
+        "单一主光动机",
+        "剪影反差",
+        "极简克制构图",
+        "绝不炫技"
+      ],
+      "lighting": "画面每一束光都能指出物理来源（窗光/台灯/照明弹），能用一盏灯绝不用两盏，绝不滥用无动机补光",
+      "lens_camera": "32mm-40mm 接近人眼透视的主力定焦与稳重推轨，绝不用花哨变焦偷懒",
+      "color_exposure": "大面积中性深暗部托举纯净暖光、照明弹火光或单色橙雾，暗部保留可读细节",
+      "motto": "最好的光是你注意不到的光（Simplicity is everything）。",
+      "is_monochrome": false,
+      "prompt_en": "cinematography in the ethos of Roger Deakins, strictly motivated single practical light source (window daylight or sodium lamp) carving crisp silhouettes against deep clean shadows, restrained 35mm framing",
+      "prompt_zh": "罗杰·狄金斯式单一物理光源动机照明（一盏实用孤灯或单侧窗光），干净克制 35mm 构图配清晰轮廓剪影"
+    },
+    {
+      "id": "dp-lubezki",
+      "name": "艾曼努尔·卢贝兹基",
+      "name_en": "Emmanuel Lubezki",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《荒野猎人》",
+        "《鸟人》",
+        "《地心引力》",
+        "《生命之树》"
+      ],
+      "tags": [
+        "纯自然光",
+        "Magic Hour",
+        "超广角贴脸",
+        "360度长镜"
+      ],
+      "lighting": "只追光不造光：黄昏太阳低于10°开机，利用自然天光、水面反弹与火光对冲蓝调时刻",
+      "lens_camera": "12mm-21mm 超广角贴近演员半米内，灯藏入窗外保证360°流动Steadicam穿梭",
+      "color_exposure": "接受自然过曝高光与自然镜头眩光，还原冷空气、水汽与体温的物理在场感",
+      "motto": "让观众切身感到刺骨的寒冷，而不只是远远看着画面里的寒冷。",
+      "is_monochrome": false,
+      "prompt_en": "cinematography inspired by Emmanuel Lubezki, natural magic hour twilight only, 18mm wide-angle lens close to actor with deep focus, glowing backlit rim light and organic lens flare",
+      "prompt_zh": "卢贝兹基式纯粹自然黄昏天光与火光照明，18mm 超广角贴身大景深逆光，保留自然光学眩光与沉浸呼吸感"
+    },
+    {
+      "id": "dp-storaro",
+      "name": "维托里奥·斯托拉罗",
+      "name_en": "Vittorio Storaro",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《末代皇帝》",
+        "《现代启示录》",
+        "《同流者》"
+      ],
+      "tags": [
+        "用光写作",
+        "全片心理色谱",
+        "3200K碰撞5600K",
+        "明暗分割半脸"
+      ],
+      "lighting": "用整墙浓色滤片打亮空气感，同一画面让3200K钨丝暖与5600K冷日光直接对撞不校正",
+      "lens_camera": "偏爱2:1 Univisium 平衡构图与几何光带空间分割，光变化即剧情心理反转",
+      "color_exposure": "色彩即戏剧章节（红=本能、橙=帝国温暖、绿=求知、蓝=冷峻智性），浓度靠灯不靠调色",
+      "motto": "我不是给场景打光，我是用光书写角色的意识与潜意识冲突。",
+      "is_monochrome": false,
+      "prompt_en": "lighting inspired by Vittorio Storaro, Writing with Light chiaroscuro dividing half the face in shadow, rich warm 3200K tungsten clashing symbolically with cold blue daylight",
+      "prompt_zh": "斯托拉罗式用光写作色彩心理学，浓郁暖琥珀与冷天光同框对撞划分潜意识边界，戏剧性光带明暗切割"
+    },
+    {
+      "id": "dp-doyle",
+      "name": "杜可风",
+      "name_en": "Christopher Doyle",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《花样年华》",
+        "《重庆森林》",
+        "《春光乍泄》",
+        "《英雄》"
+      ],
+      "tags": [
+        "湿热霓虹混色",
+        "隔镜遮挡构图",
+        "抽帧拖影",
+        "边缘孤独负空间"
+      ],
+      "lighting": "拥抱香港夜街混合光源（老荧光管青绿+钨丝琥珀+潮湿霓虹），加蒸汽与雨水做空气介质",
+      "lens_camera": "9.8mm超广角近距畸变与自由跟呼吸手持，前景门框玻璃雨伞遮挡三分之一画幅",
+      "color_exposure": "高浓度单色情绪浸染与步进印片运动涂抹感，不完美即是生命真实",
+      "motto": "空间自己会告诉你这部电影该怎么拍，拥抱潮湿夜里混合光源的错误之美。",
+      "is_monochrome": false,
+      "prompt_en": "handheld wet-night cinematography echoing Christopher Doyle, mixed teal fluorescent and warm tungsten neon reflections seen through rain-streaked glass and doorway framing",
+      "prompt_zh": "杜可风式潮湿夜巷门框前景遮挡构图，荧光青绿与钨丝霓虹暖光混杂渗透玻璃雨水反光"
+    },
+    {
+      "id": "dp-hoytema",
+      "name": "霍伊特·范·霍特玛",
+      "name_en": "Hoyte van Hoytema",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《奥本海默》",
+        "《星际穿越》",
+        "《敦刻尔克》",
+        "《她》"
+      ],
+      "tags": [
+        "65mm IMAX 触觉",
+        "薄景深只留双眸",
+        "减法色卡",
+        "实拍介质真实"
+      ],
+      "lighting": "自然窗光搭配单侧大面积柔光补偿（约3:1柔和光比），或以舱内仪表灯作实光核心",
+      "lens_camera": "IMAX大画幅扛上肩手持特写，50-80mm极浅景深将背景完全融成颗粒柔雾",
+      "color_exposure": "《她》式系统性减去冷蓝只留温润暖红米白，或以黑白正片区隔历史客观视角",
+      "motto": "胶片颗粒与极浅景深让人物脸庞成为一座可以触摸到的物理地貌。",
+      "is_monochrome": false,
+      "prompt_en": "tactile 65mm large-format cinematography inspired by Hoyte van Hoytema, ultra-shallow depth of field melting background behind luminous skin texture and fine organic grain, natural window key",
+      "prompt_zh": "霍特玛式大画幅 65mm 极浅景深触觉人像，细腻自然窗光烘托肤理微光与真实胶片颗粒感"
+    },
+    {
+      "id": "dp-fraser",
+      "name": "格雷格·弗雷泽",
+      "name_en": "Greig Fraser",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《沙丘》系列",
+        "《新蝙蝠侠》",
+        "《星球大战：侠盗一号》"
+      ],
+      "tags": [
+        "发现的光线",
+        "极限低照度贴地暗部",
+        "红外异星黑白",
+        "数字拍转胶片扫回"
+      ],
+      "lighting": "Found lighting哲学：看起来像是现场自带光线而非人工摆灯，《新蝙蝠侠》贴地板微光+单点红轮廓",
+      "lens_camera": "复古变形宽银幕焦外柔散配尘雾漫射天光，或去IR红外传感器呈现非人白肤黑眸",
+      "color_exposure": "沙金单色高漫射、雨夜钠灯暖影与极端压暗黑位，保留胶片级温润高光滚降",
+      "motto": "把光打到让人觉得场景里天生就长着这束光，非如此不可。",
+      "is_monochrome": false,
+      "prompt_en": "atmospheric found-lighting cinematography like Greig Fraser, vintage anamorphic bokeh, low-key underexposed night rain illuminated by warm sodium streetlamp and subtle crimson rim highlight",
+      "prompt_zh": "格雷格·弗雷泽式天然实感低照度摄影，复古变形宽银幕散景，雨夜路灯钠光与暗部微光轮廓并存"
+    },
+    {
+      "id": "dp-willis",
+      "name": "戈登·威利斯",
+      "name_en": "Gordon Willis",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《教父》三部曲",
+        "《曼哈顿》",
+        "《总统班底》"
+      ],
+      "tags": [
+        "黑暗王子",
+        "顶光藏眼神",
+        "系统性欠曝",
+        "60%阴影占比"
+      ],
+      "lighting": "顶部1米柔光箱垂打使人物眼窝陷入深沉阴影；宁可让画面暗60%也绝不轻易提亮暗部",
+      "lens_camera": "沉稳古典中焦构图，让建筑柱梁与暗墙成为人物权谋背后的阴影幕布",
+      "color_exposure": "将阴影直接烧进底片：褪色暖琥珀与深沉焦糖黑形成不可测的威严与悬念",
+      "motto": "决定画面力量的不是你照亮了什么，而是你勇敢地选择不照亮什么。",
+      "is_monochrome": false,
+      "prompt_en": "Gordon Willis dark dramatic interior lighting, overhead soft box casting mysterious deep shadow across brow and eyes, rich dark amber gloom occupying sixty percent of frame",
+      "prompt_zh": "戈登·威利斯黑暗美学，顶部柔光隐去眼窝眼神，大面积沉郁暖棕阴影压迫营造不可测权力张力"
+    },
+    {
+      "id": "dp-marklee",
+      "name": "李屏宾",
+      "name_en": "Mark Lee Ping-Bing",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《花样年华》",
+        "《刺客聂隐娘》",
+        "《童年往事》",
+        "《挪威的森林》"
+      ],
+      "tags": [
+        "流动自然天光",
+        "摇曳窗纱微光",
+        "东方气韵流动",
+        "长焦诗意窥视"
+      ],
+      "lighting": "偏爱蜡烛火苗摇曳、清晨山水薄雾、轻纱透过的一缕散射日光，捕捉光线呼吸感",
+      "lens_camera": "中长焦缓慢漂移如风拂过窗帘与竹叶，绝不强硬切破东方意境时间感",
+      "color_exposure": "温润米黄烛影、苔藓青灰与褪色水墨木质色调，保留胶片柔软暗影呼吸",
+      "motto": "抓住风经过窗帘和光经过面庞那一刹那的流动情绪。",
+      "is_monochrome": false,
+      "prompt_en": "poetic drifting natural light cinematography like Mark Lee Ping-Bing, gentle candle glow and hazy morning mist filtering through translucent silk curtains, gentle slow tracking breeze",
+      "prompt_zh": "李屏宾式流动自然光影诗学，清晨薄雾与透过轻纱的柔和微光摇曳面庞，缓慢优雅的东方时间韵律"
+    },
+    {
+      "id": "dp-pau",
+      "name": "鲍德熹",
+      "name_en": "Peter Pau",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《卧虎藏龙》",
+        "《夜宴》",
+        "《白发魔女传》"
+      ],
+      "tags": [
+        "轻功动势追拍",
+        "水墨青绿武侠光",
+        "丝滑飞越升格",
+        "宏大东方透视"
+      ],
+      "lighting": "竹林滤过的漫射天绿光、大漠烈日顺逆反差与暗室火盆跳动边光",
+      "lens_camera": "稳定流利跟拍飞檐走壁，借大广角俯仰强化失重漂浮与招式力道",
+      "color_exposure": "翡翠竹青、素雅宣白与西北戈壁苍茫灰土色温高度统一",
+      "motto": "让摄影机跟着大侠的轻功一齐腾挪呼吸，把侠气拍成流动的中国画。",
+      "is_monochrome": false,
+      "prompt_en": "fluid martial arts wuxia cinematography inspired by Peter Pau, dappled sunlight filtering down through emerald bamboo canopy, graceful aerial camera sweep and clean atmospheric mist",
+      "prompt_zh": "鲍德熹式流动武侠银幕美学，穿透竹海或戈壁尘烟的灵动阳光与边光，摄影机如轻功般潇洒穿行"
+    },
+    {
+      "id": "dp-gu",
+      "name": "顾长卫",
+      "name_en": "Gu Changwei",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《红高粱》",
+        "《霸王别姬》",
+        "《阳光灿烂的日子》"
+      ],
+      "tags": [
+        "第五代粗粝热光",
+        "大红大黑仪式",
+        "尘烟逆光金粉",
+        "土地体温"
+      ],
+      "lighting": "戏台斜射光束扫开漫天尘粉与汗水，西北烈日红高粱热浪侧逆光",
+      "lens_camera": "扎实贴近民间人物群像与手部动作，用大气深焦交代历史风貌",
+      "color_exposure": "饱经风霜的朱红、高粱酱红、青砖冷灰与盛夏金黄尘雾",
+      "motto": "让阳光和红布里的尘土味道直接透出银幕，拍出中国土地的生命烈度。",
+      "is_monochrome": false,
+      "prompt_en": "earthy warm backlit theater dust motes and scorching crimson sunlight inspired by Gu Changwei, bold crimson silks against weathered grey brick and vibrant summer haze",
+      "prompt_zh": "顾长卫式烈日尘烟侧逆光与舞台光柱，浓重朱红、青砖旧灰与盛夏金黄尘埃交织出厚重体温"
+    },
+    {
+      "id": "dp-caoyu",
+      "name": "曹郁",
+      "name_en": "Cao Yu",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《南京！南京！》",
+        "《妖猫传》",
+        "《八佰》",
+        "《可可西里》"
+      ],
+      "tags": [
+        "大跨度实景光效",
+        "盛唐鎏金夜宴",
+        "战场烟火灰阶",
+        "极强色彩统治"
+      ],
+      "lighting": "用多层灯笼丝绸光质造就盛唐繁华流动光晕，或在废墟战火中使用极冷阴天配瞬时火闪",
+      "lens_camera": "穿透长廊殿宇的大纵深滑轨接贴身晃动战地纪实机位，适应极端气候与夜戏",
+      "color_exposure": "极盛赤金青黛或高对比废墟银灰冷铁色",
+      "motto": "既要有盛唐丝绸灯火的华彩想象力，更要有战地风雪的真实穿透力。",
+      "is_monochrome": false,
+      "prompt_en": "sumptuous Tang palace silk-lantern golden radiance contrasting with cold smoky war ruin chiaroscuro, multi-layered depth and palpable atmospheric smoke",
+      "prompt_zh": "曹郁式大纵深光效统摄，盛唐绸灯琉璃金辉与战火硝烟冷灰对比强烈，空气微粒层次毕现"
+    },
+    {
+      "id": "dp-zhaoxd",
+      "name": "赵小丁",
+      "name_en": "Zhao Xiaoding",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《十面埋伏》",
+        "《满城尽带黄金甲》",
+        "《影》"
+      ],
+      "tags": [
+        "水墨丹青灰度",
+        "极高饱和华彩",
+        "慢动作雨滴水墨",
+        "兵阵几何光线"
+      ],
+      "lighting": "宫殿透窗漫射光塑造立体盔甲鎏金反光，或阴雨白昼强控色相成水墨国画灰度",
+      "lens_camera": "精准中轴正视与极近高速水墨雨滴升格穿插",
+      "color_exposure": "要么极浓烈帝王黄金翡翠对比，要么纯粹黑炭白纸太极水墨色度控制",
+      "motto": "在胶片或数字感光元件上写意中国传统工笔色彩与水墨留白。",
+      "is_monochrome": false,
+      "prompt_en": "Chinese ink-wash desaturated charcoal-and-rain aesthetic or ceremonial saturated imperial palette, precision symmetry with translucent falling rain droplets",
+      "prompt_zh": "赵小丁式东方美学精准显影，或工笔重彩盛大宫殿光影，或极简黑白灰太极水墨雨丝质感"
+    },
+    {
+      "id": "dp-richardson",
+      "name": "罗伯特·理查森",
+      "name_en": "Robert Richardson",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《八恶人》",
+        "《低俗小说》",
+        "《刺杀肯尼迪》",
+        "《无耻混蛋》"
+      ],
+      "tags": [
+        "炽烈白炽顶光",
+        "强烈发丝光束",
+        "跨媒介胶片切换",
+        "桌面光环"
+      ],
+      "lighting": "招牌硬顶光砸在桌面白色物品上强劲向上反弹，形成如光环般的戏剧性发顶光",
+      "lens_camera": "70mm 变形宽银幕清晰桌面全组群像与迅疾推镜特写",
+      "color_exposure": "炙白过曝桌光对照周遭深影，冷峻警探室内配高反差鲜明肤色",
+      "motto": "光环般凌厉的硬顶光把人物内心的焦灼直接推到桌面中央。",
+      "is_monochrome": false,
+      "prompt_en": "high-contrast Robert Richardson overhead hard white key light beaming onto center table creating glowing hair rim highlight against deep smoky room shadows",
+      "prompt_zh": "理查森式犀利强顶光打亮桌面高光与发丝轮廓，明暗反差凌厉，充满剑拔弩张的戏剧冲突感"
+    },
+    {
+      "id": "dp-kaminski",
+      "name": "雅努什·卡明斯基",
+      "name_en": "Janusz Kamiński",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《辛德勒的名单》",
+        "《拯救大兵瑞恩》",
+        "《人工智能》"
+      ],
+      "tags": [
+        "逆光穿透强窗光",
+        "高调雾蓝光柱",
+        "1/45秒战地颤振",
+        "烟尘银光"
+      ],
+      "lighting": "窗外超大功率灯透烟尘直接轰入室内的纯净过曝白色逆光，配45°小快门角度",
+      "lens_camera": "贴地随兵推进手提摇晃感接恢弘神圣顶光大远景",
+      "color_exposure": "降饱和战地泥灰蓝调配炽白眩光窗口，或极致黑白银盐配孤红大衣",
+      "motto": "穿透尘埃的炽白强窗光能为残酷现实劈开一丝神圣悲悯的裂缝。",
+      "is_monochrome": false,
+      "prompt_en": "bright blown-out cool window backlight slicing sharply through drifting room dust and blue haze, crisp dramatic contrast and tactile 45-degree shutter clarity",
+      "prompt_zh": "卡明斯基式穿透尘烟的炽白冷冽强逆窗光，清冷蓝灰战地或记忆雾光烘托极强戏剧悲悯"
+    },
+    {
+      "id": "dp-hall",
+      "name": "康拉德·霍尔",
+      "name_en": "Conrad L. Hall",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《美国丽人》",
+        "《毁灭之路》",
+        "《冷血》"
+      ],
+      "tags": [
+        "雨痕人脸投影",
+        "诗意柔暗光",
+        "玻璃折光隐喻",
+        "油画暗部光泽"
+      ],
+      "lighting": "最懂用窗框雨滴斜照到人物脸上投影、钢琴灯散光、走廊反光创造情感暗喻",
+      "lens_camera": "40mm-50mm 典雅长镜构图让光影自行流动交代危机",
+      "color_exposure": "潮湿夜晚墨绿炭灰、暖橙雨夜车灯与柔腻正红玫瑰色点缀",
+      "motto": "光影的每一次自然错位与水滴反光，都在暗示主角无法逆转的内心秘密。",
+      "is_monochrome": false,
+      "prompt_en": "poetic Conrad L. Hall lighting with raindrop shadows cast delicately across window glass onto character cheek, rich velvety wet-street blacks and warm amber dusk",
+      "prompt_zh": "康拉德·霍尔式雨夜玻璃水痕人脸投影，丰润天鹅绒质感暗影配合细微暖光点亮人物复杂心境"
+    },
+    {
+      "id": "dp-nykvist",
+      "name": "斯文·尼科维斯特",
+      "name_en": "Sven Nykvist",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《芬妮与亚历山大》",
+        "《假面》",
+        "《呼喊与细语》"
+      ],
+      "tags": [
+        "北欧自然北窗光",
+        "零多余人工光",
+        "人脸质感雕塑",
+        "深红与纯白"
+      ],
+      "lighting": "严格仿照北欧真实朝北窗光方向与柔和度，一室之内只留最纯粹的一扇窗感与一支蜡烛",
+      "lens_camera": "贴近面孔双人交叉特写与镜像轮廓对立构图，静止沉思感",
+      "color_exposure": "肃穆高雅黑白灰度，或《呼喊与细语》般深邃浓烈的正红色墙面",
+      "motto": "越简单的自然北窗柔光，越能裸露出人类面孔上最细微的痛苦与诚实。",
+      "is_monochrome": false,
+      "prompt_en": "pure Nordic north-window diffused daylight sculpting introspective close-up faces in quiet rooms, authentic skin radiance with restrained shadow transitions",
+      "prompt_zh": "尼科维斯特式纯粹北欧北窗柔光，零繁复人工修饰，细密雕塑人物面孔上无声起伏的情感纹理"
+    },
+    {
+      "id": "dp-sandgren",
+      "name": "莱纳斯·桑德格伦",
+      "name_en": "Linus Sandgren",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《爱乐之城》",
+        "《登月第一人》",
+        "《巴比伦》"
+      ],
+      "tags": [
+        "35mm复古华彩",
+        "16mm颗粒纪实",
+        "日落紫罗兰天光",
+        "温暖复古霓虹"
+      ],
+      "lighting": "善用老式35mm和16mm物理胶片混合日落蓝紫渐变天光配彩色聚光，兼备复古舞台华丽与舱内近摄紧张",
+      "lens_camera": "2.55:1宽银幕柔滑长轨舞蹈配16mm剧烈贴脸摇震穿梭太空",
+      "color_exposure": "经典胶片高饱和原色红黄蓝或粗糙泛黄60年代航空怀旧滤感",
+      "motto": "根据不同剧本选不同画幅和胶片，把物理介质变成讲述时代感的第一笔。",
+      "is_monochrome": false,
+      "prompt_en": "vibrant 35mm film color glow under violet dusk skylight and crisp tungsten theater spots, organic grain with romantic classic Hollywood optical depth",
+      "prompt_zh": "桑德格伦式 35mm 胶片华彩，暮色紫霞自然天光配明亮复古原色照明，极具浪漫银盐生命力"
+    },
+    {
+      "id": "dp-prieto",
+      "name": "罗德里戈·普列托",
+      "name_en": "Rodrigo Prieto",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《断背山》",
+        "《华尔街之狼》",
+        "《色，戒》",
+        "《花月杀手》"
+      ],
+      "tags": [
+        "东方丝绸质感",
+        "怀旧柔光绿蓝",
+        "跨文化光色控制",
+        "霓虹狂欢反差"
+      ],
+      "lighting": "精准切换高原清冷微光、1940上海室内台灯麻将暖光、及现代金融霓虹刺眼光浪",
+      "lens_camera": "灵动跟踪近景手部动作配稳重年代客厅窥视构图",
+      "color_exposure": "深黛翠青麻将桌灯配细腻柔润脂粉暖黄肤色，情绪微光极具层次",
+      "motto": "光影质地要随着时代、阶层与欲望温度的转换精准换档。",
+      "is_monochrome": false,
+      "prompt_en": "intimate 1940s practical lampshade chiaroscuro casting velvet shadows over silk qipao or serene cool mountain dawn light, refined skin and fabric fidelity",
+      "prompt_zh": "普列托式年代室内台灯幽微暧昧光影或清冽高原山岚日光，服装丝绸与面部微表情质感极精良"
+    },
+    {
+      "id": "dp-delbonnel",
+      "name": "布鲁诺·德尔邦内尔",
+      "name_en": "Bruno Delbonnel",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《天使爱美丽》",
+        "《醉乡民谣》",
+        "《至暗时刻》",
+        "《麦克白的悲剧》"
+      ],
+      "tags": [
+        "欧式油画暖绿",
+        "幽暗地铁白光",
+        "浓郁冬日民谣",
+        "戏剧化明暗"
+      ],
+      "lighting": "善用巴黎暖金配橄榄绿的反常规温润调性，以及《醉乡民谣》冷冬窗前微茫日照",
+      "lens_camera": "柔和变形中广角贴近人物面部孤寂，细腻光影如油画底釉般温厚",
+      "color_exposure": "翡翠暗绿、铁锈暖红、冬日苍蓝与经典黑白高冷几何之间切换自如",
+      "motto": "光与色应当像老油画底色那样被层层烘烤进空气里。",
+      "is_monochrome": false,
+      "prompt_en": "painterly French color warmth balancing deep emerald shadows and rich golden tungsten glow, soft winter window luminance and melancholic lyricism",
+      "prompt_zh": "德尔邦内尔式浓郁欧式油画光感，深翠暗绿背景衬托暖金室内微光或寒冷冬窗寂寥银光"
+    },
+    {
+      "id": "dp-libatique",
+      "name": "马修·利巴提克",
+      "name_en": "Matthew Libatique",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《黑天鹅》",
+        "《梦之安魂曲》",
+        "《一个明星的诞生》"
+      ],
+      "tags": [
+        "肩扛贴身癫狂",
+        "后台冷白反差",
+        "极浅景深",
+        "摇滚舞台实光"
+      ],
+      "lighting": "戏剧后台化妆镜冷白灯、排练厅天窗逆光以及现场演唱会追光直接进镜头不避眩光",
+      "lens_camera": "超近距贴脸随角色旋转追逐（16mm与数字大画幅自由混用）",
+      "color_exposure": "冷洁瓷白对照黑羽毛深影、紫红狂迷霓虹，逼迫视觉直抵神经焦虑",
+      "motto": "用摄影机紧扣主角紊乱的心跳与舞台灯光一起颤动。",
+      "is_monochrome": false,
+      "prompt_en": "visceral handheld backstage mirror lighting by Matthew Libatique, crisp white dressing room bulbs against cold blue rehearsal shadows and stage rim glare",
+      "prompt_zh": "利巴提克式紧密肩扛神经张力照明，后台冷白灯阵对比幽蓝舞台排练阴影与现场追光直击"
+    },
+    {
+      "id": "dp-miranda",
+      "name": "克劳迪奥·米兰达",
+      "name_en": "Claudio Miranda",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《少年派的奇幻漂流》",
+        "《壮志凌云2》",
+        "《本杰明·巴顿奇事》"
+      ],
+      "tags": [
+        "海天星光高动态",
+        "座舱实景阳光",
+        "极度洁净通透",
+        "深邃暗部控光"
+      ],
+      "lighting": "极高光比下的通透控制：海面荧光生物光辉、黄金晚霞水镜反照与战斗机窄座舱太阳侧光",
+      "lens_camera": "极净锐利广角镜头捕捉宏伟水面天际与极近驾驶舱面部挤压感",
+      "color_exposure": "瑰丽晚霞琥珀对照深海幽蓝荧光青，质感澄澈晶莹",
+      "motto": "哪怕处于最极端的逆光或黑暗海面，也要拍出通透可信的物理奇迹。",
+      "is_monochrome": false,
+      "prompt_en": "crystal-clear twilight ocean reflection and sunlit cockpit side-lighting inspired by Claudio Miranda, rich dynamic shadow detail and radiant golden horizon",
+      "prompt_zh": "米兰达式极端自然奇观通透控光，深海蓝调荧光与灼热晚霞海镜反光兼备极致物理可信度"
+    },
+    {
+      "id": "dp-miyagawa",
+      "name": "宫川一夫",
+      "name_en": "Kazuo Miyagawa",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《罗生门》",
+        "《雨月物语》",
+        "《用心棒》"
+      ],
+      "tags": [
+        "密林太阳直入镜头",
+        "东方水墨银盐黑白",
+        "镜面反光补脸",
+        "暴雨暗灰调"
+      ],
+      "lighting": "首创把摄影机直接对准密林树冠烈日，利用金属大反光板在黑白底片里雕刻水波与剑光",
+      "lens_camera": "树林穿行疾走长跟拍配暴雨破庙深景深，建立东方动作电影光影原点",
+      "color_exposure": "纯净正统黑白银盐层次——透澈白灰、浓重炭黑与镜面柔银高光（纯黑白，严禁混入彩色色相词）",
+      "motto": "在纯黑与纯白之间，太阳斑驳透林而过就是最好的戏剧节奏。",
+      "is_monochrome": true,
+      "prompt_en": "classic Japanese monochrome silver halide cinematography in the style of Kazuo Miyagawa, dappled forest sunlight slicing through mist and wooden roof ruins, pure tonal grayscale",
+      "prompt_zh": "宫川一夫式古典东方黑白银盐摄影，密林树冠透射强光与雨雾建筑轮廓构建纯粹灰阶张力"
+    },
+    {
+      "id": "dp-khondji",
+      "name": "达吕斯·康第",
+      "name_en": "Darius Khondji",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《七宗罪》",
+        "《爱》",
+        "《原钻》",
+        "《米奇17号》"
+      ],
+      "tags": [
+        "重银盐留银工艺",
+        "雨巷阴暗手电",
+        "冷冽低照度公寓",
+        "浓郁质感黑"
+      ],
+      "lighting": "借助留银（Bleach Bypass）思想造就浓黑暗影与锐利边缘手电筒光束，或在老年公寓留住凄冷漫射天光",
+      "lens_camera": "35mm-75mm 老镜头细腻质感捕捉湿滑柏油路、泛黄纸张与老龄皱纹光晕",
+      "color_exposure": "幽暗青褐、湿黑柏油与惨绿荧光混合，极具物质腐朽与沉重感",
+      "motto": "光不该讨好眼睛，光要暴露出墙壁潮气、纸张灰尘和人性底层的不安。",
+      "is_monochrome": false,
+      "prompt_en": "gritty bleach-bypass inspired noir cinematography by Darius Khondji, silver-rich deep blacks, narrow flashlight beam cutting rainy dark rooms, cool green-amber gloom",
+      "prompt_zh": "康第式厚重留银黑位摄影，潮湿昏暗公寓内微弱手电光柱与冷青褐阴影交锋，颗粒深沉"
+    },
+    {
+      "id": "dp-blaschke",
+      "name": "贾林·布拉施克",
+      "name_en": "Jarin Blaschke",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《灯塔》",
+        "《女巫》",
+        "《北方人》",
+        "《诺斯费拉图》"
+      ],
+      "tags": [
+        "正交正色黑白",
+        "纯自然阴雾烛光",
+        "古董透镜畸变",
+        "海风高对比"
+      ],
+      "lighting": "模仿19世纪正交感色黑白底片特性（皮肤纹理粗犷深沉，大海铅灰如铁），严格遵循煤油灯单点光源",
+      "lens_camera": "复古无镀膜定焦配 1.19:1 窄方构图，营造强烈古典幽闭恐惧",
+      "color_exposure": "纯正交黑白银盐质感，金属黑、盐霜白、铅灰海岸浓雾（纯黑白体系）",
+      "motto": "回到摄影术发明之初的质感敬畏自然光与火光，让皮肤和岩石说出古老的恐惧。",
+      "is_monochrome": true,
+      "prompt_en": "orthochromatic black-and-white cinematography inspired by Jarin Blaschke, vintage uncoated prime lens 1.19:1 framing lit only by oil lantern and stormy coastal gray daylight, crisp tonal grain",
+      "prompt_zh": "布拉施克式古典正交黑白银盐摄影，无镀膜古董定焦配海雾灰与煤油灯单焰光对比，幽闭冷峻"
+    }
+  ],
+  "art_directors": [
+    {
+      "id": "art-timyip",
+      "name": "叶锦添",
+      "name_en": "Tim Yip",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《卧虎藏龙》",
+        "《夜宴》",
+        "《红楼梦》"
+      ],
+      "tags": [
+        "新东方主义",
+        "服化道同色域",
+        "留白气韵",
+        "竹海青墨暗金"
+      ],
+      "spatial_philosophy": "不复刻博物馆标本，抽离东方留白、含蓄与流动空气感；人物占1/3，其余交给水墨雾气与白墙",
+      "materials_palette": "限制“一墨色+一主色”（如青竹黛绿配素白长袍），绫罗丝绸、粗麻、旧漆木与宣纸纤维层层呼应",
+      "set_discipline": "道具减法到只剩三件：一件定身份、一件立时代、一件埋戏眼伏笔；借助纱幔竹浪让风显影",
+      "motto": "东方的美不在填满画面，在于留白处那股欲言又止的气韵。",
+      "prompt_en": "New Orientalist production design by Tim Yip, harmonized monochrome palette of ink-slate robes and misty bamboo greens, raw silk, aged lacquer wood, generous poetic negative space",
+      "prompt_zh": "叶锦添式新东方主义服化道同色域，墨青竹绿与素麻丝绸、旧漆木互融，极简留白营造流动风雅气韵"
+    },
+    {
+      "id": "art-carter",
+      "name": "里克·卡特",
+      "name_en": "Rick Carter",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《林肯》",
+        "《阿凡达》",
+        "《少数派报告》",
+        "《侏罗纪公园》"
+      ],
+      "tags": [
+        "空间第二剧本",
+        "情绪平面图",
+        "走廊权力压迫",
+        "奇观物理逻辑"
+      ],
+      "spatial_philosophy": "先把场景画成“情绪地图”而非建筑图：人物失势时压低屋顶拉长深廊，用门框窗框形成心理牢笼",
+      "materials_palette": "厚重包浆实木护墙板、风化砖壁配真实生态光照逻辑；科幻空间也有清晰可解释的物理功能",
+      "set_discipline": "门扉开向、桌椅距离与窗外景致全服务于剧本当下那一口气",
+      "motto": "我不设计漂亮布景，我设计角色还没说出口的心事与压力。",
+      "prompt_en": "emotional spatial architecture designed like Rick Carter, low heavy timber-paneled corridors boxing in the protagonist with deep historical wood patina and grounded physical world logic",
+      "prompt_zh": "里克·卡特式空间第二剧本设计，低矮压抑旧木长廊与窗框重重围困人物，奇观兼具扎实物理生态逻辑"
+    },
+    {
+      "id": "art-ferretti",
+      "name": "丹特·费雷蒂",
+      "name_en": "Dante Ferretti",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《雨果》",
+        "《飞行家》",
+        "《纽约黑帮》",
+        "《玫瑰之名》"
+      ],
+      "tags": [
+        "歌剧式三重纵深",
+        "五层手工作旧",
+        "可动机械布景",
+        "华丽年代肌理"
+      ],
+      "spatial_philosophy": "布景是一台永不谢幕的歌剧：体量张力十足，垂直分三层（地面人流/中层廊桥齿轮/顶层穹光）",
+      "materials_palette": "雕花铜铁锈蚀、烟熏旧石膏、鎏金剥落丝绒，全手工做旧出触手百年包浆，绝不用崭新道具",
+      "set_discipline": "永远沿着摄影机轨道轴线布置移动元素（转动齿轮、飘动蒸汽、旗帜），让空间自己呼吸",
+      "motto": "布景不是背景板，是一台为摄影机移动而建造的三层歌剧院。",
+      "prompt_en": "grand operatic production design in the style of Dante Ferretti, triple vertical spatial depth with tarnished brass clockwork, aged smoked patina stone, drifting steam and gilded textures",
+      "prompt_zh": "丹特·费雷蒂式三重纵深歌剧巨景，生锈黄铜机械、百年烟熏石柱与蒸汽尘埃层层嵌套"
+    },
+    {
+      "id": "art-craig",
+      "name": "斯图尔特·克雷格",
+      "name_en": "Stuart Craig",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《哈利·波特》全系列",
+        "《英国病人》",
+        "《甘地传》"
+      ],
+      "tags": [
+        "90%真实结构+10%奇幻",
+        "一笔画极简剪影",
+        "石材灰底打灯",
+        "空间连续圣经"
+      ],
+      "spatial_philosophy": "奇幻世界靠真实建筑承重力成立（飞扶壁、采光井先画真再变形）；能一笔画出轮廓才停手加细节",
+      "materials_palette": "大幅度克制中性岩石灰与古老砂岩墙体打底，只留蜡烛火盆和旗帜徽章做少数跳脱色彩",
+      "set_discipline": "严格恪守跨场次材质圣经：相邻空间共享主材或光源色温，绝不随意漂移设定",
+      "motto": "先把一座虚构城堡盖得像真的能稳稳立住百年，然后再让它飞起来。",
+      "prompt_en": "authentic architectural logic production design like Stuart Craig, clean gothic stonework silhouette grounded in structural limestone weight with warm candlelit accents and aged wood",
+      "prompt_zh": "斯图尔特·克雷格式建筑真实法则，坚实风化石材灰打底勾勒一笔剪影，微弱烛火在厚重拱廊跳动"
+    },
+    {
+      "id": "art-gassner",
+      "name": "丹尼斯·加斯纳",
+      "name_en": "Dennis Gassner",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《银翼杀手2049》",
+        "《007：大破天幕杀机》",
+        "《楚门的世界》"
+      ],
+      "tags": [
+        "极简单色巨构",
+        "尺标碾压个体",
+        "少即强迫力量",
+        "混凝土与雾"
+      ],
+      "spatial_philosophy": "压倒性减法美学：一个庞大到违背常理的单体几何构筑 + 占画面不足5%的微小人影 + 60%以上负空间",
+      "materials_palette": "整场戏只许可两种材质（例如风蚀混凝土与浓雾、水面与冷金属），整场锁死单一主色调",
+      "set_discipline": "决不靠花哨全息屏幕表未来感，而是将熟悉石雕、水池或水泥门放大至十层楼高造就神性压迫",
+      "motto": "我在美术图里狠心删掉的东西，比摆进房间里的东西响亮十倍。",
+      "prompt_en": "monolithic minimalist production design by Dennis Gassner, towering raw concrete geometry dwarfing lone human figure with vast negative space in monochromatic atmospheric mist",
+      "prompt_zh": "加斯纳式极简巨构碾压美学，纯粹巨型清水混凝土几何搭配孤小人影与大面积单色浓雾"
+    },
+    {
+      "id": "art-william-art",
+      "name": "张叔平（美术造型）",
+      "name_en": "William Chang Suk-Ping",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《花样年华》",
+        "《阿飞正传》",
+        "《一代宗师》"
+      ],
+      "tags": [
+        "旗袍壁纸韵律",
+        "港沪怀旧幽微",
+        "极考究陈设几何",
+        "贴身质感"
+      ],
+      "spatial_philosophy": "极其讲究微窄公寓走廊、木质转角与人物高领旗袍领口线条之间的相互咬合",
+      "materials_palette": "印花绸缎旗袍、老式木百叶、墨绿壁纸与泛黄瓷砖构成私密粘稠的时代触摸感",
+      "set_discipline": "演员每一套造型色彩随心理秘密层级变化，家具摆设精确限制转身空间制造暧昧擦肩",
+      "motto": "衣领的高低和走廊的宽度，已经悄悄决定了两个人在一场戏里能靠近几厘米。",
+      "prompt_en": "refined 1960s Hong Kong apartment and corridor production design by William Chang, vintage floral wallpaper, tailored silk cheongsam textures and narrow intimate stairwell corners",
+      "prompt_zh": "张叔平式老香港窄廊与复古壁纸陈设，合身刺绣绸缎旗袍纹理与紧密木楼梯转角呼应私密张力"
+    },
+    {
+      "id": "art-huotx",
+      "name": "霍廷霄",
+      "name_en": "Huo Tingxiao",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《英雄》",
+        "《十面埋伏》",
+        "《白鹿原》",
+        "《满城尽带黄金甲》"
+      ],
+      "tags": [
+        "宏阔华语史诗置景",
+        "木构殿宇与风沙城",
+        "强烈颜色戏剧统摄",
+        "历史厚重"
+      ],
+      "spatial_philosophy": "兼具黄土关中农村毛坯夯土墙的生猛实感与秦汉宫阙、宋元街坊的大体量正轴气象",
+      "materials_palette": "原木廊柱、青石长阶、粗麻棉布与烈焰朱漆，色彩纯正庄严且经得起近镜颗粒推敲",
+      "set_discipline": "大场景必铺设足够真实的地面水洼、石缝杂草与建筑檐口烟渍，托住大视野历史真实度",
+      "motto": "史诗感不在镀金多亮，而在百万块青砖和夯土里藏着真日子过出来的风霜。",
+      "prompt_en": "monumental Chinese historical architecture designed by Huo Tingxiao, grand timber halls, weathered grey flagstones and rammed-earth courtyards with disciplined unified color field",
+      "prompt_zh": "霍廷霄式宏大华语历史置景，厚重木构宫室殿宇或风霜夯土院落，石砖磨损纹理真实有据"
+    },
+    {
+      "id": "art-tunan",
+      "name": "屠楠",
+      "name_en": "Tu Nan",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《妖猫传》",
+        "《风声》",
+        "《流浪地球2》近未来细节"
+      ],
+      "tags": [
+        "唐风园池幻境",
+        "建筑物理考据",
+        "漆木琉璃细部",
+        "东西方工艺融合"
+      ],
+      "spatial_philosophy": "依据唐宋营造尺制与历代建筑图卷做实地园林水系与楼阁实景复原，重“可居可游可打斗”的三维空间连贯",
+      "materials_palette": "做旧桧木结构、青苔太湖石、半透明云母纸格窗与手工矿物颜料壁画",
+      "set_discipline": "建筑空间本身就是历史人物性格与诗意幻想的物化容器",
+      "motto": "按真实古建筑营造法式一榫一卯建起来的空间，本身就会生出奇幻的气韵。",
+      "prompt_en": "authentic Tang dynasty timber pavilion and tranquil courtyard garden by Tu Nan, mica lattice windows, moss-grown stones, weathered cinnabar wood and gentle water reflection",
+      "prompt_zh": "屠楠式考据级东方营造置景，严谨榫卯木构配云母纸窗格、青苔石阶与水池倒影，清雅瑰丽"
+    },
+    {
+      "id": "art-vermette",
+      "name": "帕特里斯·弗米特",
+      "name_en": "Patrice Vermette",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《沙丘》系列",
+        "《降临》",
+        "《边境杀手》"
+      ],
+      "tags": [
+        "极简粗野沙漠建筑",
+        "生态适应型科幻",
+        "风沙侵蚀石头",
+        "非流线型外星语"
+      ],
+      "spatial_philosophy": "拒绝炫光光滑流线塑料未来感，主张沙漠帝国一切建筑均厚实斜坡抗风蚀，外形贴近古代宗教神庙与冷战掩体",
+      "materials_palette": "巨大浇筑砂岩混凝土、深黑玄武岩板与厚重亚麻粗布披挂，细节少而几何感如山",
+      "set_discipline": "每一处空间纹理必须回答一个当地物理 survival 问题（防风、储水或隔热）",
+      "motto": "未来几千年后的人造建筑应该像山川遗迹一样沉稳粗糙，而不是像最新款手机。",
+      "prompt_en": "brutalist ecological desert palace architecture designed by Patrice Vermette, slanted sand-carved stone monoliths, heavy textured linen drapes and functional ancient-futuristic shelter",
+      "prompt_zh": "弗米特式生态硬核科幻建筑，抵抗沙暴的风蚀巨型斜坡砂岩与厚麻布帐幕，告别脆弱流线塑料感"
+    },
+    {
+      "id": "art-stockhausen",
+      "name": "亚当·斯托克豪森",
+      "name_en": "Adam Stockhausen",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《布达佩斯大饭店》",
+        "《法兰西特派》",
+        "《西区故事》"
+      ],
+      "tags": [
+        "微缩模型手工艺",
+        "中欧糖果粉彩建筑",
+        "横截面全景陈设",
+        "年代排版美学"
+      ],
+      "spatial_philosophy": "结合实体手工微缩模型、对称大堂立面与严格平面化装饰图形，让整座酒店像精装印刷品",
+      "materials_palette": "古董粉红大理石、芥末黄门童制服、天鹅绒紫红与大量旧式印刷票据道具",
+      "set_discipline": "背景每一块门牌与书脊字号都经过严谨平面美工统一，横移镜头零视觉杂色",
+      "motto": "用微缩玩具般的工匠精度和印刷品排版意识去布置真实演员能走进去的房间。",
+      "prompt_en": "meticulously symmetrical storybook European hotel lobby by Adam Stockhausen, pastel pink marble, mustard velvet and crisp antique typography details with tactile miniature charm",
+      "prompt_zh": "斯托克豪森式工匠微缩感中欧建筑陈设，复古粉彩大理石大堂配精密印刷图文道具，对称平实工整"
+    },
+    {
+      "id": "art-kenadam",
+      "name": "肯·亚当",
+      "name_en": "Ken Adam",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《奇爱博士》",
+        "《巴里·林登》",
+        "经典《007》系列"
+      ],
+      "tags": [
+        "表现主义巨型战情室",
+        "环形光环穹顶",
+        "斜梁几何压迫",
+        "冷战硬核工业"
+      ],
+      "spatial_philosophy": "受到德国表现主义戏剧启发：用巨大三角形斜混凝土桁架、光环会议桌营造疯狂权谋舞台",
+      "materials_palette": "深漆亮黑反光地板、粗钢斜梁、背光巨大世界地图屏幕，对比度极高",
+      "set_discipline": "仅靠几个大尺度工业线条即可表达宏观政治荒诞，决不堆砌小零件",
+      "motto": "一块悬在头顶的巨型光环加上一条亮黑战情桌，就能装下整场核冷战。",
+      "prompt_en": "bold expressionist subterranean war room architecture inspired by Ken Adam, towering slanted concrete trusses, glowing overhead circular ring light above polished black table",
+      "prompt_zh": "肯·亚当式表现主义工业巨室，巨大斜拉混凝土钢梁配环状顶灯照亮反光黑桌，极简霸权几何感"
+    },
+    {
+      "id": "art-sydmead",
+      "name": "希德·米德",
+      "name_en": "Syd Mead",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《银翼杀手》",
+        "《异形2》",
+        "《电子世界争霸战》"
+      ],
+      "tags": [
+        "视觉未来学家",
+        "赛博朋克鼻祖",
+        "高密度加建都市",
+        "潮湿工业重管"
+      ],
+      "spatial_philosophy": "“加建层”（Retrofitting）理念：未来城市不是推倒新建，而是在20世纪老砖楼上粗糙外挂密密麻麻空调管、霓虹和钢架",
+      "materials_palette": "渗水水泥墙、外露铜管线缆、厚重耐看工业面板配潮湿柏油街面反光",
+      "set_discipline": "每一根管线与飞行器起落架必须符合物理承重与维修可操作逻辑",
+      "motto": "真正的未来是旧时代上面一层又一层打满补丁、长满锈迹但仍在嗡嗡运转的世界。",
+      "prompt_en": "retrofitted industrial cyberpunk street architecture inspired by Syd Mead, dense utility pipes bolted onto weathered old masonry, rain-slick asphalt reflecting street signs",
+      "prompt_zh": "希德·米德式工业加建未来街景，旧砖墙外爬满金属重管道与雨夜街面反光，重机械可信度高"
+    },
+    {
+      "id": "art-beachler",
+      "name": "汉娜·比奇勒",
+      "name_en": "Hannah Beachler",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《月光男孩》",
+        "《黑豹》",
+        "《奎迪》"
+      ],
+      "tags": [
+        "非裔未来主义建筑",
+        "社区体温肌理",
+        "自然与现代编织",
+        "情感住宅"
+      ],
+      "spatial_philosophy": "把真实非洲民间泥土编织图腾、竹木结构与现代悬挑玻璃大厦融合，同时善用低收入社区屋内的斑驳水渍塑造尊严",
+      "materials_palette": "红土砖墙、原木镂空几何雕花、粗麻织物配炽热海洋夕阳色温",
+      "set_discipline": "社区厨房桌布上的生活印记和王室大殿里的图腾柱同样重要，绝不失温度",
+      "motto": "空间材料必须携带着居住者的记忆、祖先文化图腾与当下体温。",
+      "prompt_en": "Afrofuturist organic architecture and lived-in community warmth by Hannah Beachler, terracotta masonry meeting bold timber lattices and sunlit woven tapestry textures",
+      "prompt_zh": "比奇勒式文化温度建筑置景，将民族编制纹理、红土石墙与通透当代结构或真实街区烟火气自然融合"
+    },
+    {
+      "id": "art-greenwood",
+      "name": "莎拉·格林伍德",
+      "name_en": "Sarah Greenwood",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《傲慢与偏见》",
+        "《赎罪》",
+        "《至暗时刻》",
+        "《芭比》"
+      ],
+      "tags": [
+        "英伦古典剧场美学",
+        "田园破败肌理",
+        "战时地堡实感",
+        "高度风格式概念"
+      ],
+      "spatial_philosophy": "同样拍英伦经典，让人物穿梭在有泥泞、旧壁炉、积灰天鹅绒的真实大宅，或在舞台化高概念色彩中立住严谨空间轴线",
+      "materials_palette": "英伦雾灰石廊、水彩粉蓝墙纸、旧木百叶和自然野花草坪，注重光透过窗纱的空气感",
+      "set_discipline": "无论是写实战时走廊还是高纯度概念天地，内部动线比例高度精准",
+      "motto": "古典文学改编怕端着架子，把大宅里的泥点子与旧墙纸气味做出来，人物自然就活了。",
+      "prompt_en": "tactile British period manor architecture by Sarah Greenwood, aged lime plaster walls, sunlit window dust and natural wild garden breezes alongside lived-in antique wood furniture",
+      "prompt_zh": "格林伍德式英伦典雅自然写实空间，风化石墙配旧漆木、柔纱透光与生活陈设气息"
+    },
+    {
+      "id": "art-ryu",
+      "name": "柳星熙",
+      "name_en": "Ryu Seong-hie",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《分手的决心》",
+        "《小姐》",
+        "《老男孩》",
+        "《杀人回忆》"
+      ],
+      "tags": [
+        "极繁东亚心理寓言",
+        "和洋折衷宅邸",
+        "海浪青绿墙纸",
+        "细节隐喻"
+      ],
+      "spatial_philosophy": "通过复杂壁纸纹样（山海一体图案）、双面门廊和玻璃器皿暗示主角隐藏的多重身份与欲望",
+      "materials_palette": "和洋合璧深沉桧木拉门、英式铁艺书库、海浪暗青纹样墙纸与冷雨湿地泥土",
+      "set_discipline": "室内陈设高密却高度有序，每一件摆设均暗合角色内心潜台词秘密",
+      "motto": "房间墙纸上山与海的纹路，早已替角色讲出了他嘴上死不承认的秘密。",
+      "prompt_en": "psychological East Asian neo-noir interior design by Ryu Seong-hie, ornate deep ocean-green mountain-wave wallpaper, dark wood Japanese-Victorian sliding doors and moody rain window",
+      "prompt_zh": "柳星熙式东亚心理隐喻室内美术，深海青绿山海纹壁纸、和洋折衷木格门框与冷湿窗雨质感"
+    },
+    {
+      "id": "art-leehj",
+      "name": "李河俊",
+      "name_en": "Lee Ha-jun",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《寄生虫》",
+        "《玉子》",
+        "《海雾》"
+      ],
+      "tags": [
+        "垂直阶级剖面",
+        "极简现代豪宅",
+        "潮湿半地下贫民窟",
+        "建筑即冲突"
+      ],
+      "spatial_philosophy": "靠一套豪宅与一间半地下室的纯建筑平面与高差设计，直接驱动整部电影阶级矛盾与暴雨灾难",
+      "materials_palette": "极简冷硬灰石木地板与整幅落地绿草窗景对比泛潮剥落瓷砖与塑料生活杂物堆",
+      "set_discipline": "豪宅里连一只垃圾桶都极度昂贵克制，而半地下窄窗永远只能仰望行人脚踝",
+      "motto": "楼梯朝向和窗台海拔高度本身就是一部阶级冲突剧本。",
+      "prompt_en": "vertical class-divide architectural staging inspired by Lee Ha-jun, sleek minimalist concrete mansion staircase with expansive garden glass window contrasting cramped damp basement alley",
+      "prompt_zh": "李河俊式垂直阶级空间结构，冷冽极简现代豪宅落地草坪视野与潮湿逼仄半地下室高度反差"
+    },
+    {
+      "id": "art-taneda",
+      "name": "种田阳平",
+      "name_en": "Yohei Taneda",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《杀死比尔》",
+        "《燕尾蝶》",
+        "《金陵十三钗》",
+        "《赛德克·巴莱》"
+      ],
+      "tags": [
+        "和洋江湖混搭",
+        "废墟垃圾乌托邦",
+        "东方青楼雪夜",
+        "舞台感质感"
+      ],
+      "spatial_philosophy": "跨文化视觉炼金术：把日本木构回廊与玻璃地板混搭成狂野奇观，或在潮湿废墟中捏造工业童话",
+      "materials_palette": "高饱和原木回廊、纸障子剪影屏风、五彩彩色玻璃教堂或铁锈工业棚屋",
+      "set_discipline": "极强动作戏友好度：墙板、台阶、廊柱高度和破坏脆度按武打动线精确计算",
+      "motto": "美术布置不仅要让画面惊艳，更要让演员打起来顺手且处处生风。",
+      "prompt_en": "striking East-meets-West martial staging design by Yohei Taneda, wooden balcony overlooking glowing backlit shoji paper sliding panels and blue-lit translucent floor",
+      "prompt_zh": "种田阳平式动作兼容奇观置景，高对比和风障子纸光墙、二层木廊与透亮地板层层铺开"
+    },
+    {
+      "id": "art-crowley",
+      "name": "内森·克劳利",
+      "name_en": "Nathan Crowley",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《星际穿越》",
+        "《敦刻尔克》",
+        "《黑暗骑士》",
+        "《魔法坏女巫》"
+      ],
+      "tags": [
+        "重型真实工业",
+        "实景建造绝不虚浮",
+        "可操作舱体机械",
+        "实用极简"
+      ],
+      "spatial_philosophy": "航天器座舱、防波堤或地下车间一律用真实航空铝板、按钮开关与实体水泥搭建出来",
+      "materials_palette": "拉丝钛铝仪表板、粗帆布军装、真实海岸石堤与干裂玉米地木屋",
+      "set_discipline": "每一盏仪表灯与机械连杆都在片场真实点亮并运行，绝不使用悬空假科技概念图",
+      "motto": "只有在片场搭出一架真的能摸到冰冷金属按钮的飞船，演员眼神里才会有敬畏。",
+      "prompt_en": "grounded industrial practical production design by Nathan Crowley, tactile brushed aluminum spacecraft switches, weathered farm timber and stark coastal concrete breakwater",
+      "prompt_zh": "内森·克劳利式硬核实体工业美学，真实航空拉丝金属仪表、风蚀堤坝与粗粝农舍材质兼具震撼分量"
+    },
+    {
+      "id": "art-welch",
+      "name": "博·韦尔奇",
+      "name_en": "Bo Welch",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《剪刀手爱德华》",
+        "《黑衣人》",
+        "《大鱼》"
+      ],
+      "tags": [
+        "糖果色郊区讽刺",
+        "哥特城堡反差",
+        "复古太空极简",
+        "童话几何"
+      ],
+      "spatial_philosophy": "用糖果粉黄薄荷绿涂抹高度统一的中产社区街道，以此反衬山顶黑灰哥特古堡的温柔孤独",
+      "materials_palette": "柔和粉蜡漆面、修剪成童话造型的绿篱与银白椭圆太空复古舱壁",
+      "set_discipline": "看似轻盈荒诞的造型依然保持极度整洁的城市视角秩序",
+      "motto": "把郊区的整齐和童话的荒谬对比到极致，孤独感自然就变成一首诗。",
+      "prompt_en": "whimsical pastel suburban neighborhood contrasting dark hilltop gothic castle architecture by Bo Welch, manicured topiary greens and clean retro-futuristic curves",
+      "prompt_zh": "博·韦尔奇式幽默童话反差空间，整齐粉彩中产小街遥对山顶阴翳哥特城堡或极简银白复古圆弧厅"
+    },
+    {
+      "id": "art-mcdowell",
+      "name": "亚历克斯·麦克道威尔",
+      "name_en": "Alex McDowell",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《少数派报告》",
+        "《搏击俱乐部》",
+        "《守望者》"
+      ],
+      "tags": [
+        "叙事世界观建筑师",
+        "透明玻璃数据界面",
+        "衰败肥皂厂",
+        "设计先于剧本"
+      ],
+      "spatial_philosophy": "主张世界观设计先于成稿参与编剧探讨，连带设计出未来执法工具交互语法与底层工业废墟生态",
+      "materials_palette": "蓝冷光学透明屏、湿冷生锈浴室瓷砖配老维多利亚潮湿鬼屋陈设",
+      "set_discipline": "世界观每一张海报、交通标识和屋内旧书都成为可独立推理的历史证物",
+      "motto": "好的美术就是把未来五十年的日常使用习惯先活生生地造出来给故事当舞台。",
+      "prompt_en": "worldbuilding-first production design inspired by Alex McDowell, cool cyan translucent glass interfaces beside gritty decaying Victorian basement brick and exposed iron pipes",
+      "prompt_zh": "麦克道威尔式世界观驱动美术，透明冷青光学界面与潮湿剥落红砖老宅底层工艺共存，细节可推理"
+    }
+  ],
+  "screenwriters": [
+    {
+      "id": "sw-kaufman",
+      "name": "查理·考夫曼",
+      "name_en": "Charlie Kaufman",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《暖暖内含光》",
+        "《成为约翰·马尔科维奇》",
+        "《改编剧本》"
+      ],
+      "tags": [
+        "高概念心理隐喻",
+        "元叙事递归",
+        "记忆崩塌外化",
+        "焦虑坦诚"
+      ],
+      "structure_method": "用一条奇异的科幻或超现实规则直接把抽象心结变成具体可拍动作（如记忆消除诊所、进入他人大脑通道）",
+      "dialogue_subtext": "角色在自嘲、笨拙自我剖析与逃避真话之间来回跌撞，绝不端出高大全鸡汤",
+      "signature_device": "空间塌陷外化：内心愧疚与记忆衰减直接在客厅墙面剥落、书架文字消失中被观众看见",
+      "motto": "绝不靠角色在床上流泪独白解释心碎——把他的客厅一座座当场拆给他看。",
+      "prompt_en": "surreal psychological externalization where melting memories appear visually as crumbling rooms and fading book titles, candid vulnerable human nuance",
+      "prompt_zh": "查理·考夫曼式心理隐喻外化，记忆丧失通过室内墙体塌缩与物品消失直观显影，人物自嘲坦诚不喊口号"
+    },
+    {
+      "id": "sw-sorkin",
+      "name": "艾伦·索金",
+      "name_en": "Aaron Sorkin",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《社交网络》",
+        "《点球成金》",
+        "《史蒂夫·乔布斯》",
+        "《白宫风云》"
+      ],
+      "tags": [
+        "行走交谈长通道",
+        "乒乓快节奏交锋",
+        "意图与障碍辩论",
+        "听证会交叉结构"
+      ],
+      "structure_method": "三幕精炼到像戏剧三场封闭高强对决（发布会后台40分钟/双线听证插叙），全程用“意图+即时障碍”推动",
+      "dialogue_subtext": "像双打乒乓球或室内乐四重奏的抢话互咬，每人手握相反立场争分夺秒绝不闲聊",
+      "signature_device": "Walk-and-Talk 长走廊行进调度中连续完成三层信息反转与身份换防",
+      "motto": "没有冲突与意图阻隔的对话不是戏，好台词是带拍号的音乐攻击。",
+      "prompt_en": "rapid high-tempo walk-and-talk corridor staging between rival minds debating urgently under office fluorescent light, rhythmic gestural interruptions",
+      "prompt_zh": "索金式行进交锋快节奏编排，走廊边走边高密度立场碰撞与即时插话打断，毫无闲散水分"
+    },
+    {
+      "id": "sw-wilder-w",
+      "name": "比利·怀尔德",
+      "name_en": "Billy Wilder",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《日落大道》",
+        "《双重赔偿》",
+        "《热情似火》",
+        "《公寓春光》"
+      ],
+      "tags": [
+        "道具回旋镖",
+        "开场倒叙死尸",
+        "致命陷阱链",
+        "精炼十律"
+      ],
+      "structure_method": "严格遵循戏剧经济律：开场第1分钟抛出悬疑结局或契约，随后每件看似不起眼的道具（打火机、破碎镜子、车钥匙）必在第三幕回旋刺中主角",
+      "dialogue_subtext": "俏皮毒舌却藏着底层温柔心酸，一句双关语同时揭穿社会虚伪和人物软肋",
+      "signature_device": "一物三用回旋镖（Setup-Payoff）：前期借出钥匙讨好上司，后期那把钥匙成了背叛证物",
+      "motto": "如果第三幕人物手里突然出现一把枪，那第一幕墙上就必须干净利落地挂过它。",
+      "prompt_en": "tight ironic dramatic setup featuring pivotal personal prop (silver compact mirror or apartment key) caught in sharp black-and-white shadow",
+      "prompt_zh": "比利·怀尔德式严密道具伏笔与反讽回旋镖，关键随身小物件推进因果链条，句句直插人物要害"
+    },
+    {
+      "id": "sw-ephron",
+      "name": "诺拉·艾芙隆",
+      "name_en": "Nora Ephron",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《当哈利遇到莎莉》",
+        "《西雅图夜未眠》",
+        "《电子情书》"
+      ],
+      "tags": [
+        "智识浪漫碰撞",
+        "跨年时间锚点",
+        "小习惯破冰",
+        "生活质感俏皮"
+      ],
+      "structure_method": "拒绝霸总工业糖精，依靠多次命运错身重逢与具体生活观念交锋（餐馆点菜习惯、书店街角生存战）逐步累积爱意",
+      "dialogue_subtext": "男女主角在抬杠争辩“男女之间有没有纯友谊”时早已完成灵魂暴露，用自黑破解深情尴尬",
+      "signature_device": "餐馆点菜细节戏 + 好友同步分屏电话交锋，写活当代都市人体面背后的孤单",
+      "motto": "爱情戏剧的最高级甜蜜，发生在两个人连点三明治挑剔细节都恰好能吵成乐曲的瞬间。",
+      "prompt_en": "warm sunlit autumn park stroll and cozy wooden diner dialogue scene, expressive animated facial banter between sharp-witted equals over coffee",
+      "prompt_zh": "诺拉·艾芙隆式暖意都市智识爱情节拍，具体点餐/读书小习惯交锋取代空洞煽情，细节灵动诚挚"
+    },
+    {
+      "id": "sw-coen-w",
+      "name": "科恩兄弟",
+      "name_en": "Joel & Ethan Coen",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《冰血暴》",
+        "《老无所依》",
+        "《阅后即焚》"
+      ],
+      "tags": [
+        "小聪明滚大雪球",
+        "笨贼遇真恶",
+        "地方口音神韵",
+        "突兀命运收束"
+      ],
+      "structure_method": "一个普通人为了小算盘迈出半步蠢招，引发各方势力因彻底误会而相互毁灭的多米诺骨牌",
+      "dialogue_subtext": "极具地域特色的琐碎废话与死板礼貌中包裹着冷血交易或彻底荒谬，遮去名字就能听出人物斤两",
+      "signature_device": "真假线索错位与反高潮截断（不在标准爆点喧哗，反在清晨煎蛋或静谧厨房揭开真相寒意）",
+      "motto": "人生最可怕的悲剧通常起于一个自作聪明的小谎言，而且没人听懂彼此真正想说什么。",
+      "prompt_en": "quiet kitchen table interrogation laced with regional eccentricities and mounting dread, understated gesture exposing absurd snowballing deceit",
+      "prompt_zh": "科恩兄弟式琐碎废话暗藏杀机的雪球叙事，极高地方言语质感与出乎意料的反高潮骤停"
+    },
+    {
+      "id": "sw-tarantino-w",
+      "name": "昆汀·塔伦蒂诺",
+      "name_en": "Quentin Tarantino",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《无耻混蛋》",
+        "《低俗小说》",
+        "《落水狗》",
+        "《好莱坞往事》"
+      ],
+      "tags": [
+        "章回非线性",
+        "漫长日常吹水突转",
+        "地下室紧张倒数",
+        "口音穿帮局"
+      ],
+      "structure_method": "章节体打乱因果重拼信息权重；每场核心张力往往花8分钟铺垫毫不相干的汉堡命名或奶制品聊天，突然半秒掏枪",
+      "dialogue_subtext": "长段流行文化闲谈其实在试探对方底细、呼吸频率与心理破绽（《无耻混蛋》三根手指认德国人）",
+      "signature_device": "桌下炸弹悬念延迟 + 一个细微手势露馅引爆全桌死斗",
+      "motto": "张力就像拉到极限的橡皮筋，聊得越闲适家常，突然断弦的那一声才越让人跳起来。",
+      "prompt_en": "tense cellar tavern card table confrontation, deceptively relaxed chat shifting instantly on a subtle three-finger hand gesture under warm tungsten overhead lamp",
+      "prompt_zh": "塔伦蒂诺式章节体与漫长家常寒暄拉锯战，靠三根手指细节露馅等微小视觉破绽引爆千钧对峙"
+    },
+    {
+      "id": "sw-schrader",
+      "name": "保罗·施拉德",
+      "name_en": "Paul Schrader",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《出租车司机》",
+        "《愤怒的公牛》",
+        "《第一归正会》"
+      ],
+      "tags": [
+        "孤僻日记体",
+        "夜车都市异化",
+        "圣洁与暴烈边缘",
+        "先验极简结尾"
+      ],
+      "structure_method": "“坐在孤室写日记的男人”原型结构：孤独主角在社会失序与自我压抑中写下偏执观察，一步步滑向极端救赎或毁灭",
+      "dialogue_subtext": "克制短促且近乎礼貌的日常答话，真情实感几乎全藏进夜间日记旁白与镜前空拳练习之中",
+      "signature_device": "孤室桌面特写（日记本、咖啡水泡或药瓶）+ 突然抽离现实的俯瞰/超现实静止神迹结尾",
+      "motto": "主角坐在安静狭小的房间里反复擦拭物件，比大街上喊口号更有摧毁力。",
+      "prompt_en": "solitary nocturnal bedroom desk ritual illuminated by small reading lamp, notebook beside warm cup, lonely psychological rigor",
+      "prompt_zh": "保罗·施拉德式孤僻日记体人物弧光，极简窄室静观搭配极具爆发潜能的内在道德危机"
+    },
+    {
+      "id": "sw-bong-han",
+      "name": "奉俊昊 / 韩进元",
+      "name_en": "Bong Joon-ho & Han Jin-won",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《寄生虫》",
+        "《杀人回忆》",
+        "《母亲》"
+      ],
+      "tags": [
+        "精密时间线入侵",
+        "中点类型剧变",
+        "阶层气味隐喻",
+        "日常工具做武器"
+      ],
+      "structure_method": "前半部像轻巧喜剧一样精密渗透一个家庭，第50%中点门铃突然拉响切入地下室暗道，类型瞬间滑向悲怆惊悚",
+      "dialogue_subtext": "满嘴“越线没有”的体面客套话与一句轻描淡写“地铁里那些人的气味”直刺人类社会尊严裂缝",
+      "signature_device": "水蜜桃过敏特工行动 + 暴雨夜全家向下走下数十层台阶的视觉阶层坠落",
+      "motto": "中点反转不能只是信息爆料，必须是把主角逼进地板下无法回头的道德陷落。",
+      "prompt_en": "clockwork precision infiltration sequence pivoting through stormy stairwell descent, everyday domestic details becoming class fault lines",
+      "prompt_zh": "奉俊昊/韩进元式精密钟表入局法，轻巧喜剧节奏在中点暴雨与秘密地下室处剧烈撕裂翻转"
+    },
+    {
+      "id": "sw-sakamoto",
+      "name": "坂元裕二",
+      "name_en": "Yuji Sakamoto",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《四重奏》",
+        "《花束般的恋爱》",
+        "《怪物》",
+        "《东京爱情故事》"
+      ],
+      "tags": [
+        "炸鸡淋柠檬哲学",
+        "非对称答非所问",
+        "生活细节写悲喜",
+        "罗生门多视角"
+      ],
+      "structure_method": "用极微小日常物事（炸鸡挤不挤柠檬、左脚鞋穿坏的磨损、二手漫画共鸣）撑起一整段复杂关系与社会阶层错位",
+      "dialogue_subtext": "看似跑题、自说自话或温和礼貌“不用啦谢谢”，其实每句话背后都是滴血的伤疤与不想让人看穿的自尊",
+      "signature_device": "单向告别录音/废墟里藏的纸条 + 《怪物》式三段同一暴雨夜重现解开全部真相",
+      "motto": "“哭着吃过饭的人，是可以走下去的”——用最微小的饭菜习惯写透最痛的人生。",
+      "prompt_en": "quiet Japanese dining table conversation over shared meal, restrained wistful pauses and warm kitchen lamp light revealing deep unspoken affection",
+      "prompt_zh": "坂元裕二式日常物事微言大义，答非所问的温柔克制潜台词与多视角罗生门精准扣合"
+    },
+    {
+      "id": "sw-kudo",
+      "name": "宫藤官九郎",
+      "name_en": "Kankuro Kudo",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《宽松世代又如何》",
+        "《海女》",
+        "《木更津猫眼》",
+        "《我家的故事》"
+      ],
+      "tags": [
+        "多线程高速回收伏笔",
+        "无厘头热泪",
+        "时空跨章互文",
+        "群像狂欢弧光"
+      ],
+      "structure_method": "看似胡闹漫无边际地抛出三十个奇怪支线与怪癖人物，最后几集用极精准的情感大回环将所有笑话拧成滚烫眼泪",
+      "dialogue_subtext": "吐槽高速接龙、自打脸式反转与充满生命力的民间市井土味对话",
+      "signature_device": "倒带式重放与一词多义贯穿伏笔（如“小众传统戏曲/长照日常与家庭秘辛共振”）",
+      "motto": "先把人生所有狼狈笑出眼泪，观众在毫无防备笑到一半时才会真正破防。",
+      "prompt_en": "lively multi-character ensemble comedy scene bursting with rapid local banter, quirky props and surprising heartfelt warmth in sunlit neighborhood alleyway",
+      "prompt_zh": "宫藤官九郎式快节奏群像伏笔回环，笑闹市井吐槽下暗藏精准收网的炽热真情"
+    },
+    {
+      "id": "sw-nogi",
+      "name": "野木亚纪子",
+      "name_en": "Akiko Nogi",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《非自然死亡》",
+        "《机动搜查队404》",
+        "《重版出来》",
+        "《逃避虽可耻但有用》"
+      ],
+      "tags": [
+        "专业行业真硬核",
+        "单元破局连主线",
+        "温柔犀利社会派",
+        "双主角互补"
+      ],
+      "structure_method": "用高度可信的行业一线流程（法医解剖细节/出版印厂排版/48小时初动警务）做发动机，单集解决具体悲剧同时悄悄锁死大季终谜题",
+      "dialogue_subtext": "职业术语精准干净，绝不拿无病呻吟凑数；在理性法医报告间留出对人性的极度善良",
+      "signature_device": "物证微差定案（胃内未消化食物时间差/花名暗码），不靠犯人忽然忏悔破案",
+      "motto": "真正打动观众的不是假装专业，是用一线职业逻辑本身找到救赎与真相的出口。",
+      "prompt_en": "grounded forensic lab and newsroom ensemble scene with crisp clinical tabletop evidence lighting and urgent humane solidarity between investigative partners",
+      "prompt_zh": "野木亚纪子式硬核一线行业剧作骨架，单元物证推理严密咬合主线社会关怀，温柔又克制"
+    },
+    {
+      "id": "sw-luwei",
+      "name": "芦苇",
+      "name_en": "Lu Wei",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《霸王别姬》",
+        "《活着》",
+        "《图雅的婚事》"
+      ],
+      "tags": [
+        "大时代平民命运",
+        "五场定生死",
+        "物象贯穿全片",
+        "厚实戏剧动作"
+      ],
+      "structure_method": "坚持好莱坞类型结构深度中国化：明确主角核心欲求与不可妥协的执念（“不疯魔不成活”），将大时代剧变落进一把剑、一箱皮影、一只羊的具体得失中",
+      "dialogue_subtext": "凝练有筋骨的京味与秦腔口语，绝无漂浮书卷译制腔，少说大道理、多让行动说话",
+      "signature_device": "道具命运化绑定：那箱皮影与那口真剑见证三十年人世沉浮",
+      "motto": "剧本结构要像青砖拱桥一样严丝合缝，台词要像铁匠打出来的一样省字又铿锵。",
+      "prompt_en": "sweeping Chinese historical epic condensed through an heirloom shadow-puppet chest and stage sword, crisp authentic folk cadence and weathered courtyard reality",
+      "prompt_zh": "芦苇式结构严密的史诗中国化剧作，靠一把传世佩剑或皮影箱物象绑定人物几十年命运沧桑"
+    },
+    {
+      "id": "sw-liuheng",
+      "name": "刘恒",
+      "name_en": "Liu Heng",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《贫嘴张大民的幸福生活》",
+        "《菊豆》",
+        "《集结号》",
+        "《秋菊打官司》"
+      ],
+      "tags": [
+        "市井烟火幽默",
+        "活生生求生欲",
+        "生命本能荒诞",
+        "一句不掉链子"
+      ],
+      "structure_method": "深入小人物最真实窘迫的生存空间（一棵卡在床中间的树/一张要不到的烈士证明/一口染缸），写活底层人苦中作乐的顽强韧性",
+      "dialogue_subtext": "京味或乡土俏皮活话带着尖锐生命力，绝不干瘪说教，把苦日子过出逗笑人的智慧",
+      "signature_device": "把屋里的树包进床头当台灯台，用最笨拙切实的生活发明反抗逼仄境遇",
+      "motto": "写百姓戏不能端茶杯俯视苦难，要蹲进他们灶台边学会拿窘境开玩笑。",
+      "prompt_en": "warm resilient neighborhood courtyard interior with cramped makeshift bed around a growing tree trunk, rich everyday Beijing household humanity",
+      "prompt_zh": "刘恒式生动市井烟火生存质感，逼仄生活中滚烫幽默的民间口语与顽强绝不低头的行动骨气"
+    },
+    {
+      "id": "sw-zoujz",
+      "name": "邹静之",
+      "name_en": "Zou Jingzhi",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《一代宗师》",
+        "《千里走单骑》",
+        "《归来》",
+        "《铁齿铜牙纪晓岚》"
+      ],
+      "tags": [
+        "金石诗眼台词",
+        "文人江湖气韵",
+        "一步一念分寸",
+        "含蓄重逢留白"
+      ],
+      "structure_method": "兼擅民间机锋喜剧与民国文人武林美学，用几场极简精准的相逢、试探、擦肩完成跨越时代的苍凉抒怀",
+      "dialogue_subtext": "既有“念念不忘，必有回响”的文人清贵筋骨，也有市井智斗“君子动口”的灵动气口",
+      "signature_device": "一粒扣子、半饼宫廷糕点或一封永远撕不破的旧信成为全片诗眼",
+      "motto": "台词得有文脉、有分寸、能入心，话到嘴边藏三分才留得住回响。",
+      "prompt_en": "poetic Republican-era martial hall meeting over warm porcelain tea cup and winter train platform snow, restrained classical gesture and bittersweet longing",
+      "prompt_zh": "邹静之式文人筋骨与江湖分寸感，凝练含蓄如金石之言的对白与风雪站台旧物重逢留白"
+    },
+    {
+      "id": "sw-liuhp",
+      "name": "刘和平",
+      "name_en": "Liu Heping",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《大明王朝1566》",
+        "《北平无战事》",
+        "《雍正王朝》"
+      ],
+      "tags": [
+        "顶级官场权谋网",
+        "文言白话筋骨",
+        "账本礼制交锋",
+        "草蛇灰线百步"
+      ],
+      "structure_method": "以财政亏空、改稻为桑、币制改革等真实历史经济与体制齿轮作引擎，让皇帝、清流、贪官与民夫构成互相牵制的精密权力钟表",
+      "dialogue_subtext": "“有些事不上秤没有四两重，上了秤一千斤也打不住”——用看似平常问安暗藏杀机与试探，一句三层意思",
+      "signature_device": "一部账本/一份圣旨/一句不点破名姓的敲山震虎引动全朝联动",
+      "motto": "写历史大戏不能靠脸谱耍奸，每派人都必须站在自己的制度位置与真实困局里讲道理。",
+      "prompt_en": "authentic Ming imperial cabinet candlelight confrontation over thick fiscal ledger scrolls, restrained scholarly officials exchanging veiled institutional warnings",
+      "prompt_zh": "刘和平式历史制度齿轮剧作，严整考据与账册奏折博弈交锋，一句问安暗含三层政局潜台词"
+    },
+    {
+      "id": "sw-waikafai",
+      "name": "韦家辉",
+      "name_en": "Wai Ka-fai",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《神探》",
+        "《大只佬》",
+        "《大时代》",
+        "《一个字头的诞生》"
+      ],
+      "tags": [
+        "宿命分岔结构",
+        "多重心魔外化",
+        "癫狂港式因果",
+        "一念天堂地狱"
+      ],
+      "structure_method": "极端高概念宿命结构：同一场抢劫按主角向左或向右走出截然相反的两个宇宙，或直接让主角看见每个人身后的七个心魔实体",
+      "dialogue_subtext": "急促尖锐如枪弹，偏执与顿悟在一秒钟内翻脸，带着港式工业生猛与宿命禅意",
+      "signature_device": "镜阵迷宫互射/用镜子照出心中鬼胎，把哲学命题做进极度刺激的警匪奇观里",
+      "motto": "大胆写最疯的宿命概念，再用港产警匪的紧凑动作把它一口气推到绝境。",
+      "prompt_en": "high-tension Hong Kong noir mirror-hall standoff where inner demons manifest visually around desperate figures under harsh blue stairwell fluorescence",
+      "prompt_zh": "韦家辉式生猛港产奇概念宿命结构，多重心魔镜像交叠于极限警匪困局，一念分岔生猛利落"
+    },
+    {
+      "id": "sw-ivyho",
+      "name": "岸西",
+      "name_en": "Ivy Ho",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《甜蜜蜜》",
+        "《男人四十》",
+        "《亲密》"
+      ],
+      "tags": [
+        "润物细无声时间线",
+        "日常琐碎见深情",
+        "香港时代背影",
+        "留白轻巧收敛"
+      ],
+      "structure_method": "用邓丽君磁带、银行汇款、麦当劳柜台、单车后座等十年微小市井切片串联时代大潮下普通男女聚散，绝不刻意生离死别",
+      "dialogue_subtext": "粤语与普通话夹杂的生活体贴，最深重的不舍也只化作临别前一句轻声交代或背脊轻拍",
+      "signature_device": "跨城十年后橱窗电视前毫无预兆的一瞥回眸（把命运交给不经意的巧合留白）",
+      "motto": "真正的深情不怕平淡，让日子和时代风尘自己一层层落在角色肩头就够了。",
+      "prompt_en": "gentle urban romance over decades framed through street bicycle ride, humid diner counter and store television glow, understated heartfelt intimacy",
+      "prompt_zh": "岸西式润物细无声的十年聚散结构，日常市井切片与克制粤语/国语微声流露真挚深情"
+    },
+    {
+      "id": "sw-wangjuan",
+      "name": "王倦",
+      "name_en": "Wang Juan",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《庆余年》",
+        "《大宋少年志》",
+        "《舞乐传奇》"
+      ],
+      "tags": [
+        "连环套中套反转",
+        "反差喜剧解压",
+        "全员有脑智斗",
+        "群像高燃团魂"
+      ],
+      "structure_method": "长剧百集爽点与智斗核心引擎：永远给反派留出清醒高智商，主角在步步算计“以为赢了其实落入第三层陷阱”中靠团队信任逆转翻盘",
+      "dialogue_subtext": "古典语境搭配现代清新脑回路的轻快机锋，在严肃权谋刀尖上随时翻出合理笑点",
+      "signature_device": "三层局嵌套反转（我预判了你预判我的局）与高燃不尴尬的少年群像群戏",
+      "motto": "决不靠给反派降智衬托主角，只有所有人都聪明且有难言苦衷时，反转才真正痛快。",
+      "prompt_en": "witty fast-paced Chinese period intrigue scene, sunlit academy courtyard banter quickly flipping into clever multi-layered tactical gambit among sharp-minded ensemble",
+      "prompt_zh": "王倦式全员高智商连环反转剧作法，轻盈诙谐市井台词包裹层层嵌套的精密权谋破局"
+    },
+    {
+      "id": "sw-sheridan",
+      "name": "泰勒·谢里丹",
+      "name_en": "Taylor Sheridan",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《边境杀手》",
+        "《赴汤蹈火》",
+        "《猎凶风河谷》"
+      ],
+      "tags": [
+        "新西部冷硬边境",
+        "专业暴力代价",
+        "极简雄性言辞",
+        "荒野生存法则"
+      ],
+      "structure_method": "“边境三部曲”式极简硬核架构：现代执法或边缘小人物在无法律保护的边疆荒漠或风雪保留地，被迫接手前辈留下的血腥规则",
+      "dialogue_subtext": "惜字如金、硬邦邦的老牛仔与老探员话语，每句经验之谈都是用命换来的现实冷幽默",
+      "signature_device": "高速桥头堵车静默审视 + 没有任何多余花招、一秒分高下的干脆拔枪实感",
+      "motto": "在这片边境线上，大话救不了命，风雪和尘土只检验人能不能站稳。",
+      "prompt_en": "austere modern western frontier standoff on dusty border highway or wind-swept snowy ridge, sparse laconic dialogue, palpable sense of danger and consequence",
+      "prompt_zh": "谢里丹式硬朗新西部边疆剧作，高强度公路堵车对峙或风雪孤境追踪，台词惜字如金直刺代价"
+    },
+    {
+      "id": "sw-gilroy",
+      "name": "托尼·吉尔罗伊",
+      "name_en": "Tony Gilroy",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《迈克尔·克莱顿》",
+        "《谍影重重》系列",
+        "《安多》"
+      ],
+      "tags": [
+        "制度冷酷谍战",
+        "多线高压合拢",
+        "小人物起义逻辑",
+        "成人冷峻节奏"
+      ],
+      "structure_method": "极度接地气的谍战与职场清算流：用细致入微的官僚会议、银行转账、地下密室手工制作与多方情报汇总，将三条毫不相干的线拧成一场必爆的大行动",
+      "dialogue_subtext": "全无超级英雄中二感，全是成年人权衡利弊、疲惫坚持与冷静摊牌（“你觉得你现在坐在这个房间里是谁选的？”）",
+      "signature_device": "《安多》式12集三幕闭环 + 主角绝境下不靠嘴炮靠真实组织力突围",
+      "motto": "把一切宏大叙事压实到特工怎么买车票、小官僚怎么篡改单据的质感里，戏剧张力自然翻十倍。",
+      "prompt_en": "adult grounded espionage thriller scene inside fluorescent-lit bureaucratic security hub and rainy street safe-house, intense tactical precision and moral fatigue",
+      "prompt_zh": "吉尔罗伊式成人冷硬谍战与制度博弈，把宏大对抗落到每一份安全漏洞、地下联络与多线合拢节奏"
+    },
+    {
+      "id": "sw-pwb",
+      "name": "菲比·沃勒-布里奇",
+      "name_en": "Phoebe Waller-Bridge",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《伦敦生活》",
+        "《杀死伊芙》"
+      ],
+      "tags": [
+        "破第四面墙眨眼",
+        "尖刻自毁幽默",
+        "女性欲望直白",
+        "骤然安静刺痛"
+      ],
+      "structure_method": "主角一边在荒唐日常饭局里对观众悄悄眨眼吐槽“看吧我又要搞砸了”，一边在观众笑累了的时候被神父或死党一眼戳破防御墙",
+      "dialogue_subtext": "极高频自嘲笑话当盾牌，把所有不堪、嫉妒与哀伤裹在敏锐毒辣的几秒顿口中",
+      "signature_device": "原本属于主角独享的“第四面墙偷看观众通道”，突然被另一个懂得她灵魂的人当场抓包",
+      "motto": "玩笑开得越猛烈，当她突然面对镜头转不过脸来的那一刻才越碎裂人心。",
+      "prompt_en": "sharp tragicomic contemporary dining scene where a clever character breaks rhythm with a sudden knowing glance and quiet vulnerability under soft London cafe light",
+      "prompt_zh": "沃勒-布里奇式尖锐悲喜剧节奏，犀利自嘲当护甲下的精准破防微表情与突袭安静瞬间"
+    },
+    {
+      "id": "sw-mcdonagh",
+      "name": "马丁·麦克唐纳",
+      "name_en": "Martin McDonagh",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《三块广告牌》",
+        "《伊尼舍林的报丧女妖》",
+        "《杀手没有假期》"
+      ],
+      "tags": [
+        "黑色荒诞道德局",
+        "戏剧舞台张力",
+        "暴烈突发柔情",
+        "小岛或小镇死结"
+      ],
+      "structure_method": "爱尔兰戏剧根底：把两个极度固执的人物锁死在一座小岛或公路广告牌两端，一件看似微不足道的小执念在荒唐升级中走向无法挽回",
+      "dialogue_subtext": "满嘴粗俗直白、孩子气的固执诡辩，却随时在下一行翻出悲悯神性或刺骨孤独",
+      "signature_device": "反派与主角竟在医院同病室、酒馆同桌喝上一杯，敌我界线在一张长椅上悄悄瓦解",
+      "motto": "把恨到骨子里的人锁在一张咖啡桌或一片小岛上，剩下的交给黑色幽默去熬。",
+      "prompt_en": "darkly comic rural roadside or moody stone island pub standoff, fiercely stubborn protagonists confronting moral absurdity beneath dramatic overcast sky",
+      "prompt_zh": "麦克唐纳式黑色荒诞小城死结剧作，极度固执荒谬的对白交锋中突然浮现震撼柔情与悲悯"
+    },
+    {
+      "id": "sw-rohmer",
+      "name": "埃里克·侯麦",
+      "name_en": "Éric Rohmer",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《绿光》",
+        "《春天的故事》",
+        "《夏天的故事》",
+        "《我的夜与我的玛德琳》"
+      ],
+      "tags": [
+        "道德故事与四季",
+        "阳光花园辩论",
+        "心口不一试探",
+        "日常哲学剧场"
+      ],
+      "structure_method": "取消重大外部事故，全片紧盯度假屋阳台、海滩和巴黎书桌旁两三男女围绕爱情原则、承诺与动摇的精准心理试探",
+      "dialogue_subtext": "角色大谈道德逻辑、诚实与自由，然而眼神、手指抓握水果刀或选择坐哪班渡轮早已背叛嘴上誓言",
+      "signature_device": "在长久絮语试探末尾偶然碰上一道真实的日落绿光（把巧合写得像精神救赎）",
+      "motto": "人嘴上发明出千百套哲学来替自己辩护，而动作与阳光早已默默给出了答案。",
+      "prompt_en": "sunlit French Riviera terrace and seaside boardwalk conversation bathed in natural late-afternoon breeze, eloquent characters masking subtle longing",
+      "prompt_zh": "侯麦式阳光海滨与四季道德剧，围绕承诺和心意展开精致口头辩驳，细微眼神泄露心口不一"
+    },
+    {
+      "id": "sw-farhadi-w",
+      "name": "阿斯哈·法哈蒂",
+      "name_en": "Asghar Farhadi",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《一次别离》",
+        "《关于伊丽》",
+        "《推销员》"
+      ],
+      "tags": [
+        "全员各有苦衷罗生门",
+        "开场契约撕裂",
+        "细节说谎链条",
+        "开放式法庭拷问"
+      ],
+      "structure_method": "没有反派的极致戏剧力学：第10分钟发生一件看似微小的意外（看护老人/海边失踪），每位当事人为保住微薄体面而撒半句小谎，最终层层锁死成无解道德死局",
+      "dialogue_subtext": "生活化争执紧迫真实，每段对白都在验证一个核心证言的真伪时间差",
+      "signature_device": "最后把选择权留给孩子、法官或银幕外安静等待结果的走廊",
+      "motto": "最残酷的戏剧对抗，不是善与恶，而是善良的人为了护住家人而彼此伤害。",
+      "prompt_en": "high-stakes everyday courtroom hallway dilemma seen through glass partition, truthful layered tension where every participant defends a partial truth",
+      "prompt_zh": "法哈蒂式全员各有立场苦衷的多重罗生门结构，半句小谎引发连锁崩塌，走廊终局发人深省"
+    }
+  ],
+  "editors_sound": [
+    {
+      "id": "ed-murch",
+      "name": "沃尔特·默奇",
+      "name_en": "Walter Murch",
+      "role_sub": "剪辑与混音",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《现代启示录》",
+        "《窃听大阴谋》",
+        "《英国病人》"
+      ],
+      "tags": [
+        "眨眼原则剪辑六律",
+        "情绪51%压倒一切",
+        "J-cut 声桥先入",
+        "空间音效叙事"
+      ],
+      "rhythm_philosophy": "《眨眼之间》黄金权重：情绪51% > 故事23% > 节奏10% > 视线7% > 二维5% > 三维4%；宁可动作不接戏，绝不切断情绪体温",
+      "sound_technique": "声桥先行（J-cut / L-cut 提前 0.5–1.5 秒入下一场环境声/呼吸），依靠声音连续感无缝缝合画面跳切",
+      "motto": "理想剪辑点就在观众心意完成一个思考而恰好眨眼前的那两帧。",
+      "prompt_en": "emotion-first narrative editing ethos of Walter Murch with seamless J-cut sound bridge leading the visual cut, priority on breath and eye blink timing",
+      "prompt_zh": "沃尔特·默奇式情绪优先剪辑法则（51%情绪压倒空间），下一场环境风声或人声桥提前半秒先行拉动画面"
+    },
+    {
+      "id": "ed-schoonmaker",
+      "name": "塞尔玛·斯昆梅克",
+      "name_en": "Thelma Schoonmaker",
+      "role_sub": "剪辑",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《好家伙》",
+        "《愤怒的公牛》",
+        "《华尔街之狼》",
+        "《花月杀手》"
+      ],
+      "tags": [
+        "快进慢出节奏漏斗",
+        "惊叹号定格",
+        "乐句卡点蒙太奇",
+        "黑场标点"
+      ],
+      "rhythm_philosophy": "镜长递减漏斗加速推向高潮爆点（3s→2s→1s→0.5s 碎切），暴力爆发后强迫留≥4秒消化长镜防观众麻木",
+      "sound_technique": "音乐律动先于剪辑（卡紧摇滚/爵士重音 ±3 帧），关键瞬间抽出一帧定格配合旁白作强烈标点",
+      "motto": "剪辑师在剪台上设计的是观众心脏跳动的加减速曲线。",
+      "prompt_en": "percussive escalating montage rhythm inspired by Thelma Schoonmaker, tightening beat cuts leading into explosive action followed by lingering stillness",
+      "prompt_zh": "斯昆梅克式加速漏斗剪辑节拍，随音乐重音层层加速碎切并在爆发后留出深长消化静态镜头"
+    },
+    {
+      "id": "ed-menke",
+      "name": "萨莉·门克",
+      "name_en": "Sally Menke",
+      "role_sub": "剪辑",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《低俗小说》",
+        "《无耻混蛋》",
+        "《杀死比尔》",
+        "《落水狗》"
+      ],
+      "tags": [
+        "延迟反应憋住张力",
+        "对话张力曲线",
+        "手部道具缓冲切",
+        "章节卡体例"
+      ],
+      "rhythm_philosophy": "长对话段落刻意憋着不给反应镜头（停在说话人脸或桌面危险物上让焦虑发酵），前2/3疏剪（8-15s）后1/3逐渐加密",
+      "sound_technique": "在悬崖对话中突然插入危险物或手部道具微响特写（2s→1.5s→0.5s递减），把寂静憋出冷汗",
+      "motto": "最锋利的那一刀剪刀是不动声色忍住不切——让观众自己数着心跳等下去。",
+      "prompt_en": "delayed-reaction conversational editing cadence by Sally Menke holding tightly on speaker tension before snapping cleanly onto subtle prop detail",
+      "prompt_zh": "萨莉·门克式延迟反应剪辑张力曲线，忍住不切让对话压力积聚后利落切换至手部或桌下危险物"
+    },
+    {
+      "id": "ed-william-edit",
+      "name": "张叔平（剪辑）",
+      "name_en": "William Chang Suk-Ping",
+      "role_sub": "剪辑",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《花样年华》",
+        "《重庆森林》",
+        "《阿飞正传》",
+        "《堕落天使》"
+      ],
+      "tags": [
+        "步进抽帧情绪涂抹",
+        "因果省略留黑",
+        "母题三度变奏",
+        "主观时间剪辑"
+      ],
+      "rhythm_philosophy": "删掉机械因果交代只留情绪碎片；同个擦肩或回眸母题在全片带着同一旋律回环变奏三遍，景别逐次推近",
+      "sound_technique": "利用 8fps 抽帧拖影配合绵长探戈大提琴或怀旧旋律，将动作升华为时间里的惆怅韵脚",
+      "motto": "剪掉繁琐前因后果，只留下时间在人与人之间擦肩而过的余温。",
+      "prompt_en": "lyrical elliptical editing rhythm by William Chang, subtle slow-shutter motion blur and recurring musical motif bridging fragmented emotional glances",
+      "prompt_zh": "张叔平式省略与步进抽帧时间美学，剪去冗余因果链，以三度变奏韵律和深情乐段缝合情绪碎片"
+    },
+    {
+      "id": "ed-joewalker",
+      "name": "乔·沃克",
+      "name_en": "Joe Walker",
+      "role_sub": "剪辑",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《沙丘》",
+        "《降临》",
+        "《边境杀手》",
+        "《为奴十二年》"
+      ],
+      "tags": [
+        "冷冽宏大呼吸",
+        "声波先行预兆切",
+        "闪回如脑内刺穿",
+        "精确节制"
+      ],
+      "rhythm_philosophy": "擅用一闪而过（6–12帧）主观潜意识闪切打断宏观静默，同时保持史诗长镜头沉雄压迫感",
+      "sound_technique": "由受过作曲训练的剪辑师视角统一低频嗡鸣、沙粒摩挲与心跳预兆音效",
+      "motto": "用低频音景托住大银幕宏观寂静，再用半秒记忆碎片切进主角脊髓。",
+      "prompt_en": "monumental measured sci-fi epic cadence like Joe Walker, deep atmospheric bass resonance bridging steady desert vistas with crisp brief memory flashes",
+      "prompt_zh": "乔·沃克式冷峻史诗剪辑节奏，低频音景稳托宏大静景并穿插手术刀般锐利的短暂潜意识闪回"
+    },
+    {
+      "id": "ed-yangjm",
+      "name": "杨进模",
+      "name_en": "Yang Jin-mo",
+      "role_sub": "剪辑",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《寄生虫》",
+        "《雪国列车》",
+        "《玉子》"
+      ],
+      "tags": [
+        "蒙太奇精准踩点",
+        "平行双线错位合拢",
+        "喜剧转惊悚滑步",
+        "零喘息衔接"
+      ],
+      "rhythm_philosophy": "著名的“送水蜜桃/驱逐女管家蒙太奇”在8分钟内靠台词、动作与节奏把复杂阴谋切得流畅如舞曲",
+      "sound_technique": "把门铃、咳嗽、脚步与配乐古典乐节拍精密编排，实现无缝阶层潜行合拍",
+      "motto": "让四条人物线索像机械表里的咬合齿轮一样无缝同时往前滑行。",
+      "prompt_en": "razor-tight ensemble parallel montage inspired by Yang Jin-mo, rhythmic doorway entries and domestic actions flowing seamlessly in musical tempo",
+      "prompt_zh": "杨进模式钟表平行蒙太奇，多组人员门廊交错动作紧踩拍子流畅滑行，紧凑无半分赘余"
+    },
+    {
+      "id": "snd-zimmer",
+      "name": "汉斯·季默",
+      "name_en": "Hans Zimmer",
+      "role_sub": "配乐与声音",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《星际穿越》",
+        "《盗梦空间》",
+        "《沙丘》",
+        "《黑暗骑士》"
+      ],
+      "tags": [
+        "计时器声学化",
+        "管风琴宇宙感",
+        "Shepard无尽上升音阶",
+        "工业铜管低鸣"
+      ],
+      "rhythm_philosophy": "不写传统花哨曲调，改用秒表滴答（《敦刻尔克》）、管风琴风箱喘息或双弦拉锯把时间压力直接焊进剧情脉搏",
+      "sound_technique": "把风笛、电吉他、人体嗓音扭曲成环境音响墙与低频震动，配乐与拟音融为一体",
+      "motto": "仅用两个单音加一个越来越紧的钟表滴答声，就可以让整座影院屏住呼吸。",
+      "prompt_en": "visceral ticking clockwork percussion, warm pipe organ swells and deep resonant bass drone blending sound design and score",
+      "prompt_zh": "汉斯·季默式计时器声学融合配乐，紧迫秒表滴答配合管风琴厚重低频推向情绪与时间顶点"
+    },
+    {
+      "id": "snd-hisaishi",
+      "name": "久石让",
+      "name_en": "Joe Hisaishi",
+      "role_sub": "配乐与声音",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《千与千寻》",
+        "《菊次郎的夏天》",
+        "《花火》",
+        "《入殓师》"
+      ],
+      "tags": [
+        "极简四音符澄澈",
+        "温暖东方田园感",
+        "旋律克制大留白",
+        "弦乐童真治愈"
+      ],
+      "rhythm_philosophy": "受极简主义音乐启发，以简练上口的琶音循环起手，随画面视野开阔时才层层叠入弦乐与大提琴",
+      "sound_technique": "钢琴键触轻柔透明、大提琴独奏温润克制，在最喧嚣的画面之前反而敢于让音乐停半拍",
+      "motto": "给画面留出风吹过树梢的空间，只用一个真诚透明的旋律就能让所有观众想起夏天。",
+      "prompt_en": "luminous minimalist concert keyboard arpeggios opening gently into warm soaring strings, serene nostalgic Japanese summer breeze ambience",
+      "prompt_zh": "久石让式澄澈极简钢琴琶音渐入温暖大提琴弦乐，清爽留白如夏风拂过原野与铁道记忆"
+    },
+    {
+      "id": "snd-sakamoto",
+      "name": "坂本龙一",
+      "name_en": "Ryuichi Sakamoto",
+      "role_sub": "配乐与声音",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《末代皇帝》",
+        "《荒野猎人》",
+        "《怪物》",
+        "《战场上的快乐圣诞》"
+      ],
+      "tags": [
+        "留白半音与寂静",
+        "环境采样音色化",
+        "东方五声融合现代电声",
+        "破碎脆弱感"
+      ],
+      "rhythm_philosophy": "“声音即空间里的呼吸”：极其惜音如金，一个泛音后往往留出整整两三秒沉默空间给风声与木楼吱嘎",
+      "sound_technique": "混合失真古钢琴、雨打塑料桶/碎玻璃采音与温和合成器暗涌，充满时间枯荣哀矜",
+      "motto": "每个音符落下去之后渐渐消散进静谧空气里的那个尾巴，才是音乐真正开始的地方。",
+      "prompt_en": "fragile resonant felt-hammered upright keyboard chords floating across wide atmospheric silence with subtle icy string drones and delicate rain texture",
+      "prompt_zh": "坂本龙一式极简留白微声美学，弱音钢琴泛音缓缓融进漫长空气静谧之中，孤冷脆弱而隽永"
+    },
+    {
+      "id": "snd-morricone",
+      "name": "恩尼奥·莫里康内",
+      "name_en": "Ennio Morricone",
+      "role_sub": "配乐与声音",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《黄金三镖客》",
+        "《天堂电影院》",
+        "《美国往事》",
+        "《八恶人》"
+      ],
+      "tags": [
+        "具体物象即乐器",
+        "口哨与女声吟唱",
+        "怀旧双簧管",
+        "史诗张力"
+      ],
+      "rhythm_philosophy": "将口哨、鞭响、老怀表八音盒、犹太口弦琴直接编入交响总谱，在荒凉冷峻或深情回首之间随心调遣",
+      "sound_technique": "把具体环境拟音写进音乐节拍里成为不可替代的旋律钩子",
+      "motto": "任何一根生锈铁丝和一声口哨都可以写进悲剧史诗，关键在于它属于那个角色的灵魂。",
+      "prompt_en": "iconic acoustic guitar harmonic and mournful solo oboe or atmospheric whistle against dusty frontier silence, classic timeless dramatic swell",
+      "prompt_zh": "莫里康内式物象拟音与史诗旋律交响，苍凉口哨/原声吉他或怀旧双簧管瞬间定义人物宿命"
+    },
+    {
+      "id": "snd-greenwood",
+      "name": "约翰尼·格林伍德",
+      "name_en": "Jonny Greenwood",
+      "role_sub": "配乐与声音",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《血色将至》",
+        "《魅影缝匠》",
+        "《犬之力》",
+        "《大师》"
+      ],
+      "tags": [
+        "不协和弦乐焦虑",
+        "微分音神经压迫",
+        "复古马特诺音波琴",
+        "班卓琴孤绝"
+      ],
+      "rhythm_philosophy": "在看似古典优雅的礼服、森林和庄园表象之下，偷偷铺一条极微弱却不断滑动走音的大提琴锯齿长音制造寒意",
+      "sound_technique": "高频密集弦乐群颤音（如蜂群或刀刃磨擦）或干燥单把班卓琴拨弦紧扣内心失衡",
+      "motto": "声音不是用来哄观众开心的背景糖浆，它负责替优雅表面下那只暗中焦躁的怪物发声。",
+      "prompt_en": "uneasy microtonal solo cello and plucked strings creeping slowly beneath refined chamber stillness, mounting psychological dread",
+      "prompt_zh": "格林伍德式微分音焦虑弦乐美学，典雅表面之下以干涩摩擦琴弓音与走调长鸣逐步收紧心理绞索"
+    },
+    {
+      "id": "snd-umebayashi",
+      "name": "梅林茂",
+      "name_en": "Shigeru Umebayashi",
+      "role_sub": "配乐与声音",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《花样年华》",
+        "《十面埋伏》",
+        "《一代宗师》",
+        "《2046》"
+      ],
+      "tags": [
+        "圆舞曲回旋深情",
+        "大提琴悲剧慢板",
+        "鼓点竹声东亚交响",
+        "宿命克制"
+      ],
+      "rhythm_philosophy": "用反复旋转却始终迈不出决定性一步的深沉大提琴三拍子圆舞曲，精准演绎亚洲角色克制压抑、永远停在临界点上的情愫",
+      "sound_technique": "醇厚大提琴领奏配克制拨弦，以及中国古鼓打击声阵配东亚管弦",
+      "motto": "旋律原地旋转三圈却忍住不落到终点，那就是《花样年华》走廊里没说出的情话。",
+      "prompt_en": "lush melancholic waltz led by deep expressive solo cello in humid warm corridor twilight, yearning restraint and elegant cyclical tempo",
+      "prompt_zh": "梅林茂式低回宿命圆舞曲美学，醇厚大提琴三拍循环回旋于暧昧幽微光影之间，情深而极度克制"
+    },
+    {
+      "id": "snd-burtt",
+      "name": "本·伯特",
+      "name_en": "Ben Burtt",
+      "role_sub": "配乐与声音",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《机器人总动员》",
+        "《星球大战》系列",
+        "《夺宝奇兵》"
+      ],
+      "tags": [
+        "有机物理音效发明",
+        "零台词纯声叙事",
+        "真实机械摩擦",
+        "声音角色化"
+      ],
+      "rhythm_philosophy": "靠物理录音与巧妙混音让没有嘴的角色（如瓦力）发出喜怒哀乐——通过声音材质变化传递完整剧作信息",
+      "sound_technique": "把老放映机马达、钢缆弹震、真实风声组合成辨识度极高的世界观物理底噪",
+      "motto": "真正奇幻或科幻的声效一定要听起来像你能在五金店里摸到它的物理粗糙感。",
+      "prompt_en": "tactile mechanical sound design built from organic motor hums, crisp metal clicks and clean wind acoustics carrying character emotion cleanly",
+      "prompt_zh": "本·伯特式物理拟音发明工艺，真实机械马达与金属质感摩擦音直接替代冗余台词建立角色情感"
+    },
+    {
+      "id": "snd-tuduuchih",
+      "name": "杜笃之",
+      "name_en": "Tu Duu-Chih",
+      "role_sub": "配乐与声音",
+      "region": "华语与亚洲",
+      "representative_works": [
+        "《一一》",
+        "《悲情城市》",
+        "《千禧曼波》",
+        "《刺客聂隐娘》"
+      ],
+      "tags": [
+        "华语同步录音奠基",
+        "画外城市环境层次",
+        "静观长镜自然声",
+        "远近音景纵深"
+      ],
+      "rhythm_philosophy": "反对过度塞满配乐，相信一个房间里远处传来的火车声、楼下夫妻拌嘴声、风扇转动就是最好的东亚电影音乐",
+      "sound_technique": "极其立体通透的同期声与画外音分层：前景细微翻书呼吸 + 中景雨滴屋檐 + 远景高架车流",
+      "motto": "画外的城市声景是画面之外的另一半银幕，给它呼吸就能把安静的房间立成真实世界。",
+      "prompt_en": "layered realistic Taiwanese spatial soundscape with intimate indoor breathing foreground, steady rain eaves and distant city traffic humming offscreen",
+      "prompt_zh": "杜笃之式华语同期环境声景纵深，前景细微呼吸翻页配远景车流雨声构建极具真实感的亚洲生活声场"
+    },
+    {
+      "id": "snd-reznor",
+      "name": "特伦特·雷诺 & 阿提克斯·罗斯",
+      "name_en": "Trent Reznor & Atticus Ross",
+      "role_sub": "配乐与声音",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《社交网络》",
+        "《消失的爱人》",
+        "《龙纹身的女孩》",
+        "《挑战者》"
+      ],
+      "tags": [
+        "冷冽电子脉冲",
+        "数字失真焦虑",
+        "温水煮青蛙电子声",
+        "极净现代感"
+      ],
+      "rhythm_philosophy": "用极其冷静精密、轻微生锈失真的老式模拟合成器与脉冲节拍，表现现代人敲击代码、侦查追踪与婚姻操控中的冰凉算计",
+      "sound_technique": "温润失真合成器铺底（故意做成微暖家居假象如《消失的爱人》开场）突袭切换刺耳工业低音",
+      "motto": "最好的现代惊悚配乐听起来像夜里两点半电脑屏幕散发出的冷光嗡嗡声。",
+      "prompt_en": "icy clinical analog synth pulses and muted industrial electronic hum underscoring nocturnal focused investigative rhythm",
+      "prompt_zh": "雷诺/罗斯式冷峻现代工业电子脉动，细腻失真合成器微光铺底营造夜深侦查与心理操控寒意"
+    },
+    {
+      "id": "snd-goransson",
+      "name": "路德维希·约兰松",
+      "name_en": "Ludwig Göransson",
+      "role_sub": "配乐与声音",
+      "region": "欧美与国际",
+      "representative_works": [
+        "《奥本海默》",
+        "《信条》",
+        "《曼达洛人》"
+      ],
+      "tags": [
+        "独奏小提琴极速螺旋",
+        "时间逆行音律",
+        "民族器乐融合合成",
+        "量子加速狂飙"
+      ],
+      "rhythm_philosophy": "用一把独奏小提琴的柔和微弱震颤起手，随后随着24组变速节拍器和打击乐声浪逐渐疯魔加速成核裂变音墙",
+      "sound_technique": "精准变速拍号叠加、逆向倒放声效设计以及把非洲塔玛鼓/低音长笛与现代低频熔为一炉",
+      "motto": "旋律速度从柔和思辨一步步加速到原子裂变的失控边界，音乐本身就是情绪核爆。",
+      "prompt_en": "intimate trembling solo violin accelerating through relentless interlocking polyrhythms into an overwhelming radiant brass and synth crescendo",
+      "prompt_zh": "约兰松式微颤独奏小提琴复节奏极速盘旋攀升，把思辨内观一步步推至震撼听觉风暴顶点"
     }
   ],
   "crew_master_consultants": {
