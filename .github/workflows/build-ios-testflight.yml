@@ -93,24 +93,7 @@ jobs:
           security set-key-partition-list -S apple-tool:,apple: -s -k "$KC_PASS" "$KC_PATH"
           security list-keychains -d user -s "$KC_PATH" login.keychain-db
 
-          cat > /tmp/jt-ios-build/ExportOptions.plist <<EOF
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-  <key>destination</key>
-  <string>export</string>
-  <key>method</key>
-  <string>app-store-connect</string>
-  <key>signingStyle</key>
-  <string>automatic</string>
-  <key>teamID</key>
-  <string>${APPLE_TEAM_ID}</string>
-  <key>stripSwiftSymbols</key>
-  <true/>
-</dict>
-</plist>
-EOF
+          python3 -c 'import os, plistlib; open("/tmp/jt-ios-build/ExportOptions.plist","wb").write(plistlib.dumps({"destination":"export","method":"app-store-connect","signingStyle":"automatic","teamID":os.environ["APPLE_TEAM_ID"],"stripSwiftSymbols":True}))'
 
           xcodebuild \
             -project ios_app/JTScreenwriter.xcodeproj \
